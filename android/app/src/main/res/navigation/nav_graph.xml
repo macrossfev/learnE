@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/learnFragment">
+
+    <fragment
+        android:id="@+id/learnFragment"
+        android:name="com.learne.ui.learn.InteractiveLearnFragment"
+        android:label="@string/nav_learn">
+        <action
+            android:id="@+id/action_learn_to_auto"
+            app:destination="@id/autoPlayFragment"
+            app:popUpTo="@id/learnFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/autoPlayFragment"
+        android:name="com.learne.ui.learn.LearnFragment"
+        android:label="@string/nav_learn">
+        <action
+            android:id="@+id/action_auto_to_learn"
+            app:destination="@id/learnFragment"
+            app:popUpTo="@id/autoPlayFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/reviewFragment"
+        android:name="com.learne.ui.review.ReviewFragment"
+        android:label="@string/nav_review" />
+
+    <fragment
+        android:id="@+id/testFragment"
+        android:name="com.learne.ui.test.TestFragment"
+        android:label="@string/nav_test" />
+
+    <fragment
+        android:id="@+id/statsFragment"
+        android:name="com.learne.ui.stats.StatsFragment"
+        android:label="@string/nav_stats" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.learne.ui.settings.SettingsFragment"
+        android:label="@string/nav_settings" />
+
+</navigation>

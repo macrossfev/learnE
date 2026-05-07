@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:padding="16dp">
+
+    <!-- 自动播放控制面板 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_auto_play"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/surface"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="8dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- 标题 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="AUTO PLAY MODE"
+                    android:textColor="@color/primary"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:drawablePadding="8dp"/>
+
+                <Button
+                    android:id="@+id/btn_mode_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:text="交互学习"
+                    android:textSize="12sp"
+                    android:background="@drawable/btn_primary"
+                    android:textColor="@color/white"/>
+
+            </LinearLayout>
+
+            <!-- 进度条 -->
+            <ProgressBar
+                android:id="@+id/progress_auto_play"
+                style="@style/AutoPlayProgress"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:layout_marginTop="8dp"
+                android:max="50"
+                android:progress="0"/>
+
+            <!-- 进度信息 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tv_group_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Group"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    android:layout_marginEnd="4dp"/>
+
+                <!-- 组选择Spinner -->
+                <Spinner
+                    android:id="@+id/sp_group_select"
+                    android:layout_width="140dp"
+                    android:layout_height="36dp"
+                    android:background="@color/surface"
+                    android:spinnerMode="dropdown"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/tv_word_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Word: 0/50"
+                    android:textColor="@color/accent"
+                    android:textSize="12sp"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+            <!-- 重复次数选择 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="重复次数:"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    android:layout_marginEnd="8dp"/>
+
+                <Button
+                    android:id="@+id/btn_repeat_1"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:layout_weight="1"
+                    android:text="×1"
+                    android:textSize="12sp"
+                    android:background="@drawable/btn_accent"
+                    android:textColor="@color/white"
+                    android:layout_marginEnd="4dp"/>
+
+                <Button
+                    android:id="@+id/btn_repeat_2"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:layout_weight="1"
+                    android:text="×2"
+                    android:textSize="12sp"
+                    android:background="@drawable/btn_accent"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="4dp"/>
+
+                <Button
+                    android:id="@+id/btn_repeat_3"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:layout_weight="1"
+                    android:text="×3"
+                    android:textSize="12sp"
+                    android:background="@drawable/btn_accent"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="4dp"/>
+
+            </LinearLayout>
+
+            <!-- 控制按钮 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btn_prev_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="◀ PREV"
+                    android:background="@drawable/btn_accent"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"/>
+
+                <Button
+                    android:id="@+id/btn_start_auto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="▶ START"
+                    android:background="@drawable/btn_primary"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="8dp"
+                    android:textSize="12sp"
+                    android:textStyle="bold"/>
+
+                <Button
+                    android:id="@+id/btn_pause_auto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="⏸ PAUSE"
+                    android:background="@drawable/btn_accent"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="8dp"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"/>
+
+                <Button
+                    android:id="@+id/btn_next_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="NEXT ▶"
+                    android:background="@drawable/btn_accent"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="8dp"
+                    android:textSize="12sp"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- 单词卡片 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_word"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:cardBackgroundColor="@color/card_background"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="8dp"
+        app:layout_constraintTop_toBottomOf="@id/card_auto_play"
+        app:layout_constraintBottom_toTopOf="@id/layout_buttons">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- 播放状态指示 -->
+                <TextView
+                    android:id="@+id/tv_play_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="播放单词发音"
+                    android:textColor="@color/primary"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:drawablePadding="4dp"/>
+
+                <!-- 单词 -->
+                <TextView
+                    android:id="@+id/tv_word"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@color/text_dark"
+                    android:textSize="32sp"
+                    android:textStyle="bold"/>
+
+                <!-- 音标 -->
+                <TextView
+                    android:id="@+id/tv_phonetic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/gundam_gray"
+                    android:textSize="16sp"/>
+
+                <!-- 释义 -->
+                <TextView
+                    android:id="@+id/tv_meaning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@color/accent"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+                <!-- 词组部分 -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/gundam_red"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="PHRASE"
+                    android:textColor="@color/primary"
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tv_phrase"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/text_dark"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:id="@+id/tv_phrase_meaning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="#555555"
+                    android:textSize="16sp"/>
+
+                <!-- 例句部分 -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/accent"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="EXAMPLE"
+                    android:textColor="@color/accent"
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tv_example"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/text_dark"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/tv_example_meaning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="#555555"
+                    android:textSize="14sp"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- 底部按钮 -->
+    <LinearLayout
+        android:id="@+id/layout_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/btn_mastered"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="MASTERED"
+            android:background="@drawable/btn_primary"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/btn_play"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="🔊"
+            android:background="@drawable/btn_accent"
+            android:textColor="@color/white"
+            android:layout_marginStart="8dp"
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="NEXT"
+            android:background="@drawable/btn_accent"
+            android:textColor="@color/white"
+            android:layout_marginStart="8dp"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/btn_card_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="📇"
+            android:background="@drawable/btn_accent"
+            android:textColor="@color/white"
+            android:layout_marginStart="8dp"
+            android:textSize="18sp"/>
+
+    </LinearLayout>
+
+    <!-- 卡片模式全屏显示 -->
+    <LinearLayout
+        android:id="@+id/layout_card_mode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/background"
+        android:gravity="center"
+        android:visibility="gone"
+        android:padding="32dp">
+
+        <!-- 播放状态指示 -->
+        <TextView
+            android:id="@+id/tv_card_play_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="播放单词发音"
+            android:textColor="@color/primary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"/>
+
+        <!-- 单词 -->
+        <TextView
+            android:id="@+id/tv_card_word"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:textColor="@color/text_dark"
+            android:textSize="48sp"
+            android:textStyle="bold"/>
+
+        <!-- 音标 -->
+        <TextView
+            android:id="@+id/tv_card_phonetic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/gundam_gray"
+            android:textSize="20sp"/>
+
+        <!-- 释义 -->
+        <TextView
+            android:id="@+id/tv_card_meaning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:textColor="@color/accent"
+            android:textSize="28sp"
+            android:textStyle="bold"/>
+
+        <!-- 词组 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="32dp"
+            android:background="@color/gundam_red"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="PHRASE"
+            android:textColor="@color/primary"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv_card_phrase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/text_dark"
+            android:textSize="22sp"/>
+
+        <TextView
+            android:id="@+id/tv_card_phrase_meaning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="#555555"
+            android:textSize="18sp"/>
+
+        <!-- 例句 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="32dp"
+            android:background="@color/accent"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="EXAMPLE"
+            android:textColor="@color/accent"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv_card_example"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/text_dark"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/tv_card_example_meaning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="#555555"
+            android:textSize="18sp"/>
+
+        <!-- 底部提示 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="AUTOPLAY MODE"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

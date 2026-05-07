@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tv_test_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="单词测试"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Button
+        android:id="@+id/btn_choice_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="选择题测试"
+        app:layout_constraintTop_toBottomOf="@id/tv_test_title"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/btn_spell_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="拼写测试"
+        app:layout_constraintTop_toBottomOf="@id/btn_choice_test"
+        android:layout_marginTop="8dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

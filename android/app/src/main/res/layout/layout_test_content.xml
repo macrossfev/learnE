@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- 选择题测试界面 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/choice_test_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_choice_word"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_choice_phonetic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#666"
+            app:layout_constraintTop_toBottomOf="@id/tv_choice_word"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/rg_options"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_choice_phonetic"
+            android:layout_marginTop="24dp">
+
+            <RadioButton
+                android:id="@+id/rb_option1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/rb_option2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/rb_option3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/rb_option4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btn_submit_choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="确认"
+            app:layout_constraintTop_toBottomOf="@id/rg_options"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/tv_choice_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="#4CAF50"
+            android:visibility="invisible"
+            app:layout_constraintTop_toBottomOf="@id/btn_submit_choice"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="8dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- 拼写测试界面 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/spell_test_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_spell_meaning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <EditText
+            android:id="@+id/et_spell_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="输入单词"
+            android:inputType="text"
+            app:layout_constraintTop_toBottomOf="@id/tv_spell_meaning"
+            android:layout_marginTop="24dp" />
+
+        <Button
+            android:id="@+id/btn_submit_spell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="确认"
+            app:layout_constraintTop_toBottomOf="@id/et_spell_input"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/tv_spell_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:layout_constraintTop_toBottomOf="@id/btn_submit_spell"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="8dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- 测试结果界面 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/test_result_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_result_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="测试完成"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@id/tv_result_title"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="24dp" />
+
+        <Button
+            android:id="@+id/btn_back_to_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="返回"
+            app:layout_constraintTop_toBottomOf="@id/tv_score"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="24dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

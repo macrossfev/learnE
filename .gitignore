@@ -1,0 +1,29 @@
+# Android
+*.iml
+.gradle/
+local.properties/
+*.log
+build/
+.cxx/
+*.apk
+*.aab
+
+# IDE
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Build outputs
+android/app/build/
+android/build/
+
+# Sensitive
+*.jks
+*.keystore
+*.properties
+!gradle.properties
+
+# Node (for cloudfunctions)
+node_modules/

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8E8E8">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LearnE"
+            android:textColor="#E3000F"
+            android:textSize="40sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv_corpus_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="CATTI"
+            android:textColor="#808080"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="选择学习模式"
+            android:textColor="#000000"
+            android:textSize="20sp"/>
+
+        <!-- 交互学习模式 -->
+        <LinearLayout
+            android:id="@+id/btn_interactive_learn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            android:background="#FFFFFF"
+            android:elevation="4dp"
+            android:padding="20dp"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="交互学习模式"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="→"
+                android:textColor="#E3000F"
+                android:textSize="24sp"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3步学习：展示 → 选择题 → 填词，自动播放音频"
+            android:textColor="#808080"
+            android:textSize="13sp"
+            android:paddingStart="20dp"
+            android:layout_marginTop="4dp"
+            android:paddingEnd="4dp"/>
+
+        <!-- 听读模式 -->
+        <LinearLayout
+            android:id="@+id/btn_listen_read"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            android:background="#FFFFFF"
+            android:elevation="4dp"
+            android:padding="20dp"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="听读模式"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="→"
+                android:textColor="#0039CB"
+                android:textSize="24sp"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="卡片展示 + 自动播放音频，可设置重复次数"
+            android:textColor="#808080"
+            android:textSize="13sp"
+            android:paddingStart="20dp"
+            android:layout_marginTop="4dp"
+            android:paddingEnd="4dp"/>
+
+        <!-- 底部操作 -->
+        <Button
+            android:id="@+id/btn_change_corpus"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="48dp"
+            android:text="更换语料库"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:backgroundTint="#808080"/>
+
+    </LinearLayout>
+
+    <!-- 加载中 -->
+    <LinearLayout
+        android:id="@+id/layout_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:indeterminateTint="#E3000F"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="正在获取语料库列表..."
+            android:textColor="#000000"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+</FrameLayout>
