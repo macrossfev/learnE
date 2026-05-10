@@ -138,11 +138,17 @@ class QuizFragment : Fragment() {
         binding.spellLayout.visibility = View.GONE
         binding.tvWordForChoice.text = word.word
 
-        val wrongOptions = allWords
+        // Wrong options from SAME GROUP only
+        val groupMeanings = quizWords
             .filter { it.word != word.word }
             .map { it.meaning }
-            .shuffled()
-            .take(3)
+            .distinct()
+        val wrongOptions = if (groupMeanings.size >= 3) {
+            groupMeanings.shuffled().take(3)
+        } else {
+            // Not enough distinct meanings in group — fallback to allWords
+            allWords.filter { it.word != word.word }.map { it.meaning }.distinct().shuffled().take(3)
+        }
         currentOptions = (wrongOptions + word.meaning).shuffled()
 
         binding.choiceOptions.removeAllViews()
@@ -168,7 +174,7 @@ class QuizFragment : Fragment() {
     private fun showSpellQuestion(word: Word) {
         binding.choiceLayout.visibility = View.GONE
         binding.spellLayout.visibility = View.VISIBLE
-        binding.tvSpellHint.text = "请根据听力拼写单词"
+        binding.tvSpellHint.text = "请根据听力拼写单词 (${word.meaning})"
         binding.etSpellInput.text?.clear()
         binding.tvSpellResult.visibility = View.GONE
         binding.btnSpellSubmit.visibility = View.VISIBLE
@@ -233,7 +239,8 @@ class QuizFragment : Fragment() {
         }
         binding.tvSpellResult.visibility = View.VISIBLE
         binding.btnSpellSubmit.visibility = View.GONE
-        binding.btnSpellNext.visibility = View.VISIBLE
+        // Auto-advance to next question after spell
+        binding.spellLayout.postDelayed({ nextQuestion() }, 1500)
     }
 
     private fun nextQuestion() {

@@ -37807,17 +37807,6 @@
     "freq": 5
   },
   {
-    "word": "rape",
-    "phonetic": "/rˈeɪp/",
-    "pos": "`n.*",
-    "meaning": "强奸",
-    "phrase": "crime of rape",
-    "phrase_meaning": "强奸罪",
-    "example": "This is rape.",
-    "example_meaning": "这是强奸。",
-    "freq": 5
-  },
-  {
     "word": "rationalize",
     "phonetic": "/rˈæʃʌnʌlˌaɪz/",
     "pos": "`v.*",
@@ -39927,17 +39916,6 @@
     "phrase_meaning": "对自由的渴望",
     "example": "She has aspiration for freedom.",
     "example_meaning": "她渴望自由。",
-    "freq": 3
-  },
-  {
-    "word": "bawdy",
-    "phonetic": "/bˈɔdiː/",
-    "pos": "`adj.`",
-    "meaning": "淫秽的",
-    "phrase": "bawdy humor",
-    "phrase_meaning": "粗俗幽默",
-    "example": "The movie contains bawdy humor.",
-    "example_meaning": "这部电影包含粗俗幽默。",
     "freq": 3
   },
   {
@@ -43557,17 +43535,6 @@
     "phrase_meaning": "忽略危险",
     "example": "He is oblivious to danger.",
     "example_meaning": "他忽略了危险。",
-    "freq": 2
-  },
-  {
-    "word": "obscene",
-    "phonetic": "/ɑbsˈiːn/",
-    "pos": "`adj.`",
-    "meaning": "淫秽的",
-    "phrase": "obscene language",
-    "phrase_meaning": "淫秽语言",
-    "example": "Please avoid obscene language.",
-    "example_meaning": "请避免淫秽语言。",
     "freq": 2
   },
   {
@@ -52775,17 +52742,6 @@
     "phrase_meaning": "成人限制级电影",
     "example": "The xfilm is not for children.",
     "example_meaning": "限制级电影儿童不宜。",
-    "freq": 0
-  },
-  {
-    "word": "rated",
-    "phonetic": "/rˈeɪtɪd/",
-    "pos": "`adj.`",
-    "meaning": "淫秽的",
-    "phrase": "xrated content",
-    "phrase_meaning": "淫秽内容",
-    "example": "The xrated content is banned.",
-    "example_meaning": "淫秽内容被禁止。",
     "freq": 0
   },
   {
