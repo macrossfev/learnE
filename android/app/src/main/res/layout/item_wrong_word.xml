@@ -58,6 +58,14 @@
                 android:textColor="@color/gundam_yellow"
                 android:textSize="12sp"/>
 
+            <TextView
+                android:id="@+id/tv_last_wrong_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#999999"
+                android:textSize="11sp"
+                android:layout_marginEnd="8dp"/>
+
             <Button
                 android:id="@+id/btn_mark_corrected"
                 android:layout_width="wrap_content"

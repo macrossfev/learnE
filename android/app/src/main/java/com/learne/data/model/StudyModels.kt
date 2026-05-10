@@ -106,3 +106,14 @@ data class StudyReminder(
     val message: String = "开始今天的学习吧！"
 )
 
+/**
+ * 星标单词（学习中标记不熟，独立于错题本）
+ */
+@Entity(tableName = "starred_words")
+data class StarredWord(
+    @PrimaryKey
+    val id: String,
+    val corpusId: String,
+    val word: String,
+    val starredTime: Long = System.currentTimeMillis()
+)

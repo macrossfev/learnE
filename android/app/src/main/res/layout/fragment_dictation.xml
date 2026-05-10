@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8E8E8"
+    android:orientation="vertical">
+
+    <!-- 顶部栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="6dp"
+        android:gravity="center_vertical"
+        android:background="#FFFFFF">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="听写模式"
+            android:textColor="#E3000F"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/tv_word_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1 / 50  组 1/2"
+            android:textColor="#808080"
+            android:textSize="13sp"
+            android:padding="4dp"
+            android:layout_marginEnd="8dp"/>
+
+        <Spinner
+            android:id="@+id/sp_group"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:background="#FFFFFF"
+            android:spinnerMode="dropdown"/>
+    </LinearLayout>
+
+    <!-- 主内容区 -->
+    <LinearLayout
+        android:id="@+id/content_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center_horizontal">
+
+        <!-- 播放按钮区域 -->
+        <Button
+            android:id="@+id/btn_play"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:text="播放"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:backgroundTint="#0039CB"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="点击播放音频，根据听力拼写单词"
+            android:textColor="#808080"
+            android:textSize="14sp"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- 输入区域 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <EditText
+                android:id="@+id/et_input"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="输入你听到的单词..."
+                android:textSize="18sp"
+                android:padding="12dp"
+                android:background="#FFFFFF"
+                android:inputType="textMultiLine"
+                android:imeOptions="actionDone"/>
+
+            <Button
+                android:id="@+id/btn_hint"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="?"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:backgroundTint="#808080"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+        <!-- 提示文字 -->
+        <TextView
+            android:id="@+id/tv_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="14sp"
+            android:textColor="#FF9800"
+            android:visibility="gone"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            android:layout_gravity="center"/>
+
+        <!-- 结果反馈 -->
+        <TextView
+            android:id="@+id/tv_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- 操作按钮 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:text="提交"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:backgroundTint="#E3000F"/>
+
+            <Button
+                android:id="@+id/btn_next"
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:text="下一个"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:backgroundTint="#0039CB"
+                android:layout_marginStart="16dp"
+                android:visibility="gone"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 加载指示器 -->
+    <FrameLayout
+        android:id="@+id/layout_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ProgressBar
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:indeterminateTint="#E3000F"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="正在加载词库..."
+                android:textColor="#000000"
+                android:textSize="14sp"/>
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

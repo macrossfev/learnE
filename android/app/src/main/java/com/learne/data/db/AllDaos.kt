@@ -22,7 +22,7 @@ interface UserDao {
 @Dao
 interface WrongWordDao {
 
-    @Query("SELECT * FROM wrong_words WHERE corpusId = :corpusId AND corrected = 0 ORDER BY wrongTime DESC")
+    @Query("SELECT * FROM wrong_words WHERE corpusId = :corpusId AND corrected = 0 ORDER BY wrongCount DESC, wrongTime DESC")
     fun getWrongWords(corpusId: String): Flow<List<WrongWord>>
 
     @Query("SELECT * FROM wrong_words WHERE corpusId = :corpusId AND corrected = 0 LIMIT :limit")
@@ -70,6 +70,10 @@ interface StudyRecordDao {
 
     @Query("SELECT SUM(studyDuration) FROM study_records WHERE corpusId = :corpusId")
     fun getTotalDuration(corpusId: String): Flow<Long>
+
+    // Heatmap: get daily study records for last 90 days
+    @Query("SELECT date, learnedCount FROM study_records WHERE corpusId = :corpusId AND date >= :startDate ORDER BY date ASC")
+    suspend fun getHeatmapData(corpusId: String, startDate: String): List<HeatmapRecord>
 }
 
 @Dao
@@ -89,6 +93,9 @@ interface DailyGoalDao {
 
     @Query("UPDATE daily_goal SET currentCount = currentCount + 1 WHERE corpusId = :corpusId")
     suspend fun incrementProgress(corpusId: String)
+
+    @Query("SELECT streakDays FROM daily_goal WHERE corpusId = :corpusId LIMIT 1")
+    suspend fun getStreakDays(corpusId: String): Int?
 }
 
 @Dao
@@ -160,3 +167,40 @@ interface ListenHistoryDao {
     @Query("DELETE FROM listen_history WHERE userId = :userId AND corpusId = :corpusId")
     suspend fun clearHistory(userId: String, corpusId: String)
 }
+
+@Dao
+interface CorpusCacheDao {
+
+    @Query("SELECT * FROM corpus_cache WHERE corpusId = :corpusId LIMIT 1")
+    suspend fun getByCorpusId(corpusId: String): CorpusCache?
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insert(cache: CorpusCache)
+
+    @Query("DELETE FROM corpus_cache WHERE corpusId = :corpusId")
+    suspend fun delete(corpusId: String)
+}
+
+@Dao
+interface StarredWordDao {
+
+    @Query("SELECT * FROM starred_words WHERE corpusId = :corpusId ORDER BY starredTime DESC")
+    fun getStarredWords(corpusId: String): Flow<List<StarredWord>>
+
+    @Query("SELECT COUNT(*) FROM starred_words WHERE corpusId = :corpusId")
+    fun getStarredCount(corpusId: String): Flow<Int>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insert(starredWord: StarredWord)
+
+    @Query("DELETE FROM starred_words WHERE corpusId = :corpusId AND word = :word")
+    suspend fun delete(corpusId: String, word: String)
+
+    @Query("SELECT * FROM starred_words WHERE corpusId = :corpusId AND word = :word LIMIT 1")
+    suspend fun getByWord(corpusId: String, word: String): StarredWord?
+}
+
+data class HeatmapRecord(
+    val date: String,
+    val learnedCount: Int
+)

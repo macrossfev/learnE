@@ -7,7 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.learne.R
 import com.learne.databinding.ActivityLoginBinding
 import com.learne.data.repository.UserManager
-import com.learne.ui.main.MainActivity
+import com.learne.data.repository.UserPreferencesRepository
+import com.learne.ui.plan.StudyPlanActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -15,29 +16,36 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        android.util.Log.d("LoginActivity", "onCreate start")
 
         UserManager.init(applicationContext)
-        android.util.Log.d("LoginActivity", "UserManager initialized, isLoggedIn=${UserManager.isLoggedIn}")
+        UserPreferencesRepository.init(applicationContext)
 
-        // 使用 ViewBinding 正确方式
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        android.util.Log.d("LoginActivity", "setContentView done")
 
-        // 自动登录并跳转
-        if (!UserManager.isLoggedIn) {
-            UserManager.login("admin")
-            android.util.Log.d("LoginActivity", "login called")
+        // If already logged in, go directly to plan
+        if (UserManager.isLoggedIn) {
+            startActivity(Intent(this, StudyPlanActivity::class.java))
+            finish()
+            return
         }
 
-        // 显示加载提示
-        binding.btnLogin.text = "正在加载..."
-        binding.btnLogin.isEnabled = false
+        binding.btnLogin.setOnClickListener {
+            val username = binding.etUsername.text.toString().trim()
+            val password = binding.etPassword.text.toString().trim()
 
-        android.util.Log.d("LoginActivity", "Starting MainActivity")
-        startActivity(Intent(this, MainActivity::class.java))
-        android.util.Log.d("LoginActivity", "finish")
-        finish()
+            if (username.isEmpty() || password.isEmpty()) {
+                Toast.makeText(this, "请输入用户名和密码", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if (username == "admin" && password == "admin") {
+                UserManager.login(username)
+                startActivity(Intent(this, StudyPlanActivity::class.java))
+                finish()
+            } else {
+                Toast.makeText(this, "用户名或密码错误", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }

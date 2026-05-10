@@ -5,6 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.learne.data.model.WrongWord
 import com.learne.databinding.ItemWrongWordBinding
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 class WrongWordAdapter(
     private val onMarkCorrected: (WrongWord) -> Unit
@@ -42,7 +44,10 @@ class WrongWordAdapter(
         fun bind(wrong: WrongWord, detail: com.learne.data.model.Word?, onClick: (WrongWord) -> Unit) {
             binding.tvWord.text = wrong.word
             binding.tvWrongType.text = wrong.testType
-            binding.tvWrongTimes.text = "错误${wrong.wrongCount}次"
+            binding.tvWrongTimes.text = "错误 ${wrong.wrongCount} 次"
+
+            val timeStr = SimpleDateFormat("MM-dd HH:mm", Locale.getDefault()).format(wrong.lastWrongTime)
+            binding.tvLastWrongTime.text = timeStr
 
             if (detail != null) {
                 binding.tvMeaning.text = detail.meaning

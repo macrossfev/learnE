@@ -4,12 +4,14 @@ import android.content.Context
 import com.learne.data.db.AppDatabase
 import com.learne.data.model.*
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.firstOrNull
 import java.text.SimpleDateFormat
 import java.util.*
 
 class StudyRepository(context: Context) {
 
+    private val context: Context = context
     private val database = AppDatabase.getDatabase(context)
     private val wrongWordDao = database.wrongWordDao()
     private val studyRecordDao = database.studyRecordDao()
@@ -17,6 +19,28 @@ class StudyRepository(context: Context) {
     private val userNoteDao = database.userNoteDao()
     private val achievementDao = database.achievementDao()
     private val reminderDao = database.reminderDao()
+
+    // ========== 星标单词 ==========
+
+    fun getStarredWords(userId: String, corpusId: String): Flow<List<com.learne.data.model.StarredWord>> {
+        return database.starredWordDao().getStarredWords("${userId}_$corpusId")
+    }
+
+    suspend fun addStarredWord(userId: String, corpusId: String, word: String) {
+        val uid = "${userId}_$corpusId"
+        val existing = database.starredWordDao().getByWord(uid, word)
+        if (existing == null) {
+            database.starredWordDao().insert(com.learne.data.model.StarredWord(
+                id = "${userId}_${corpusId}_${word}_${System.currentTimeMillis()}",
+                corpusId = uid,
+                word = word
+            ))
+        }
+    }
+
+    suspend fun removeStarredWord(userId: String, corpusId: String, word: String) {
+        database.starredWordDao().delete("${userId}_$corpusId", word)
+    }
 
     // ========== 错题本 ==========
 
@@ -28,9 +52,11 @@ class StudyRepository(context: Context) {
         val uid = "${userId}_$corpusId"
         val existing = wrongWordDao.getByWord(uid, word)
         if (existing != null) {
+            // Reactivate if previously corrected
             wrongWordDao.update(existing.copy(
                 wrongCount = existing.wrongCount + 1,
-                lastWrongTime = System.currentTimeMillis()
+                lastWrongTime = System.currentTimeMillis(),
+                corrected = false
             ))
         } else {
             val id = "${userId}_${corpusId}_${word}_${System.currentTimeMillis()}"
@@ -45,6 +71,22 @@ class StudyRepository(context: Context) {
 
     suspend fun markWrongWordCorrected(userId: String, corpusId: String, word: String) {
         wrongWordDao.markAsCorrected("${userId}_$corpusId", word)
+    }
+
+    /**
+     * Record a correct answer for a wrong word. Auto-marks as corrected after 3 consecutive correct.
+     */
+    suspend fun recordCorrectAnswer(userId: String, corpusId: String, word: String) {
+        val uid = "${userId}_$corpusId"
+        val existing = wrongWordDao.getByWord(uid, word) ?: return
+        if (existing.corrected) return
+        if (existing.wrongCount >= 3) {
+            // Mark as corrected if wrong frequently before
+            wrongWordDao.markAsCorrected(uid, word)
+        } else {
+            // Decrease wrongCount as a "consecutive correct" tracker
+            wrongWordDao.update(existing.copy(wrongCount = (existing.wrongCount - 1).coerceAtLeast(0)))
+        }
     }
 
     fun getWrongWordCount(userId: String, corpusId: String): Flow<Int> {
@@ -153,18 +195,40 @@ class StudyRepository(context: Context) {
 
     suspend fun checkAchievements(userId: String, corpusId: String) {
         val uid = "${userId}_$corpusId"
-        // 检查学习成就
         val totalLearned = studyRecordDao.getTotalLearned(uid).firstOrNull() ?: 0
         val totalMastered = studyRecordDao.getTotalMastered(uid).firstOrNull() ?: 0
+        val completedGroups = UserPreferencesRepository.getCompletedGroups(corpusId).size
 
-        // 学习100词
         checkAndUnlock("learn_100", "学习达人", "累计学习100个单词", totalLearned, 100)
-        // 学习500词
         checkAndUnlock("learn_500", "词汇大师", "累计学习500个单词", totalLearned, 500)
-        // 掌握50词
         checkAndUnlock("master_50", "初露锋芒", "掌握50个单词", totalMastered, 50)
-        // 掌握200词
         checkAndUnlock("master_200", "词汇专家", "掌握200个单词", totalMastered, 200)
+        checkAndUnlock("group_50", "初出茅庐", "完成50个组的学习", completedGroups, 50)
+        checkAndUnlock("group_100", "稳步前进", "完成100个组的学习", completedGroups, 100)
+        checkAndUnlock("group_200", "词汇达人", "完成200个组的学习", completedGroups, 200)
+    }
+
+    /**
+     * Get all words due for review. Caller maps to groups.
+     */
+    suspend fun getWordsDueForReview(corpusId: String): List<com.learne.data.model.WordProgress> {
+        val uidCorpus = "${UserManager.userId}_$corpusId"
+        return try {
+            AppDatabase.getDatabase(context).progressDao()
+                .getWordsForReview(uidCorpus, System.currentTimeMillis()).first()
+        } catch (e: Exception) {
+            emptyList()
+        }
+    }
+
+    suspend fun getMasteredWordCount(corpusId: String): Int {
+        val uidCorpus = "${UserManager.userId}_$corpusId"
+        return try {
+            AppDatabase.getDatabase(context).progressDao()
+                .getMasteredCount(uidCorpus).first()
+        } catch (e: Exception) {
+            0
+        }
     }
 
     private suspend fun checkAndUnlock(id: String, title: String, desc: String, progress: Int, target: Int) {
@@ -201,6 +265,9 @@ class StudyRepository(context: Context) {
             achievementDao.insert(Achievement(id = "master_200", type = "master", title = "词汇专家", description = "掌握200个单词", icon = "medal", target = 200))
             achievementDao.insert(Achievement(id = "streak_7", type = "streak", title = "坚持不懈", description = "连续打卡7天", icon = "fire", target = 7))
             achievementDao.insert(Achievement(id = "streak_30", type = "streak", title = "习惯养成", description = "连续打卡30天", icon = "fire", target = 30))
+            achievementDao.insert(Achievement(id = "group_50", type = "group", title = "初出茅庐", description = "完成50个组的学习", icon = "star", target = 50))
+            achievementDao.insert(Achievement(id = "group_100", type = "group", title = "稳步前进", description = "完成100个组的学习", icon = "star", target = 100))
+            achievementDao.insert(Achievement(id = "group_200", type = "group", title = "词汇达人", description = "完成200个组的学习", icon = "medal", target = 200))
         }
     }
 

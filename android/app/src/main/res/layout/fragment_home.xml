@@ -31,6 +31,15 @@
             android:textStyle="bold"/>
 
         <TextView
+            android:id="@+id/tv_group_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="每组 30 个单词"
+            android:textColor="#808080"
+            android:textSize="14sp"/>
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
@@ -120,16 +129,231 @@
             android:layout_marginTop="4dp"
             android:paddingEnd="4dp"/>
 
+        <!-- 听写模式 -->
+        <LinearLayout
+            android:id="@+id/btn_dictation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            android:background="#FFFFFF"
+            android:elevation="4dp"
+            android:padding="20dp"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="听写模式"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="→"
+                android:textColor="#FF9800"
+                android:textSize="24sp"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="播放音频 → 输入拼写 → 判对错，锻炼拼写能力"
+            android:textColor="#808080"
+            android:textSize="13sp"
+            android:paddingStart="20dp"
+            android:layout_marginTop="4dp"
+            android:paddingEnd="4dp"/>
+
+        <!-- 闪卡模式 -->
+        <LinearLayout
+            android:id="@+id/btn_flashcard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            android:background="#FFFFFF"
+            android:elevation="4dp"
+            android:padding="20dp"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="闪卡模式"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="→"
+                android:textColor="#4CAF50"
+                android:textSize="24sp"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="翻转卡片 → 自评掌握度 → 间隔重复，科学记忆"
+            android:textColor="#808080"
+            android:textSize="13sp"
+            android:paddingStart="20dp"
+            android:layout_marginTop="4dp"
+            android:paddingEnd="4dp"/>
+
+        <!-- 每日挑战 -->
+        <LinearLayout
+            android:id="@+id/btn_daily_challenge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            android:background="#FFFFFF"
+            android:elevation="4dp"
+            android:padding="20dp"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="每日挑战"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="→"
+                android:textColor="#9C27B0"
+                android:textSize="24sp"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="随机10词混战：选择+听写+闪卡，检验学习成果"
+            android:textColor="#808080"
+            android:textSize="13sp"
+            android:paddingStart="20dp"
+            android:layout_marginTop="4dp"
+            android:paddingEnd="4dp"/>
+
+        <!-- 学习统计 -->
+        <LinearLayout
+            android:id="@+id/btn_study_stats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            android:background="#FFFFFF"
+            android:elevation="4dp"
+            android:padding="20dp"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="学习统计"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="→"
+                android:textColor="#607D8B"
+                android:textSize="24sp"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="学习热力图 + 进度统计 + 连续打卡"
+            android:textColor="#808080"
+            android:textSize="13sp"
+            android:paddingStart="20dp"
+            android:layout_marginTop="4dp"
+            android:paddingEnd="4dp"/>
+
+        <!-- 错题本 -->
+        <LinearLayout
+            android:id="@+id/btn_wrong_words"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            android:background="#FFFFFF"
+            android:elevation="4dp"
+            android:padding="20dp"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="错题本"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="→"
+                android:textColor="#F44336"
+                android:textSize="24sp"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="复习易错单词，针对性强化薄弱环节"
+            android:textColor="#808080"
+            android:textSize="13sp"
+            android:paddingStart="20dp"
+            android:layout_marginTop="4dp"
+            android:paddingEnd="4dp"/>
+
         <!-- 底部操作 -->
         <Button
-            android:id="@+id/btn_change_corpus"
+            android:id="@+id/btn_change_plan"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginTop="48dp"
-            android:text="更换语料库"
+            android:layout_marginTop="32dp"
+            android:text="调整学习计划"
             android:textColor="#FFFFFF"
             android:textSize="14sp"
             android:backgroundTint="#808080"/>
+
+        <Button
+            android:id="@+id/btn_new_plan"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:text="重新选择计划"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:backgroundTint="#0039CB"/>
 
     </LinearLayout>
 

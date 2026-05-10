@@ -117,6 +117,27 @@ class ReviewViewModel(
         }
     }
 
+    fun loadWrongWordsForReview(wrongWordStrings: List<String>) {
+        viewModelScope.launch {
+            allWords = corpusRepository.loadWords(corpusId)
+            reviewList = wrongWordStrings.map { word ->
+                WordProgress(id = "${uid}_${corpusId}_${word}", corpusId = "${uid}_$corpusId", word = word)
+            }
+            _reviewWords.value = reviewList
+            _reviewCount.value = reviewList.size
+            _totalCount.value = reviewList.size
+
+            if (reviewList.isNotEmpty()) {
+                _completed.value = false
+                _currentStep.value = 1
+                _currentIndex.value = 0
+                showCurrentWord()
+            } else {
+                _reviewCount.value = 0
+            }
+        }
+    }
+
     fun startReview() {
         if (reviewList.isEmpty()) return
         _completed.value = false

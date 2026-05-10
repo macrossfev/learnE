@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.learne.data.model.Word
 import com.learne.data.repository.CorpusRepository
+import com.learne.data.repository.UserPreferencesRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -60,7 +61,6 @@ class AutoPlayViewModel(
     val repeatCount: LiveData<Int> = _repeatCount
     private var currentRepeat = 0  // 当前第几次重复
 
-    private val GROUP_SIZE = 50
     private var allWordsList: List<Word> = emptyList()
     private var isPaused = false
 
@@ -70,7 +70,7 @@ class AutoPlayViewModel(
             val words = corpusRepository.loadWords(corpusId)
             allWordsList = words
             _allWords.value = words
-            _totalGroups.value = (words.size / GROUP_SIZE) + if (words.size % GROUP_SIZE > 0) 1 else 0
+            _totalGroups.value = (words.size / UserPreferencesRepository.planGroupSize) + if (words.size % UserPreferencesRepository.planGroupSize > 0) 1 else 0
             val groupIdx = if (savedGroupIndex in 0 until (_totalGroups.value ?: 1)) savedGroupIndex else 0
             val wordIdx = savedWordIndex.coerceAtLeast(0)
             loadGroup(groupIdx, wordIdx)
@@ -79,8 +79,8 @@ class AutoPlayViewModel(
 
     fun preloadGroup(groupIndex: Int, startWordIndex: Int = 0) {
         viewModelScope.launch(Dispatchers.IO) {
-            val startIndex = groupIndex * GROUP_SIZE
-            val endIndex = minOf(startIndex + GROUP_SIZE, allWordsList.size)
+            val startIndex = groupIndex * UserPreferencesRepository.planGroupSize
+            val endIndex = minOf(startIndex + UserPreferencesRepository.planGroupSize, allWordsList.size)
             val groupWords = allWordsList.subList(startIndex, endIndex)
 
             // 预加载音频文件信息

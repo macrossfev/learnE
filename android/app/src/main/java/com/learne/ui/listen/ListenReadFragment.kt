@@ -35,6 +35,9 @@ class ListenReadFragment : Fragment() {
         }
     }
 
+    // Playback modes
+    enum class PlayMode { ORDER, SHUFFLE, LOOP_GROUP }
+
     private var _binding: FragmentListenReadBinding? = null
     private val binding get() = _binding!!
     private var allWords: List<Word> = emptyList()
@@ -43,6 +46,14 @@ class ListenReadFragment : Fragment() {
     private var currentWordIndex = 0
     private var isPlaying = false
     private var repeatCount = 1
+    private var playMode = PlayMode.ORDER
+
+    // Shuffled order state
+    private var shuffledOrder: List<Int> = emptyList()
+    private var shufflePosition = 0
+
+    // Blind mode state
+    private var isBlindMode = false
 
     private val audioPlayer = AudioPlayer()
 
@@ -60,7 +71,7 @@ class ListenReadFragment : Fragment() {
     private var isFullScreenMode = false
     private var fullScreenActivity: Activity? = null
 
-    private val GROUP_SIZE = 50
+    private var groupSize: Int = 30
     private var currentCorpusId: String = "catti"
 
     override fun onCreateView(
@@ -75,8 +86,14 @@ class ListenReadFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        currentCorpusId = arguments?.getString("corpusId") ?: UserPreferencesRepository.selectedCorpusId
+        currentCorpusId = arguments?.getString("corpusId") ?: UserPreferencesRepository.planCorpusId ?: "catti"
+        groupSize = UserPreferencesRepository.planGroupSize
         repeatCount = UserPreferencesRepository.repeatCount.coerceIn(1, 5)
+        playMode = try {
+            PlayMode.valueOf(UserPreferencesRepository.listenPlayMode)
+        } catch (e: Exception) {
+            PlayMode.ORDER
+        }
 
         binding.tvCorpusName.text = getCorpusName(currentCorpusId)
         binding.btnPlay.setOnClickListener { startAutoPlay() }
@@ -87,6 +104,7 @@ class ListenReadFragment : Fragment() {
 
         setupGroupSpinner()
         setupRepeatButtons()
+        setupPlayModeButtons()
         loadWords()
     }
 
@@ -136,6 +154,75 @@ class ListenReadFragment : Fragment() {
         }
     }
 
+    private fun setupPlayModeButtons() {
+        binding.modeButtons.removeAllViews()
+        val dp8 = dip(8)
+        val modes = listOf(
+            Pair(PlayMode.ORDER, "顺序"),
+            Pair(PlayMode.SHUFFLE, "乱序"),
+            Pair(PlayMode.LOOP_GROUP, "循环")
+        )
+        for ((mode, label) in modes) {
+            val btn = Button(requireContext()).apply {
+                text = label
+                textSize = 12f
+                setTextColor(0xFFFFFFFF.toInt())
+                setBackgroundColor(if (mode == playMode) 0xFFE3000F.toInt() else 0xFF808080.toInt())
+                setPadding(dp8, 0, dp8, 0)
+                layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, dip(30)).apply {
+                    marginEnd = dip(4)
+                }
+                setOnClickListener {
+                    playMode = mode
+                    UserPreferencesRepository.listenPlayMode = mode.name
+                    updateModeButtonColors()
+                    if (mode == PlayMode.SHUFFLE) reshuffle()
+                    stopPlaying()
+                }
+            }
+            binding.modeButtons.addView(btn)
+        }
+        // Blind mode toggle
+        val blindBtn = Button(requireContext()).apply {
+            text = "盲听"
+            textSize = 12f
+            setTextColor(0xFFFFFFFF.toInt())
+            setBackgroundColor(if (isBlindMode) 0xFFE3000F.toInt() else 0xFF808080.toInt())
+            setPadding(dp8, 0, dp8, 0)
+            layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, dip(30))
+            setOnClickListener { toggleBlindMode() }
+        }
+        binding.modeButtons.addView(blindBtn)
+    }
+
+    private fun updateModeButtonColors() {
+        val modes = listOf(PlayMode.ORDER, PlayMode.SHUFFLE, PlayMode.LOOP_GROUP)
+        for (i in 0 until binding.modeButtons.childCount) {
+            val btn = binding.modeButtons.getChildAt(i) as Button
+            if (i < modes.size) {
+                btn.setBackgroundColor(if (modes[i] == playMode) 0xFFE3000F.toInt() else 0xFF808080.toInt())
+            } else {
+                // Blind mode button
+                btn.setBackgroundColor(if (isBlindMode) 0xFFE3000F.toInt() else 0xFF808080.toInt())
+            }
+        }
+    }
+
+    private fun reshuffle() {
+        shuffledOrder = currentGroup.indices.toList().shuffled()
+        shufflePosition = 0
+    }
+
+    private fun getActualWordIndex(): Int {
+        return when (playMode) {
+            PlayMode.SHUFFLE -> {
+                if (shuffledOrder.isEmpty() || shufflePosition >= shuffledOrder.size) reshuffle()
+                shuffledOrder[shufflePosition]
+            }
+            else -> currentWordIndex
+        }
+    }
+
     private fun loadWords() {
         binding.layoutLoading.visibility = View.VISIBLE
 
@@ -170,7 +257,7 @@ class ListenReadFragment : Fragment() {
     }
 
     private fun setupGroups() {
-        val totalGroups = ceil(allWords.size.toDouble() / GROUP_SIZE).toInt()
+        val totalGroups = ceil(allWords.size.toDouble() / groupSize).toInt()
         val groupNames = List(totalGroups) { "第${it + 1}组 (${getGroupWordRange(it)})" }
         val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, groupNames)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -178,52 +265,75 @@ class ListenReadFragment : Fragment() {
     }
 
     private fun getGroupWordRange(groupIndex: Int): String {
-        val start = groupIndex * GROUP_SIZE + 1
-        val end = ((groupIndex + 1) * GROUP_SIZE).coerceAtMost(allWords.size)
+        val start = groupIndex * groupSize + 1
+        val end = ((groupIndex + 1) * groupSize).coerceAtMost(allWords.size)
         return "$start-$end"
     }
 
     private fun selectGroup(groupIndex: Int) {
         stopPlaying()
         currentGroupIndex = groupIndex
-        val start = groupIndex * GROUP_SIZE
-        val end = (start + GROUP_SIZE).coerceAtMost(allWords.size)
+        val start = groupIndex * groupSize
+        val end = (start + groupSize).coerceAtMost(allWords.size)
         currentGroup = allWords.subList(start, end)
         currentWordIndex = 0
         currentSubGroup = 0
         repeatCurrent = 0
+        if (playMode == PlayMode.SHUFFLE) reshuffle()
         UserPreferencesRepository.saveListenPosition(currentCorpusId, currentGroupIndex, currentWordIndex)
         updateProgress()
-        showCurrentWord()
+        showCurrentWordNormal()
     }
 
     private fun selectGroupWithResume(groupIndex: Int, wordIndex: Int) {
         stopPlaying()
         currentGroupIndex = groupIndex
-        val start = groupIndex * GROUP_SIZE
-        val end = (start + GROUP_SIZE).coerceAtMost(allWords.size)
+        val start = groupIndex * groupSize
+        val end = (start + groupSize).coerceAtMost(allWords.size)
         currentGroup = allWords.subList(start, end)
         currentWordIndex = wordIndex.coerceAtMost(currentGroup.size - 1)
         currentSubGroup = 0
         repeatCurrent = 0
+        if (playMode == PlayMode.SHUFFLE) reshuffle()
         UserPreferencesRepository.saveListenPosition(currentCorpusId, currentGroupIndex, currentWordIndex)
         updateProgress()
-        showCurrentWord()
+        showCurrentWordNormal()
     }
 
     private fun updateProgress() {
-        val globalIndex = currentGroupIndex * GROUP_SIZE + currentWordIndex + 1
+        val displayIndex = getActualWordIndex()
+        val globalIndex = currentGroupIndex * groupSize + displayIndex + 1
         val total = allWords.size
         binding.tvWordProgress.text = "$globalIndex / $total"
         binding.progressBar.progress = (globalIndex * 100 / total)
     }
 
+    private fun getCurrentWord(): Word {
+        return currentGroup[getActualWordIndex()]
+    }
+
+    private fun updateStickyHeader() {
+        if (currentGroup.isEmpty()) return
+        val word = getCurrentWord()
+        binding.tvStickyWord.text = word.word
+        binding.tvStickyPhonetic.text = word.phonetic
+        binding.tvStickyMeaning.text = when (currentSubGroup) {
+            0 -> word.meaning
+            1 -> if (word.phrase.isNotBlank()) "${word.phrase}  ${word.phraseMeaning}" else ""
+            2 -> if (word.example.isNotBlank()) "${word.example}  ${word.exampleMeaning}" else ""
+            else -> word.meaning
+        }
+        binding.tvStickyPhonetic.visibility = if (word.phonetic.isNotBlank()) View.VISIBLE else View.GONE
+    }
+
     // ====== Normal mode: show all content ======
 
-    private fun showCurrentWord() {
+    private fun showCurrentWordNormal() {
         if (currentGroup.isEmpty()) return
-        val word = currentGroup[currentWordIndex]
+        val word = getCurrentWord()
         binding.contentContainer.removeAllViews()
+
+        updateStickyHeader()
 
         val dp12 = dip(12)
         val dp16 = dip(16)
@@ -297,8 +407,14 @@ class ListenReadFragment : Fragment() {
     private fun playCurrentWord() {
         if (!isPlaying || currentGroup.isEmpty()) return
         if (currentWordIndex >= currentGroup.size) {
-            nextGroup()
-            return
+            if (playMode == PlayMode.LOOP_GROUP) {
+                // Loop back to start of current group
+                currentWordIndex = 0
+                if (playMode == PlayMode.SHUFFLE) reshuffle()
+            } else {
+                nextGroup()
+                return
+            }
         }
 
         currentSubGroup = 0
@@ -315,6 +431,7 @@ class ListenReadFragment : Fragment() {
      */
     private fun playCurrentAudio() {
         if (!isPlaying) return
+
         if (currentSubGroup >= 3) {
             recordHistory()
             nextWord()
@@ -323,9 +440,11 @@ class ListenReadFragment : Fragment() {
 
         val paths = subGroupPaths[currentSubGroup]
         val pairAudioIndex = repeatCurrent % 2 // 0=英文, 1=释义
+        val word = getCurrentWord()
 
         updateStatusText()
-        val path = CorpusRepository(requireContext()).getAudioPath(currentCorpusId, currentGroup[currentWordIndex].word, paths[pairAudioIndex])
+        updateStickyHeader()
+        val path = CorpusRepository(requireContext()).getAudioPath(currentCorpusId, word.word, paths[pairAudioIndex])
 
         audioPlayer.play(path) { duration ->
             lastAudioDurationMs = duration
@@ -344,19 +463,21 @@ class ListenReadFragment : Fragment() {
         }
     }
 
+    // ====== Navigation ======
+
     private fun updateStatusText() {
         // Status text updated during playback
     }
 
     private fun recordHistory() {
         if (currentGroup.isEmpty()) return
-        val word = currentGroup[currentWordIndex]
+        val word = getCurrentWord()
         val history = ListenHistory(
             id = "user_${currentCorpusId}_${word.word}_${System.currentTimeMillis()}",
             userId = "user",
             corpusId = currentCorpusId,
             word = word.word,
-            wordIndex = currentGroupIndex * GROUP_SIZE + currentWordIndex,
+            wordIndex = currentGroupIndex * groupSize + getActualWordIndex(),
             groupIndex = currentGroupIndex,
             duration = lastAudioDurationMs * repeatCount,
             completedAudio = 3,
@@ -367,29 +488,55 @@ class ListenReadFragment : Fragment() {
         }
     }
 
-    // ====== Navigation ======
-
     private fun nextWord() {
-        if (currentWordIndex < currentGroup.size - 1) {
-            currentWordIndex++
-            UserPreferencesRepository.saveListenPosition(currentCorpusId, currentGroupIndex, currentWordIndex)
-            updateProgress()
-            showCurrentWord()
-            if (isPlaying) playCurrentWord()
-        } else {
-            stopPlaying()
-            Toast.makeText(context, "本组播放完毕", Toast.LENGTH_SHORT).show()
+        stopPlaying()
+
+        when (playMode) {
+            PlayMode.SHUFFLE -> {
+                shufflePosition++
+                if (shufflePosition >= currentGroup.size) {
+                    shufflePosition = 0
+                    reshuffle()
+                }
+            }
+            PlayMode.LOOP_GROUP -> {
+                currentWordIndex = (currentWordIndex + 1) % currentGroup.size
+                if (currentWordIndex == 0) reshuffle()
+            }
+            else -> { // ORDER
+                if (currentWordIndex >= currentGroup.size - 1) {
+                    stopPlaying()
+                    Toast.makeText(context, "本组播放完毕", Toast.LENGTH_SHORT).show()
+                    return
+                }
+                currentWordIndex++
+            }
         }
+
+        UserPreferencesRepository.saveListenPosition(currentCorpusId, currentGroupIndex, currentWordIndex)
+        updateProgress()
+        showCurrentWordNormal()
+        if (isPlaying) playCurrentWord()
     }
 
     private fun prevWord() {
         stopPlaying()
-        if (currentWordIndex > 0) {
-            currentWordIndex--
-            UserPreferencesRepository.saveListenPosition(currentCorpusId, currentGroupIndex, currentWordIndex)
-            updateProgress()
-            showCurrentWord()
+
+        when (playMode) {
+            PlayMode.SHUFFLE -> {
+                shufflePosition = (shufflePosition - 1).coerceAtLeast(0)
+            }
+            PlayMode.LOOP_GROUP -> {
+                currentWordIndex = (currentWordIndex - 1 + currentGroup.size) % currentGroup.size
+            }
+            else -> {
+                if (currentWordIndex > 0) currentWordIndex--
+            }
         }
+
+        UserPreferencesRepository.saveListenPosition(currentCorpusId, currentGroupIndex, currentWordIndex)
+        updateProgress()
+        showCurrentWordNormal()
     }
 
     private fun nextGroup() {
@@ -410,11 +557,64 @@ class ListenReadFragment : Fragment() {
             putExtra("wordIndex", currentWordIndex)
             putExtra("repeatCount", repeatCount)
             putExtra("isPlaying", isPlaying)
+            putExtra("playMode", playMode.name)
         }
         startActivity(intent)
     }
 
     // ====== Helpers ======
+
+    private fun toggleBlindMode() {
+        isBlindMode = !isBlindMode
+        UserPreferencesRepository.listenBlindMode = isBlindMode
+        updateModeButtonColors()
+        if (isBlindMode) {
+            showBlindContent()
+        } else {
+            showCurrentWordNormal()
+        }
+    }
+
+    private fun showBlindContent() {
+        binding.contentContainer.removeAllViews()
+        val dp16 = dip(16)
+        binding.tvStickyWord.text = "盲听模式"
+        binding.tvStickyPhonetic.visibility = View.GONE
+        binding.tvStickyMeaning.text = "仔细听，点击下方按钮查看内容"
+
+        val statusText = TextView(requireContext()).apply {
+            text = if (isPlaying) "正在播放音频..." else "点击播放开始盲听"
+            textSize = 18f
+            setTextColor(0xFFE3000F.toInt())
+            setTypeface(null, android.graphics.Typeface.BOLD)
+            setPadding(dp16, dp16, dp16, dp16)
+            gravity = android.view.Gravity.CENTER
+        }
+        binding.contentContainer.addView(statusText)
+
+        val viewBtn = Button(requireContext()).apply {
+            text = "查看内容"
+            textSize = 16f
+            setTextColor(0xFFFFFFFF.toInt())
+            setBackgroundColor(0xFF0039CB.toInt())
+            setPadding(dp16, dp16, dp16, dp16)
+            layoutParams = LinearLayout.LayoutParams(dip(180), dip(50)).apply {
+                gravity = android.view.Gravity.CENTER_HORIZONTAL
+                topMargin = dip(16)
+            }
+            setOnClickListener { showCurrentWordNormal() }
+        }
+        binding.contentContainer.addView(viewBtn)
+    }
+
+    // Override showCurrentWord to redirect in blind mode
+    private fun showCurrentWordBlind() {
+        if (isBlindMode) {
+            showBlindContent()
+            return
+        }
+        showCurrentWordNormal()
+    }
 
     private fun makeCard(): LinearLayout {
         return LinearLayout(requireContext()).apply {

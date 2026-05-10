@@ -5,44 +5,6 @@
     android:layout_height="match_parent"
     android:background="#E8E8E8">
 
-    <!-- 欢迎界面 -->
-    <LinearLayout
-        android:id="@+id/layout_welcome"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:visibility="visible">
-
-        <TextView
-            android:id="@+id/tv_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="LearnE"
-            android:textColor="#E3000F"
-            android:textSize="48sp"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:id="@+id/tv_subtitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="语料库英语学习"
-            android:textColor="#808080"
-            android:textSize="18sp"/>
-
-        <Button
-            android:id="@+id/btn_start_learn"
-            android:layout_width="200dp"
-            android:layout_height="56dp"
-            android:layout_marginTop="48dp"
-            android:text="开始学习"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
-    </LinearLayout>
-
     <!-- 加载中 -->
     <LinearLayout
         android:id="@+id/layout_loading"
@@ -50,7 +12,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <ProgressBar
             android:layout_width="48dp"
@@ -67,121 +29,221 @@
             android:textSize="16sp"/>
     </LinearLayout>
 
-    <!-- 顶部栏 -->
+    <!-- 进度仪表盘 -->
     <LinearLayout
-        android:id="@+id/layout_top_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="12dp"
-        android:gravity="center_vertical"
-        android:visibility="gone">
-
-        <TextView
-            android:id="@+id/tv_progress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="1 / 20"
-            android:textColor="#E3000F"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
-
-        <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
-
-        <TextView
-            android:id="@+id/tv_step"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="步骤 1/3"
-            android:textColor="#808080"
-            android:textSize="14sp"
-            android:background="#FFFFFF"
-            android:padding="8dp"
-            android:layout_marginEnd="8dp"/>
-
-        <Button
-            android:id="@+id/btn_mode_switch"
-            android:layout_width="wrap_content"
-            android:layout_height="36dp"
-            android:text="听写模式"
-            android:textColor="#FFFFFF"
-            android:textSize="12sp"
-            android:backgroundTint="#0039CB"/>
-    </LinearLayout>
-
-    <!-- 进度条 -->
-    <ProgressBar
-        android:id="@+id/progress_bar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="4dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginHorizontal="16dp"
-        android:visibility="gone"
-        android:progressDrawable="@drawable/progress_gundam"/>
-
-    <!-- 主内容区 -->
-    <ScrollView
-        android:id="@+id/scroll_content"
+        android:id="@+id/layout_dashboard"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="64dp"
-        android:layout_marginBottom="72dp"
+        android:orientation="vertical"
+        android:gravity="center"
         android:visibility="gone"
-        android:fillViewport="true">
+        android:padding="24dp"
+        android:background="#E8E8E8">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="学习进度"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- 统计卡片 -->
         <LinearLayout
-            android:id="@+id/content_container"
+            android:id="@+id/layout_stats"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp"/>
-    </ScrollView>
+            android:background="#FFFFFF"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+        </LinearLayout>
 
-    <!-- 底部按钮 -->
+        <Button
+            android:id="@+id/btn_start_learning"
+            android:layout_width="200dp"
+            android:layout_height="56dp"
+            android:text="开始学习"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:backgroundTint="#E3000F"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+
+    <!-- 主学习界面 -->
     <LinearLayout
-        android:id="@+id/layout_bottom_buttons"
+        android:id="@+id/layout_main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingHorizontal="16dp"
-        android:paddingBottom="16dp"
-        android:layout_gravity="bottom"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         android:visibility="gone">
 
-        <Button
-            android:id="@+id/btn_prev"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            android:text="上一词"
-            android:textColor="#FFFFFF"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:backgroundTint="#0039CB"
-            android:alpha="0.6"/>
+        <!-- 顶部栏：组选择 + 模式标签 -->
+        <LinearLayout
+            android:id="@+id/layout_top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
 
-        <Button
-            android:id="@+id/btn_unfamiliar"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:layout_marginHorizontal="8dp"
-            android:text="不熟"
-            android:textColor="#FFFFFF"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:backgroundTint="#0039CB"/>
+            <!-- 模式标签 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
 
-        <Button
-            android:id="@+id/btn_next"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
+                <TextView
+                    android:id="@+id/tv_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1 / 30"
+                    android:textColor="#E3000F"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+                <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/tv_step"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="步骤 1/3"
+                    android:textColor="#808080"
+                    android:textSize="13sp"
+                    android:background="#FFFFFF"
+                    android:padding="6dp"
+                    android:layout_marginEnd="4dp"/>
+            </LinearLayout>
+
+            <!-- 模式标签 + 组选择 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp">
+
+                <!-- 模式标签 -->
+                <LinearLayout
+                    android:id="@+id/layout_mode_tabs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_tab_learn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:text="学习"
+                        android:textSize="12sp"
+                        android:backgroundTint="#E3000F"
+                        android:minHeight="0dp"
+                        android:minWidth="0dp"/>
+
+                    <Button
+                        android:id="@+id/btn_tab_review"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:text="复习"
+                        android:textSize="12sp"
+                        android:backgroundTint="#808080"
+                        android:layout_marginStart="4dp"
+                        android:minHeight="0dp"
+                        android:minWidth="0dp"/>
+
+                    <Button
+                        android:id="@+id/btn_tab_wrong"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:text="错题本"
+                        android:textSize="12sp"
+                        android:backgroundTint="#808080"
+                        android:layout_marginStart="4dp"
+                        android:minHeight="0dp"
+                        android:minWidth="0dp"/>
+                </LinearLayout>
+
+                <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
+
+                <!-- 组选择 -->
+                <Spinner
+                    android:id="@+id/sp_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="8dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 进度条 -->
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginHorizontal="16dp"
+            android:progressDrawable="@drawable/progress_gundam"/>
+
+        <!-- 主内容区 -->
+        <ScrollView
+            android:id="@+id/scroll_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="认识"
-            android:textColor="#FFFFFF"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:backgroundTint="#E3000F"/>
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:id="@+id/content_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"/>
+        </ScrollView>
+
+        <!-- 底部按钮 -->
+        <LinearLayout
+            android:id="@+id/layout_bottom_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp"
+            android:paddingBottom="16dp">
+
+            <Button
+                android:id="@+id/btn_prev"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="上一词"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:backgroundTint="#0039CB"
+                android:alpha="0.6"/>
+
+            <Button
+                android:id="@+id/btn_unfamiliar"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="8dp"
+                android:text="标记"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:backgroundTint="#0039CB"/>
+
+            <Button
+                android:id="@+id/btn_next"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="已掌握"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:backgroundTint="#E3000F"/>
+        </LinearLayout>
     </LinearLayout>
 
 </FrameLayout>

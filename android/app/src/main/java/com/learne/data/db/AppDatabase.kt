@@ -16,9 +16,11 @@ import com.learne.data.model.*
         UserNote::class,
         Achievement::class,
         StudyReminder::class,
-        ListenHistory::class
+        ListenHistory::class,
+        CorpusCache::class,
+        StarredWord::class
     ],
-    version = 5,
+    version = 7,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -32,6 +34,8 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun achievementDao(): AchievementDao
     abstract fun reminderDao(): ReminderDao
     abstract fun listenHistoryDao(): ListenHistoryDao
+    abstract fun corpusCacheDao(): CorpusCacheDao
+    abstract fun starredWordDao(): StarredWordDao
 
     companion object {
         @Volatile

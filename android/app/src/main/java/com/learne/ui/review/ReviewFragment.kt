@@ -5,13 +5,35 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.learne.data.model.WordProgress
 import com.learne.databinding.FragmentReviewBinding
 import com.learne.di.ViewModelFactory
 import com.learne.service.AudioPlayer
 
 class ReviewFragment : Fragment() {
+
+    companion object {
+        private const val ARG_WRONG_WORD_STRINGS = "wrong_word_strings"
+
+        fun newInstance(corpusId: String? = null): ReviewFragment {
+            return ReviewFragment().apply {
+                arguments = Bundle().apply {
+                    putString("corpusId", corpusId)
+                }
+            }
+        }
+
+        fun newInstanceForWrongWords(wrongWords: List<com.learne.data.model.WrongWord>): ReviewFragment {
+            return ReviewFragment().apply {
+                arguments = Bundle().apply {
+                    putStringArrayList(ARG_WRONG_WORD_STRINGS, ArrayList(wrongWords.map { it.word }))
+                }
+            }
+        }
+    }
 
     private var _binding: FragmentReviewBinding? = null
     private val binding get() = _binding!!
@@ -45,7 +67,13 @@ class ReviewFragment : Fragment() {
         setupObservers()
         setupListeners()
 
-        viewModel.loadCorpus("catti")
+        val wrongWordStrings = arguments?.getStringArrayList(ARG_WRONG_WORD_STRINGS)
+        if (wrongWordStrings != null) {
+            viewModel.loadWrongWordsForReview(wrongWordStrings)
+        } else {
+            val corpusId = arguments?.getString("corpusId") ?: "catti"
+            viewModel.loadCorpus(corpusId)
+        }
     }
 
     private fun setupObservers() {
@@ -152,6 +180,10 @@ class ReviewFragment : Fragment() {
     private fun setupListeners() {
         binding.btnStartReview.setOnClickListener {
             viewModel.startReview()
+        }
+
+        binding.btnBack.setOnClickListener {
+            parentFragmentManager.popBackStack()
         }
 
         binding.btnNextStep.setOnClickListener {

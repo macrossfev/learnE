@@ -58,7 +58,7 @@ class ListenReadFullScreenActivity : AppCompatActivity() {
     private var currentSubGroup = 0 // 0=单词, 1=词组, 2=例句
     private var repeatCurrent = 0   // 当前重复次数
 
-    private val GROUP_SIZE = 50
+    private fun getGroupSize(): Int = UserPreferencesRepository.planGroupSize
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -121,13 +121,13 @@ class ListenReadFullScreenActivity : AppCompatActivity() {
 
     private fun selectGroup(groupIndex: Int) {
         currentGroupIndex = groupIndex
-        val start = groupIndex * GROUP_SIZE
-        val end = (start + GROUP_SIZE).coerceAtMost(allWords.size)
+        val start = groupIndex * getGroupSize()
+        val end = (start + getGroupSize()).coerceAtMost(allWords.size)
         currentGroup = allWords.subList(start, end)
     }
 
     private fun updateProgress() {
-        val globalIndex = currentGroupIndex * GROUP_SIZE + currentWordIndex + 1
+        val globalIndex = currentGroupIndex * getGroupSize() + currentWordIndex + 1
         binding.tvProgress.text = "$globalIndex / ${allWords.size}"
     }
 
@@ -277,7 +277,7 @@ class ListenReadFullScreenActivity : AppCompatActivity() {
                 showDefaultContent()
             }
         } else {
-            val totalGroups = ceil(allWords.size.toDouble() / GROUP_SIZE).toInt()
+            val totalGroups = ceil(allWords.size.toDouble() / getGroupSize()).toInt()
             if (currentGroupIndex < totalGroups - 1) {
                 selectGroup(currentGroupIndex + 1)
                 currentWordIndex = 0
@@ -335,7 +335,7 @@ class ListenReadFullScreenActivity : AppCompatActivity() {
             userId = "user",
             corpusId = currentCorpusId,
             word = word.word,
-            wordIndex = currentGroupIndex * GROUP_SIZE + currentWordIndex,
+            wordIndex = currentGroupIndex * getGroupSize() + currentWordIndex,
             groupIndex = currentGroupIndex,
             duration = lastAudioDurationMs * repeatCount,
             completedAudio = 3,

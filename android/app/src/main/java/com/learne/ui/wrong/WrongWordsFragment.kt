@@ -4,12 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.learne.databinding.FragmentWrongWordsBinding
 import com.learne.data.repository.CorpusRepository
 import com.learne.data.repository.StudyRepository
+import com.learne.ui.review.ReviewFragment
 
 class WrongWordsFragment : Fragment() {
 
@@ -61,8 +63,21 @@ class WrongWordsFragment : Fragment() {
     }
 
     private fun setupListeners() {
+        binding.btnBack.setOnClickListener {
+            parentFragmentManager.popBackStack()
+        }
+
         binding.btnReviewWrong.setOnClickListener {
-            // TODO: 进入错题复习模式
+            val wrongWords = viewModel.wrongWords.value
+            if (wrongWords.isNullOrEmpty()) {
+                Toast.makeText(context, "暂无错题", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            val fragment = ReviewFragment.newInstanceForWrongWords(wrongWords)
+            parentFragmentManager.beginTransaction()
+                .replace(com.learne.R.id.fragment_container, fragment)
+                .addToBackStack("wrong_words")
+                .commit()
         }
 
         binding.btnClearWrong.setOnClickListener {
