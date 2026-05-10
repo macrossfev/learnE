@@ -231,7 +231,7 @@ class StudyPlanActivity : AppCompatActivity() {
             putExtra("planIndex", planIndex.coerceAtLeast(0))
         }
         startActivity(intent)
-        finish()
+        // Don't finish() — keep StudyPlanActivity in back stack so user can return
     }
 
     private fun showNewPlanDialog() {

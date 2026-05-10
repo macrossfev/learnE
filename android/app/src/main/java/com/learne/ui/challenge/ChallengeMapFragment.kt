@@ -227,14 +227,35 @@ class ChallengeMapFragment : Fragment() {
                         }
                         addView(TextView(requireContext()).apply {
                             text = showIcon
-                            textSize = 12f
+                            textSize = 14f
                             setTextColor(0xFFFFFFFF.toInt())
                             gravity = Gravity.CENTER
                             setBackgroundColor(iconBg)
-                            layoutParams = LinearLayout.LayoutParams(dip(16), dip(16)).apply {
+                            layoutParams = LinearLayout.LayoutParams(dip(20), dip(20)).apply {
                                 gravity = Gravity.TOP or Gravity.END
                             }
                         })
+                    }
+
+                    // Review countdown badge: shows number of words due for review in this group
+                    if (isStudied) {
+                        val reviewCount = groupReviewWordCount(groupIndex)
+                        if (reviewCount > 0) {
+                            addView(TextView(requireContext()).apply {
+                                text = "$reviewCount"
+                                textSize = 9f
+                                setTextColor(0xFFFFFFFF.toInt())
+                                gravity = Gravity.CENTER
+                                setBackgroundColor(0xFFE65100.toInt())
+                                setPadding(dip(2), 0, dip(2), 0)
+                                layoutParams = LinearLayout.LayoutParams(
+                                    dip(16), dip(14)
+                                ).apply {
+                                    topMargin = dip(2)
+                                    gravity = Gravity.BOTTOM or Gravity.CENTER_HORIZONTAL
+                                }
+                            })
+                        }
                     }
                 }
 
@@ -286,6 +307,17 @@ class ChallengeMapFragment : Fragment() {
 
     private fun groupIsFullyMastered(groupIndex: Int): Boolean {
         return completedGroups.contains(groupIndex) && masteredCount >= allWords.size
+    }
+
+    private fun groupReviewWordCount(groupIndex: Int): Int {
+        val start = groupIndex * planSave!!.groupSize
+        val end = (start + planSave!!.groupSize).coerceAtMost(allWords.size)
+        val dueWords = wordsDueForReview.map { it.word }.toSet()
+        var count = 0
+        for (i in start until end) {
+            if (allWords.getOrNull(i)?.word in dueWords) count++
+        }
+        return count
     }
 
     private fun handleGroupClick(groupIndex: Int, isStudied: Boolean, quizPassed: Boolean, quizFailed: Boolean) {
@@ -365,8 +397,6 @@ class ChallengeMapFragment : Fragment() {
     }
 
     private fun navigateBackToStudyPlan() {
-        val intent = Intent(requireContext(), com.learne.ui.plan.StudyPlanActivity::class.java)
-        startActivity(intent)
         activity?.finish()
     }
 
