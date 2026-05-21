@@ -3,82 +3,79 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/background"
+    android:background="@color/mecha_hull"
     android:padding="16dp">
 
-    <!-- 错题统计 -->
-    <androidx.cardview.widget.CardView
+    <!-- Header panel -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="@color/primary"
-        app:cardCornerRadius="12dp"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+        android:orientation="horizontal"
+        android:background="@drawable/panel_dark"
+        android:padding="12dp"
+        android:gravity="center"
+        android:elevation="4dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="◀ 返回"
+            android:textColor="@color/mecha_white"
+            android:textSize="12sp"
+            android:background="@drawable/btn_accent"
+            android:layout_marginEnd="8dp"
+            android:paddingHorizontal="12dp"
+            android:letterSpacing="0.05"/>
+
+        <TextView
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="16dp"
-            android:gravity="center">
+            android:layout_weight="1"
+            android:text="错题本"
+            android:textColor="@color/mecha_gold"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.08"/>
 
-            <Button
-                android:id="@+id/btn_back"
-                android:layout_width="wrap_content"
-                android:layout_height="36dp"
-                android:text="返回"
-                android:textSize="12sp"
-                android:layout_marginEnd="8dp"
-                android:minHeight="0dp"
-                android:minWidth="0dp"
-                android:backgroundTint="#FFFFFF"/>
+        <TextView
+            android:id="@+id/tv_wrong_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@color/mecha_red"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:fontFamily="monospace"/>
+    </LinearLayout>
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="错题本"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                android:textStyle="bold"/>
-
-            <TextView
-                android:id="@+id/tv_wrong_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0"
-                android:textColor="@color/white"
-                android:textSize="32sp"
-                android:textStyle="bold"/>
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <!-- 错题列表 -->
+    <!-- Wrong words list -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_wrong_words"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="12dp"/>
 
-    <!-- 操作按钮 -->
+    <!-- Action buttons -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="16dp">
+        android:layout_marginTop="12dp">
 
         <Button
             android:id="@+id/btn_review_wrong"
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
-            android:text="复习错题"
+            android:text="▶ 复习错题"
             android:background="@drawable/btn_primary"
-            android:textColor="@color/white"
+            android:textColor="@color/mecha_white"
             android:textSize="14sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:letterSpacing="0.05"/>
 
         <Button
             android:id="@+id/btn_clear_wrong"
@@ -87,10 +84,11 @@
             android:layout_weight="1"
             android:text="清空已纠正"
             android:background="@drawable/btn_accent"
-            android:textColor="@color/white"
+            android:textColor="@color/mecha_white"
             android:layout_marginStart="8dp"
             android:textSize="14sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:letterSpacing="0.05"/>
 
     </LinearLayout>
 

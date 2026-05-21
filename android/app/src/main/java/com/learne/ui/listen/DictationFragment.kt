@@ -1,15 +1,20 @@
 package com.learne.ui.listen
 
 import android.os.Bundle
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.FrameLayout
 import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
+import com.learne.R
 import com.learne.data.model.Word
 import com.learne.data.repository.CorpusRepository
 import com.learne.data.repository.StudyRepository
@@ -35,16 +40,23 @@ class DictationFragment : Fragment() {
     private var allWords: List<Word> = emptyList()
     private var currentGroup: List<Word> = emptyList()
     private var currentGroupIndex = 0
+    private var selectedGroupIndex = 0
     private var currentIndex = 0
     private var correctCount = 0
     private var wrongCount = 0
     private var currentCorpusId: String = "catti"
     private var groupSize: Int = 30
+    private var totalGroups: Int = 0
 
     private val audioPlayer = AudioPlayer()
     private lateinit var studyRepo: StudyRepository
 
     private var consecutiveWrong = 0 // 连续答错次数
+
+    // Colors for group map
+    private val COLOR_COMPLETED = 0xFF4CAF50.toInt()   // Green (quiz passed)
+    private val COLOR_AVAILABLE = 0xFFFFC107.toInt()    // Yellow (quiz passed, available for dictation)
+    private val COLOR_LOCKED = 0xFF9E9E9E.toInt()       // Gray (not quiz-passed)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -62,46 +74,152 @@ class DictationFragment : Fragment() {
         groupSize = UserPreferencesRepository.planGroupSize
         studyRepo = StudyRepository(requireContext())
 
-        binding.btnPlay.setOnClickListener { playCurrentAudio() }
+        binding.btnBack.setOnClickListener {
+            parentFragmentManager.popBackStack()
+        }
+
+        binding.btnPlayAudio.setOnClickListener { playCurrentAudio() }
         binding.btnSubmit.setOnClickListener { submitAnswer() }
         binding.btnNext.setOnClickListener { nextWord() }
-        binding.btnHint.setOnClickListener { showHint() }
+
+        binding.btnStartDictation.setOnClickListener {
+            startDictationForGroup(selectedGroupIndex)
+        }
 
         loadWords()
     }
 
     private fun loadWords() {
         binding.layoutLoading.visibility = View.VISIBLE
+        binding.layoutGroupMap.visibility = View.GONE
+        binding.layoutDictation.visibility = View.GONE
+
         lifecycleScope.launch {
             try {
-                allWords = CorpusRepository(requireContext()).loadWords(currentCorpusId)
-                if (allWords.isEmpty()) {
+                val allCorpusWords = CorpusRepository(requireContext()).loadWords(currentCorpusId)
+                if (allCorpusWords.isEmpty()) {
                     Toast.makeText(context, "词库为空", Toast.LENGTH_SHORT).show()
                     parentFragmentManager.popBackStack()
                     return@launch
                 }
-                setupGroupSpinner()
+                // Filter to only quiz-passed groups
+                val passedGroups = UserPreferencesRepository.getQuizPassedGroups(currentCorpusId)
+                allWords = allCorpusWords.mapIndexedNotNull { idx, word ->
+                    val groupIdx = idx / groupSize
+                    if (passedGroups.contains(groupIdx)) word else null
+                }
+                if (allWords.isEmpty()) {
+                    Toast.makeText(context, "暂无考试通过的单词，请先完成考试", Toast.LENGTH_SHORT).show()
+                    parentFragmentManager.popBackStack()
+                    return@launch
+                }
+
+                totalGroups = ceil(allWords.size.toDouble() / groupSize).toInt()
+                buildGroupMap()
+
                 binding.layoutLoading.visibility = View.GONE
-                selectGroup(0)
+                binding.layoutGroupMap.visibility = View.VISIBLE
             } catch (e: Exception) {
+                binding.layoutLoading.visibility = View.GONE
                 Toast.makeText(context, "加载失败: ${e.message}", Toast.LENGTH_LONG).show()
                 parentFragmentManager.popBackStack()
             }
         }
     }
 
-    private fun setupGroupSpinner() {
-        val totalGroups = ceil(allWords.size.toDouble() / groupSize).toInt()
-        val groupNames = List(totalGroups) { "第${it + 1}组" }
-        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, groupNames)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        binding.spGroup.adapter = adapter
-        binding.spGroup.onItemSelectedListener = object : android.widget.AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: android.widget.AdapterView<*>?, view: View?, position: Int, id: Long) {
-                selectGroup(position)
+    private fun buildGroupMap() {
+        binding.layoutGroupGrid.removeAllViews()
+
+        val passedGroups = UserPreferencesRepository.getQuizPassedGroups(currentCorpusId)
+        val dictationCompleted = UserPreferencesRepository.getCompletedGroups("dictation_$currentCorpusId").toSet()
+
+        val groupsPerRow = 5
+        val totalRows = ceil(totalGroups.toDouble() / groupsPerRow).toInt()
+
+        // Find first available group for default selection
+        selectedGroupIndex = 0
+
+        var rowLayout: LinearLayout? = null
+
+        for (row in 0 until totalRows) {
+            rowLayout = LinearLayout(requireContext()).apply {
+                orientation = LinearLayout.HORIZONTAL
+                gravity = Gravity.CENTER_HORIZONTAL
+                layoutParams = LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+                ).apply { bottomMargin = dip(8) }
             }
-            override fun onNothingSelected(parent: android.widget.AdapterView<*>?) {}
+
+            for (col in 0 until groupsPerRow) {
+                val groupIndex = row * groupsPerRow + col
+                if (groupIndex >= totalGroups) break
+
+                val isDictationCompleted = dictationCompleted.contains(groupIndex)
+                val color = when {
+                    isDictationCompleted -> COLOR_COMPLETED
+                    else -> COLOR_AVAILABLE
+                }
+                val showIcon = if (isDictationCompleted) "✓" else ""
+
+                val frameLayout = FrameLayout(requireContext()).apply {
+                    val size = dip(56)
+                    layoutParams = LinearLayout.LayoutParams(size, size).apply {
+                        marginEnd = dip(6)
+                    }
+                    setBackgroundResource(android.R.drawable.dialog_holo_light_frame)
+
+                    addView(Button(requireContext()).apply {
+                        text = "${groupIndex + 1}"
+                        textSize = 14f
+                        setBackgroundColor(color)
+                        setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
+                        if (showIcon.isNotEmpty()) setTypeface(null, android.graphics.Typeface.BOLD)
+                        elevation = 4f
+                        layoutParams = FrameLayout.LayoutParams(
+                            FrameLayout.LayoutParams.MATCH_PARENT,
+                            FrameLayout.LayoutParams.MATCH_PARENT
+                        )
+                        setOnClickListener {
+                            selectedGroupIndex = groupIndex
+                            highlightSelectedGroup()
+                        }
+                    })
+                }
+
+                rowLayout.addView(frameLayout)
+            }
+
+            binding.layoutGroupGrid.addView(rowLayout)
         }
+
+        // Default: select first group
+        highlightSelectedGroup()
+    }
+
+    private fun highlightSelectedGroup() {
+        for (i in 0 until binding.layoutGroupGrid.childCount) {
+            val row = binding.layoutGroupGrid.getChildAt(i) as? LinearLayout ?: continue
+            for (j in 0 until row.childCount) {
+                val frame = row.getChildAt(j) as? FrameLayout ?: continue
+                val btn = frame.getChildAt(0) as? Button ?: continue
+                val groupIndex = i * 5 + j
+                if (groupIndex == selectedGroupIndex) {
+                    btn.elevation = 8f
+                    btn.setTextColor(0xFFFFFFFF.toInt())
+                } else {
+                    btn.elevation = 4f
+                    btn.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
+                }
+            }
+        }
+    }
+
+    private fun startDictationForGroup(groupIndex: Int) {
+        binding.layoutGroupMap.visibility = View.GONE
+        binding.layoutDictation.visibility = View.VISIBLE
+
+        selectGroup(groupIndex)
     }
 
     private fun selectGroup(groupIndex: Int) {
@@ -114,22 +232,22 @@ class DictationFragment : Fragment() {
         correctCount = 0
         wrongCount = 0
         consecutiveWrong = 0
-        binding.etInput.setText("")
+
+        binding.etAnswer.setText("")
         binding.tvResult.text = ""
         binding.tvResult.visibility = View.GONE
-        binding.tvHint.visibility = View.GONE
-        binding.tvHint.text = ""
-        binding.btnHint.visibility = View.VISIBLE
-        binding.btnHint.isEnabled = true
-        updateProgress()
+        binding.tvHint.visibility = View.VISIBLE
+        binding.tvHint.text = "点击播放按钮听发音"
         binding.btnSubmit.visibility = View.VISIBLE
         binding.btnNext.visibility = View.GONE
+
+        updateProgress()
     }
 
     private fun updateProgress() {
-        val total = allWords.size
-        val global = currentGroupIndex * groupSize + currentIndex + 1
-        binding.tvWordProgress.text = "$global / $total  组 ${currentGroupIndex + 1}/${binding.spGroup.adapter.count}"
+        val total = currentGroup.size
+        val current = currentIndex + 1
+        binding.tvProgressTop.text = "$current / $total  组 ${currentGroupIndex + 1}/$totalGroups"
     }
 
     private fun playCurrentAudio() {
@@ -141,7 +259,7 @@ class DictationFragment : Fragment() {
 
     private fun submitAnswer() {
         if (currentGroup.isEmpty()) return
-        val input = binding.etInput.text.toString().trim().lowercase()
+        val input = binding.etAnswer.text.toString().trim().lowercase()
         val answer = currentGroup[currentIndex].word.trim().lowercase()
 
         if (input.isEmpty()) {
@@ -183,12 +301,11 @@ class DictationFragment : Fragment() {
         if (currentIndex < currentGroup.size - 1) {
             currentIndex++
             consecutiveWrong = 0
-            binding.etInput.setText("")
+            binding.etAnswer.setText("")
             binding.tvResult.text = ""
             binding.tvResult.visibility = View.GONE
-            binding.tvHint.visibility = View.GONE
-            binding.tvHint.text = ""
-            binding.btnHint.isEnabled = true
+            binding.tvHint.visibility = View.VISIBLE
+            binding.tvHint.text = "点击播放按钮听发音"
             binding.btnSubmit.visibility = View.VISIBLE
             binding.btnNext.visibility = View.GONE
             updateProgress()
@@ -208,96 +325,83 @@ class DictationFragment : Fragment() {
                 val middle = "_".repeat(word.length - 2)
                 "${word[0]}$middle${word.last()}"
             }
-            consecutiveWrong >= 2 -> {
-                // Show first letter
-                val rest = "_".repeat(word.length - 1)
-                "${word[0]}$rest"
-            }
             else -> {
+                // Show first letter
                 val rest = "_".repeat(word.length - 1)
                 "${word[0]}$rest"
             }
         }
         binding.tvHint.text = "提示: $revealed"
         binding.tvHint.visibility = View.VISIBLE
-        binding.btnHint.isEnabled = false
     }
 
     private fun showStats() {
         val total = correctCount + wrongCount
         val accuracy = if (total > 0) correctCount * 100 / total else 0
-        val hasNextGroup = currentGroupIndex + 1 < binding.spGroup.adapter.count
-        binding.tvWordProgress.text = "听写完成"
-        binding.contentContainer.removeAllViews()
+        val hasNextGroup = currentGroupIndex + 1 < totalGroups
 
-        // Title
-        binding.contentContainer.addView(android.widget.TextView(requireContext()).apply {
-            text = "听写完成"
-            textSize = 24f
-            android.graphics.Typeface.BOLD
-            setTextColor(0xFFE3000F.toInt())
-            gravity = android.view.Gravity.CENTER
-            setPadding(dip(16), dip(16), dip(16), dip(8))
-        })
+        // Mark group as completed for dictation
+        UserPreferencesRepository.markGroupCompleted("dictation_$currentCorpusId", currentGroupIndex)
 
-        // Stats
-        binding.contentContainer.addView(android.widget.TextView(requireContext()).apply {
-            text = "正确: $correctCount  错误: $wrongCount\n正确率: $accuracy%"
-            textSize = 18f
-            gravity = android.view.Gravity.CENTER
-            setPadding(dip(16), 0, dip(16), 0)
-        })
+        binding.tvProgressTop.text = "听写完成"
 
-        // Accuracy bar visualization
-        if (total > 0) {
-            binding.contentContainer.addView(android.widget.TextView(requireContext()).apply {
-                val correctBar = "█".repeat(correctCount * 20 / total)
-                val wrongBar = "░".repeat(20 - correctBar.length)
-                text = "$correctBar$wrongBar"
-                textSize = 14f
-                setTextColor(0xFF4CAF50.toInt())
-                gravity = android.view.Gravity.CENTER
-                setPadding(dip(16), 8, dip(16), 16)
+        // Switch back to group map and show stats overlay
+        binding.layoutDictation.visibility = View.GONE
+        binding.layoutGroupMap.visibility = View.VISIBLE
+
+        // Rebuild map to reflect completion
+        buildGroupMap()
+
+        // Show stats in a dialog-like overlay
+        val dialogView = LinearLayout(requireContext()).apply {
+            orientation = LinearLayout.VERTICAL
+            setPadding(dip(16), dip(16), dip(16), dip(16))
+
+            addView(TextView(requireContext()).apply {
+                text = "听写完成"
+                textSize = 24f
+                setTypeface(null, android.graphics.Typeface.BOLD)
+                setTextColor(0xFFE3000F.toInt())
+                gravity = Gravity.CENTER
+                setPadding(dip(16), dip(16), dip(16), dip(8))
             })
+
+            addView(TextView(requireContext()).apply {
+                text = "正确: $correctCount  错误: $wrongCount\n正确率: $accuracy%"
+                textSize = 18f
+                gravity = Gravity.CENTER
+                setPadding(dip(16), 0, dip(16), 0)
+            })
+
+            // Accuracy bar visualization
+            if (total > 0) {
+                addView(TextView(requireContext()).apply {
+                    val correctBar = "█".repeat(correctCount * 20 / total)
+                    val wrongBar = "░".repeat(20 - correctBar.length)
+                    text = "$correctBar$wrongBar"
+                    textSize = 14f
+                    setTextColor(0xFF4CAF50.toInt())
+                    gravity = Gravity.CENTER
+                    setPadding(dip(16), dip(8), dip(16), dip(16))
+                })
+            }
         }
 
-        // Buttons
-        val btnRow = LinearLayout(requireContext()).apply {
-            orientation = LinearLayout.HORIZONTAL
-            gravity = android.view.Gravity.CENTER
-            layoutParams = LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-            ).apply { topMargin = dip(16) }
-        }
-
-        val btnBack = android.widget.Button(requireContext()).apply {
-            text = "返回"
-            textSize = 16f
-            setTextColor(0xFFFFFFFF.toInt())
-            setBackgroundColor(0xFF808080.toInt())
-            setOnClickListener { parentFragmentManager.popBackStack() }
-        }
-        btnRow.addView(btnBack, LinearLayout.LayoutParams(0, dip(48)).apply { weight = 1f; marginEnd = dip(8) })
-
-        if (hasNextGroup) {
-            val btnContinue = android.widget.Button(requireContext()).apply {
-                text = "下一组"
-                textSize = 16f
-                setTextColor(0xFFFFFFFF.toInt())
-                setBackgroundColor(0xFFE3000F.toInt())
-                setOnClickListener {
-                    selectGroup(currentGroupIndex + 1)
-                    binding.spGroup.setSelection(currentGroupIndex + 1)
+        val btnPositive = if (hasNextGroup) "下一组" else "确定"
+        val dialog = android.app.AlertDialog.Builder(requireContext())
+            .setView(dialogView)
+            .setPositiveButton(btnPositive) { _, _ ->
+                if (hasNextGroup) {
+                    selectedGroupIndex = currentGroupIndex + 1
+                    startDictationForGroup(selectedGroupIndex)
                 }
             }
-            btnRow.addView(btnContinue, LinearLayout.LayoutParams(0, dip(48)).apply { weight = 1f })
-        }
-
-        binding.contentContainer.addView(btnRow)
-
-        binding.btnSubmit.visibility = View.GONE
-        binding.btnNext.visibility = View.GONE
+            .setNegativeButton("返回") { _, _ ->
+                parentFragmentManager.popBackStack()
+            }
+            .setCancelable(false)
+            .create()
+        dialog.show()
     }
 
     private fun stopAudio() {

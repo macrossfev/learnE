@@ -3,254 +3,366 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E8E8E8"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/mecha_hull">
 
-    <!-- 顶部栏 -->
+    <!-- Top HUD bar -->
     <LinearLayout
         android:id="@+id/layout_top_bar"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:orientation="horizontal"
         android:paddingHorizontal="12dp"
-        android:paddingVertical="6dp"
         android:gravity="center_vertical"
-        android:background="#FFFFFF">
+        android:background="@drawable/panel_dark"
+        android:elevation="4dp">
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="◀ 返回"
+            android:textColor="@color/mecha_white"
+            android:textSize="12sp"
+            android:background="@drawable/btn_accent"
+            android:layout_marginEnd="8dp"
+            android:paddingHorizontal="12dp"
+            android:letterSpacing="0.05"/>
 
         <TextView
-            android:id="@+id/tv_corpus_name"
-            android:layout_width="wrap_content"
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="CATTI"
-            android:textColor="#E3000F"
+            android:layout_weight="1"
+            android:text="听读模式"
+            android:textColor="@color/mecha_gold"
             android:textSize="16sp"
-            android:textStyle="bold"/>
-
-        <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
+            android:textStyle="bold"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.08"/>
 
         <TextView
-            android:id="@+id/tv_word_progress"
+            android:id="@+id/tv_progress_top"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1 / 50"
-            android:textColor="#808080"
-            android:textSize="13sp"
-            android:padding="4dp"
-            android:layout_marginEnd="8dp"/>
-
-        <Button
-            android:id="@+id/btn_fullscreen"
-            android:layout_width="wrap_content"
-            android:layout_height="36dp"
-            android:text="大屏"
-            android:textColor="#FFFFFF"
-            android:textSize="13sp"
-            android:textStyle="bold"
-            android:backgroundTint="#0039CB"
-            android:paddingHorizontal="12dp"/>
+            android:text=""
+            android:textColor="@color/mecha_armor"
+            android:textSize="12sp"
+            android:fontFamily="monospace"/>
     </LinearLayout>
 
-    <!-- 进度条 -->
-    <ProgressBar
-        android:id="@+id/progress_bar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:progressDrawable="@drawable/progress_gundam"/>
-
-    <!-- 控制面板 -->
+    <!-- Loading -->
     <LinearLayout
-        android:id="@+id/control_panel"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:orientation="horizontal"
-        android:paddingHorizontal="8dp"
-        android:gravity="center_vertical"
-        android:background="#F5F5F5">
-
-        <!-- 组选择 -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="组"
-            android:textColor="#555555"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:layout_marginEnd="2dp"/>
-
-        <Spinner
-            android:id="@+id/sp_group"
-            android:layout_width="70dp"
-            android:layout_height="30dp"
-            android:background="#FFFFFF"
-            android:spinnerMode="dropdown"
-            android:layout_marginEnd="6dp"/>
-
-        <!-- 重复次数 -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="重复"
-            android:textColor="#555555"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:layout_marginEnd="2dp"/>
-
-        <LinearLayout
-            android:id="@+id/repeat_buttons"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginEnd="6dp"/>
-
-        <!-- 播放模式 -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="模式"
-            android:textColor="#555555"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:layout_marginEnd="2dp"/>
-
-        <LinearLayout
-            android:id="@+id/mode_buttons"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginEnd="6dp"/>
-
-        <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
-
-        <!-- 播放控制 -->
-        <Button
-            android:id="@+id/btn_play"
-            android:layout_width="wrap_content"
-            android:layout_height="36dp"
-            android:text="▶ 播放"
-            android:textColor="#FFFFFF"
-            android:textSize="13sp"
-            android:textStyle="bold"
-            android:backgroundTint="#E3000F"
-            android:paddingHorizontal="16dp"
-            android:minWidth="80dp"/>
-
-        <Button
-            android:id="@+id/btn_pause"
-            android:layout_width="wrap_content"
-            android:layout_height="36dp"
-            android:text="⏸ 暂停"
-            android:textColor="#FFFFFF"
-            android:textSize="13sp"
-            android:textStyle="bold"
-            android:backgroundTint="#808080"
-            android:paddingHorizontal="16dp"
-            android:minWidth="80dp"
-            android:layout_marginStart="6dp"/>
-
-        <Button
-            android:id="@+id/btn_prev_word"
-            android:layout_width="40dp"
-            android:layout_height="36dp"
-            android:text="◀"
-            android:textColor="#FFFFFF"
-            android:textSize="14sp"
-            android:backgroundTint="#0039CB"
-            android:padding="0dp"
-            android:layout_marginStart="6dp"/>
-
-        <Button
-            android:id="@+id/btn_next_word"
-            android:layout_width="40dp"
-            android:layout_height="36dp"
-            android:text="▶"
-            android:textColor="#FFFFFF"
-            android:textSize="14sp"
-            android:backgroundTint="#0039CB"
-            android:padding="0dp"
-            android:layout_marginStart="6dp"/>
-    </LinearLayout>
-
-    <!-- 固定单词栏：播放时始终显示单词信息 -->
-    <LinearLayout
-        android:id="@+id/layout_sticky_header"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingHorizontal="16dp"
-        android:paddingVertical="8dp"
-        android:background="#FFFFFF">
-
-        <TextView
-            android:id="@+id/tv_sticky_word"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textColor="#000000"
-            android:textSize="28sp"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:id="@+id/tv_sticky_phonetic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textColor="#808080"
-            android:textSize="14sp"
-            android:layout_marginTop="2dp"/>
-
-        <TextView
-            android:id="@+id/tv_sticky_meaning"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textColor="#E3000F"
-            android:textSize="18sp"
-            android:layout_marginTop="4dp"/>
-    </LinearLayout>
-
-    <!-- 主内容区 -->
-    <ScrollView
-        android:id="@+id/scroll_content"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:fillViewport="true">
-
-        <LinearLayout
-            android:id="@+id/content_container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp"/>
-    </ScrollView>
-
-    <!-- 加载指示器 -->
-    <FrameLayout
         android:id="@+id/layout_loading"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone">
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/mecha_hull"
+        android:visibility="visible">
 
+        <ProgressBar
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:indeterminateTint="@color/mecha_gold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="正在加载词库..."
+            android:textColor="@color/mecha_armor"
+            android:textSize="14sp"
+            android:fontFamily="monospace"/>
+    </LinearLayout>
+
+    <!-- Group map -->
+    <LinearLayout
+        android:id="@+id/layout_group_map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:background="@color/mecha_hull">
+
+        <!-- Progress stats panel -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:background="@drawable/panel_dark"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/tv_map_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="听读模式"
+                android:textColor="@color/mecha_gold"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.08"/>
+
+            <!-- Group play mode -->
+            <LinearLayout
+                android:id="@+id/layout_group_mode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="组播放"
+                    android:textColor="@color/mecha_armor"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:layout_marginEnd="4dp"/>
+
+                <Button android:id="@+id/btn_mode_group_loop" android:layout_width="wrap_content" android:layout_height="32dp" android:text="组内循环" android:textSize="11sp" android:textColor="@color/mecha_white" android:background="@drawable/btn_accent" android:minWidth="0dp" android:paddingHorizontal="10dp" android:layout_marginEnd="4dp"/>
+                <Button android:id="@+id/btn_mode_group_seq" android:layout_width="wrap_content" android:layout_height="32dp" android:text="顺序播放" android:textSize="11sp" android:textColor="@color/mecha_armor" android:background="@drawable/card_metal" android:minWidth="0dp" android:paddingHorizontal="10dp" android:layout_marginEnd="4dp"/>
+                <Button android:id="@+id/btn_mode_group_random" android:layout_width="wrap_content" android:layout_height="32dp" android:text="随机组" android:textSize="11sp" android:textColor="@color/mecha_armor" android:background="@drawable/card_metal" android:minWidth="0dp" android:paddingHorizontal="10dp" android:layout_marginEnd="8dp"/>
+
+                <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Group grid -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:id="@+id/layout_group_grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp"/>
+        </ScrollView>
+
+        <!-- Bottom play button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/panel_dark"
+            android:padding="8dp"
             android:gravity="center">
 
-            <ProgressBar
-                android:layout_width="48dp"
+            <Button
+                android:id="@+id/btn_start_listen"
+                android:layout_width="0dp"
                 android:layout_height="48dp"
-                android:indeterminateTint="#E3000F"/>
+                android:layout_weight="1"
+                android:text="▶ 开始播放"
+                android:textColor="@color/mecha_white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:background="@drawable/btn_primary"
+                android:letterSpacing="0.05"/>
+        </LinearLayout>
+    </LinearLayout>
 
+    <!-- Play interface -->
+    <LinearLayout
+        android:id="@+id/layout_play"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <!-- Progress bar -->
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="@style/AutoPlayProgress"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"/>
+
+        <!-- Control panel -->
+        <LinearLayout
+            android:id="@+id/control_panel"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp"
+            android:gravity="center_vertical"
+            android:background="@drawable/panel_dark">
+
+            <!-- Repeat count -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:text="正在加载词库..."
-                android:textColor="#000000"
-                android:textSize="14sp"/>
+                android:text="重复"
+                android:textColor="@color/mecha_armor"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:layout_marginEnd="2dp"/>
+
+            <LinearLayout
+                android:id="@+id/repeat_buttons2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginEnd="6dp"/>
+
+            <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/btn_fullscreen"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="大屏"
+                android:textColor="@color/mecha_white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:background="@drawable/btn_accent"
+                android:paddingHorizontal="12dp"
+                android:minWidth="60dp"
+                android:layout_marginEnd="6dp"
+                android:letterSpacing="0.05"/>
+
+            <!-- Play mode -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="模式"
+                android:textColor="@color/mecha_armor"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:layout_marginEnd="2dp"/>
+
+            <LinearLayout
+                android:id="@+id/mode_buttons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginEnd="6dp"/>
+
+            <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/btn_play"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="▶ 播放"
+                android:textColor="@color/mecha_white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:background="@drawable/btn_primary"
+                android:paddingHorizontal="14dp"
+                android:minWidth="80dp"
+                android:letterSpacing="0.05"/>
+
+            <Button
+                android:id="@+id/btn_pause"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="⏸ 暂停"
+                android:textColor="@color/mecha_white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:background="@drawable/card_metal"
+                android:paddingHorizontal="14dp"
+                android:minWidth="80dp"
+                android:layout_marginStart="6dp"/>
+
+            <Button
+                android:id="@+id/btn_prev_word"
+                android:layout_width="40dp"
+                android:layout_height="36dp"
+                android:text="◀"
+                android:textColor="@color/mecha_white"
+                android:textSize="14sp"
+                android:background="@drawable/btn_accent"
+                android:padding="0dp"
+                android:layout_marginStart="6dp"/>
+
+            <Button
+                android:id="@+id/btn_next_word"
+                android:layout_width="40dp"
+                android:layout_height="36dp"
+                android:text="▶"
+                android:textColor="@color/mecha_white"
+                android:textSize="14sp"
+                android:background="@drawable/btn_accent"
+                android:padding="0dp"
+                android:layout_marginStart="6dp"/>
         </LinearLayout>
-    </FrameLayout>
+
+        <!-- Sticky word header -->
+        <LinearLayout
+            android:id="@+id/layout_sticky_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:background="@drawable/card_metal">
+
+            <TextView
+                android:id="@+id/tv_sticky_word"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/mecha_white"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:fontFamily="monospace"/>
+
+            <TextView
+                android:id="@+id/tv_sticky_phonetic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/mecha_armor"
+                android:textSize="14sp"
+                android:layout_marginTop="2dp"
+                android:fontFamily="monospace"/>
+
+            <TextView
+                android:id="@+id/tv_sticky_meaning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/mecha_gold"
+                android:textSize="18sp"
+                android:layout_marginTop="4dp"/>
+
+            <TextView
+                android:id="@+id/tv_sticky_subgroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/mecha_hud_cyan"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+        <!-- Content area -->
+        <ScrollView
+            android:id="@+id/scroll_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:id="@+id/content_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"/>
+        </ScrollView>
+    </LinearLayout>
 
 </LinearLayout>

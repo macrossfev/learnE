@@ -1,93 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E8E8E8">
+    android:orientation="vertical"
+    android:background="@color/mecha_hull">
 
-    <!-- 加载中 -->
+    <!-- ===== TOP HUD BAR ===== -->
+    <LinearLayout
+        android:id="@+id/layout_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="12dp"
+        android:gravity="center_vertical"
+        android:background="@drawable/panel_dark"
+        android:elevation="4dp">
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="◀ 返回"
+            android:textColor="@color/mecha_white"
+            android:textSize="12sp"
+            android:background="@drawable/btn_accent"
+            android:layout_marginEnd="8dp"
+            android:paddingHorizontal="12dp"
+            android:letterSpacing="0.05"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="学习模式"
+            android:textColor="@color/mecha_gold"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.08"
+            android:fontFamily="monospace"/>
+
+        <TextView
+            android:id="@+id/tv_progress_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/mecha_armor"
+            android:textSize="12sp"
+            android:fontFamily="monospace"/>
+    </LinearLayout>
+
+    <!-- ===== LOADING ===== -->
     <LinearLayout
         android:id="@+id/layout_loading"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
+        android:background="@color/mecha_hull"
         android:visibility="visible">
 
         <ProgressBar
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:indeterminateTint="#E3000F"/>
+            android:indeterminateTint="@color/mecha_gold"/>
 
         <TextView
-            android:id="@+id/tv_loading_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="正在加载词库..."
-            android:textColor="#000000"
-            android:textSize="16sp"/>
+            android:textColor="@color/mecha_armor"
+            android:textSize="14sp"
+            android:fontFamily="monospace"/>
     </LinearLayout>
 
-    <!-- 进度仪表盘 -->
+    <!-- ===== GROUP MAP ===== -->
     <LinearLayout
-        android:id="@+id/layout_dashboard"
+        android:id="@+id/layout_group_map"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="center"
         android:visibility="gone"
-        android:padding="24dp"
-        android:background="#E8E8E8">
+        android:background="@color/mecha_hull">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="学习进度"
-            android:textColor="#000000"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="24dp"/>
-
-        <!-- 统计卡片 -->
+        <!-- Progress stats panel -->
         <LinearLayout
-            android:id="@+id/layout_stats"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#FFFFFF"
-            android:padding="16dp"
-            android:layout_marginBottom="16dp">
-        </LinearLayout>
+            android:background="@drawable/panel_dark"
+            android:padding="12dp">
 
-        <Button
-            android:id="@+id/btn_start_learning"
-            android:layout_width="200dp"
-            android:layout_height="56dp"
-            android:text="开始学习"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:backgroundTint="#E3000F"
-            android:layout_marginTop="16dp"/>
-    </LinearLayout>
-
-    <!-- 主学习界面 -->
-    <LinearLayout
-        android:id="@+id/layout_main"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:visibility="gone">
-
-        <!-- 顶部栏：组选择 + 模式标签 -->
-        <LinearLayout
-            android:id="@+id/layout_top_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="8dp">
-
-            <!-- 模式标签 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -95,97 +100,154 @@
                 android:gravity="center_vertical">
 
                 <TextView
-                    android:id="@+id/tv_progress"
+                    android:id="@+id/tv_map_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1 / 30"
-                    android:textColor="#E3000F"
+                    android:text="学习进度"
+                    android:textColor="@color/mecha_gold"
                     android:textSize="16sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:letterSpacing="0.08"/>
 
                 <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
 
                 <TextView
-                    android:id="@+id/tv_step"
+                    android:id="@+id/tv_map_progress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="步骤 1/3"
-                    android:textColor="#808080"
-                    android:textSize="13sp"
-                    android:background="#FFFFFF"
-                    android:padding="6dp"
-                    android:layout_marginEnd="4dp"/>
+                    android:text="0 / 0"
+                    android:textColor="@color/mecha_hud_cyan"
+                    android:textSize="14sp"
+                    android:fontFamily="monospace"/>
             </LinearLayout>
 
-            <!-- 模式标签 + 组选择 -->
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="@style/AutoPlayProgress"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:layout_marginTop="8dp"/>
+
+            <!-- Stats row (dynamically populated) -->
             <LinearLayout
+                android:id="@+id/layout_stats_row"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:layout_marginTop="8dp">
-
-                <!-- 模式标签 -->
-                <LinearLayout
-                    android:id="@+id/layout_mode_tabs"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/btn_tab_learn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="36dp"
-                        android:text="学习"
-                        android:textSize="12sp"
-                        android:backgroundTint="#E3000F"
-                        android:minHeight="0dp"
-                        android:minWidth="0dp"/>
-
-                    <Button
-                        android:id="@+id/btn_tab_review"
-                        android:layout_width="wrap_content"
-                        android:layout_height="36dp"
-                        android:text="复习"
-                        android:textSize="12sp"
-                        android:backgroundTint="#808080"
-                        android:layout_marginStart="4dp"
-                        android:minHeight="0dp"
-                        android:minWidth="0dp"/>
-
-                    <Button
-                        android:id="@+id/btn_tab_wrong"
-                        android:layout_width="wrap_content"
-                        android:layout_height="36dp"
-                        android:text="错题本"
-                        android:textSize="12sp"
-                        android:backgroundTint="#808080"
-                        android:layout_marginStart="4dp"
-                        android:minHeight="0dp"
-                        android:minWidth="0dp"/>
-                </LinearLayout>
-
-                <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
-
-                <!-- 组选择 -->
-                <Spinner
-                    android:id="@+id/sp_group"
-                    android:layout_width="wrap_content"
-                    android:layout_height="36dp"
-                    android:layout_marginStart="8dp"/>
-            </LinearLayout>
+                android:layout_marginTop="8dp"/>
         </LinearLayout>
 
-        <!-- 进度条 -->
+        <!-- Group grid -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:id="@+id/layout_group_grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp"/>
+        </ScrollView>
+
+        <!-- Bottom action buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/panel_dark"
+            android:padding="8dp"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_start_learn"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="▶ 开始学习"
+                android:textColor="@color/mecha_white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:background="@drawable/btn_primary"
+                android:layout_marginEnd="4dp"
+                android:letterSpacing="0.05"/>
+
+            <Button
+                android:id="@+id/btn_start_review"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="▶ 开始复习"
+                android:textColor="@color/mecha_white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:background="@drawable/btn_accent"
+                android:layout_marginStart="4dp"
+                android:letterSpacing="0.05"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- ===== MAIN LEARN INTERFACE ===== -->
+    <LinearLayout
+        android:id="@+id/layout_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <!-- HUD progress bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:background="@drawable/panel_dark"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1 / 30"
+                android:textColor="@color/mecha_gold"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:fontFamily="monospace"/>
+
+            <!-- Step indicator -->
+            <TextView
+                android:id="@+id/tv_step"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="步骤 1/3"
+                android:textColor="@color/mecha_hud_cyan"
+                android:textSize="11sp"
+                android:fontFamily="monospace"
+                android:background="@color/mecha_panel"
+                android:padding="4dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="4dp"/>
+
+            <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
+
+            <Spinner
+                android:id="@+id/sp_group"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"/>
+        </LinearLayout>
+
+        <!-- Progress bar -->
         <ProgressBar
-            android:id="@+id/progress_bar"
-            style="?android:attr/progressBarStyleHorizontal"
+            android:id="@+id/progress_bar_learn"
+            style="@style/AutoPlayProgress"
             android:layout_width="match_parent"
             android:layout_height="4dp"
-            android:layout_marginHorizontal="16dp"
-            android:progressDrawable="@drawable/progress_gundam"/>
+            android:layout_marginHorizontal="12dp"/>
 
-        <!-- 主内容区 -->
+        <!-- Content area -->
         <ScrollView
             android:id="@+id/scroll_content"
             android:layout_width="match_parent"
@@ -201,49 +263,53 @@
                 android:padding="16dp"/>
         </ScrollView>
 
-        <!-- 底部按钮 -->
+        <!-- Bottom action buttons -->
         <LinearLayout
             android:id="@+id/layout_bottom_buttons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingHorizontal="16dp"
-            android:paddingBottom="16dp">
+            android:paddingHorizontal="12dp"
+            android:paddingBottom="12dp"
+            android:paddingTop="4dp">
 
             <Button
                 android:id="@+id/btn_prev"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
-                android:text="上一词"
-                android:textColor="#FFFFFF"
-                android:textSize="14sp"
+                android:text="◀ 上一词"
+                android:textColor="@color/mecha_white"
+                android:textSize="13sp"
                 android:textStyle="bold"
-                android:backgroundTint="#0039CB"
-                android:alpha="0.6"/>
+                android:background="@drawable/btn_accent"
+                android:alpha="0.6"
+                android:letterSpacing="0.03"/>
 
             <Button
                 android:id="@+id/btn_unfamiliar"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
-                android:layout_marginHorizontal="8dp"
+                android:layout_marginHorizontal="6dp"
                 android:text="标记"
-                android:textColor="#FFFFFF"
-                android:textSize="14sp"
+                android:textColor="@color/mecha_white"
+                android:textSize="13sp"
                 android:textStyle="bold"
-                android:backgroundTint="#0039CB"/>
+                android:background="@drawable/btn_gold"
+                android:letterSpacing="0.03"/>
 
             <Button
                 android:id="@+id/btn_next"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
-                android:text="已掌握"
-                android:textColor="#FFFFFF"
-                android:textSize="14sp"
+                android:text="已掌握 ▶"
+                android:textColor="@color/mecha_white"
+                android:textSize="13sp"
                 android:textStyle="bold"
-                android:backgroundTint="#E3000F"/>
+                android:background="@drawable/btn_primary"
+                android:letterSpacing="0.03"/>
         </LinearLayout>
     </LinearLayout>
 
-</FrameLayout>
+</LinearLayout>

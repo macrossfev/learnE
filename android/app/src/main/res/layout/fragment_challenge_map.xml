@@ -4,16 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#E8E8E8">
+    android:background="@color/mecha_hull">
 
-    <!-- Top bar -->
+    <!-- ===== TOP HUD BAR ===== -->
     <LinearLayout
         android:id="@+id/layout_top_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="#FFFFFF"
-        android:padding="12dp">
+        android:background="@drawable/panel_dark"
+        android:padding="12dp"
+        android:elevation="4dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,21 +26,24 @@
                 android:id="@+id/btn_back_to_plans"
                 android:layout_width="wrap_content"
                 android:layout_height="36dp"
-                android:text="返回"
-                android:textColor="#FFFFFF"
-                android:textSize="13sp"
-                android:backgroundTint="#808080"
+                android:text="◀ 返回"
+                android:textColor="@color/mecha_white"
+                android:textSize="12sp"
+                android:background="@drawable/btn_accent"
                 android:layout_marginEnd="8dp"
-                android:paddingHorizontal="12dp"/>
+                android:paddingHorizontal="12dp"
+                android:letterSpacing="0.05"/>
 
             <TextView
                 android:id="@+id/tv_plan_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="学习"
-                android:textColor="#E3000F"
+                android:textColor="@color/mecha_gold"
                 android:textSize="18sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.08"/>
 
             <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
 
@@ -48,17 +52,32 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="连续0天"
-                android:textColor="#FF9800"
-                android:textSize="13sp"
+                android:textColor="@color/mecha_hud_orange"
+                android:textSize="12sp"
+                android:fontFamily="monospace"
                 android:layout_marginEnd="8dp"/>
+
+            <Button
+                android:id="@+id/btn_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:text="进度"
+                android:textColor="@color/mecha_white"
+                android:textSize="11sp"
+                android:background="@drawable/btn_accent"
+                android:layout_marginEnd="8dp"
+                android:paddingHorizontal="8dp"
+                android:minWidth="0dp"
+                android:letterSpacing="0.05"/>
 
             <TextView
                 android:id="@+id/tv_review_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0 组待复习"
-                android:textColor="#FF9800"
-                android:textSize="13sp"
+                android:textColor="@color/mecha_hud_orange"
+                android:textSize="12sp"
+                android:fontFamily="monospace"
                 android:layout_marginEnd="8dp"/>
 
             <TextView
@@ -66,20 +85,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0 / 0"
-                android:textColor="#808080"
-                android:textSize="14sp"/>
+                android:textColor="@color/mecha_hud_cyan"
+                android:textSize="13sp"
+                android:fontFamily="monospace"/>
         </LinearLayout>
 
         <ProgressBar
             android:id="@+id/progress_bar"
-            style="?android:attr/progressBarStyleHorizontal"
+            style="@style/AutoPlayProgress"
             android:layout_width="match_parent"
-            android:layout_height="6dp"
-            android:layout_marginTop="8dp"
-            android:progressDrawable="@drawable/progress_gundam"/>
+            android:layout_height="8dp"
+            android:layout_marginTop="8dp"/>
     </LinearLayout>
 
-    <!-- Map grid -->
+    <!-- ===== MAP GRID ===== -->
     <ScrollView
         android:id="@+id/scroll_map"
         android:layout_width="match_parent"
@@ -95,12 +114,12 @@
             android:padding="12dp"/>
     </ScrollView>
 
-    <!-- Achievements bar -->
+    <!-- ===== ACHIEVEMENTS BAR ===== -->
     <HorizontalScrollView
         android:id="@+id/layout_achievements"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
+        android:background="@drawable/panel_dark"
         android:padding="8dp"
         android:visibility="gone">
 
@@ -111,27 +130,15 @@
             android:orientation="horizontal"/>
     </HorizontalScrollView>
 
-    <!-- Bottom action buttons -->
+    <!-- ===== BOTTOM ACTION BUTTONS ===== -->
     <LinearLayout
         android:id="@+id/layout_bottom_actions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="#FFFFFF"
+        android:background="@drawable/panel_dark"
         android:padding="8dp"
         android:gravity="center">
-
-        <Button
-            android:id="@+id/btn_review_all"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            android:text="全部复习"
-            android:textColor="#FFFFFF"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:backgroundTint="#FF9800"
-            android:layout_marginEnd="4dp"/>
 
         <Button
             android:id="@+id/btn_wrong"
@@ -139,20 +146,34 @@
             android:layout_height="48dp"
             android:layout_weight="1"
             android:text="错题本"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/mecha_white"
             android:textSize="14sp"
             android:textStyle="bold"
-            android:backgroundTint="#F44336"
-            android:layout_marginStart="4dp"/>
+            android:background="@drawable/btn_primary"
+            android:layout_marginEnd="4dp"
+            android:letterSpacing="0.05"/>
+
+        <Button
+            android:id="@+id/btn_starred"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="★ 星标本"
+            android:textColor="@color/mecha_white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:background="@drawable/btn_gold"
+            android:layout_marginStart="4dp"
+            android:letterSpacing="0.05"/>
     </LinearLayout>
 
-    <!-- Loading -->
+    <!-- ===== LOADING OVERLAY ===== -->
     <FrameLayout
         android:id="@+id/layout_loading"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"
-        android:background="#E8E8E8">
+        android:background="@color/mecha_hull">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -163,15 +184,16 @@
             <ProgressBar
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:indeterminateTint="#E3000F"/>
+                android:indeterminateTint="@color/mecha_gold"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="正在加载..."
-                android:textColor="#000000"
-                android:textSize="16sp"/>
+                android:textColor="@color/mecha_armor"
+                android:textSize="14sp"
+                android:fontFamily="monospace"/>
         </LinearLayout>
     </FrameLayout>
 

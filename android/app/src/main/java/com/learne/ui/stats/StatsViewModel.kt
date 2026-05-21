@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.learne.data.repository.CorpusRepository
 import com.learne.data.repository.ProgressRepository
-import kotlinx.coroutines.flow.collect
+import com.learne.data.repository.UserManager
 import kotlinx.coroutines.launch
 
 class StatsViewModel(
@@ -31,14 +31,10 @@ class StatsViewModel(
             val words = corpusRepository.loadWords(corpusId)
             _totalWords.value = words.size
 
-            progressRepository.getLearnedCount(corpusId).collect {
-                _learnedCount.value = it
-            }
+            _learnedCount.value = progressRepository.getLearnedCount(UserManager.userId, corpusId)
         }
         viewModelScope.launch {
-            progressRepository.getMasteredCount(corpusId).collect {
-                _masteredCount.value = it
-            }
+            _masteredCount.value = progressRepository.getMasteredCount(UserManager.userId, corpusId)
         }
     }
 }

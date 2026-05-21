@@ -3,27 +3,29 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E8E8E8"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/mecha_hull">
 
-    <!-- 顶部栏 -->
+    <!-- Top HUD bar -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:orientation="horizontal"
         android:paddingHorizontal="12dp"
-        android:paddingVertical="6dp"
         android:gravity="center_vertical"
-        android:background="#FFFFFF">
+        android:background="@drawable/panel_dark"
+        android:elevation="4dp">
 
         <TextView
             android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="闪卡模式"
-            android:textColor="#E3000F"
+            android:textColor="@color/mecha_gold"
             android:textSize="16sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.08"/>
 
         <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
 
@@ -32,8 +34,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="英→中"
-            android:textColor="#0039CB"
-            android:textSize="13sp"
+            android:textColor="@color/mecha_hud_cyan"
+            android:textSize="12sp"
+            android:fontFamily="monospace"
             android:padding="4dp"
             android:layout_marginEnd="8dp"/>
 
@@ -42,21 +45,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="1 / 50"
-            android:textColor="#808080"
-            android:textSize="13sp"
+            android:textColor="@color/mecha_armor"
+            android:textSize="12sp"
+            android:fontFamily="monospace"
             android:padding="4dp"/>
     </LinearLayout>
 
-    <!-- 进度条 -->
+    <!-- Progress bar -->
     <ProgressBar
         android:id="@+id/progress_bar"
-        style="?android:attr/progressBarStyleHorizontal"
+        style="@style/AutoPlayProgress"
         android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:progress="0"
-        android:progressDrawable="@drawable/progress_gundam"/>
+        android:layout_height="4dp"/>
 
-    <!-- 主内容区 -->
+    <!-- Main content -->
     <LinearLayout
         android:id="@+id/content_container"
         android:layout_width="match_parent"
@@ -66,7 +68,7 @@
         android:padding="16dp"
         android:gravity="center">
 
-        <!-- 闪卡 -->
+        <!-- Flashcard -->
         <FrameLayout
             android:id="@+id/card_container"
             android:layout_width="match_parent"
@@ -74,14 +76,14 @@
             android:layout_weight="1"
             android:layout_marginBottom="16dp">
 
-            <!-- 正面 -->
+            <!-- Front -->
             <LinearLayout
                 android:id="@+id/card_front"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:background="#FFFFFF"
+                android:background="@drawable/card_metal"
                 android:padding="24dp"
                 android:elevation="4dp">
 
@@ -90,10 +92,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
-                    android:textColor="#000000"
+                    android:textColor="@color/mecha_white"
                     android:textSize="32sp"
                     android:textStyle="bold"
                     android:gravity="center"
+                    android:fontFamily="monospace"
                     android:layout_marginBottom="8dp"/>
 
                 <TextView
@@ -101,18 +104,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="点击翻转查看答案"
-                    android:textColor="#CCCCCC"
-                    android:textSize="14sp"/>
+                    android:textColor="@color/mecha_armor_dark"
+                    android:textSize="13sp"
+                    android:fontFamily="monospace"/>
             </LinearLayout>
 
-            <!-- 背面 -->
+            <!-- Back -->
             <LinearLayout
                 android:id="@+id/card_back"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:background="#FFF8F0"
+                android:background="@drawable/panel_dark"
                 android:padding="24dp"
                 android:elevation="4dp"
                 android:visibility="gone">
@@ -122,9 +126,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
-                    android:textColor="#0039CB"
+                    android:textColor="@color/mecha_hud_cyan"
                     android:textSize="24sp"
                     android:textStyle="bold"
+                    android:fontFamily="monospace"
                     android:layout_marginBottom="4dp"/>
 
                 <TextView
@@ -132,7 +137,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
-                    android:textColor="#808080"
+                    android:textColor="@color/mecha_armor"
                     android:textSize="16sp"
                     android:layout_marginBottom="12dp"/>
 
@@ -141,31 +146,86 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
-                    android:textColor="#E3000F"
+                    android:textColor="@color/mecha_gold"
                     android:textSize="22sp"
                     android:gravity="center"
-                    android:layout_marginBottom="16dp"/>
+                    android:layout_marginBottom="12dp"/>
+
+                <TextView
+                    android:id="@+id/tv_card_back_phrase_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="词组"
+                    android:textColor="@color/mecha_hud_cyan"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:visibility="gone"
+                    android:layout_marginTop="8dp"/>
+
+                <TextView
+                    android:id="@+id/tv_card_back_phrase"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/mecha_hud_cyan"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:id="@+id/tv_card_back_phrase_meaning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/mecha_armor"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_marginBottom="12dp"/>
+
+                <TextView
+                    android:id="@+id/tv_card_back_example_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="例句"
+                    android:textColor="@color/mecha_hud_cyan"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:visibility="gone"
+                    android:layout_marginTop="8dp"/>
 
                 <TextView
                     android:id="@+id/tv_card_back_example"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
-                    android:textColor="#555555"
+                    android:textColor="@color/mecha_armor_light"
                     android:textSize="14sp"
                     android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/tv_card_back_example_meaning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/mecha_armor"
+                    android:textSize="13sp"
+                    android:gravity="center"
+                    android:layout_marginTop="4dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="选择你的掌握程度"
-                    android:textColor="#CCCCCC"
-                    android:textSize="14sp"
+                    android:textColor="@color/mecha_armor_dark"
+                    android:textSize="13sp"
+                    android:fontFamily="monospace"
                     android:layout_marginTop="24dp"/>
             </LinearLayout>
         </FrameLayout>
 
-        <!-- 自评按钮（背面可见时显示） -->
+        <!-- Rating buttons -->
         <LinearLayout
             android:id="@+id/layout_rating"
             android:layout_width="match_parent"
@@ -180,9 +240,10 @@
                 android:layout_height="48dp"
                 android:layout_weight="1"
                 android:text="不认识"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/mecha_white"
                 android:textSize="14sp"
-                android:backgroundTint="#F44336"/>
+                android:background="@drawable/btn_primary"
+                android:letterSpacing="0.05"/>
 
             <Button
                 android:id="@+id/btn_vague"
@@ -190,10 +251,11 @@
                 android:layout_height="48dp"
                 android:layout_weight="1"
                 android:text="模糊"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/mecha_white"
                 android:textSize="14sp"
-                android:backgroundTint="#FF9800"
-                android:layout_marginHorizontal="8dp"/>
+                android:background="@drawable/btn_gold"
+                android:layout_marginHorizontal="8dp"
+                android:letterSpacing="0.05"/>
 
             <Button
                 android:id="@+id/btn_known"
@@ -201,42 +263,44 @@
                 android:layout_height="48dp"
                 android:layout_weight="1"
                 android:text="认识"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/mecha_white"
                 android:textSize="14sp"
-                android:backgroundTint="#4CAF50"/>
+                android:background="@drawable/btn_accent"
+                android:letterSpacing="0.05"/>
         </LinearLayout>
     </LinearLayout>
 
-    <!-- 底部控制栏 -->
+    <!-- Bottom control bar -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:orientation="horizontal"
         android:paddingHorizontal="8dp"
         android:gravity="center_vertical"
-        android:background="#F5F5F5">
+        android:background="@drawable/panel_dark">
 
         <Button
             android:id="@+id/btn_prev"
             android:layout_width="40dp"
             android:layout_height="36dp"
             android:text="◀"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/mecha_white"
             android:textSize="14sp"
-            android:backgroundTint="#0039CB"
+            android:background="@drawable/btn_accent"
             android:padding="0dp"/>
 
         <Button
             android:id="@+id/btn_play"
             android:layout_width="wrap_content"
             android:layout_height="36dp"
-            android:text="播放"
-            android:textColor="#FFFFFF"
-            android:textSize="13sp"
+            android:text="▶ 播放"
+            android:textColor="@color/mecha_white"
+            android:textSize="12sp"
             android:textStyle="bold"
-            android:backgroundTint="#E3000F"
-            android:paddingHorizontal="16dp"
-            android:layout_marginStart="8dp"/>
+            android:background="@drawable/btn_primary"
+            android:paddingHorizontal="14dp"
+            android:layout_marginStart="8dp"
+            android:letterSpacing="0.05"/>
 
         <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
 
@@ -245,29 +309,31 @@
             android:layout_width="wrap_content"
             android:layout_height="36dp"
             android:text="翻转"
-            android:textColor="#FFFFFF"
-            android:textSize="13sp"
-            android:backgroundTint="#0039CB"
-            android:paddingHorizontal="16dp"/>
+            android:textColor="@color/mecha_white"
+            android:textSize="12sp"
+            android:background="@drawable/btn_gold"
+            android:paddingHorizontal="14dp"
+            android:letterSpacing="0.05"/>
 
         <Button
             android:id="@+id/btn_next"
             android:layout_width="40dp"
             android:layout_height="36dp"
             android:text="▶"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/mecha_white"
             android:textSize="14sp"
-            android:backgroundTint="#0039CB"
+            android:background="@drawable/btn_accent"
             android:padding="0dp"
             android:layout_marginStart="8dp"/>
     </LinearLayout>
 
-    <!-- 加载指示器 -->
+    <!-- Loading -->
     <FrameLayout
         android:id="@+id/layout_loading"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone">
+        android:visibility="gone"
+        android:background="@color/mecha_hull">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -278,15 +344,16 @@
             <ProgressBar
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:indeterminateTint="#E3000F"/>
+                android:indeterminateTint="@color/mecha_gold"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:text="正在加载词库..."
-                android:textColor="#000000"
-                android:textSize="14sp"/>
+                android:textColor="@color/mecha_armor"
+                android:textSize="14sp"
+                android:fontFamily="monospace"/>
         </LinearLayout>
     </FrameLayout>
 

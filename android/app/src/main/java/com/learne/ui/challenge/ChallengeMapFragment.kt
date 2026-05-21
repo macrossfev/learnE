@@ -9,10 +9,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.FrameLayout
 import android.widget.HorizontalScrollView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.learne.R
@@ -31,10 +33,17 @@ import kotlin.math.ceil
 
 class ChallengeMapFragment : Fragment() {
 
+    fun refreshMap() {
+        buildMap()
+    }
+
     companion object {
-        fun newInstance(planIndex: Int): ChallengeMapFragment {
+        fun newInstance(planIndex: Int, mode: String = "learn"): ChallengeMapFragment {
             return ChallengeMapFragment().apply {
-                arguments = Bundle().apply { putInt("planIndex", planIndex) }
+                arguments = Bundle().apply {
+                    putInt("planIndex", planIndex)
+                    putString("navMode", mode)
+                }
             }
         }
     }
@@ -43,6 +52,7 @@ class ChallengeMapFragment : Fragment() {
     private val binding get() = _binding!!
 
     private var planIndex: Int = 0
+    private var navMode: String = "learn" // "learn", "listen", "review", "quiz"
     private var planSave: UserPreferencesRepository.PlanSave? = null
     private var allWords: List<Word> = emptyList()
     private var totalGroups: Int = 0
@@ -55,10 +65,11 @@ class ChallengeMapFragment : Fragment() {
     private lateinit var studyRepo: StudyRepository
 
     // Colors
-    private val COLOR_NOT_STUDIED = 0xFFF44336.toInt()   // Red
-    private val COLOR_NEEDS_QUIZ = 0xFFFFC107.toInt()     // Yellow (studied, not tested)
-    private val COLOR_QUIZ_FAILED = 0xFFFF9800.toInt()    // Orange (quiz failed)
-    private val COLOR_COMPLETED = 0xFF4CAF50.toInt()      // Green (quiz passed)
+    private val COLOR_NOT_STUDIED = 0xFF9E9E9E.toInt()    // Gray (not studied)
+    private val COLOR_NEEDS_QUIZ = 0xFFFFC107.toInt()      // Yellow (studied, not tested)
+    private val COLOR_QUIZ_FAILED = 0xFFFF9800.toInt()     // Orange (quiz failed)
+    private val COLOR_REVIEW_DUE = 0xFFE3000F.toInt()      // Red (review due, highest priority)
+    private val COLOR_COMPLETED = 0xFF4CAF50.toInt()       // Green (quiz passed 100%)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -73,12 +84,14 @@ class ChallengeMapFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         planIndex = arguments?.getInt("planIndex", 0) ?: 0
+        navMode = arguments?.getString("navMode", "learn") ?: "learn"
         studyRepo = StudyRepository(requireContext())
 
         binding.btnBackToPlans.setOnClickListener { navigateBackToStudyPlan() }
         binding.tvPlanName.setOnClickListener { showRenameDialog() }
-        binding.btnReviewAll.setOnClickListener { reviewAllPending() }
         binding.btnWrong.setOnClickListener { enterWrongMode() }
+        binding.btnStarred.setOnClickListener { enterStarredMode() }
+        binding.btnProgress.setOnClickListener { showGroupProgress() }
 
         loadPlanAndWords()
     }
@@ -165,7 +178,7 @@ class ChallengeMapFragment : Fragment() {
         val totalRows = ceil(totalGroups.toDouble() / groupsPerRow).toInt()
 
         for (row in 0 until totalRows) {
-            val rowLayout = LinearLayout(requireContext()).apply {
+            var rowLayout = LinearLayout(requireContext()).apply {
                 orientation = LinearLayout.HORIZONTAL
                 gravity = Gravity.CENTER_HORIZONTAL
                 layoutParams = LinearLayout.LayoutParams(
@@ -182,8 +195,10 @@ class ChallengeMapFragment : Fragment() {
                 val quizPassed = quizPassedGroups.contains(groupIndex)
                 val quizFailed = quizFailedGroups.contains(groupIndex)
 
+                val hasReview = groupHasReview(groupIndex)
+
                 val color = when {
-                    !isStudied -> COLOR_NOT_STUDIED
+                    hasReview -> COLOR_REVIEW_DUE
                     quizPassed -> COLOR_COMPLETED
                     quizFailed -> COLOR_QUIZ_FAILED
                     isStudied -> COLOR_NEEDS_QUIZ
@@ -196,9 +211,7 @@ class ChallengeMapFragment : Fragment() {
                     else -> ""
                 }
 
-                val frameLayout = LinearLayout(requireContext()).apply {
-                    orientation = LinearLayout.VERTICAL
-                    gravity = Gravity.CENTER
+                val frameLayout = FrameLayout(requireContext()).apply {
                     val size = dip(56)
                     layoutParams = LinearLayout.LayoutParams(size, size).apply {
                         marginEnd = dip(6)
@@ -210,9 +223,13 @@ class ChallengeMapFragment : Fragment() {
                         text = "${groupIndex + 1}"
                         textSize = 14f
                         setBackgroundColor(color)
-                        setTextColor(0xFFFFFFFF.toInt())
+                        setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
                         if (showIcon.isNotEmpty()) setTypeface(null, android.graphics.Typeface.BOLD)
                         elevation = 4f
+                        layoutParams = FrameLayout.LayoutParams(
+                            FrameLayout.LayoutParams.MATCH_PARENT,
+                            FrameLayout.LayoutParams.MATCH_PARENT
+                        )
                         setOnClickListener {
                             handleGroupClick(groupIndex, isStudied, quizPassed, quizFailed)
                         }
@@ -228,29 +245,27 @@ class ChallengeMapFragment : Fragment() {
                         addView(TextView(requireContext()).apply {
                             text = showIcon
                             textSize = 14f
-                            setTextColor(0xFFFFFFFF.toInt())
+                            setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
                             gravity = Gravity.CENTER
                             setBackgroundColor(iconBg)
-                            layoutParams = LinearLayout.LayoutParams(dip(20), dip(20)).apply {
+                            layoutParams = FrameLayout.LayoutParams(dip(20), dip(20)).apply {
                                 gravity = Gravity.TOP or Gravity.END
                             }
                         })
                     }
 
-                    // Review countdown badge: shows number of words due for review in this group
+                    // Review countdown badge
                     if (isStudied) {
                         val reviewCount = groupReviewWordCount(groupIndex)
                         if (reviewCount > 0) {
                             addView(TextView(requireContext()).apply {
                                 text = "$reviewCount"
                                 textSize = 9f
-                                setTextColor(0xFFFFFFFF.toInt())
+                                setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
                                 gravity = Gravity.CENTER
                                 setBackgroundColor(0xFFE65100.toInt())
                                 setPadding(dip(2), 0, dip(2), 0)
-                                layoutParams = LinearLayout.LayoutParams(
-                                    dip(16), dip(14)
-                                ).apply {
+                                layoutParams = FrameLayout.LayoutParams(dip(16), dip(14)).apply {
                                     topMargin = dip(2)
                                     gravity = Gravity.BOTTOM or Gravity.CENTER_HORIZONTAL
                                 }
@@ -261,12 +276,21 @@ class ChallengeMapFragment : Fragment() {
 
                 rowLayout.addView(frameLayout)
 
-            // Milestone separator after every 50 groups - add as separate row
+            // Milestone separator after every 50 groups
             if ((groupIndex + 1) % 50 == 0 && groupIndex + 1 < totalGroups) {
+                binding.layoutMapGrid.addView(rowLayout)
+                rowLayout = LinearLayout(requireContext()).apply {
+                    orientation = LinearLayout.HORIZONTAL
+                    gravity = Gravity.CENTER_HORIZONTAL
+                    layoutParams = LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                    ).apply { bottomMargin = dip(8) }
+                }
                 binding.layoutMapGrid.addView(TextView(requireContext()).apply {
                     text = "🏁 目标 ${groupIndex + 1} 词已达成"
                     textSize = 12f
-                    setTextColor(0xFFE3000F.toInt())
+                    setTextColor(ContextCompat.getColor(requireContext(), R.color.primary))
                     gravity = Gravity.CENTER_HORIZONTAL
                     layoutParams = LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.MATCH_PARENT,
@@ -280,6 +304,19 @@ class ChallengeMapFragment : Fragment() {
         }
 
         binding.layoutMapGrid.addView(rowLayout)
+
+        // Auto-scroll to first uncompleted group
+        val firstUncompletedRow = (0 until totalGroups).firstOrNull { !completedGroups.contains(it) }
+        if (firstUncompletedRow != null) {
+            val targetRow = firstUncompletedRow / groupsPerRow
+            binding.scrollMap.postDelayed({
+                if (targetRow < binding.layoutMapGrid.childCount) {
+                    val rowView = binding.layoutMapGrid.getChildAt(targetRow)
+                    val scrollY = rowView.top - binding.scrollMap.height / 3
+                    binding.scrollMap.smoothScrollTo(0, maxOf(0, scrollY))
+                }
+            }, 300)
+        }
         }
     }
 
@@ -323,46 +360,41 @@ class ChallengeMapFragment : Fragment() {
     private fun handleGroupClick(groupIndex: Int, isStudied: Boolean, quizPassed: Boolean, quizFailed: Boolean) {
         val plan = planSave ?: return
 
-        when {
-            !isStudied -> {
-                // Not studied yet → enter LEARN mode
-                enterLearnFromGroup(groupIndex)
-            }
-            quizPassed -> {
-                // Already passed → ask if retest
-                AlertDialog.Builder(requireContext())
-                    .setTitle("组 ${groupIndex + 1} 已通过")
-                    .setMessage("要重新考试吗？")
-                    .setPositiveButton("考试") { _, _ -> launchQuiz(groupIndex) }
-                    .setNegativeButton("取消", null)
-                    .show()
-            }
-            quizFailed -> {
-                // Failed → retest or relearn
-                AlertDialog.Builder(requireContext())
-                    .setTitle("组 ${groupIndex + 1} 未通过")
-                    .setMessage("上次考试未通过，要再考一次还是重新学习？")
-                    .setPositiveButton("再考一次") { _, _ -> launchQuiz(groupIndex) }
-                    .setNeutralButton("重新学习") { _, _ -> enterLearnFromGroup(groupIndex) }
-                    .setNegativeButton("取消", null)
-                    .show()
-            }
-            else -> {
-                // Studied but not tested → go to quiz
-                launchQuiz(groupIndex)
-            }
-        }
-    }
-
-    private fun enterLearnFromGroup(groupIndex: Int) {
-        val plan = planSave ?: return
-
         UserPreferencesRepository.planCorpusId = plan.corpusId
         UserPreferencesRepository.planGroupSize = plan.groupSize
         UserPreferencesRepository.planCurrentGroupIndex = groupIndex
         UserPreferencesRepository.planCurrentWordIndex = 0
 
+        when (navMode) {
+            "learn" -> enterLearnMode(groupIndex)
+            "listen" -> enterListenMode(groupIndex)
+            "review" -> enterReviewMode(groupIndex)
+            "quiz" -> {
+                if (isStudied) {
+                    launchQuiz(groupIndex)
+                } else {
+                    Toast.makeText(context, "请先学习该组后再考试", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+    }
+
+    private fun enterLearnMode(groupIndex: Int) {
+        val plan = planSave ?: return
         val fragment = InteractiveLearnFragment.newInstance(plan.corpusId, InteractiveLearnFragment.Mode.LEARN, planIndex, groupIndex, isGuided = true)
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, fragment, "challenge_map")
+            .addToBackStack("challenge_map")
+            .commit()
+    }
+
+    private fun enterListenMode(groupIndex: Int) {
+        val plan = planSave ?: return
+        UserPreferencesRepository.planCorpusId = plan.corpusId
+        UserPreferencesRepository.planGroupSize = plan.groupSize
+        UserPreferencesRepository.planCurrentGroupIndex = groupIndex
+        UserPreferencesRepository.planCurrentWordIndex = 0
+        val fragment = com.learne.ui.listen.ListenReadFragment.newInstance(plan.corpusId, groupIndex)
         parentFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, fragment)
             .addToBackStack("challenge_map")
@@ -373,16 +405,16 @@ class ChallengeMapFragment : Fragment() {
         val plan = planSave ?: return
         val fragment = QuizFragment.newInstance(plan.corpusId, groupIndex, planIndex)
         parentFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, fragment)
+            .replace(R.id.fragment_container, fragment, "challenge_map")
             .addToBackStack("challenge_map")
             .commit()
     }
 
-    private fun reviewAllPending() {
+    private fun enterReviewMode(groupIndex: Int) {
         val plan = planSave ?: return
-        val fragment = InteractiveLearnFragment.newInstance(plan.corpusId, InteractiveLearnFragment.Mode.REVIEW, planIndex, isGuided = true)
+        val fragment = InteractiveLearnFragment.newInstance(plan.corpusId, InteractiveLearnFragment.Mode.REVIEW, planIndex, groupIndex, isGuided = true)
         parentFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, fragment)
+            .replace(R.id.fragment_container, fragment, "challenge_map")
             .addToBackStack("challenge_map")
             .commit()
     }
@@ -391,13 +423,75 @@ class ChallengeMapFragment : Fragment() {
         val plan = planSave ?: return
         val fragment = InteractiveLearnFragment.newInstance(plan.corpusId, InteractiveLearnFragment.Mode.WRONG, planIndex, isGuided = true)
         parentFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, fragment)
+            .replace(R.id.fragment_container, fragment, "challenge_map")
             .addToBackStack("challenge_map")
             .commit()
     }
 
+    private fun enterStarredMode() {
+        val plan = planSave ?: return
+        val fragment = InteractiveLearnFragment.newInstance(plan.corpusId, InteractiveLearnFragment.Mode.STARRED, planIndex, isGuided = true)
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, fragment, "challenge_map")
+            .addToBackStack("challenge_map")
+            .commit()
+    }
+
+    private fun showGroupProgress() {
+        val plan = planSave ?: return
+        val dp16 = dip(16)
+        val dp8 = dip(8)
+        val dialogView = LinearLayout(requireContext()).apply {
+            orientation = LinearLayout.VERTICAL
+            setPadding(dp16, dp16, dp16, dp16)
+
+            val totalGroups = ceil(plan.totalWords.toDouble() / plan.groupSize).toInt()
+            val completed = completedGroups.size
+
+            addView(TextView(requireContext()).apply {
+                text = "总组数: $totalGroups"
+                textSize = 15f
+                setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+                setPadding(0, dp8, 0, 0)
+            })
+            addView(TextView(requireContext()).apply {
+                text = "已学: $completed 组"
+                textSize = 15f
+                setTextColor(ContextCompat.getColor(requireContext(), R.color.status_success))
+                setPadding(0, dp8, 0, 0)
+            })
+            addView(TextView(requireContext()).apply {
+                text = "未学: ${totalGroups - completed} 组"
+                textSize = 15f
+                setTextColor(ContextCompat.getColor(requireContext(), R.color.text_hint))
+                setPadding(0, dp8, 0, 0)
+            })
+            addView(TextView(requireContext()).apply {
+                text = "通过考试: ${quizPassedGroups.size} 组"
+                textSize = 15f
+                setTextColor(ContextCompat.getColor(requireContext(), R.color.accent))
+                setPadding(0, dp8, 0, 0)
+            })
+
+            if (completed > 0) {
+                addView(TextView(requireContext()).apply {
+                    text = "已完成组: ${completedGroups.sorted().joinToString(", ") { "${it + 1}" }}"
+                    textSize = 13f
+                    setTextColor(ContextCompat.getColor(requireContext(), R.color.accent))
+                    setPadding(0, dp16, 0, 0)
+                })
+            }
+        }
+
+        AlertDialog.Builder(requireContext())
+            .setTitle("学习进度")
+            .setView(dialogView)
+            .setPositiveButton("确定", null)
+            .show()
+    }
+
     private fun navigateBackToStudyPlan() {
-        activity?.finish()
+        parentFragmentManager.popBackStack()
     }
 
     private fun showRenameDialog() {
@@ -454,7 +548,7 @@ class ChallengeMapFragment : Fragment() {
         return TextView(requireContext()).apply {
             text = if (a.unlocked) a.title else "??"
             textSize = 11f
-            setTextColor(if (a.unlocked) 0xFFE3000F.toInt() else 0xFFCCCCCC.toInt())
+            setTextColor(if (a.unlocked) ContextCompat.getColor(requireContext(), R.color.primary) else ContextCompat.getColor(requireContext(), R.color.gundam_gray))
             gravity = Gravity.CENTER
             setPadding(dip(8), dip(4), dip(8), dip(4))
             layoutParams = LinearLayout.LayoutParams(

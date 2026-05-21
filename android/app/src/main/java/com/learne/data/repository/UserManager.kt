@@ -8,6 +8,7 @@ object UserManager {
     private const val KEY_USER_ID = "user_id"
     private const val KEY_LOGGED_IN = "logged_in"
 
+    @Volatile
     private var prefs: android.content.SharedPreferences? = null
 
     fun init(context: Context) {
@@ -49,5 +50,7 @@ object UserManager {
             remove(KEY_USER_ID)
             putBoolean(KEY_LOGGED_IN, false)
         }
+        // Clear all learning data so new user starts fresh
+        UserPreferencesRepository.clearAll()
     }
 }

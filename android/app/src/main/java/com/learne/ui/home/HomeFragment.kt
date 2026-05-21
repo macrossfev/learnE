@@ -10,19 +10,36 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.learne.data.model.Corpus
 import com.learne.data.repository.CorpusLoader
+import com.learne.data.repository.StudyRepository
+import com.learne.data.repository.UserManager
 import com.learne.data.repository.UserPreferencesRepository
 import com.learne.databinding.FragmentHomeBinding
-import android.widget.RadioGroup
 import kotlinx.coroutines.launch
 
 object HomeNavigation {
     var startInteractiveLearn: ((String) -> Unit)? = null
     var startListenRead: ((String) -> Unit)? = null
+    var startReview: ((String) -> Unit)? = null
+    var startReviewDirect: ((String) -> Unit)? = null
+    var startWrongWords: ((String) -> Unit)? = null
+    var startQuiz: ((String) -> Unit)? = null
     var startDictation: ((String) -> Unit)? = null
     var startFlashcard: ((String) -> Unit)? = null
     var startDailyChallenge: (() -> Unit)? = null
     var startStudyStats: (() -> Unit)? = null
-    var startWrongWords: (() -> Unit)? = null
+    var startUserCenter: (() -> Unit)? = null
+
+    fun clear() {
+        startInteractiveLearn = null
+        startListenRead = null
+        startReview = null
+        startQuiz = null
+        startDictation = null
+        startFlashcard = null
+        startDailyChallenge = null
+        startStudyStats = null
+        startUserCenter = null
+    }
 }
 
 class HomeFragment : Fragment() {
@@ -41,6 +58,10 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
     private var corpusList: List<Corpus> = emptyList()
     private var currentCorpusId: String = "catti"
+    private var completedGroupCount: Int = 0
+    private var reviewWordCount: Int = 0
+    private var quizAvailableGroups: Set<Int> = emptySet()
+    private var planIndex: Int = -1 // 已学习但未考试的组
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -60,7 +81,12 @@ class HomeFragment : Fragment() {
             ?: UserPreferencesRepository.planCorpusId
             ?: UserPreferencesRepository.selectedCorpusId
 
+        planIndex = activity?.intent?.getIntExtra("planIndex", -1) ?: -1
+
         updatePlanDisplay()
+        loadCompletedGroupCount()
+        loadReviewAndQuizData()
+        updateContinueLearnButton()
 
         binding.btnInteractiveLearn.setOnClickListener {
             HomeNavigation.startInteractiveLearn?.invoke(currentCorpusId)
@@ -70,11 +96,41 @@ class HomeFragment : Fragment() {
             HomeNavigation.startListenRead?.invoke(currentCorpusId)
         }
 
+        binding.btnReview.setOnClickListener {
+            if (reviewWordCount == 0) {
+                Toast.makeText(context, "暂无需要复习的单词", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            HomeNavigation.startReview?.invoke(currentCorpusId)
+        }
+        binding.btnReviewDirect.setOnClickListener {
+            HomeNavigation.startReviewDirect?.invoke(currentCorpusId)
+        }
+        binding.btnWrongWords.setOnClickListener {
+            HomeNavigation.startWrongWords?.invoke(currentCorpusId)
+        }
+
+        binding.btnQuiz.setOnClickListener {
+            if (quizAvailableGroups.isEmpty()) {
+                Toast.makeText(context, "暂无需要考试的组，请先学习新组", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            HomeNavigation.startQuiz?.invoke(currentCorpusId)
+        }
+
         binding.btnDictation.setOnClickListener {
+            if (completedGroupCount == 0) {
+                Toast.makeText(context, "请先完成考试后再使用听写模式", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
             HomeNavigation.startDictation?.invoke(currentCorpusId)
         }
 
         binding.btnFlashcard.setOnClickListener {
+            if (completedGroupCount == 0) {
+                Toast.makeText(context, "请先完成考试后再使用闪卡模式", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
             HomeNavigation.startFlashcard?.invoke(currentCorpusId)
         }
 
@@ -86,21 +142,75 @@ class HomeFragment : Fragment() {
             HomeNavigation.startStudyStats?.invoke()
         }
 
-        binding.btnWrongWords.setOnClickListener {
-            HomeNavigation.startWrongWords?.invoke()
+        binding.btnUserCenter.setOnClickListener {
+            HomeNavigation.startUserCenter?.invoke()
         }
 
-        binding.btnChangePlan.setOnClickListener {
-            showPlanSelection()
+        binding.btnBackToMap.setOnClickListener {
+            parentFragmentManager.popBackStack()
         }
 
-        binding.btnNewPlan.setOnClickListener {
-            val intent = Intent(requireContext(), com.learne.ui.plan.StudyPlanActivity::class.java)
-            startActivity(intent)
-            activity?.finish()
+        binding.btnContinueLearn.setOnClickListener {
+            HomeNavigation.startInteractiveLearn?.invoke(currentCorpusId)
         }
 
         loadCorpusList()
+    }
+
+    private fun updateContinueLearnButton() {
+        lifecycleScope.launch {
+            val groupIdx = if (planIndex >= 0) {
+                val plan = UserPreferencesRepository.loadPlan(planIndex)
+                plan?.currentGroupIndex ?: 0
+            } else {
+                UserPreferencesRepository.getLearnPosition(currentCorpusId).first
+            }
+            if (groupIdx > 0) {
+                binding.btnContinueLearn.text = "继续学习 第${groupIdx + 1}组"
+                binding.btnContinueLearn.visibility = View.VISIBLE
+            } else {
+                binding.btnContinueLearn.visibility = View.GONE
+            }
+
+            // Today overview
+            val todayCount = UserPreferencesRepository.getTodayLearnedCount(currentCorpusId)
+            binding.tvGroupSize.text = "每组 ${UserPreferencesRepository.planGroupSize} 个单词 | 今日已学 $todayCount 词"
+        }
+    }
+
+    private fun loadCompletedGroupCount() {
+        lifecycleScope.launch {
+            completedGroupCount = if (planIndex >= 0) {
+                UserPreferencesRepository.getPlanCompletedGroups(planIndex).size
+            } else {
+                UserPreferencesRepository.getCompletedGroups(currentCorpusId).size
+            }
+        }
+    }
+
+    private fun loadReviewAndQuizData() {
+        val studyRepo = StudyRepository(requireContext())
+        lifecycleScope.launch {
+            try {
+                val reviewWords = studyRepo.getWordsDueForReview(currentCorpusId)
+                reviewWordCount = reviewWords.size
+            } catch (e: Exception) {
+                reviewWordCount = 0
+            }
+
+            val completed = if (planIndex >= 0) {
+                UserPreferencesRepository.getPlanCompletedGroups(planIndex)
+            } else {
+                UserPreferencesRepository.getCompletedGroups(currentCorpusId)
+            }
+            val passed = UserPreferencesRepository.getQuizPassedGroups(currentCorpusId)
+            quizAvailableGroups = (completed - passed).toSet()
+
+            // Update review/wrong buttons with counts
+            if (reviewWordCount > 0) {
+                binding.btnReviewDirect.text = "全量复习 ($reviewWordCount)"
+            }
+        }
     }
 
     private fun updatePlanDisplay() {
@@ -121,55 +231,6 @@ class HomeFragment : Fragment() {
                 corpusList = listOf(Corpus.CET4, Corpus.CATTI)
             }
         }
-    }
-
-    private fun showPlanSelection() {
-        val available = if (corpusList.isNotEmpty()) corpusList else listOf(Corpus.CET4, Corpus.CATTI)
-
-        val groupSizeInput = android.widget.EditText(requireContext()).apply {
-            hint = "每组单词数"
-            inputType = android.text.InputType.TYPE_CLASS_NUMBER
-            setText(UserPreferencesRepository.planGroupSize.toString())
-            setPadding(dip(16), dip(16), dip(16), dip(16))
-        }
-
-        var selectedIndex = available.indexOfFirst { it.id == currentCorpusId }.coerceAtLeast(0)
-
-        val radioGroup = RadioGroup(requireContext()).apply {
-            orientation = RadioGroup.VERTICAL
-            setPadding(dip(24), dip(16), dip(24), dip(8))
-            for ((i, corpus) in available.withIndex()) {
-                addView(android.widget.RadioButton(requireContext()).apply {
-                    id = View.generateViewId()
-                    text = "${corpus.name} - ${corpus.description}"
-                    textSize = 14f
-                    isChecked = (i == selectedIndex)
-                    setOnCheckedChangeListener { _, checked ->
-                        if (checked) selectedIndex = i
-                    }
-                })
-            }
-        }
-
-        val container = android.widget.LinearLayout(requireContext()).apply {
-            orientation = android.widget.LinearLayout.VERTICAL
-            addView(radioGroup)
-            addView(groupSizeInput)
-        }
-
-        android.app.AlertDialog.Builder(requireContext())
-            .setTitle("调整学习计划")
-            .setView(container)
-            .setPositiveButton("确定") { _, _ ->
-                val groupSize = groupSizeInput.text.toString().toIntOrNull()?.coerceIn(1, 200) ?: 30
-                val selected = available[selectedIndex]
-                UserPreferencesRepository.savePlan(selected.id, groupSize)
-                currentCorpusId = selected.id
-                updatePlanDisplay()
-                Toast.makeText(context, "已更新计划", Toast.LENGTH_SHORT).show()
-            }
-            .setNegativeButton("取消", null)
-            .show()
     }
 
     private fun getCorpusName(id: String): String {

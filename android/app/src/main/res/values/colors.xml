@@ -1,6 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- 高达风格配色 - 红白蓝金属质感 -->
+    <!-- ===== MECHA/GUNDAM COLOR SYSTEM ===== -->
+
+    <!-- Core Palette -->
+    <color name="mecha_white">#FFFFFF</color>
+    <color name="mecha_offwhite">#E8ECF0</color>
+    <color name="mecha_gold">#FFD700</color>
+    <color name="mecha_gold_dark">#C8A200</color>
+    <color name="mecha_blue">#0039CB</color>
+    <color name="mecha_blue_dark">#002D9E</color>
+    <color name="mecha_blue_light">#4A6FE3</color>
+    <color name="mecha_red">#E3000F</color>
+    <color name="mecha_red_dark">#B3000C</color>
+
+    <!-- Panel/Background Colors -->
+    <color name="mecha_panel">#16213E</color>
+    <color name="mecha_panel_dark">#0F3460</color>
+    <color name="mecha_hull">#1A1A2E</color>
+    <color name="mecha_armor">#C0C0C0</color>
+    <color name="mecha_armor_dark">#808080</color>
+    <color name="mecha_armor_light">#D8D8D8</color>
+
+    <!-- HUD/Glow Colors -->
+    <color name="mecha_hud_green">#4CAF50</color>
+    <color name="mecha_hud_orange">#FF9800</color>
+    <color name="mecha_hud_cyan">#00BCD4</color>
+    <color name="mecha_glow_red">#FF1A1A</color>
+    <color name="mecha_glow_gold">#FFE44D</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#C0C0C0</color>
+    <color name="text_dark">#1A1A2E</color>
+    <color name="text_highlight">#FFD700</color>
+    <color name="text_hud">#00BCD4</color>
+    <color name="text_warning">#FF9800</color>
+    <color name="text_hint">#808080</color>
+    <color name="mecha_divider">#2A2A4E</color>
+
+    <!-- Status Colors -->
+    <color name="status_success">#4CAF50</color>
+    <color name="status_warning">#FFD700</color>
+    <color name="status_error">#E3000F</color>
+    <color name="status_locked">#607D8B</color>
+    <color name="status_active">#00BCD4</color>
+
+    <!-- Legacy aliases (backward compat) -->
+    <color name="primary">#E3000F</color>
+    <color name="primary_dark">#B3000C</color>
+    <color name="primary_light">#FF1A1A</color>
+    <color name="accent">#0039CB</color>
+    <color name="accent_dark">#002D9E</color>
+    <color name="background">#E8ECF0</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="card_background">#F0F0F0</color>
     <color name="gundam_red">#E3000F</color>
     <color name="gundam_blue">#0039CB</color>
     <color name="gundam_white">#F0F0F0</color>
@@ -8,29 +61,6 @@
     <color name="gundam_gray">#808080</color>
     <color name="gundam_dark">#1A1A2E</color>
     <color name="gundam_metal">#C0C0C0</color>
-
-    <!-- App主题色 -->
-    <color name="primary">#E3000F</color>
-    <color name="primary_dark">#B3000C</color>
-    <color name="primary_light">#FF1A1A</color>
-    <color name="accent">#0039CB</color>
-    <color name="accent_dark">#002D9E</color>
-    <color name="background">#E8E8E8</color>
-    <color name="surface">#FFFFFF</color>
-    <color name="card_background">#F0F0F0</color>
-
-    <!-- 文字颜色 -->
-    <color name="text_primary">#FFFFFF</color>
-    <color name="text_secondary">#C0C0C0</color>
-    <color name="text_dark">#1A1A2E</color>
-    <color name="text_highlight">#FFD700</color>
-
-    <!-- 状态颜色 -->
-    <color name="success">#4CAF50</color>
-    <color name="warning">#FFD700</color>
-    <color name="error">#E3000F</color>
-
-    <!-- 通用颜色 -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="transparent">#00000000</color>

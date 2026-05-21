@@ -85,9 +85,20 @@ class FlashcardFragment : Fragment() {
         binding.layoutLoading.visibility = View.VISIBLE
         lifecycleScope.launch {
             try {
-                allWords = CorpusRepository(requireContext()).loadWords(currentCorpusId)
-                if (allWords.isEmpty()) {
+                val allCorpusWords = CorpusRepository(requireContext()).loadWords(currentCorpusId)
+                if (allCorpusWords.isEmpty()) {
                     Toast.makeText(context, "词库为空", Toast.LENGTH_SHORT).show()
+                    parentFragmentManager.popBackStack()
+                    return@launch
+                }
+                // Filter to only quiz-passed groups
+                val passedGroups = UserPreferencesRepository.getQuizPassedGroups(currentCorpusId)
+                allWords = allCorpusWords.mapIndexedNotNull { idx, word ->
+                    val groupIdx = idx / groupSize
+                    if (passedGroups.contains(groupIdx)) word else null
+                }
+                if (allWords.isEmpty()) {
+                    Toast.makeText(context, "暂无考试通过的单词，请先完成考试", Toast.LENGTH_SHORT).show()
                     parentFragmentManager.popBackStack()
                     return@launch
                 }
@@ -131,8 +142,32 @@ class FlashcardFragment : Fragment() {
         binding.tvCardBackPhonetic.text = word.phonetic
         binding.tvCardBackPhonetic.visibility = if (word.phonetic.isEmpty()) View.GONE else View.VISIBLE
         binding.tvCardBackMeaning.text = word.meaning
-        binding.tvCardBackExample.text = word.example
-        binding.tvCardBackExample.visibility = if (word.example.isEmpty()) View.GONE else View.VISIBLE
+
+        // Phrase
+        if (word.phrase.isNotEmpty()) {
+            binding.tvCardBackPhrase.text = word.phrase
+            binding.tvCardBackPhrase.visibility = View.VISIBLE
+            binding.tvCardBackPhraseLabel.visibility = View.VISIBLE
+            binding.tvCardBackPhraseMeaning.text = word.phraseMeaning
+            binding.tvCardBackPhraseMeaning.visibility = View.VISIBLE
+        } else {
+            binding.tvCardBackPhrase.visibility = View.GONE
+            binding.tvCardBackPhraseLabel.visibility = View.GONE
+            binding.tvCardBackPhraseMeaning.visibility = View.GONE
+        }
+
+        // Example
+        if (word.example.isNotEmpty()) {
+            binding.tvCardBackExample.text = word.example
+            binding.tvCardBackExample.visibility = View.VISIBLE
+            binding.tvCardBackExampleLabel.visibility = View.VISIBLE
+            binding.tvCardBackExampleMeaning.text = word.exampleMeaning
+            binding.tvCardBackExampleMeaning.visibility = View.VISIBLE
+        } else {
+            binding.tvCardBackExample.visibility = View.GONE
+            binding.tvCardBackExampleLabel.visibility = View.GONE
+            binding.tvCardBackExampleMeaning.visibility = View.GONE
+        }
 
         updateProgress()
     }
@@ -175,7 +210,7 @@ class FlashcardFragment : Fragment() {
             "vague" -> {
                 vagueCount++
                 lifecycleScope.launch {
-                    progressRepo.recordLearned(UserManager.userId, currentCorpusId, word.word)
+                    progressRepo.markWordLearned(UserManager.userId, currentCorpusId, word.word)
                 }
             }
             "forgot" -> {

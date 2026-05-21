@@ -20,7 +20,7 @@ import com.learne.data.model.*
         CorpusCache::class,
         StarredWord::class
     ],
-    version = 7,
+    version = 9,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {

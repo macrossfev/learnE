@@ -9,27 +9,27 @@ class AudioPlayer {
 
     fun play(url: String, onComplete: ((duration: Long) -> Unit)? = null) {
         release()
-        mediaPlayer = MediaPlayer().apply {
-            try {
-                setDataSource(url)
-                setOnCompletionListener {
-                    val dur = duration.toLong()
-                    onComplete?.invoke(dur)
-                    release()
-                }
-                setOnErrorListener { _, what, extra ->
-                    onComplete?.invoke(0)
-                    release()
-                    true
-                }
-                prepareAsync()
-                setOnPreparedListener {
-                    start()
-                }
-            } catch (e: IOException) {
-                e.printStackTrace()
-                onComplete?.invoke(0)
+        val mp = MediaPlayer()
+        mediaPlayer = mp
+        try {
+            mp.setDataSource(url)
+            mp.setOnCompletionListener {
+                val dur = mp.duration.toLong()
+                onComplete?.invoke(dur)
+                // Do NOT release here — caller manages lifecycle via stop()/release()
             }
+            mp.setOnErrorListener { _, what, extra ->
+                onComplete?.invoke(0)
+                true
+            }
+            mp.prepareAsync()
+            mp.setOnPreparedListener {
+                mp.start()
+            }
+        } catch (e: IOException) {
+            e.printStackTrace()
+            onComplete?.invoke(0)
+            release()
         }
     }
 

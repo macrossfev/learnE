@@ -1,11 +1,16 @@
 package com.learne.ui.listen
 
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View
 import android.view.WindowManager
+import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
+import com.learne.R
 import com.learne.data.db.AppDatabase
 import com.learne.data.model.ListenHistory
 import com.learne.data.model.Word
@@ -36,6 +41,12 @@ class ListenReadFullScreenActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityListenReadFullscreenBinding
     private val audioPlayer = AudioPlayer()
+
+    // Programmatic content views (added to fullscreen_content_container)
+    private lateinit var tvAudioType: TextView
+    private lateinit var tvLine1: TextView
+    private lateinit var tvLine2: TextView
+    private lateinit var tvLine3: TextView
 
     // 3个子组，每组[英文音频, 释义音频]
     private val subGroupPaths = listOf(
@@ -77,6 +88,72 @@ class ListenReadFullScreenActivity : AppCompatActivity() {
         binding = ActivityListenReadFullscreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Create programmatic content views inside the container
+        val container = binding.fullscreenContentContainer
+        tvAudioType = TextView(this).apply {
+            id = View.generateViewId()
+            text = ""
+            textSize = 18f
+            setTextColor(ContextCompat.getColor(this@ListenReadFullScreenActivity, R.color.mecha_gold))
+            gravity = Gravity.CENTER
+            typeface = android.graphics.Typeface.MONOSPACE
+            val lp = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            )
+            lp.gravity = Gravity.CENTER
+            lp.bottomMargin = 16
+            layoutParams = lp
+        }
+        container.addView(tvAudioType)
+
+        tvLine1 = TextView(this).apply {
+            id = View.generateViewId()
+            text = ""
+            textSize = 72f
+            setTextColor(ContextCompat.getColor(this@ListenReadFullScreenActivity, R.color.mecha_white))
+            gravity = Gravity.CENTER
+            val lp = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            )
+            lp.gravity = Gravity.CENTER
+            lp.bottomMargin = 24
+            layoutParams = lp
+        }
+        container.addView(tvLine1)
+
+        tvLine2 = TextView(this).apply {
+            id = View.generateViewId()
+            text = ""
+            textSize = 40f
+            setTextColor(ContextCompat.getColor(this@ListenReadFullScreenActivity, R.color.mecha_armor))
+            gravity = Gravity.CENTER
+            val lp = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            )
+            lp.gravity = Gravity.CENTER
+            lp.bottomMargin = 16
+            layoutParams = lp
+        }
+        container.addView(tvLine2)
+
+        tvLine3 = TextView(this).apply {
+            id = View.generateViewId()
+            text = ""
+            textSize = 20f
+            setTextColor(ContextCompat.getColor(this@ListenReadFullScreenActivity, R.color.mecha_armor))
+            gravity = Gravity.CENTER
+            val lp = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            )
+            lp.gravity = Gravity.CENTER
+            layoutParams = lp
+        }
+        container.addView(tvLine3)
+
         currentCorpusId = intent.getStringExtra("corpusId") ?: "catti"
         currentGroupIndex = intent.getIntExtra("groupIndex", 0)
         currentWordIndex = intent.getIntExtra("wordIndex", 0)
@@ -84,14 +161,22 @@ class ListenReadFullScreenActivity : AppCompatActivity() {
         isPlaying = intent.getBooleanExtra("isPlaying", false)
 
         binding.btnExitFullscreen.setOnClickListener { finish() }
-        binding.btnBack.setOnClickListener { finish() }
-        binding.btnPlayPause.setOnClickListener {
-            if (isPlaying) pausePlaying() else resumePlaying()
+        binding.btnFullscreenPlay.setOnClickListener {
+            if (!isPlaying) resumePlaying()
         }
-        binding.btnPrev.setOnClickListener { prevWord() }
-        binding.btnNext.setOnClickListener { nextWord() }
+        binding.btnFullscreenPause.setOnClickListener {
+            if (isPlaying) pausePlaying()
+        }
+        binding.btnFullscreenPrev.setOnClickListener { prevWord() }
+        binding.btnFullscreenNext.setOnClickListener { nextWord() }
 
+        updatePlayPauseButtons()
         loadWords()
+    }
+
+    private fun updatePlayPauseButtons() {
+        binding.btnFullscreenPlay.visibility = if (isPlaying) View.GONE else View.VISIBLE
+        binding.btnFullscreenPause.visibility = if (isPlaying) View.VISIBLE else View.GONE
     }
 
     private fun loadWords() {
@@ -128,7 +213,7 @@ class ListenReadFullScreenActivity : AppCompatActivity() {
 
     private fun updateProgress() {
         val globalIndex = currentGroupIndex * getGroupSize() + currentWordIndex + 1
-        binding.tvProgress.text = "$globalIndex / ${allWords.size}"
+        binding.tvFullscreenProgress.text = "$globalIndex / ${allWords.size}"
     }
 
     // ====== Content display ======
@@ -137,46 +222,46 @@ class ListenReadFullScreenActivity : AppCompatActivity() {
         if (currentGroup.isEmpty()) return
         val word = currentGroup[currentWordIndex]
         updateProgress()
-        binding.tvAudioType.text = "点击播放开始"
+        tvAudioType.text = "点击播放开始"
         showWordContent(word, 0)
     }
 
     private fun showWordContent(word: Word, subGroup: Int) {
         when (subGroup) {
             0 -> { // 单词
-                binding.tvAudioType.text = GROUP_LABELS[0]
+                tvAudioType.text = GROUP_LABELS[0]
                 val enSize = getWordTextSize(word.word)
-                binding.tvLine1.text = word.word
-                binding.tvLine1.textSize = enSize
-                binding.tvLine2.text = word.meaning
+                tvLine1.text = word.word
+                tvLine1.textSize = enSize
+                tvLine2.text = word.meaning
             }
             1 -> { // 词组
-                binding.tvAudioType.text = GROUP_LABELS[1]
+                tvAudioType.text = GROUP_LABELS[1]
                 if (word.phrase.isNotBlank()) {
                     val enSize = getWordTextSize(word.phrase)
-                    binding.tvLine1.text = word.phrase
-                    binding.tvLine1.textSize = enSize
+                    tvLine1.text = word.phrase
+                    tvLine1.textSize = enSize
                 } else {
-                    binding.tvLine1.text = word.word
-                    binding.tvLine1.textSize = getWordTextSize(word.word)
+                    tvLine1.text = word.word
+                    tvLine1.textSize = getWordTextSize(word.word)
                 }
-                binding.tvLine2.text = word.phraseMeaning.takeIf { it.isNotBlank() } ?: word.meaning
+                tvLine2.text = word.phraseMeaning.takeIf { it.isNotBlank() } ?: word.meaning
             }
             2 -> { // 例句
-                binding.tvAudioType.text = GROUP_LABELS[2]
+                tvAudioType.text = GROUP_LABELS[2]
                 if (word.example.isNotBlank()) {
                     val enSize = getWordTextSize(word.example)
-                    binding.tvLine1.text = word.example
-                    binding.tvLine1.textSize = enSize
+                    tvLine1.text = word.example
+                    tvLine1.textSize = enSize
                 } else {
-                    binding.tvLine1.text = word.word
-                    binding.tvLine1.textSize = getWordTextSize(word.word)
+                    tvLine1.text = word.word
+                    tvLine1.textSize = getWordTextSize(word.word)
                 }
-                binding.tvLine2.text = word.exampleMeaning.takeIf { it.isNotBlank() } ?: word.meaning
+                tvLine2.text = word.exampleMeaning.takeIf { it.isNotBlank() } ?: word.meaning
             }
         }
-        binding.tvLine2.textSize = 40f
-        binding.tvLine3.text = ""
+        tvLine2.textSize = 40f
+        tvLine3.text = ""
     }
 
     private fun getWordTextSize(text: String): Float {
@@ -192,7 +277,7 @@ class ListenReadFullScreenActivity : AppCompatActivity() {
 
     private fun startAutoPlay() {
         isPlaying = true
-        binding.btnPlayPause.text = "暂 停"
+        updatePlayPauseButtons()
         currentSubGroup = 0
         repeatCurrent = 0
         playCurrentWord()
@@ -200,13 +285,13 @@ class ListenReadFullScreenActivity : AppCompatActivity() {
 
     private fun pausePlaying() {
         isPlaying = false
-        binding.btnPlayPause.text = "播 放"
+        updatePlayPauseButtons()
         audioPlayer.release()
     }
 
     private fun resumePlaying() {
         isPlaying = true
-        binding.btnPlayPause.text = "暂 停"
+        updatePlayPauseButtons()
         playCurrentWord()
     }
 
@@ -291,7 +376,7 @@ class ListenReadFullScreenActivity : AppCompatActivity() {
                 }
             } else {
                 isPlaying = false
-                binding.btnPlayPause.text = "播 放"
+                updatePlayPauseButtons()
                 Toast.makeText(this, "全部播放完毕", Toast.LENGTH_SHORT).show()
             }
         }

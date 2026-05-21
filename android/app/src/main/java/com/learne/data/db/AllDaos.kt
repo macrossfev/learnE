@@ -54,7 +54,7 @@ interface StudyRecordDao {
     fun getRecentRecords(corpusId: String): Flow<List<StudyRecord>>
 
     @Query("SELECT * FROM study_records WHERE date = :date AND corpusId = :corpusId LIMIT 1")
-    suspend fun getByDate(date: String, corpusId: String): StudyRecord?
+    suspend fun getByDateAndCorpus(date: String, corpusId: String): StudyRecord?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(record: StudyRecord)

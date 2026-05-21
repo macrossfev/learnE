@@ -1,13 +1,14 @@
 package com.learne.ui.challenge
 
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import com.learne.R
 import com.learne.data.model.Word
 import com.learne.data.repository.CorpusRepository
 import com.learne.data.repository.ProgressRepository
@@ -18,14 +19,23 @@ import com.learne.databinding.FragmentDailyChallengeBinding
 import com.learne.service.AudioPlayer
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+import kotlin.random.Random
 
 class DailyChallengeFragment : Fragment() {
 
     companion object {
-        fun newInstance(): DailyChallengeFragment {
-            return DailyChallengeFragment()
+        fun newInstance(planIndex: Int = -1): DailyChallengeFragment {
+            return DailyChallengeFragment().apply {
+                arguments = Bundle().apply {
+                    putInt("planIndex", planIndex)
+                }
+            }
         }
     }
+
+    private var planIndexArg: Int = -1
 
     private var _binding: FragmentDailyChallengeBinding? = null
     private val binding get() = _binding!!
@@ -49,6 +59,8 @@ class DailyChallengeFragment : Fragment() {
         FLASHCARD  // Flashcard: see EN -> recall -> show CN -> self-rate
     }
 
+    private var todayDate: String = ""
+
     private val audioPlayer = AudioPlayer()
     private lateinit var studyRepo: StudyRepository
     private lateinit var progressRepo: ProgressRepository
@@ -66,6 +78,7 @@ class DailyChallengeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         currentCorpusId = UserPreferencesRepository.planCorpusId ?: "catti"
+        planIndexArg = arguments?.getInt("planIndex", -1) ?: -1
         studyRepo = StudyRepository(requireContext())
         progressRepo = ProgressRepository(requireContext())
 
@@ -85,40 +98,42 @@ class DailyChallengeFragment : Fragment() {
     }
 
     private fun loadWords() {
+        todayDate = LocalDate.now().format(DateTimeFormatter.ISO_LOCAL_DATE)
+
+        // Check if already completed today
+        if (UserPreferencesRepository.isDailyChallengeCompleted(currentCorpusId, todayDate)) {
+            val score = UserPreferencesRepository.getDailyChallengeScore(currentCorpusId, todayDate)
+            binding.layoutLoading.visibility = View.GONE
+            showDailyCompleted(score)
+            return
+        }
+
         binding.layoutLoading.visibility = View.VISIBLE
         lifecycleScope.launch {
             try {
-                allWords = CorpusRepository(requireContext()).loadWords(currentCorpusId)
-                if (allWords.isEmpty()) {
+                val allCorpusWords = CorpusRepository(requireContext()).loadWords(currentCorpusId)
+                if (allCorpusWords.isEmpty()) {
                     Toast.makeText(context, "词库为空", Toast.LENGTH_SHORT).show()
                     parentFragmentManager.popBackStack()
                     return@launch
                 }
+                // Filter to only quiz-passed groups
+                val passedGroups = UserPreferencesRepository.getQuizPassedGroups(currentCorpusId)
+                allWords = allCorpusWords.filter { word ->
+                    val globalIndex = allCorpusWords.indexOf(word)
+                    val groupIdx = globalIndex / com.learne.data.repository.UserPreferencesRepository.planGroupSize
+                    passedGroups.contains(groupIdx)
+                }
+                // Fallback: if no quiz-passed words, use all corpus words
+                if (allWords.isEmpty()) {
+                    allWords = allCorpusWords
+                }
 
-                // Select 10 random words: prioritize wrong words + review + random
-                val wrongWords = try {
-                    studyRepo.getWrongWords(UserManager.userId, currentCorpusId).first()
-                        .sortedByDescending { it.wrongCount }
-                        .mapNotNull { ww -> allWords.find { w -> w.word == ww.word } }
-                } catch (e: Exception) { emptyList() }
-
-                val learnedWords = try {
-                    progressRepo.getWordsForReview(currentCorpusId).first()
-                        .mapNotNull { wp -> allWords.find { w -> w.word == wp.word } }
-                } catch (e: Exception) { emptyList() }
-
-                // Pick from wrong words first (up to 4)
-                val wrongSet: List<com.learne.data.model.Word> = wrongWords.take(4)
-                // Then from review words not in wrongSet (up to 3)
-                val wrongSetWords = wrongSet.map { it.word }.toSet()
-                val reviewSet: List<com.learne.data.model.Word> = learnedWords.filter { it.word !in wrongSetWords }.shuffled().take(3)
-                // Then random remaining (up to 3)
-                val usedWords: Set<String> = wrongSet.map { it.word }.union(reviewSet.map { it.word }.toSet())
-                val randomSet: List<com.learne.data.model.Word> = allWords.filter { it.word !in usedWords }.shuffled().take(3)
-
-                challengeWords = (wrongSet + reviewSet + randomSet).shuffled().take(10)
+                // Date-seeded random: same day = same questions
+                val seed = LocalDate.now().toEpochDay()
+                challengeWords = allWords.shuffled(Random(seed)).take(10)
                 if (challengeWords.isEmpty()) {
-                    Toast.makeText(context, "可用单词不足", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "暂无可用单词", Toast.LENGTH_SHORT).show()
                     parentFragmentManager.popBackStack()
                     return@launch
                 }
@@ -188,7 +203,7 @@ class DailyChallengeFragment : Fragment() {
         listOf(binding.btnChoiceOption1, binding.btnChoiceOption2,
             binding.btnChoiceOption3, binding.btnChoiceOption4).forEach { btn ->
             btn.isEnabled = true
-            btn.setBackgroundColor(Color.parseColor("#0039CB"))
+            btn.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.accent))
         }
     }
 
@@ -236,9 +251,9 @@ class DailyChallengeFragment : Fragment() {
                 binding.btnChoiceOption3, binding.btnChoiceOption4).indexOf(btn)
             val optText = currentOptions[btnIndex]
             if (optText == word.meaning) {
-                btn.setBackgroundColor(Color.parseColor("#4CAF50"))
+                btn.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.status_success))
             } else if (btnIndex == index && !correct) {
-                btn.setBackgroundColor(Color.parseColor("#F44336"))
+                btn.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.status_error))
             }
         }
 
@@ -277,7 +292,7 @@ class DailyChallengeFragment : Fragment() {
             streakCount++
             if (streakCount > maxStreak) maxStreak = streakCount
             binding.tvSpellResult.text = "正确!"
-            binding.tvSpellResult.setTextColor(Color.parseColor("#4CAF50"))
+            binding.tvSpellResult.setTextColor(ContextCompat.getColor(requireContext(), R.color.status_success))
             lifecycleScope.launch {
                 progressRepo.updateReviewProgress(UserManager.userId, currentCorpusId, word.word, true)
             }
@@ -285,7 +300,7 @@ class DailyChallengeFragment : Fragment() {
             wrongCount++
             streakCount = 0
             binding.tvSpellResult.text = "错误! 正确答案: ${word.word}"
-            binding.tvSpellResult.setTextColor(Color.parseColor("#F44336"))
+            binding.tvSpellResult.setTextColor(ContextCompat.getColor(requireContext(), R.color.status_error))
             lifecycleScope.launch {
                 studyRepo.addWrongWord(UserManager.userId, currentCorpusId, word.word, "daily_challenge")
             }
@@ -338,6 +353,40 @@ class DailyChallengeFragment : Fragment() {
         audioPlayer.play(path) { _ -> }
     }
 
+    private fun showDailyCompleted(score: Int) {
+        binding.layoutLoading.visibility = View.GONE
+        binding.choiceLayout.visibility = View.GONE
+        binding.spellLayout.visibility = View.GONE
+        binding.cardLayout.visibility = View.GONE
+
+        binding.tvProgress.text = "今日挑战已完成"
+        binding.contentContainer.removeAllViews()
+        binding.contentContainer.addView(android.widget.TextView(requireContext()).apply {
+            text = "今日挑战已完成"
+            textSize = 28f
+            setTypeface(null, android.graphics.Typeface.BOLD)
+            setTextColor(ContextCompat.getColor(requireContext(), R.color.status_success))
+            gravity = android.view.Gravity.CENTER
+            setPadding(dip(16), dip(16), dip(16), dip(8))
+        })
+        binding.contentContainer.addView(android.widget.TextView(requireContext()).apply {
+            text = "正确率: $score%\n明天再来挑战吧！"
+            textSize = 18f
+            gravity = android.view.Gravity.CENTER
+            setPadding(dip(16), 8, dip(16), 8)
+        })
+        binding.contentContainer.addView(android.widget.Button(requireContext()).apply {
+            text = "返回"
+            textSize = 16f
+            setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
+            setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.primary))
+            setOnClickListener { parentFragmentManager.popBackStack() }
+        }, android.widget.LinearLayout.LayoutParams(dip(150), dip(48)).apply {
+            gravity = android.view.Gravity.CENTER_HORIZONTAL
+            topMargin = dip(24)
+        })
+    }
+
     private fun showResults() {
         audioPlayer.release()
         binding.choiceLayout.visibility = View.GONE
@@ -347,13 +396,27 @@ class DailyChallengeFragment : Fragment() {
         val accuracy = if (challengeWords.isNotEmpty()) correctCount * 100 / challengeWords.size else 0
         val streakText = if (maxStreak >= 3) " 最高连击: $maxStreak" else ""
 
+        // Mark daily challenge completed and save score
+        UserPreferencesRepository.markDailyChallengeCompleted(currentCorpusId, todayDate)
+        UserPreferencesRepository.saveDailyChallengeScore(currentCorpusId, todayDate, accuracy)
+
+        // Track plan progress: mark daily challenge as completed for the plan
+        if (planIndexArg >= 0) {
+            UserPreferencesRepository.markDailyChallengeCompletedForPlan(planIndexArg, todayDate)
+        }
+
+        // Notify ChallengeMapFragment if present
+        parentFragmentManager.fragments.find { it is ChallengeMapFragment }?.let {
+            (it as ChallengeMapFragment).refreshMap()
+        }
+
         binding.tvProgress.text = "挑战完成"
         binding.contentContainer.removeAllViews()
         binding.contentContainer.addView(android.widget.TextView(requireContext()).apply {
             text = "每日挑战"
             textSize = 28f
             android.graphics.Typeface.BOLD
-            setTextColor(0xFFE3000F.toInt())
+            setTextColor(ContextCompat.getColor(requireContext(), R.color.primary))
             gravity = android.view.Gravity.CENTER
             setPadding(dip(16), dip(16), dip(16), dip(8))
         })
@@ -366,8 +429,8 @@ class DailyChallengeFragment : Fragment() {
         binding.contentContainer.addView(android.widget.Button(requireContext()).apply {
             text = "返回"
             textSize = 16f
-            setTextColor(0xFFFFFFFF.toInt())
-            setBackgroundColor(0xFFE3000F.toInt())
+            setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
+            setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.primary))
             setOnClickListener { parentFragmentManager.popBackStack() }
         }, android.widget.LinearLayout.LayoutParams(dip(150), dip(48)).apply {
             gravity = android.view.Gravity.CENTER_HORIZONTAL

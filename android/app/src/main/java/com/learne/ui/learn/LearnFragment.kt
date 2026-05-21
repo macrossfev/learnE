@@ -195,7 +195,7 @@ class LearnFragment : Fragment() {
                 val corpusId = prefs.getString("corpus_id", "cet4") ?: "cet4"
                 viewModel.pauseAutoPlay()
                 lifecycleScope.launch {
-                    progressRepository.markAsMastered(UserManager.userId, corpusId, word.word)
+                    progressRepository.markWordLearned(UserManager.userId, corpusId, word.word)
                 }
                 viewModel.nextWord()
                 saveLastPosition()
@@ -206,7 +206,7 @@ class LearnFragment : Fragment() {
             viewModel.currentWord.value?.let { word ->
                 val corpusId = prefs.getString("corpus_id", "cet4") ?: "cet4"
                 lifecycleScope.launch {
-                    progressRepository.recordLearned(UserManager.userId, corpusId, word.word)
+                    progressRepository.markWordLearned(UserManager.userId, corpusId, word.word)
                 }
             }
             viewModel.nextWord()

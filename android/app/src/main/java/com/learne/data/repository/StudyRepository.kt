@@ -102,7 +102,7 @@ class StudyRepository(context: Context) {
     suspend fun updateStudyRecord(userId: String, corpusId: String, learned: Int, mastered: Int, reviewed: Int, duration: Long) {
         val date = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
         val uid = "${userId}_$corpusId"
-        val record = studyRecordDao.getByDate(date, uid)
+        val record = studyRecordDao.getByDateAndCorpus(date, uid)
         if (record != null) {
             studyRecordDao.update(record.copy(
                 learnedCount = record.learnedCount + learned,

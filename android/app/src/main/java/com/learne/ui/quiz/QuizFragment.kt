@@ -1,13 +1,15 @@
 package com.learne.ui.quiz
 
-import android.graphics.Color
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import com.learne.R
 import com.learne.data.model.Word
 import com.learne.data.repository.CorpusRepository
 import com.learne.data.repository.StudyRepository
@@ -19,6 +21,8 @@ import com.learne.ui.challenge.ChallengeMapFragment
 import kotlinx.coroutines.launch
 
 class QuizFragment : Fragment() {
+
+    enum class ExamType { COMPREHENSIVE, CHOICE_ONLY, SPELL_ONLY }
 
     companion object {
         fun newInstance(corpusId: String, groupIndex: Int, planIndex: Int = -1): QuizFragment {
@@ -47,6 +51,7 @@ class QuizFragment : Fragment() {
     private var wrongCount = 0
     private var wrongWordsList: MutableList<Word> = mutableListOf()
     private var currentOptions: List<String> = emptyList()
+    private var examType: ExamType = ExamType.COMPREHENSIVE
 
     private val audioPlayer = AudioPlayer()
     private lateinit var studyRepo: StudyRepository
@@ -72,6 +77,15 @@ class QuizFragment : Fragment() {
         binding.btnSpellPlay.setOnClickListener { playCurrentAudio() }
         binding.btnSpellSubmit.setOnClickListener { submitSpell() }
         binding.btnSpellNext.setOnClickListener { nextQuestion() }
+
+        // Intercept system back button during exam
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,
+            object : androidx.activity.OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    confirmExitExam()
+                }
+            }
+        )
 
         loadWords()
     }
@@ -104,13 +118,30 @@ class QuizFragment : Fragment() {
 
                 binding.layoutLoading.visibility = View.GONE
                 binding.tvTitle.text = "组 ${groupIndex + 1} 考试"
-                showQuestion()
+                showExamTypeDialog()
             } catch (e: Exception) {
                 binding.layoutLoading.visibility = View.GONE
                 Toast.makeText(context, "加载失败: ${e.message}", Toast.LENGTH_LONG).show()
                 parentFragmentManager.popBackStack()
             }
         }
+    }
+
+    private fun showExamTypeDialog() {
+        AlertDialog.Builder(requireContext())
+            .setTitle("选择考试类型")
+            .setItems(arrayOf("综合考试（选择+拼写）", "选择题考试", "拼写考试（听写）")) { _, which ->
+                examType = when (which) {
+                    0 -> ExamType.COMPREHENSIVE
+                    1 -> ExamType.CHOICE_ONLY
+                    2 -> ExamType.SPELL_ONLY
+                    else -> ExamType.COMPREHENSIVE
+                }
+                currentIndex = 0
+                showQuestion()
+            }
+            .setOnCancelListener { parentFragmentManager.popBackStack() }
+            .show()
     }
 
     private fun showQuestion() {
@@ -125,11 +156,12 @@ class QuizFragment : Fragment() {
         binding.tvProgress.text = "$progress / $total"
         binding.progressBar.progress = progress * 100 / total
 
-        // Alternate: even = choice, odd = spell
-        if (currentIndex % 2 == 0) {
-            showChoiceQuestion(word)
-        } else {
-            showSpellQuestion(word)
+        when (examType) {
+            ExamType.CHOICE_ONLY -> showChoiceQuestion(word)
+            ExamType.SPELL_ONLY -> showSpellQuestion(word)
+            ExamType.COMPREHENSIVE -> {
+                if (currentIndex % 2 == 0) showChoiceQuestion(word) else showSpellQuestion(word)
+            }
         }
     }
 
@@ -156,8 +188,8 @@ class QuizFragment : Fragment() {
             val btn = android.widget.Button(requireContext()).apply {
                 text = option
                 textSize = 15f
-                setTextColor(0xFF000000.toInt())
-                setBackgroundColor(0xFFFFFFFF.toInt())
+                setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
+                setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
                 setPadding(dip(16), dip(16), dip(16), dip(16))
                 layoutParams = android.widget.LinearLayout.LayoutParams(
                     android.widget.LinearLayout.LayoutParams.MATCH_PARENT,
@@ -193,11 +225,11 @@ class QuizFragment : Fragment() {
             btn.isEnabled = false
             val optText = currentOptions[i]
             if (optText == word.meaning) {
-                btn.setBackgroundColor(0xFF4CAF50.toInt())
-                btn.setTextColor(0xFFFFFFFF.toInt())
+                btn.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.status_success))
+                btn.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
             } else if (i == index && !correct) {
-                btn.setBackgroundColor(0xFFF44336.toInt())
-                btn.setTextColor(0xFFFFFFFF.toInt())
+                btn.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.status_error))
+                btn.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
             }
         }
 
@@ -227,12 +259,12 @@ class QuizFragment : Fragment() {
         if (input == answer) {
             correctCount++
             binding.tvSpellResult.text = "正确!"
-            binding.tvSpellResult.setTextColor(Color.parseColor("#4CAF50"))
+            binding.tvSpellResult.setTextColor(ContextCompat.getColor(requireContext(), R.color.status_success))
         } else {
             wrongCount++
             wrongWordsList.add(word)
             binding.tvSpellResult.text = "错误! 正确答案: ${word.word}"
-            binding.tvSpellResult.setTextColor(Color.parseColor("#F44336"))
+            binding.tvSpellResult.setTextColor(ContextCompat.getColor(requireContext(), R.color.status_error))
             lifecycleScope.launch {
                 studyRepo.addWrongWord(UserManager.userId, currentCorpusId, word.word, "quiz")
             }
@@ -280,7 +312,7 @@ class QuizFragment : Fragment() {
             text = if (passed) "恭喜通过考试!" else "需要再努力"
             textSize = 28f
             setTypeface(null, android.graphics.Typeface.BOLD)
-            setTextColor(if (passed) 0xFF4CAF50.toInt() else 0xFFF44336.toInt())
+            setTextColor(if (passed) ContextCompat.getColor(requireContext(), R.color.status_success) else ContextCompat.getColor(requireContext(), R.color.status_error))
             gravity = android.view.Gravity.CENTER
             setPadding(dip(16), dip(16), dip(16), dip(8))
         })
@@ -298,7 +330,7 @@ class QuizFragment : Fragment() {
             binding.contentContainer.addView(android.widget.TextView(requireContext()).apply {
                 text = "错误单词:\n${wrongWordsList.joinToString("\n") { "- ${it.word} (${it.meaning})" }}"
                 textSize = 14f
-                setTextColor(0xFF666666.toInt())
+                setTextColor(ContextCompat.getColor(requireContext(), R.color.text_hint))
                 gravity = android.view.Gravity.CENTER
                 setPadding(dip(16), 16, dip(16), 16)
             })
@@ -317,8 +349,8 @@ class QuizFragment : Fragment() {
         val btnBack = android.widget.Button(requireContext()).apply {
             text = "返回"
             textSize = 16f
-            setTextColor(0xFFFFFFFF.toInt())
-            setBackgroundColor(0xFF808080.toInt())
+            setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
+            setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.text_hint))
             setOnClickListener {
                 notifyMapFragment()
                 parentFragmentManager.popBackStack()
@@ -332,16 +364,15 @@ class QuizFragment : Fragment() {
             val btnRetake = android.widget.Button(requireContext()).apply {
                 text = "再考一次"
                 textSize = 16f
-                setTextColor(0xFFFFFFFF.toInt())
-                setBackgroundColor(0xFFE3000F.toInt())
+                setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
+                setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.primary))
                 setOnClickListener {
                     currentIndex = 0
                     correctCount = 0
                     wrongCount = 0
                     wrongWordsList.clear()
                     quizWords = quizWords.shuffled()
-                    showQuestion()
-                    binding.tvProgress.text = "组 ${groupIndex + 1} 考试"
+                    showExamTypeDialog()
                 }
             }
             btnRow.addView(btnRetake, android.widget.LinearLayout.LayoutParams(0, dip(48)).apply {
@@ -352,10 +383,29 @@ class QuizFragment : Fragment() {
         binding.contentContainer.addView(btnRow)
     }
 
+    private fun confirmExitExam() {
+        // Only confirm during active exam (choice or spell layout visible)
+        val inExam = binding.choiceLayout.visibility == View.VISIBLE ||
+                     binding.spellLayout.visibility == View.VISIBLE
+        if (!inExam) {
+            notifyMapFragment()
+            parentFragmentManager.popBackStack()
+            return
+        }
+        AlertDialog.Builder(requireContext())
+            .setTitle("确认退出")
+            .setMessage("考试进度将丢失，确定退出吗？")
+            .setPositiveButton("退出") { _, _ ->
+                notifyMapFragment()
+                parentFragmentManager.popBackStack()
+            }
+            .setNegativeButton("继续考试", null)
+            .show()
+    }
+
     private fun notifyMapFragment() {
-        val fragment = parentFragmentManager.findFragmentByTag("challenge_map")
-        if (fragment is ChallengeMapFragment) {
-            fragment.onGroupCompleted(groupIndex)
+        parentFragmentManager.fragments.find { it is ChallengeMapFragment }?.let {
+            (it as ChallengeMapFragment).refreshMap()
         }
     }
 

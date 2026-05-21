@@ -51,7 +51,7 @@ class LearnViewModel(
     fun markAsMastered() {
         _currentWord.value?.let { word ->
             viewModelScope.launch {
-                progressRepository.markAsMastered(uid, _corpusId.value ?: "", word.word)
+                progressRepository.markWordLearned(uid, _corpusId.value ?: "", word.word)
             }
         }
         loadNextWord()

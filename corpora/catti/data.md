@@ -78,7 +78,7 @@
 | 72 | very | /ˈvɛri/ | `adv.` | 非常 | very much | 非常 | I like it very much. | 我非常喜欢它。 | 796 |
 | 73 | make | /meɪk/ | `v.` | 做 | make sure | 确保 | Make sure you lock the door. | 确保你锁好门。 | 794 |
 | 74 | world | /wɜːrld/ | `n.` | 世界 | all over the world | 全世界 | It is sold all over the world. | 它销往全世界。 | 787 |
-| 75 | still | /stɪl/ | `adv.` | 仍然 | still and all | 尽管如此 | Still and all, she is right. | 尽管如此，她是对的。 | 782 |
+| 75 | still | /stɪl/ | `adv.` | 仍然 | even still | 即便如此 | Even still, she refused to give up. | 即便如此，她仍然拒绝放弃。 | 782 |
 | 76 | own | /oʊn/ | `adj.` | 自己的 | on one's own | 独自 | She lives on her own. | 她独自生活。 | 772 |
 | 77 | see | /siː/ | `v.` | 看 | see you later | 再见 | See you later. | 再见。 | 772 |
 | 78 | work | /wɜːrk/ | `v.` | 工作 | work hard | 努力工作 | We should work hard. | 我们应该努力工作。 | 762 |
@@ -115,7 +115,7 @@
 | 109 | however | /haʊˈɛvər/ | `adv.` | 然而 | however much | 无论多少 | However much you try, you cannot change it. | 无论你多么努力，你都无法改变它。 | 552 |
 | 110 | home | /hˈoʊm/ | `n.` | 家 | go home | 回家 | I go home at six. | 我六点回家。 | 547 |
 | 111 | small | /smˈɔl/ | `adj.` | 小的 | a small amount | 小量 | It costs a small amount. | 它花了一小笔钱。 | 542 |
-| 112 | found | /fˈaʊnd/ | `v.` | 建立 | find out | 发现 | We find out the truth. | 我们发现了真相。 | 536 |
+| 112 | found | /fˈaʊnd/ | `v.` | 建立 | found a school | 创办学校 | He founded the school in 1990. | 他在1990年创办了这所学校。 | 536 |
 | 113 | say | /seɪ/ | `v.` | 说 | say hello | 打招呼 | Please say hello to her. | 请向她问好。 | 504 |
 | 114 | part | /pɑːrt/ | `n.` | 部分 | take part in | 参加 | We take part in the game. | 我们参加比赛。 | 500 |
 | 115 | once | /wˈʌns/ | `adv.` | 一次 | once more | 再一次 | Say it once more. | 再说一遍。 | 499 |
@@ -136,7 +136,7 @@
 | 130 | put | /pˈʊt/ | `v.` | 放 | put on | 穿上 | Please put on your coat. | 请穿上你的外套。 | 437 |
 | 131 | hand | /hˈænd/ | `n.` | 手 | hand in hand | 手牵手 | They walked hand in hand. | 他们手牵手走。 | 431 |
 | 132 | enough | /ɪnˈʌf/ | `adj.` | 足够的 | enough to | 足够… | It is enough to feed everyone. | 它足够喂饱每个人。 | 430 |
-| 133 | head | /hˈɛd/ | `n.` | 头 | team head | 团队负责人 | He is the team head of the marketing department. | 他是营销部门的团队负责人。 | 424 |
+| 133 | head | /hˈɛd/ | `n.` | 头 | head of | …的负责人 | He is the head of the marketing department. | 他是营销部门的负责人。 | 424 |
 | 134 | yet | /jˈɛt/ | `adv.` | 还 | not yet | 还没有 | I have not finished yet. | 我还没有完成。 | 419 |
 | 135 | government | /ˈɡʌvɜːrmʌnt/ | `n.` | 政府 | government office | 政府机关 | The government office is closed. | 政府机关关门了。 | 418 |
 | 136 | system | /sˈɪstʌm/ | `n.` | 系统 | education system | 教育体系 | The school adopted a new education system this year. | 学校今年采用了新的教育体系。 | 416 |
@@ -169,9 +169,9 @@
 | 163 | per | /pˈɜːr/ | `prep.` | 每 | per day | 每天 | He walks ten miles per day. | 他每天走十英里。 | 371 |
 | 164 | form | /fˈɔrm/ | `n.` | 形式 | in the form of | 以…形式 | The data is in the form of numbers. | 数据以数字形式呈现。 | 370 |
 | 165 | important | /ɪmpˈɔrtʌnt/ | `adj.` | 重要的 | most important | 最重要的 | The most important thing is health. | 最重要的事是健康。 | 369 |
-| 166 | often | /ˈɔfʌn/ | `adv.` | 经常 | often use | 经常使用 | We often use this method. | 我们经常使用这种方法。 | 369 |
+| 166 | often | /ˈɔfʌn/ | `adv.` | 经常 | very often | 很经常 | We very often discuss this issue. | 我们很经常讨论这个问题。 | 369 |
 | 167 | early | /ˈɜːrliː/ | `adj.` | 早的 | early morning | 清晨 | I wake up in the early morning. | 我在清晨醒来。 | 366 |
-| 168 | white | /wˈaɪt/ | `adj.` | 白色的 | white house | 白宫 | The White House is in Washington. | 白宫在华盛顿。 | 365 |
+| 168 | white | /wˈaɪt/ | `adj.` | 白色的 | in white | 穿白衣 | The bride was dressed in white. | 新娘穿着白色婚纱。 | 365 |
 | 169 | large | /lˈɑrdʒ/ | `adj.` | 大的 | large number of | 大量 | A large number of people came. | 大量的人来了。 | 361 |
 | 170 | four | /fˈɔr/ | `num.` | 四 | four o'clock | 四点 | Meet me at four o'clock. | 四点钟和我见面。 | 360 |
 | 171 | need | /nˈiːd/ | `v.` | 需要 | need to | 需要 | I need to work harder. | 我需要更努力工作。 | 360 |
@@ -196,7 +196,7 @@
 | 190 | means | /mˈiːnz/ | `n.` | 手段 | by means of | 通过 | We talk by means of language. | 我们通过语言交流。 | 310 |
 | 191 | whole | /hˈoʊl/ | `adj.` | 整个的 | whole day | 整天 | I worked the whole day. | 我工作了一整天。 | 309 |
 | 192 | matter | /mˈætɜːr/ | `n.` | 事情 | no matter | 无论 | No matter what happens, I will help you. | 无论发生什么，我都会帮助你。 | 308 |
-| 193 | perhaps | /pɜːrhˈæps/ | `adv.` | 也许 | perhaps so | 也许是这样 | Perhaps so, but I am not sure. | 也许是这样，但我不确定。 | 307 |
+| 193 | perhaps | /pɜːrhˈæps/ | `adv.` | 也许 | perhaps not | 也许不是 | Perhaps not, but it is worth a try. | 也许不是，但值得一试。 | 307 |
 | 194 | itself | /ɪtsˈɛlf/ | `pron.` | 它自己 | by itself | 自动地 | The door opened by itself. | 门自动开了。 | 304 |
 | 195 | human | /hjˈuːmʌn/ | `adj.` | 人类的 | human being | 人类 | Every human being has rights. | 每个人类都有权利。 | 299 |
 | 196 | law | /lˈɔ/ | `n.` | 法律 | break law | 违法 | We must obey the law. | 我们必须遵守法律。 | 299 |
@@ -205,7 +205,7 @@
 | 199 | example | /ɪɡzˈæmpʌl/ | `n.` | 例子 | for example | 例如 | For example, apple is a fruit. | 例如，苹果是一种水果。 | 292 |
 | 200 | action | /ˈækʃʌn/ | `n.` | 行动 | take action | 采取行动 | We must take action now. | 我们现在必须采取行动。 | 291 |
 | 201 | local | /lˈoʊkʌl/ | `adj.` | 当地的 | local time | 当地时间 | What is the local time? | 当地时间是多少？ | 288 |
-| 202 | show | /ˈʃoʊ/ | `v.` | 展示 | show up | 出现 | Please show up on time. | 请准时出现。 | 288 |
+| 202 | show | /ˈʃoʊ/ | `v.` | 展示 | show up | 出现 | Please show up on time. | 请准时到场。 | 288 |
 | 203 | five | /fˈaɪv/ | `num.` | 五 | five o'clock | 五点 | Meet me at five o'clock. | 五点钟和我见面。 | 286 |
 | 204 | history | /hˈɪstɜːriː/ | `n.` | 历史 | make history | 创造历史 | They made history in 2020. | 他们在2020年创造了历史。 | 286 |
 | 205 | either | /ˈiːðɜːr/ | `conj.` | 或者 | either or | 要么…要么 | You can either stay or go. | 你可以要么留下要么走。 | 284 |
@@ -217,11 +217,11 @@
 | 211 | anything | /ˈɛniːθˌɪŋ/ | `pron.` | 任何事物 | anything else | 别的 | Do you need anything else? | 你还需要别的吗？ | 280 |
 | 212 | body | /bˈɑdiː/ | `n.` | 身体 | human body | 人体 | The human body is complex. | 人体是复杂的。 | 276 |
 | 213 | experience | /ɪkspˈɪriːʌns/ | `n.` | 经验 | work experience | 工作经验 | I have five years of work experience. | 我有五年的工作经验。 | 276 |
-| 214 | half | /hˈæf/ | `n.` | 一半 | half time | 半场休息 | At half time, the coach gave the team instructions. | 半场休息时，教练给球队指示。 | 275 |
+| 214 | half | /hˈæf/ | `n.` | 一半 | half of | …的一半 | Half of the students are girls. | 一半的学生是女生。 | 275 |
 | 215 | really | /rˈɪliː/ | `adv.` | 真正地 | really good | 非常好 | This is really good. | 这真的很好。 | 275 |
 | 216 | week | /wˈiːk/ | `n.` | 星期 | last week | 上周 | I visited her last week. | 上周我去看望了她。 | 275 |
 | 217 | car | /kˈɑr/ | `n.` | 汽车 | by car | 开车 | I go to work by car. | 我开车上班。 | 274 |
-| 218 | field | /fˈiːld/ | `n.` | 领域 | professional field | 专业领域 | She has worked in this professional field for over ten years. | 她在这个专业领域工作了十多年。 | 274 |
+| 218 | field | /fˈiːld/ | `n.` | 领域 | in the field of | 在…领域 | She works in the field of education. | 她在教育领域工作。 | 274 |
 | 219 | word | /wˈɜːrd/ | `n.` | 单词 | in a word | 总之 | In a word, he is right. | 总之，他是对的。 | 274 |
 | 220 | already | /ɔːlˈrɛdi/ | `adv.` | 已经 | already done | 已经完成 | The work is already done. | 工作已经完成。 | 273 |
 | 221 | themselves | /ðɛmsˈɛlvz/ | `pron.` | 他们自己 | by themselves | 他们自己 | They did it by themselves. | 他们自己做的那件事。 | 270 |
@@ -233,11 +233,11 @@
 | 227 | period | /pˈɪriːʌd/ | `n.` | 时期 | period of time | 一段时间 | I lived there for a period of time. | 我在那里住了一段时间。 | 265 |
 | 228 | keep | /kˈiːp/ | `v.` | 保持 | keep doing | 继续做 | Keep trying and you will succeed. | 继续尝试，你会成功的。 | 264 |
 | 229 | sure | /ˈʃʊr/ | `adj.` | 确定的 | make sure | 确保 | Make sure the door is locked. | 确保门已锁好。 | 263 |
-| 230 | free | /frˈiː/ | `adj.` | 自由的 | set free | 释放 | They set the bird free. | 他们把鸟放了。 | 259 |
+| 230 | free | /frˈiː/ | `adj.` | 自由的 | set free | 释放 | They set the bird free. | 他们把鸟放飞了。 | 259 |
 | 231 | behind | /bɪhˈaɪnd/ | `prep.` | 在后面 | behind the door | 门后 | The cat is behind the door. | 猫在门后面。 | 258 |
 | 232 | political | /pʌlˈɪtʌkʌl/ | `adj.` | 政治的 | political party | 政党 | Which political party do you support? | 你支持哪个政党？ | 258 |
 | 233 | real | /rˈiːl/ | `adj.` | 真实的 | real name | 真名 | What is your real name? | 你的真名是什么？ | 258 |
-| 234 | question | /kwˈɛstʃʌn/ | `n.` | 问题 | out of question | 毫无疑问 | It is out of question. | 那是毫无疑问的。 | 257 |
+| 234 | question | /kwˈɛstʃʌn/ | `n.` | 问题 | out of the question | 不可能 | It is out of the question. | 这是不可能的。 | 257 |
 | 235 | office | /ˈɔfʌs/ | `n.` | 办公室 | office building | 办公楼 | The office building is tall. | 办公楼很高。 | 255 |
 | 236 | miss | /mˈɪs/ | `v.` | 想念 | miss you | 想你 | I miss you very much. | 我很想你。 | 253 |
 | 237 | whose | /hˈuːz/ | `pron.` | 谁的 | whose book | 的书 | Whose book is this? | 这是谁的书？ | 251 |
@@ -249,11 +249,11 @@
 | 243 | result | /rɪzˈʌlt/ | `n.` | 结果 | as a result | 结果 | As a result, we succeeded. | 结果，我们成功了。 | 244 |
 | 244 | street | /strˈiːt/ | `n.` | 街道 | street corner | 街角 | Turn left at the street corner. | 在街角左转。 | 244 |
 | 245 | economic | /ˌɛkʌnˈɑmɪk/ | `adj.` | 经济的 | economic development | 经济发展 | Economic development is important. | 经济发展很重要。 | 243 |
-| 246 | position | /pʌzˈɪʃʌn/ | `n.` | 位置 | in position | 在位 | Please keep in position. | 请保持在位。 | 241 |
+| 246 | position | /pʌzˈɪʃʌn/ | `n.` | 位置 | in a position to | 能够做某事 | I am not in a position to comment. | 我无法对此发表评论。 | 241 |
 | 247 | reason | /rˈiːzʌn/ | `n.` | 原因 | the reason is | 原因是 | The reason is simple. | 原因很简单。 | 241 |
 | 248 | south | /sˈaʊθ/ | `n.` | 南方 | south of | 以南 | The city is south of the river. | 城市在河的南边。 | 240 |
-| 249 | board | /bˈɔrd/ | `n.` | 板 | on the board | 在板上 | Please write on the board. | 请在板上写。 | 239 |
-| 250 | individual | /ˌɪndʌvˈɪdʒʌwʌl/ | `n.` | 个人 | individual person | 个人 | Every individual person matters. | 每个人都很重要。 | 239 |
+| 249 | board | /bˈɔrd/ | `n.` | 板 | board of directors | 董事会 | She serves on the board of directors. | 她在董事会任职。 | 239 |
+| 250 | individual | /ˌɪndʌvˈɪdʒʌwʌl/ | `n.` | 个人 | individual rights | 个人权利 | Every individual has basic rights. | 每个人都拥有基本权利。 | 239 |
 | 251 | job | /dʒˈɑb/ | `n.` | 工作 | look for a job | 找工作 | I am looking for a job. | 我正在找工作。 | 238 |
 | 252 | west | /wˈɛst/ | `n.` | 西方 | west of | 以西 | The city is west of the mountain. | 城市在山的西边。 | 235 |
 | 253 | turn | /tˈɜːrn/ | `v.` | 转动 | turn around | 转身 | Please turn around. | 请转身。 | 233 |
@@ -272,13 +272,13 @@
 | 266 | necessary | /nˈɛsʌsˌɛriː/ | `adj.` | 必要的 | if necessary | 如有必要 | If necessary, call me. | 如有必要，给我打电话。 | 222 |
 | 267 | following | /fˈɑloʊɪŋ/ | `adj.` | 接下来的 | following day | 第二天 | The following day, we left. | 第二天，我们离开了。 | 221 |
 | 268 | front | /frˈʌnt/ | `n.` | 前面 | in front of | 在…前面 | The car is in front of the house. | 车在房子前面。 | 221 |
-| 269 | sometimes | /sʌmtˈaɪmz/ | `adv.` | 有时 | sometimes I | 有时我 | Sometimes I feel tired. | 有时我觉得累。 | 221 |
+| 269 | sometimes | /sʌmtˈaɪmz/ | `adv.` | 有时 | every now and then | 偶尔 | I see him every now and then. | 我偶尔会见到他。 | 221 |
 | 270 | girl | /ˈɡɜːrl/ | `n.` | 女孩 | little girl | 小女孩 | The little girl is cute. | 小女孩很可爱。 | 220 |
 | 271 | six | /sˈɪks/ | `num.` | 六 | six o'clock | 六点 | I wake up at six o'clock. | 我六点醒来。 | 220 |
 | 272 | further | /fˈɜːrðɜːr/ | `adv.` | 进一步 | further study | 进一步学习 | I need further study. | 我需要进一步学习。 | 218 |
 | 273 | land | /lˈænd/ | `n.` | 陆地 | vast land | 广阔的土地 | The country has vast land and rich natural resources. | 这个国家拥有广阔的土地和丰富的自然资源。 | 218 |
 | 274 | able | /ˈeɪbʌl/ | `adj.` | 能干的 | be able to | 能够 | I am able to do it. | 我能够做这件事。 | 216 |
-| 275 | feel | /fˈiːl/ | `v.` | 感觉 | feel happy | 感到开心 | I feel happy today. | 我今天感到开心。 | 216 |
+| 275 | feel | /fˈiːl/ | `v.` | 感觉 | feel like | 想要/感觉像 | I feel like going for a walk. | 我想要去散步。 | 216 |
 | 276 | mother | /mˈʌðɜːr/ | `n.` | 母亲 | mother and child | 母子 | The mother and child are safe. | 母子都安全。 | 216 |
 | 277 | music | /mjˈuːzɪk/ | `n.` | 音乐 | listen to music | 听音乐 | I like to listen to music. | 我喜欢听音乐。 | 216 |
 | 278 | party | /pˈɑrtiː/ | `n.` | 聚会 | birthday party | 生日聚会 | I went to a birthday party. | 我去参加了一个生日聚会。 | 216 |
@@ -303,7 +303,7 @@
 | 297 | plan | /plˈæn/ | `n.` | 计划 | plan to | 计划 | I plan to travel next month. | 我计划下个月去旅行。 | 205 |
 | 298 | therefore | /ˈðɛrfˌɔr/ | `adv.` | 因此 | and therefore | 因此 | It rained, and therefore we stayed. | 因此我们留了下来。 | 205 |
 | 299 | evidence | /ˈɛvʌdʌns/ | `n.` | 证据 | clear evidence | 明确的证据 | There is clear evidence. | 有明确的证据。 | 204 |
-| 300 | sound | /sˈaʊnd/ | `n.` | 声音 | loud sound | 响亮的声音 | We heard a loud sound coming from the street outside. | 我们听到街上传来的响亮声音。 | 204 |
+| 300 | sound | /sˈaʊnd/ | `n.` | 声音 | sound of | …的声音 | The sound of music filled the room. | 音乐声充满了房间。 | 204 |
 | 301 | black | /blˈæk/ | `adj.` | 黑色的 | black and white | 黑白的 | The photo is black and white. | 照片是黑白的。 | 203 |
 | 302 | hard | /hˈɑrd/ | `adj.` | 硬的 | work hard | 努力工作 | We must work hard. | 我们必须努力工作。 | 202 |
 | 303 | strong | /strˈɔŋ/ | `adj.` | 强壮的 | strong wind | 强风 | The strong wind blew down several trees last night. | 昨晚强风吹倒了好几棵树。 | 202 |
@@ -311,7 +311,7 @@
 | 305 | various | /vˈɛriːʌs/ | `adj.` | 各种各样的 | various kinds of | 各种 | We have various kinds of books. | 我们有各种书。 | 201 |
 | 306 | believe | /bɪlˈiːv/ | `v.` | 相信 | believe in | 相信 | I believe in you. | 我相信你。 | 200 |
 | 307 | play | /plˈeɪ/ | `v.` | 玩 | play with | 和…玩 | The children play with toys. | 孩子们玩玩具。 | 200 |
-| 308 | surface | /sˈɜːrfʌs/ | `n.` | 表面 | smooth surface | 光滑的表面 | The table has a smooth surface that is easy to clean. | 桌子有光滑的表面，易于清洁。 | 200 |
+| 308 | surface | /sˈɜːrfʌs/ | `n.` | 表面 | smooth surface | 光滑的表面 | The table has a smooth surface. | 桌子有光滑的表面。 | 200 |
 | 309 | type | /tˈaɪp/ | `n.` | 类型 | different type | 不同类型 | There are different types of books in the library. | 图书馆里有不同类型的书。 | 200 |
 | 310 | value | /vˈæljuː/ | `n.` | 价值 | great value | 巨大的价值 | This book has great value for students learning English. | 这本书对学习英语的学生有巨大的价值。 | 200 |
 | 311 | soon | /sˈuːn/ | `adv.` | 很快 | as soon as | 一…就 | Call me as soon as you arrive. | 你一到就给我打电话。 | 199 |
@@ -331,12 +331,12 @@
 | 325 | nature | /nˈeɪtʃɜːr/ | `n.` | 自然 | human nature | 人性 | Understanding human nature is important for social interaction. | 理解人性对于社交很重要。 | 191 |
 | 326 | private | /prˈaɪvʌt/ | `adj.` | 私人的 | private life | 私人生活 | I value my private life. | 我重视我的私人生活。 | 191 |
 | 327 | secretary | /sˈɛkrʌtˌɛriː/ | `n.` | 秘书 | company secretary | 公司秘书 | She works as a company secretary at a large corporation. | 她在一家大公司担任公司秘书。 | 191 |
-| 328 | third | /ˈθɜːrd/ | `num.` | 第三 | third time | 第三次 | This is the third time I visit. | 这是我第三次参观。 | 190 |
-| 329 | section | /sˈɛkʃʌn/ | `n.` | 部分 | book section | 书的章节 | This book section covers important grammar points. | 这个书的章节涵盖了重要的语法点。 | 189 |
+| 328 | third | /ˈθɜːrd/ | `num.` | 第三 | third time | 第三次 | This is the third time I have visited. | 这是我第三次参观。 | 190 |
+| 329 | section | /sˈɛkʃʌn/ | `n.` | 部分 | in section | 在…节 | See section 5 for details. | 详见第五节。 | 189 |
 | 330 | fire | /fˈaɪɜːr/ | `n.` | 火 | on fire | 着火 | The building is on fire. | 楼着火了。 | 187 |
 | 331 | ground | /ɡrˈaʊnd/ | `n.` | 地面 | ground floor | 一楼 | The shop is on the ground floor. | 商店在一楼。 | 186 |
-| 332 | dark | /dˈɑrk/ | `adj.` | 黑暗的 | dark night | 黑夜 | We walked through the dark night to reach the village. | 我们穿过黑夜到达了村庄。 | 185 |
-| 333 | everything | /ˈɛvriːθˌɪŋ/ | `pron.` | 一切 | everything is | 一切都 | Everything is ready now. | 一切都准备好了。 | 185 |
+| 332 | dark | /dˈɑrk/ | `adj.` | 黑暗的 | in the dark | 在黑暗中 | She sat alone in the dark. | 她独自坐在黑暗中。 | 185 |
+| 333 | everything | /ˈɛvriːθˌɪŋ/ | `pron.` | 一切 | everything else | 其他一切 | Everything else is ready. | 其他一切都准备好了。 | 185 |
 | 334 | pressure | /prˈɛʃɜːr/ | `n.` | 压力 | under pressure | 压力下 | He works well under pressure. | 他在压力下工作得很好。 | 185 |
 | 335 | space | /spˈeɪs/ | `n.` | 空间 | outer space | 外太空 | Scientists continue to explore the mysteries of outer space. | 科学家们继续探索外太空的奥秘。 | 184 |
 | 336 | east | /ˈiːst/ | `n.` | 东方 | east of | 以东 | The city is east of the river. | 城市在河的东边。 | 183 |
@@ -348,11 +348,11 @@
 | 342 | recent | /rˈiːsʌnt/ | `adj.` | 最近的 | recent years | 近年来 | In recent years, China changed a lot. | 近年来，中国变化很大。 | 179 |
 | 343 | live | /lˈaɪv/ | `v.` | 生活 | live in | 住在 | I live in Beijing. | 我住在北京。 | 177 |
 | 344 | stage | /stˈeɪdʒ/ | `n.` | 阶段 | at this stage | 在这个阶段 | At this stage, we need more time. | 在这个阶段，我们需要更多时间。 | 175 |
-| 345 | dead | /dˈɛd/ | `adj.` | 死的 | dead end | 死胡同 | We reached a dead end while trying to solve the problem. | 我们在试图解决问题时遇到了死胡同。 | 174 |
+| 345 | dead | /dˈɛd/ | `adj.` | 死的 | dead body | 尸体 | They found a dead body on the beach. | 他们在海滩发现了一具尸体。 | 174 |
 | 346 | inside | /ɪnsˈaɪd/ | `prep.` | 在里面 | inside the box | 盒子里面 | The key is inside the box. | 钥匙在盒子里面。 | 174 |
 | 347 | material | /mʌtˈɪriːʌl/ | `n.` | 材料 | building material | 建筑材料 | Building material is expensive. | 建筑材料很贵。 | 174 |
 | 348 | person | /pˈɜːrsʌn/ | `n.` | 人 | per person | 每人 | How much per person? | 每人多少？ | 174 |
-| 349 | read | /rˈɛd/ | `v.` | 读 | read a book | 读书 | I like to read a book. | 我喜欢读书。 | 174 |
+| 349 | read | /rˈɛd/ | `v.` | 读 | read through | 通读 | Please read through the document. | 请通读这份文件。 | 174 |
 | 350 | report | /riːpˈɔrt/ | `v.` | 报告 | report to | 向…报告 | I report to the manager. | 我向经理报告。 | 174 |
 | 351 | heart | /hˈɑrt/ | `n.` | 心 | heart attack | 心脏病发作 | He suffered a heart attack and was rushed to hospital. | 他心脏病发作，被紧急送往医院。 | 173 |
 | 352 | instead | /ɪnstˈɛd/ | `adv.` | 代替 | instead of | 而不是 | I go there instead of him. | 我替他去那里。 | 173 |
@@ -360,7 +360,7 @@
 | 354 | amount | /ʌmˈaʊnt/ | `n.` | 数量 | large amount | 大量 | A large amount of money is needed for the project. | 项目需要大量金钱。 | 172 |
 | 355 | feeling | /fˈiːlɪŋ/ | `n.` | 感觉 | good feeling | 好的感觉 | This gives me a good feeling. | 这给我很好的感觉。 | 172 |
 | 356 | pay | /pˈeɪ/ | `v.` | 支付 | pay for | 为…付钱 | I will pay for the dinner. | 我将为晚餐付钱。 | 172 |
-| 357 | single | /sˈɪŋɡʌl/ | `adj.` | 单一的 | single person | 单人 | I am a single person now. | 我现在是一个单身的人。 | 172 |
+| 357 | single | /sˈɪŋɡʌl/ | `adj.` | 单一的 | single parent | 单亲 | Many single parents work hard for their children. | 许多单亲为他们的孩子努力工作。 | 172 |
 | 358 | basic | /bˈeɪsɪk/ | `adj.` | 基本的 | basic need | 基本需求 | Food is a basic need. | 食物是基本需求。 | 171 |
 | 359 | hundred | /hˈʌndrʌd/ | `num.` | 百 | hundreds of | 数百 | Hundreds of people came. | 数百人来了。 | 171 |
 | 360 | industry | /ˈɪndʌstriː/ | `n.` | 工业 | tourism industry | 旅游产业 | The tourism industry has grown rapidly in recent years. | 旅游产业近年来发展迅速。 | 171 |
@@ -371,7 +371,7 @@
 | 365 | equipment | /ɪkwˈɪpmʌnt/ | `n.` | 设备 | sports equipment | 运动设备 | We need more sports equipment. | 我们需要更多运动设备。 | 167 |
 | 366 | island | /ˈaɪlʌnd/ | `n.` | 岛 | on the island | 在岛上 | I live on the island. | 我住在岛上。 | 167 |
 | 367 | central | /sˈɛntrʌl/ | `adj.` | 中央的 | central government | 中央政府 | The central government is important. | 中央政府很重要。 | 165 |
-| 368 | religious | /rɪlˈɪdʒʌs/ | `adj.` | 宗教的 | religious belief | 宗教信仰 | Everyone has religious belief. | 每个人都有自己的宗教信仰。 | 165 |
+| 368 | religious | /rɪlˈɪdʒʌs/ | `adj.` | 宗教的 | religious beliefs | 宗教信仰 | Everyone has their own religious beliefs. | 每个人都有自己的宗教信仰。 | 165 |
 | 369 | river | /rˈɪvɜːr/ | `n.` | 河流 | river bank | 河岸 | The river bank is beautiful. | 河岸很美。 | 165 |
 | 370 | son | /sˈʌn/ | `n.` | 儿子 | son and daughter | 子女 | I have a son and a daughter. | 我有一儿一女。 | 165 |
 | 371 | beginning | /bɪɡˈɪnɪŋ/ | `n.` | 开始 | at the beginning | 起初 | At the beginning, it was hard. | 起初很难。 | 164 |
@@ -379,7 +379,7 @@
 | 373 | ten | /tˈɛn/ | `num.` | 十 | ten o'clock | 十点 | I wake up at ten o'clock. | 我十点醒来。 | 164 |
 | 374 | rest | /rˈɛst/ | `n.` | 休息 | take a rest | 休息 | Let me take a rest. | 让我休息一下。 | 163 |
 | 375 | care | /kˈɛr/ | `n.` | 关心 | take care of | 照顾 | Please take care of my dog. | 请照顾我的狗。 | 162 |
-| 376 | indeed | /ɪndˈiːd/ | `adv.` | 确实 | indeed it is | 确实是 | Indeed it is a good book. | 这确实是一本好书。 | 162 |
+| 376 | indeed | /ɪndˈiːd/ | `adv.` | 确实 | very much indeed | 确实很 | Thank you very much indeed. | 确实非常感谢你。 | 162 |
 | 377 | medical | /mˈɛdʌkʌl/ | `adj.` | 医学的 | medical treatment | 治疗 | The medical treatment is expensive. | 治疗很贵。 | 162 |
 | 378 | picture | /pˈɪktʃɜːr/ | `n.` | 图片 | take a picture | 拍照 | Let us take a picture. | 让我们拍张照。 | 162 |
 | 379 | administration | /ædmˌɪnɪstrˈeɪʃʌn/ | `n.` | 管理 | public administration | 公共管理 | I study public administration. | 我学公共管理。 | 161 |
@@ -422,7 +422,7 @@
 | 416 | below | /bɪlˈoʊ/ | `prep.` | 在下面 | below zero | 零度以下 | The temperature is below zero. | 温度在零度以下。 | 145 |
 | 417 | effort | /ˈɛfɜːrt/ | `n.` | 努力 | make an effort | 努力 | You must make an effort. | 你必须努力。 | 145 |
 | 418 | hour | /ˈaʊɜːr/ | `n.` | 小时 | an hour ago | 一小时前 | I saw him an hour ago. | 我一小时前见过他。 | 145 |
-| 419 | knowledge | /nˈɑlʌdʒ/ | `n.` | 知识 | scientific knowledge | 科学知识 | He has extensive scientific knowledge in physics and chemistry. | 他有广泛的物理和化学科学知识。 | 145 |
+| 419 | knowledge | /nˈɑlʌdʒ/ | `n.` | 知识 | scientific knowledge | 科学知识 | He has extensive scientific knowledge. | 他有广泛的科学知识。 | 145 |
 | 420 | letter | /lˈɛtɜːr/ | `n.` | 信 | love letter | 情书 | She wrote a love letter. | 她写了一封情书。 | 145 |
 | 421 | yes | /jˈɛs/ | `adv.` | 是 | yes or no | 是或否 | Answer yes or no. | 回答是或否。 | 144 |
 | 422 | blue | /blˈuː/ | `adj.` | 蓝色的 | blue sky | 蓝天 | The sky is blue today. | 今天天空是蓝色的。 | 143 |
@@ -438,21 +438,21 @@
 | 432 | reading | /rˈiːdɪŋ/ | `n.` | 阅读 | reading habit | 阅读习惯 | Reading habit is good. | 阅读习惯是好的。 | 141 |
 | 433 | statement | /stˈeɪtmʌnt/ | `n.` | 声明 | official statement | 官方声明 | They made an official statement. | 他们发表了官方声明。 | 141 |
 | 434 | throughout | /θruːˈaʊt/ | `prep.` | 遍及 | throughout the day | 整天 | It rained throughout the day. | 整天下雨。 | 141 |
-| 435 | color | /kˈʌlɜːr/ | `n.` | 颜色 | color TV | 彩色电视 | We have a color TV. | 我们有一台彩色电视。 | 140 |
+| 435 | color | /kˈʌlɜːr/ | `n.` | 颜色 | in color | 彩色的 | The photo is in color. | 这张照片是彩色的。 | 140 |
 | 436 | try | /trˈaɪ/ | `v.` | 尝试 | try to | 试图 | I try to learn English. | 我试图学习英语。 | 140 |
 | 437 | lay | /lˈeɪ/ | `v.` | 放置 | lay down | 放下 | Please lay down the book. | 请把书放下。 | 139 |
-| 438 | nation | /nˈeɪʃʌn/ | `n.` | 国家 | developed nation | 发达国家 | Germany is a developed nation with a strong economy. | 德国是一个经济发达的发达国家。 | 139 |
+| 438 | nation | /nˈeɪʃʌn/ | `n.` | 国家 | developed nation | 发达国家 | Germany is a developed nation. | 德国是一个发达国家。 | 139 |
 | 439 | physical | /fˈɪzɪkʌl/ | `adj.` | 身体的 | physical exercise | 体育锻炼 | Physical exercise is good for health. | 体育锻炼对健康有益。 | 138 |
-| 440 | remember | /rɪmˈɛmbɜːr/ | `v.` | 记得 | remember me | 记得我 | Please remember me. | 请记得我。 | 138 |
+| 440 | remember | /rɪmˈɛmbɜːr/ | `v.` | 记得 | remember to | 记得去做 | Remember to lock the door. | 记得锁门。 | 138 |
 | 441 | size | /sˈaɪz/ | `n.` | 尺寸 | large size | 大尺寸 | This shirt comes in a large size that fits me well. | 这件衬衫有大尺寸，很适合我。 | 138 |
-| 442 | member | /mˈɛmbɜːr/ | `n.` | 成员 | family member | 家庭成员 | Every family member attended the reunion dinner last Sunday. | 每个家庭成员都参加了上周日的团聚晚餐。 | 137 |
+| 442 | member | /mˈɛmbɜːr/ | `n.` | 成员 | family member | 家庭成员 | Every family member was happy. | 每个家庭成员都很开心。 | 137 |
 | 443 | record | /rʌkˈɔrd/ | `n.` | 记录 | world record | 世界纪录 | He set a world record. | 他创造了世界纪录。 | 137 |
 | 444 | southern | /sˈʌðɜːrn/ | `adj.` | 南方的 | southern part | 南部地区 | This is the southern part. | 这是南部地区。 | 137 |
 | 445 | strength | /strˈɛŋkθ/ | `n.` | 力量 | physical strength | 体力 | Regular exercise can improve your physical strength. | 定期锻炼可以提高你的体力。 | 137 |
 | 446 | understand | /ˌʌndɜːrstˈænd/ | `v.` | 理解 | understand me | 理解我 | Please understand me. | 请理解我。 | 137 |
-| 447 | western | /wˈɛstɜːrn/ | `adj.` | 西方的 | Western country | 西方国家 | France is a Western country with rich cultural heritage. | 法国是一个拥有丰富文化遗产的西方国家。 | 137 |
+| 447 | western | /wˈɛstɜːrn/ | `adj.` | 西方的 | Western culture | 西方文化 | He is studying Western culture. | 他在学习西方文化。 | 137 |
 | 448 | normal | /nˈɔrmʌl/ | `adj.` | 正常的 | normal life | 正常生活 | This is normal life. | 这是正常生活。 | 136 |
-| 449 | population | /pˌɑpjʌlˈeɪʃʌn/ | `n.` | 人口 | large population | 大量人口 | The city has a large population of over one million people. | 这个城市有超过一百万的大量人口。 | 136 |
+| 449 | population | /pˌɑpjʌlˈeɪʃʌn/ | `n.` | 人口 | large population | 大量人口 | The city has a large population. | 这个城市人口众多。 | 136 |
 | 450 | district | /dˈɪstrɪkt/ | `n.` | 地区 | business district | 商业区 | The business district is full of offices and shops. | 商业区充满了办公室和商店。 | 135 |
 | 451 | temperature | /tˈɛmprʌtʃɜːr/ | `n.` | 温度 | room temperature | 室温 | The room temperature is comfortable. | 室温很舒适。 | 135 |
 | 452 | volume | /vˈɑljuːm/ | `n.` | 体积 | large volume | 大体积 | This container has a large volume and can hold many items. | 这个容器有大体积，可以装很多东西。 | 135 |
@@ -465,7 +465,7 @@
 | 459 | friend | /frˈɛnd/ | `n.` | 朋友 | best friend | 最好的朋友 | He is my best friend. | 他是我最好的朋友。 | 133 |
 | 460 | list | /lˈɪst/ | `n.` | 清单 | book list | 书单 | The teacher provided a book list for students to read. | 老师为学生提供了书单供阅读。 | 133 |
 | 461 | literature | /lˈɪtɜːrʌtʃɜːr/ | `n.` | 文学 | world literature | 世界文学 | I like world literature. | 我喜欢世界文学。 | 133 |
-| 462 | maybe | /mˈeɪbiː/ | `adv.` | 也许 | maybe so | 也许吧 | Maybe so, I think. | 也许吧，我想。 | 133 |
+| 462 | maybe | /mˈeɪbiː/ | `adv.` | 也许 | maybe not | 也许不是 | Maybe not, let me check. | 也许不是，让我确认一下。 | 133 |
 | 463 | influence | /ˈɪnfluːʌns/ | `n.` | 影响 | influence on | 对…的影响 | This has influence on me. | 这对我有影响。 | 132 |
 | 464 | provided | /prʌvˈaɪdʌd/ | `conj.` | 假如 | provided that | 假如 | I will go provided that you come. | 假如你来我就去。 | 132 |
 | 465 | chance | /tʃˈæns/ | `n.` | 机会 | good chance | 好机会 | With hard work, you have a good chance to succeed. | 只要努力，你就有成功的好机会。 | 131 |
@@ -475,11 +475,11 @@
 | 469 | step | /stˈɛp/ | `n.` | 步骤 | next step | 下一步 | What is the next step? | 下一步是什么？ | 131 |
 | 470 | student | /stˈuːdʌnt/ | `n.` | 学生 | student loan | 助学贷款 | I have a student loan. | 我有助学贷款。 | 131 |
 | 471 | average | /ˈævɜːrɪdʒ/ | `n.` | 平均 | on average | 平均 | On average, it takes ten minutes. | 平均需要十分钟。 | 130 |
-| 472 | hot | /hˈɑt/ | `adj.` | 热的 | hot dog | 热狗 | I want a hot dog. | 我想要一个热狗。 | 130 |
+| 472 | hot | /hˈɑt/ | `adj.` | 热的 | hot weather | 炎热的天气 | I don't like hot weather. | 我不喜欢炎热的天气。 | 130 |
 | 473 | series | /sˈɪriːz/ | `n.` | 系列 | TV series | 电视剧 | I like this TV series. | 我喜欢这个电视剧。 | 130 |
 | 474 | direct | /dɜːrˈɛkt/ | `adj.` | 直接的 | direct result | 直接结果 | This is the direct result. | 这是直接结果。 | 129 |
 | 475 | effective | /ɪfˈɛktɪv/ | `adj.` | 有效的 | effective way | 有效方法 | Regular exercise is an effective way to stay healthy. | 定期锻炼是保持健康的有效方法。 | 129 |
-| 476 | lead | /lˈɛd/ | `v.` | 领导 | lead to | 导致 | This will lead to success. | 这会导致成功。 | 129 |
+| 476 | lead | /lˈɛd/ | `v.` | 领导 | lead the team | 带领团队 | She will lead the team to success. | 她将带领团队走向成功。 | 129 |
 | 477 | piece | /pˈiːs/ | `n.` | 块 | piece of | 一块 | Give me a piece of paper. | 给我一张纸。 | 129 |
 | 478 | theory | /ˈθɪriː/ | `n.` | 理论 | in theory | 理论上 | In theory, it should work. | 理论上应该可行。 | 129 |
 | 479 | wrong | /rˈɔŋ/ | `adj.` | 错误的 | wrong answer | 错误答案 | That is the wrong answer. | 那是错误答案。 | 129 |
@@ -487,10 +487,10 @@
 | 481 | freedom | /frˈiːdʌm/ | `n.` | 自由 | personal freedom | 个人自由 | Everyone should have personal freedom to make choices. | 每个人都应该有做出选择的个人自由。 | 128 |
 | 482 | movement | /mˈuːvmʌnt/ | `n.` | 运动 | social movement | 社会运动 | The social movement gained support from many people. | 社会运动获得了许多人的支持。 | 128 |
 | 483 | organization | /ˌɔrɡʌnʌzˈeɪʃʌn/ | `n.` | 组织 | international organization | 国际组织 | The United Nations is an international organization for peace. | 联合国是一个促进和平的国际组织。 | 128 |
-| 484 | beautiful | /bjˈuːtʌfʌl/ | `adj.` | 美丽的 | beautiful girl | 美丽的女孩 | The beautiful girl won the singing competition last night. | 那个美丽的女孩昨晚赢得了歌唱比赛。 | 127 |
+| 484 | beautiful | /bjˈuːtʌfʌl/ | `adj.` | 美丽的 | beautiful view | 美丽的风景 | The beautiful view attracted many tourists. | 美丽的风景吸引了许多游客。 | 127 |
 | 485 | consider | /kʌnsˈɪdɜːr/ | `v.` | 考虑 | consider as | 认为 | I consider him as a friend. | 我把他当朋友。 | 127 |
 | 486 | lot | /lˈɑt/ | `n.` | 许多 | a lot of | 许多 | There are a lot of books. | 有许多书。 | 127 |
-| 487 | meaning | /mˈiːnɪŋ/ | `n.` | 意义 | deep meaning | 深刻的意义 | The poem has a deep meaning about life and love. | 这首诗有关于生活和爱情的深刻意义。 | 127 |
+| 487 | meaning | /mˈiːnɪŋ/ | `n.` | 意义 | deep meaning | 深刻的含义 | The story has a deep meaning. | 这个故事有深刻的含义。 | 127 |
 | 488 | note | /nˈoʊt/ | `n.` | 笔记 | take note | 记笔记 | Please take note of this. | 请记下这个。 | 127 |
 | 489 | press | /prˈɛs/ | `v.` | 按 | press button | 按按钮 | Please press the button. | 请按按钮。 | 127 |
 | 490 | somewhat | /sˈʌmwˈʌt/ | `adv.` | 有点 | somewhat like | 有点像 | It is somewhat like this. | 它有点像这个。 | 127 |
@@ -498,7 +498,7 @@
 | 492 | treatment | /trˈiːtmʌnt/ | `n.` | 治疗 | medical treatment | 医疗治疗 | Medical treatment is needed. | 需要医疗治疗。 | 127 |
 | 493 | truth | /trˈuːθ/ | `n.` | 真理 | in truth | 事实上 | In truth, I don't know. | 事实上我不知道。 | 126 |
 | 494 | herself | /hɜːrsˈɛlf/ | `pron.` | 她自己 | by herself | 她独自 | She did it by herself. | 她独自完成的。 | 125 |
-| 495 | plant | /plˈænt/ | `n.` | 植物 | power plant | 发电厂 | The power plant is near here. | 发电厂在附近。 | 125 |
+| 495 | plant | /plˈænt/ | `n.` | 植物 | grow plants | 种植植物 | She likes to grow plants in the garden. | 她喜欢在花园里种植物。 | 125 |
 | 496 | respect | /rɪspˈɛkt/ | `v.` | 尊重 | respect for | 对…的尊重 | Show respect for others. | 尊重他人。 | 125 |
 | 497 | wide | /wˈaɪd/ | `adj.` | 宽的 | wide range | 广泛范围 | This has a wide range. | 这个范围广泛。 | 125 |
 | 498 | manner | /mˈænɜːr/ | `n.` | 方式 | in this manner | 以这种方式 | Do it in this manner. | 以这种方式做。 | 124 |
@@ -515,7 +515,7 @@
 | 509 | opportunity | /ˌɑpɜːrtˈuːnʌtiː/ | `n.` | 机会 | opportunity to | …的机会 | Studying abroad is an opportunity to learn different cultures. | 留学是学习不同文化的机会。 | 121 |
 | 510 | understanding | /ˌʌndɜːrstˈændɪŋ/ | `n.` | 理解 | understanding of | 对…的理解 | I have understanding of this. | 我理解这个。 | 121 |
 | 511 | progress | /prˈɑɡrˌɛs/ | `n.` | 进步 | make progress | 取得进步 | We make progress every day. | 我们每天取得进步。 | 120 |
-| 512 | radio | /rˈeɪdiːˌoʊ/ | `n.` | 收音机 | on the radio | 通过收音机 | I heard it on the radio. | 我从收音机听到的。 | 120 |
+| 512 | radio | /rˈeɪdiːˌoʊ/ | `n.` | 收音机 | on the radio | 在广播中 | I heard it on the radio. | 我在广播里听到的。 | 120 |
 | 513 | stop | /stˈɑp/ | `v.` | 停止 | stop doing | 停止做 | Stop doing that. | 停止做那件事。 | 120 |
 | 514 | technical | /tˈɛknɪkʌl/ | `adj.` | 技术的 | technical problem | 技术问题 | The engineers solved the technical problem within two hours. | 工程师们在两小时内解决了技术问题。 | 120 |
 | 515 | chief | /tʃˈiːf/ | `adj.` | 主要的 | chief editor | 主编 | He is the chief editor. | 他是主编。 | 119 |
@@ -535,27 +535,27 @@
 | 529 | green | /ɡrˈiːn/ | `adj.` | 绿色的 | green tea | 绿茶 | I drink green tea. | 我喝绿茶。 | 116 |
 | 530 | length | /lˈɛŋkθ/ | `n.` | 长度 | total length | 总长度 | The total length of the bridge is over 500 meters. | 这座桥的总长度超过500米。 | 116 |
 | 531 | serious | /sˈɪriːʌs/ | `adj.` | 严肃的 | serious problem | 严重问题 | Environmental pollution is a serious problem in many cities. | 环境污染是许多城市的严重问题。 | 116 |
-| 532 | audience | /ˈɑdiːʌns/ | `n.` | 观众 | large audience | 大量观众 | The large audience at this concert was very enthusiastic. | 这场音乐会的大量观众非常热情。 | 115 |
+| 532 | audience | /ˈɑdiːʌns/ | `n.` | 观众 | large audience | 大量观众 | The audience was very enthusiastic. | 观众非常热情。 | 115 |
 | 533 | forward | /fˈɔrwɜːrd/ | `adv.` | 向前 | look forward | 期待 | I look forward to it. | 我期待它。 | 115 |
 | 534 | specific | /spʌsˈɪfɪk/ | `adj.` | 具体的 | specific example | 具体例子 | Can you give a specific example? | 你能举一个具体例子吗？ | 115 |
-| 535 | design | /dɪzˈaɪn/ | `n.` | 设计 | modern design | 现代设计 | The building features a modern design with clean lines. | 这座建筑采用了线条简洁的现代设计。 | 114 |
+| 535 | design | /dɪzˈaɪn/ | `n.` | 设计 | modern design | 现代设计 | The building has a modern design. | 这座建筑有现代设计。 | 114 |
 | 536 | doubt | /dˈaʊt/ | `n.` | 怀疑 | in doubt | 怀疑 | It is in doubt. | 这值得怀疑。 | 114 |
-| 537 | hit | /hˈɪt/ | `v.` | 打 | hit on | 搭讪 | He hits on her. | 他搭讪她。 | 114 |
+| 537 | hit | /hˈɪt/ | `v.` | 打 | hit the ball | 击球 | He hit the ball hard. | 他用力击球。 | 114 |
 | 538 | justice | /dʒˈʌstʌs/ | `n.` | 正义 | sense of justice | 正义感 | He has a sense of justice. | 他有正义感。 | 114 |
 | 539 | latter | /lˈætɜːr/ | `adj.` | 后者的 | the latter | 后者 | I prefer the latter. | 我选择后者。 | 114 |
 | 540 | plane | /plˈeɪn/ | `n.` | 飞机 | by plane | 乘飞机 | I go by plane. | 我乘飞机去。 | 114 |
-| 541 | quality | /kwˈɑlʌtiː/ | `n.` | 质量 | high quality | 高质量 | This product is known for its high quality and durability. | 这个产品以其高质量和耐用性著称。 | 114 |
+| 541 | quality | /kwˈɑlʌtiː/ | `n.` | 质量 | high quality | 高质量 | This product is of high quality. | 这个产品质量很高。 | 114 |
 | 542 | straight | /strˈeɪt/ | `adj.` | 直的 | straight line | 直线 | Draw a straight line. | 画一条直线。 | 114 |
 | 543 | born | /bˈɔrn/ | `adj.` | 天生的 | born with | 天生具有 | She was born with talent. | 她天生有才能。 | 113 |
 | 544 | choice | /tʃˈɔɪs/ | `n.` | 选择 | make a choice | 做出选择 | I need to make a choice. | 我需要做出选择。 | 113 |
 | 545 | function | /fˈʌŋkʃʌn/ | `n.` | 功能 | main function | 主要功能 | The main function of this device is to measure temperature. | 这个设备的主要功能是测量温度。 | 113 |
-| 546 | include | /ɪnklˈuːd/ | `v.` | 包括 | include in | 包含在 | Include this in the list. | 把这个包含在清单里。 | 113 |
-| 547 | operation | /ˌɑpɜːrˈeɪʃʌn/ | `n.` | 操作 | simple operation | 简单操作 | The simple operation can be completed by anyone. | 简单操作任何人都能完成。 | 113 |
+| 546 | include | /ɪnklˈuːd/ | `v.` | 包括 | include the list | 包含在清单中 | Please include the list in the report. | 请把清单包含在报告中。 | 113 |
+| 547 | operation | /ˌɑpɜːrˈeɪʃʌn/ | `n.` | 操作 | simple operation | 简单操作 | This operation is easy to complete. | 这个操作很容易完成。 | 113 |
 | 548 | pattern | /pˈætɜːrn/ | `n.` | 模式 | behavior pattern | 行为模式 | Scientists discovered a behavior pattern in the study. | 科学家在研究中发现了一种行为模式。 | 113 |
 | 549 | poor | /pˈʊr/ | `adj.` | 贫穷的 | poor people | 穷人 | We should help poor people. | 我们应该帮助穷人。 | 113 |
 | 550 | seven | /sˈɛvʌn/ | `num.` | 七 | seven o'clock | 七点 | It is seven o'clock. | 现在七点。 | 113 |
-| 551 | shot | /ˈʃɑt/ | `n.` | 射击 | take a shot | 拍照 | Take a shot of this beautiful scenery for your album. | 拍一张这美丽风景的照片留作纪念。 | 113 |
-| 552 | staff | /stˈæf/ | `n.` | 全体职员 | staff member | 职员 | I am a staff member. | 我是一名职员。 | 113 |
+| 551 | shot | /ˈʃɑt/ | `n.` | 射击 | take a shot | 尝试一下 | Let me take a shot at it. | 让我尝试一下。 | 113 |
+| 552 | staff | /stˈæf/ | `n.` | 全体职员 | staff meeting | 员工会议 | The staff meeting is on Monday. | 员工会议在星期一。 | 113 |
 | 553 | stay | /stˈeɪ/ | `v.` | 停留 | stay at | 住在 | I stay at a hotel. | 我住在酒店。 | 113 |
 | 554 | sun | /sˈʌn/ | `n.` | 太阳 | sunrise | 日出 | I watch the sunrise. | 我看日出。 | 112 |
 | 555 | whatever | /wˌʌtˈɛvɜːr/ | `pron.` | 无论什么 | whatever you say | 随便你 | Whatever you say, I don't care. | 随便你，我不在乎。 | 112 |
@@ -569,13 +569,13 @@
 | 563 | income | /ˈɪnkˌʌm/ | `n.` | 收入 | income tax | 所得税 | Income tax is required. | 需要交所得税。 | 109 |
 | 564 | language | /lˈæŋɡwʌdʒ/ | `n.` | 语言 | foreign language | 外语 | I learn a foreign language. | 我学习外语。 | 109 |
 | 565 | principle | /prˈɪnsʌpʌl/ | `n.` | 原则 | basic principle | 基本原则 | Honesty is a basic principle that everyone should follow. | 诚实是每个人都应该遵守的基本原则。 | 109 |
-| 566 | visit | /vˈɪzʌt/ | `v.` | 访问 | visit to | 访问 | I will make a visit to them. | 我将访问他们。 | 109 |
+| 566 | visit | /vˈɪzɪt/ | `v.` | 访问 | visit the museum | 参观博物馆 | We will visit the museum tomorrow. | 我们明天参观博物馆。 | 109 |
 | 567 | analysis | /ʌnˈælʌsʌs/ | `n.` | 分析 | market analysis | 市场分析 | The report includes a detailed market analysis of the industry. | 报告包含对行业的详细市场分析。 | 108 |
 | 568 | distance | /dˈɪstʌns/ | `n.` | 距离 | long distance | 长距离 | They traveled a long distance to reach their destination. | 他们走了很长的距离才到达目的地。 | 108 |
 | 569 | expect | /ɪkspˈɛkt/ | `v.` | 期望 | expect to | 期望 | I expect to win. | 我期望赢。 | 108 |
 | 570 | importance | /ɪmpˈɔrtʌns/ | `n.` | 重要性 | great importance | 极其重要 | Education is of great importance for personal development. | 教育对个人发展极其重要。 | 108 |
 | 571 | none | /nˈʌn/ | `pron.` | 没有 | none of | 都不 | None of them came. | 他们都没来。 | 108 |
-| 572 | attitude | /ˈætʌtˌuːd/ | `n.` | 态度 | attitude toward | 对…的态度 | What is your attitude toward this? | 你对这个的态度是什么？ | 107 |
+| 572 | attitude | /ˈætʌtˌuːd/ | `n.` | 态度 | attitude toward | 对…的态度 | What is your attitude toward this? | 你对此态度如何？ | 107 |
 | 573 | continue | /kʌntˈɪnjuː/ | `v.` | 继续 | continue to | 继续 | I continue to work. | 我继续工作。 | 107 |
 | 574 | determine | /dʌtˈɜːrmʌn/ | `v.` | 决定 | determine to | 决定做 | I determine to try. | 我决定试试。 | 107 |
 | 575 | division | /dɪvˈɪʒʌn/ | `n.` | 分裂 | clear division | 明确划分 | There is a clear division of responsibilities among team members. | 团队成员之间有明确的职责划分。 | 107 |
@@ -592,20 +592,20 @@
 | 586 | health | /hˈɛlθ/ | `n.` | 健康 | health care | 医疗保健 | Health care is important. | 医疗保健很重要。 | 105 |
 | 587 | married | /mˈɛriːd/ | `adj.` | 已婚的 | married couple | 已婚夫妇 | They are a married couple. | 他们是已婚夫妇。 | 105 |
 | 588 | professional | /prʌfˈɛʃʌnʌl/ | `adj.` | 专业的 | professional skill | 专业技能 | He has professional skill. | 他有专业技能。 | 105 |
-| 589 | reach | /rˈiːtʃ/ | `v.` | 到达 | reach to | 到达 | I will reach to the station. | 我将到达车站。 | 105 |
+| 589 | reach | /rˈiːtʃ/ | `v.` | 到达 | reach the top | 到达顶部 | I will reach the top soon. | 我很快会到达顶部。 | 105 |
 | 590 | season | /sˈiːzʌn/ | `n.` | 季节 | rainy season | 雨季 | The rainy season is here. | 雨季来了。 | 105 |
 | 591 | station | /stˈeɪʃʌn/ | `n.` | 车站 | train station | 火车站 | The train station is near. | 火车站很近。 | 105 |
 | 592 | current | /kˈɜːrʌnt/ | `adj.` | 当前的 | current situation | 当前形势 | The current situation is good. | 当前形势很好。 | 104 |
 | 593 | eight | /ˈeɪt/ | `num.` | 八 | eight o'clock | 八点 | It is eight o'clock. | 现在八点。 | 104 |
 | 594 | council | /kˈaʊnsʌl/ | `n.` | 委员会 | city council | 市议会 | The city council met. | 市议会开会了。 | 103 |
 | 595 | machine | /mʌʃˈiːn/ | `n.` | 机器 | washing machine | 洗衣机 | The washing machine is new. | 洗衣机是新的。 | 103 |
-| 596 | mouth | /mˈaʊθ/ | `n.` | 嘴 | open mouth | 张开的嘴 | She looked at the beautiful scenery with an open mouth. | 她张开嘴看着美丽的风景。 | 103 |
+| 596 | mouth | /mˈaʊθ/ | `n.` | 嘴 | open your mouth | 张开嘴 | Please open your mouth wide. | 请张大嘴巴。 | 103 |
 | 597 | original | /əˈrɪdʒənəl/ | `adj.` | 原始的 | original idea | 最初的想法 | This is my original idea. | 这是我最初的想法。 | 103 |
 | 598 | race | /rˈeɪs/ | `n.` | 种族 | human race | 人类 | The human race is one. | 人类是一家。 | 103 |
 | 599 | unit | /jˈuːnʌt/ | `n.` | 单位 | basic unit | 基本单位 | The meter is a basic unit of measurement for length. | 米是长度的基本测量单位。 | 103 |
 | 600 | news | /nˈuːz/ | `n.` | 新闻 | good news | 好消息 | I have good news for you. | 我有好消息告诉你。 | 102 |
 | 601 | rise | /rˈaɪz/ | `v.` | 上升 | rise up | 上升 | The sun rises up every day. | 太阳每天升起。 | 102 |
-| 602 | supply | /sʌplˈaɪ/ | `v.` | 供应 | water supply | 水供应 | The water supply in this city is sufficient for residents. | 这个城市的水供应对居民来说充足。 | 102 |
+| 602 | supply | /sʌplˈaɪ/ | `v.` | 供应 | water supply | 水供应 | The water supply is sufficient. | 水供应充足。 | 102 |
 | 603 | unless | /ʌnlˈɛs/ | `conj.` | 除非 | unless you | 除非你 | Unless you try, you won't succeed. | 除非你尝试，否则你不会成功。 | 101 |
 | 604 | walk | /wˈɔk/ | `v.` | 走 | walk to | 走向 | I walk to school every day. | 我每天走路上学。 | 100 |
 | 605 | gas | /ˈɡæs/ | `n.` | 气体 | natural gas | 天然气 | Natural gas is used here. | 这里使用天然气。 | 99 |
@@ -624,7 +624,7 @@
 | 618 | heat | /hˈiːt/ | `n.` | 热 | heat up | 加热 | Please heat up the food. | 请把食物加热。 | 97 |
 | 619 | status | /stˈætʌs/ | `n.` | 地位 | social status | 社会地位 | Social status matters. | 社会地位很重要。 | 97 |
 | 620 | suppose | /sʌpˈoʊz/ | `v.` | 假设 | suppose so | 假定如此 | I suppose so. | 我假定如此。 | 97 |
-| 621 | thousand | /ˈθaʊzʌnd/ | `num.` | 千 | thousand of | 成千上万的 | Thousands of people came. | 成千上万的人来了。 | 97 |
+| 621 | thousand | /ˈθaʊzʌnd/ | `num.` | 千 | thousands of | 成千上万的 | Thousands of people came. | 成千上万的人来了。 | 97 |
 | 622 | behavior | /bɪhˈeɪvjɜːr/ | `n.` | 行为 | good behavior | 良好行为 | His good behavior impressed everyone at the meeting. | 他的良好行为给会议上的每个人都留下了深刻印象。 | 96 |
 | 623 | considerable | /kʌnsˈɪdɜːrʌbʌl/ | `adj.` | 相当大的 | considerable amount | 相当大的数量 | The project requires a considerable amount of investment. | 这个项目需要相当大的投资。 | 96 |
 | 624 | film | /fˈɪlm/ | `n.` | 电影 | film star | 电影明星 | The film star attended the premiere of his new movie yesterday. | 这位电影明星昨天出席了他新电影的首映式。 | 96 |
@@ -705,7 +705,7 @@
 | 699 | begin | /bɪɡˈɪn/ | `v.` | 开始 | begin with | 以…开始 | Let's begin with this. | 让我们从这开始。 | 84 |
 | 700 | collection | /kʌlˈɛkʃʌn/ | `n.` | 收集 | stamp collection | 邮票收藏 | I have a valuable stamp collection from many countries. | 我有一个来自许多国家的珍贵邮票收藏。 | 84 |
 | 701 | learn | /lˈɜːrn/ | `v.` | 学习 | learn from | 向…学习 | I learn from my mistakes. | 我从错误中学习。 | 84 |
-| 702 | sex | /sˈɛks/ | `n.` | 性别 | gender sex | 性别 | What is the gender sex of the baby? | 宝宝的性别是什么？ | 84 |
+| 702 | sex | /sˈɛks/ | `n.` | 性别 | sex education | 性教育 | Sex education is important for children. | 性教育对儿童很重要。 | 84 |
 | 703 | strange | /strˈeɪndʒ/ | `adj.` | 奇怪的 | strange to | 对…奇怪 | It is strange to me. | 这对我很奇怪。 | 84 |
 | 704 | mark | /mˈɑrk/ | `n.` | 标记 | success mark | 成功标记 | A diploma is a success mark in education. | 文凭是教育成功的标记。 | 83 |
 | 705 | opening | /ˈoʊpʌnɪŋ/ | `n.` | 开头 | grand opening | 盛大开幕 | The grand opening of the store attracted many customers. | 商店的盛大开幕吸引了许多顾客。 | 83 |
@@ -721,7 +721,7 @@
 | 715 | bar | /bˈɑr/ | `n.` | 酒吧 | coffee bar | 咖啡吧 | I go to the coffee bar. | 我去咖啡吧。 | 82 |
 | 716 | drink | /drˈɪŋk/ | `v.` | 喝 | drink water | 喝水 | I need to drink water. | 我需要喝水。 | 82 |
 | 717 | instance | /ˈɪnstʌns/ | `n.` | 例子 | for instance | 例如 | For instance, this one. | 例如，这个。 | 82 |
-| 718 | produce | /prʌdˈuːs/ | `v.` | 生产 | factory produce | 工厂产品 | This is factory produce from our local area. | 这是来自我们当地的工厂产品。 | 82 |
+| 718 | produce | /prʌdˈuːs/ | `v.` | 生产 | produce goods | 生产商品 | The factory produces goods for export. | 这家工厂生产出口商品。 | 82 |
 | 719 | train | /trˈeɪn/ | `v.` | 训练 | train to | 训练去 | I train to be a teacher. | 我训练成为老师。 | 82 |
 | 720 | youth | /jˈuːθ/ | `n.` | 青春 | youth club | 青年俱乐部 | I join the youth club. | 我参加青年俱乐部。 | 82 |
 | 721 | essential | /ɪsˈɛnʃʌl/ | `adj.` | 必要的 | essential to | 对…必要 | Water is essential to life. | 水对生命必要。 | 81 |
@@ -834,7 +834,7 @@
 | 828 | liberal | /lˈɪbɜːrʌl/ | `adj.` | 自由的 | liberal arts | 文科 | I study liberal arts. | 我学习文科。 | 69 |
 | 829 | politics | /pˈɑlʌtˌɪks/ | `n.` | 政治 | international politics | 国际政治 | I am interested in international politics and diplomacy. | 我对国际政治和外交感兴趣。 | 69 |
 | 830 | realize | /rˈiːlˌaɪz/ | `v.` | 意识到 | realize that | 意识到 | I realize that I am wrong. | 我意识到我错了。 | 69 |
-| 831 | seek | /sˈiːk/ | `v.` | 寻找 | seek for | 寻找 | I seek for the truth. | 我寻找真相。 | 69 |
+| 831 | seek | /sˈiːk/ | `v.` | 寻找 | seek truth | 寻找真相 | We seek truth in all things. | 我们在一切中寻找真相。 | 69 |
 | 832 | sweet | /swˈiːt/ | `adj.` | 甜的 | sweet taste | 甜味 | I love the sweet taste of ripe mangoes. | 我喜欢成熟芒果的甜味。 | 69 |
 | 833 | weather | /wˈɛðɜːr/ | `n.` | 天气 | weather forecast | 天气预报 | The weather forecast says rain. | 天气预报说有雨。 | 69 |
 | 834 | willing | /wˈɪlɪŋ/ | `adj.` | 愿意的 | willing to | 愿意 | I am willing to help. | 我愿意帮忙。 | 69 |
@@ -1143,7 +1143,7 @@
 | 1137 | speaker | /spˈiːkɜːr/ | `n.` | 演讲者 | good speaker | 好演讲者 | The good speaker gave an inspiring speech. | 好演讲者发表了鼓舞人心的演讲。 | 49 |
 | 1138 | tendency | /tˈɛndʌnsiː/ | `n.` | 趋势 | growing tendency | 增长趋势 | The growing tendency of young people moving to cities continues. | 年轻人向城市迁移的增长趋势持续。 | 49 |
 | 1139 | till | /tˈɪl/ | `conj.` | 直到 | till now | 直到现在 | Till now, I wait. | 直到现在，我等待。 | 49 |
-| 1140 | tragedy | /trˈædʒʌdiː/ | `n.` | 悲剧 | tragic tragedy | 悲惨的悲剧 | The earthquake was a tragic tragedy that affected thousands of families. | 地震是一场悲惨的悲剧，影响了数千个家庭。 | 49 |
+| 1140 | tragedy | /trˈædʒʌdiː/ | `n.` | 悲剧 | family tragedy | 家庭悲剧 | The family tragedy shocked everyone in the community. | 这场家庭悲剧震惊了整个社区。 | 49 |
 | 1141 | anger | /ˈæŋɡɜːr/ | `n.` | 愤怒 | clear anger | 明显愤怒 | His clear anger was visible on his face. | 他脸上明显的愤怒可见。 | 48 |
 | 1142 | comparison | /kʌmpˈɛrʌsʌn/ | `n.` | 比较 | make a comparison | 进行比较 | We need to make a comparison between the two products before deciding. | 我们需要在决定之前对这两种产品进行比较。 | 48 |
 | 1143 | formal | /fˈɔrmʌl/ | `adj.` | 正式的 | formal dress | 正式礼服 | Guests are required to wear formal dress at the wedding ceremony. | 客人在婚礼仪式上需要穿正式礼服。 | 48 |
@@ -1291,7 +1291,7 @@
 | 1285 | smooth | /smˈuːð/ | `adj.` | 平滑的 | smooth surface | 光滑表面 | The surface is smooth. | 表面光滑。 | 42 |
 | 1286 | threat | /θrˈɛt/ | `n.` | 威胁 | serious threat | 严重威胁 | Climate change is a serious threat to our planet. | 气候变化是对我们地球的严重威胁。 | 42 |
 | 1287 | throw | /θrˈoʊ/ | `v.` | 扔 | throw away | 扔掉 | Throw it away. | 把它扔掉。 | 42 |
-| 1288 | unlike | /ʌnlˈaɪk/ | `prep.` | 不像 | unlike me | 不像我 | Unlike me, he is tall. | 不像我是的，他很高。 | 42 |
+| 1288 | unlike | /ʌnlˈaɪk/ | `prep.` | 不像 | unlike me | 不像我 | Unlike me, he is tall. | 不像我，他很高。 | 42 |
 | 1289 | urban | /ˈɜːrbʌn/ | `adj.` | 城市的 | urban life | 城市生活 | Many people enjoy urban life. | 许多人喜欢城市生活。 | 42 |
 | 1290 | weapon | /wˈɛpʌn/ | `n.` | 武器 | dangerous weapon | 危险武器 | The police found a dangerous weapon in his car. | 警察在他的车里发现了一件危险武器。 | 42 |
 | 1291 | wire | /wˈaɪɜːr/ | `n.` | 电线 | broken wire | 断线 | This broken wire needs to be repaired. | 这根断线需要修理。 | 42 |
@@ -1901,7 +1901,7 @@
 | 1895 | stimulate | /ˈstɪmjʊˌleɪt/ | `v.* | 刺激 | stimulate growth | 刺激增长 | The new policy aims to stimulate growth in the economy. | 新政策旨在刺激经济增长。 | 24 |
 | 1896 | stir | /stɜːr/ | `v.* | 搅拌 | stir the coffee | 搅拌咖啡 | Please stir the coffee before drinking. | 请在喝咖啡前搅拌一下。 | 24 |
 | 1897 | stock | /stɑk/ | `v.* | 储存 | stock up | 储存 | We need to stock up on food for winter. | 我们需要储存食物过冬。 | 24 |
-| 1898 | stomach | /ˈstʌmʌk/ | `v.* | 胃 | stomach the food | 胃接受食物 | I can't stomach this. | 我无法接受这个。 | 24 |
+| 1898 | stomach | /ˈstʌmʌk/ | `v.* | 忍受 | stomach the pain | 忍受痛苦 | I can't stomach the pain anymore. | 我再也无法忍受痛苦。 | 24 |
 | 1899 | stone | /stoʊn/ | `v.* | 扔石头 | stone the bird | 用石头扔鸟 | Don't stone the bird. | 别用石头扔鸟。 | 24 |
 | 1900 | stool | /stuːl/ | `n.` | 凳子 | wooden stool |木凳 | He sat on a wooden stool in the corner of the room. | 他坐在房间角落的木凳上。 | 24 |
 | 1901 | stop | /stɑp/ | `n.` | 停止 | production stop |生产停止 | A production stop caused delays in delivery. |生产停止导致了交付延误。 | 24 |
@@ -1911,19 +1911,19 @@
 | 1905 | story | /ˈstɔri/ | `n.` | 故事 | inspiring story |鼓舞人心的故事 | The book tells an inspiring story of adventure. | 这本书讲述了一个鼓舞人心的冒险故事。 | 24 |
 | 1906 | straight | /streɪt/ | `v.* | 拉直 | straight the line | 拉直线 | Please straight the line on the paper. | 请把纸上的线拉直。 | 24 |
 | 1907 | strain | /streɪn/ | `v.* | 拉紧 | strain the rope | 拉紧绳子 | He strain the rope to secure the tent. | 他拉紧绳子来固定帐篷。 | 24 |
-| 1908 | strange | /streɪndʒ/ | `v.* | 使奇怪 | strange me | 使我奇怪 | This strange thing surprises me. | 这奇怪的事使我惊讶。 | 24 |
+| 1908 | strange | /streɪndʒ/ | `adj.* | 奇怪的 | strange thing | 奇怪的事 | A strange thing happened today. | 今天发生了一件奇怪的事。 | 24 |
 | 1909 | stranger | /ˈstreɪndʒɜːr/ | `n.` | 陌生人 | kind stranger |善良陌生人 | A kind stranger helped the lost child find home. |善良陌生人帮助迷路的孩子找到了家。 | 24 |
 | 1910 | stream | /striːm/ | `v.* | 流动 | water stream | 水流 | The water stream flows. | 小溪流动。 | 24 |
 | 1911 | street | /striːt/ | `n.` | 街道 | busy street |繁忙街道 | The busy street was filled with shops and restaurants. |繁忙街道布满了商店和餐馆。 | 24 |
-| 1912 | strength | /strɛŋθ/ | `v.* | 加强 | strength the wall | 加强墙壁 | They strength the wall to prevent collapse. | 他们加强墙壁防止倒塌。 | 24 |
+| 1912 | strength | /strɛŋθ/ | `n.* | 力量 | physical strength | 体力 | Regular exercise improves physical strength. | 定期锻炼提高体力。 | 24 |
 | 1913 | strengthen | /ˈstrɛŋθɜːn/ | `v.* | 加强 | strengthen the team | 加强团队 | We need to strengthen the team with new members. | 我们需要用新成员加强团队。 | 24 |
 | 1914 | stress | /strɛs/ | `v.* | 强调 | stress the importance | 强调重要性 | The teacher stress the importance of studying. | 老师强调学习的重要性。 | 24 |
 | 1915 | stretch | /strɛtʃ/ | `v.* | 伸展 | stretch the muscle | 伸展肌肉 | You should stretch the muscle before exercising. | 你应该在运动前伸展肌肉。 | 24 |
 | 1916 | strict | /strɪkt/ | `adj.* | 严格的 | strict rule | 严格的规则 | Follow the strict rule carefully. | 仔细遵守严格的规则。 | 24 |
 | 1917 | strike | /straɪk/ | `v.* | 罢工 | strike for rights | 为权利罢工 | Workers strike for rights when they are treated unfairly. | 工人在受到不公平对待时为权利罢工。 | 24 |
-| 1918 | striking | /ˈstraɪkɪŋ/ | `v.* | 打 | striking the table | 敲桌子 | Striking the table is wrong. | 敲桌子是错的。 | 24 |
+| 1918 | striking | /ˈstraɪkɪŋ/ | `adj.* | 引人注目的 | striking appearance | 引人注目的外表 | She has a striking appearance. | 她有引人注目的外表。 | 24 |
 | 1919 | string | /strɪŋ/ | `n.` | 绳子 | guitar string | 吉他弦 | He replaced the broken guitar string before the performance. | 他在表演前更换了断裂的吉他弦。 | 24 |
-| 1920 | strip | /strɪp/ | `v.* | 脱衣 | strip off | 脱掉 | Strip off your clothes. | 脱掉你的衣服。 | 24 |
+| 1920 | strip | /strɪp/ | `v.* | 除去 | strip away | 除去 | Strip away the old paint. | 除去旧油漆。 | 24 |
 | 1921 | intimate | /ˈɪntʌmʌt/ | `adj.` | 亲密的 | intimate friend | 亲密的朋友 | She shared her secret with an intimate friend from college. | 她与大学时的亲密朋友分享了秘密。 | 21 |
 | 1922 | jail | /dʒˈeɪl/ | `n.` | 监狱 | go to jail | 入狱 | The criminal will go to jail for his crimes. | 罪犯将因他的罪行入狱。 | 21 |
 | 1923 | linear | /lˈɪniːɜːr/ | `adj.` | 线性的 | linear growth | 线性增长 | The company experienced linear growth in sales over the past year. | 公司在过去一年中销售呈线性增长。 | 21 |
@@ -1999,7 +1999,7 @@
 | 1993 | okay | /ˌoʊkˈeɪ/ | `adj.* | 好的 | okay to do | 可以做 | It's okay to do this. | 做这个是可以的。 | 20 |
 | 1994 | orderly | /ˈɔrdɜːrliː/ | `adj.* | 整齐的 | orderly room | 整齐的房间 | She keeps an orderly room. | 她保持房间整齐。 | 20 |
 | 1995 | package | /pˈækʌdʒ/ | `n.` | 包裹 | receive package | 收到包裹 | I received a package from my friend yesterday. | 我昨天收到了朋友寄来的包裹。 | 20 |
-| 1996 | pioneer | /pˌaɪʌnˈɪr/ | `n.` | 先驱 | industry pioneer | 行业先驱 | Edison was an industry pioneer in electrical engineering. | 爱迪生是电气工程的行业先驱。 | 20 |
+| 1996 | pioneer | /pˌaɪʌnˈɪr/ | `n.` | 先驱 | pioneer in | …的先驱 | Edison was a pioneer in electrical engineering. | 爱迪生是电气工程的先驱。 | 20 |
 | 1997 | pipe | /pˈaɪp/ | `n.` | 管子 | water pipe | 水管 | The plumber fixed a broken water pipe yesterday. | 管工昨天修理了一根破损的水管。 | 20 |
 | 1998 | poverty | /pˈɑvɜːrtiː/ | `n.* | 贫穷 | extreme poverty | 极端贫困 | Many people in the region live in extreme poverty. | 这个地区的许多人生活在极端贫困中。 | 20 |
 | 1999 | pursue | /pɜːrsˈuː/ | `v.* | 追求 | pursue dream | 追求梦想 | Pursue your dream. | 追求你的梦想。 | 20 |
@@ -2013,10 +2013,10 @@
 | 2007 | socialism | /sˈoʊʃʌlˌɪzʌm/ | `n.* | 社会主义 | democratic socialism | 民主社会主义 | Democratic socialism is a political ideology. | 民主社会主义是一种政治意识形态。 | 20 |
 | 2008 | solve | /sˈɑlv/ | `v.* | 解决 | solve the problem | 解决问题 | We must solve the problem together. | 我们必须一起解决问题。 | 20 |
 | 2009 | splendid | /splˈɛndʌd/ | `adj.* | 辉煌的 | splendid view | 辉煌的景色 | We saw a splendid view from the mountain. | 我们从山上看到了辉煌的景色。 | 20 |
-| 2010 | stake | /stˈeɪk/ | `n.` | 赌注 | financial stake | 财务赌注 | Investors have a significant financial stake in the company's success. | 投资者在公司的成功中有重要的财务赌注。 | 20 |
+| 2010 | stake | /stˈeɪk/ | `n.` | 利害关系 | financial stake | 财务利益 | Investors have a significant financial stake in the company's success. | 投资者在公司的成功中有重要的财务利益。 | 20 |
 | 2011 | tent | /tˈɛnt/ | `n.` | 帐篷 | camping tent | 露营帐篷 | The campers set up a camping tent near the lake. | 露营者在湖边搭起了一个露营帐篷。 | 20 |
-| 2012 | thereafter | /ðɛrˈæftɜːr/ | `adv.* | 之后 | thereafter I left | 之后我离开了 | Thereafter, I left. | 之后，我离开了。 | 20 |
-| 2013 | tooth | /tˈuːθ/ | `n.` | 牙齿 | broken tooth | 破损的牙齿 | The dentist carefully extracted a broken tooth from the patient. | 牙医小心地从病人身上拔掉了一颗破损的牙齿。 | 20 |
+| 2012 | thereafter | /ðɛrˈæftɜːr/ | `adv.* | 之后 | soon thereafter | 不久之后 | Soon thereafter, he left. | 不久之后，他离开了。 | 20 |
+| 2013 | tooth | /tˈuːθ/ | `n.` | 牙齿 | tooth ache | 牙痛 | I have a tooth ache. | 我牙痛。 | 20 |
 | 2014 | tournament | /tˈʊrnʌmʌnt/ | `n.` | 锦标赛 | chess tournament | 象棋锦标赛 | The team won an international chess tournament last year. | 团队去年赢得了国际象棋锦标赛。 | 20 |
 | 2015 | trap | /trˈæp/ | `n.` | 陷阱 | animal trap | 捕兽陷阱 | The hunter set an animal trap to catch the wild animal. | 猎人设置了一个捕兽陷阱来捕捉野生动物。 | 20 |
 | 2016 | treaty | /trˈiːtiː/ | `n.` | 条约 | peace treaty | 和平条约 | The countries signed a peace treaty after the war. | 各国在战后签署了和平条约。 | 20 |
@@ -2034,33 +2034,33 @@
 | 2028 | elementary | /ˌɛlʌmˈɛntriː/ | `adj.* | 基本的 | elementary school | 小学 | Children go to elementary school at age six. | 孩子们六岁上小学。 | 19 |
 | 2029 | eve | /ˈiːv/ | `n.* | 前夕 | Christmas Eve | 圣诞前夕 | Families gather together on Christmas Eve. | 家人在圣诞前夕聚在一起。 | 19 |
 | 2030 | exceed | /ɪksˈiːd/ | `v.* | 超过 | exceed the limit | 超过限制 | Do not exceed the limit on your credit card. | 不要超过你的信用卡限额。 | 19 |
-| 2031 | fatal | /fˈeɪtʌl/ | `adj.* | 致命的 | fatal mistake | 致命的错误 | Making a fatal mistake can ruin everything. | 犯致命的错误可以毁掉一切。 | 19 |
+| 2031 | fatal | /fˈeɪtʌl/ | `adj.* | 致命的 | fatal accident | 致命事故 | The fatal accident shocked everyone. | 这起致命事故震惊了所有人。 | 19 |
 | 2032 | fever | /fˈiːvɜːr/ | `n.* | 发烧 | high fever | 高烧 | She had a high fever last night. | 她昨晚发高烧了。 | 19 |
 | 2033 | hostile | /hˈɑstʌl/ | `adj.* | 敌对的 | hostile environment | 敌对的环境 | They faced a hostile environment there. | 他们在那里面临敌对的环境。 | 19 |
 | 2034 | ignore | /ɪɡnˈɔr/ | `v.* | 忽视 | ignore the fact | 忽视事实 | Ignore this fact. | 忽视这个事实。 | 19 |
 | 2035 | lodge | /lˈɑdʒ/ | `v.* | 住宿 | mountain lodge | 山间住所 | We stayed at a mountain lodge during our hiking trip. | 我们在徒步旅行期间住在山间住所。 | 19 |
 | 2036 | lover | /lˈʌvɜːr/ | `n.` | 爱人 | art lover | 艺术爱好者 | She remained an art lover throughout her life. | 她一生都是艺术的爱好者。 | 19 |
-| 2037 | midst | /mˈɪdst/ | `n.* | 中间 | midst of | …的中间 | In the midst of. | 在…的中间。 | 19 |
+| 2037 | midst | /mˈɪdst/ | `n.* | 中间 | in the midst of | 在…之中 | She remained calm in the midst of chaos. | 她在混乱中保持冷静。 | 19 |
 | 2038 | naive | /nˌaɪˈiːv/ | `adj.* | 天真的 | naive idea | 天真的想法 | That was a naive idea. | 那是一个天真的想法。 | 19 |
 | 2039 | numerical | /nuːmˈɛrʌkʌl/ | `adj.* | 数字的 | numerical value | 数值 | What is the numerical value? | 数值是多少？ | 19 |
 | 2040 | optical | /ˈɑptɪkʌl/ | `adj.* | 光学的 | optical instrument | 光学仪器 | This is an optical instrument. | 这是一个光学仪器。 | 19 |
 | 2041 | plantation | /plˌæntˈeɪʃʌn/ | `n.` | 种植园 | coffee plantation | 咖啡种植园 | The owner managed a coffee plantation in Brazil. | 主人在巴西管理着一个咖啡种植园。 | 19 |
 | 2042 | policeman | /pʌlˈiːsmʌn/ | `n.` | 警察 | traffic policeman | 交通警察 | A traffic policeman helped the tourist find the hotel. | 一位交通警察帮助游客找到了酒店。 | 19 |
-| 2043 | ray | /rˈeɪ/ | `n.` | 光线 | ray of hope | 一线希望 | The good news gave the family a ray of hope after the tragedy. | 好消息给这个家庭在悲剧后带来一线希望。 | 19 |
+| 2043 | ray | /rˈeɪ/ | `n.` | 光线 | ray of hope | 一线希望 | The good news gave us a ray of hope. | 好消息给了我们一线希望。 | 19 |
 | 2044 | realm | /rˈɛlm/ | `n.` | 领域 | realm of science | 科学领域 | The scientist made important discoveries in the realm of physics. | 科学家在物理领域做出了重要发现。 | 19 |
 | 2045 | relax | /rɪlˈæks/ | `v.* | 放松 | relax yourself | 放松自己 | Please relax yourself and enjoy the music. | 请放松自己，享受音乐。 | 19 |
 | 2046 | remainder | /rɪmˈeɪndɜːr/ | `n.* | 剩余 | remainder time | 剩余时间 | We have remainder time to complete the project. | 我们有剩余时间完成项目。 | 19 |
 | 2047 | respective | /rɪspˈɛktɪv/ | `adj.* | 各自的 | respective duties | 各自的职责 | They performed their respective duties well. | 他们很好地履行了各自的职责。 | 19 |
 | 2048 | rob | /rˈɑb/ | `v.* | 抢劫 | rob someone | 抢劫某人 | Rob the bank. | 抢劫银行。 | 19 |
-| 2049 | servant | /sˈɜːrvʌnt/ | `n.` | 仆人 | civil servant | 公务员 | Many people choose to become a civil servant for stable employment. | 许多人选择成为公务员以获得稳定就业。 | 19 |
+| 2049 | servant | /sˈɜːrvʌnt/ | `n.` | 仆人 | civil servant | 公务员 | She is a civil servant. | 她是一名公务员。 | 19 |
 | 2050 | slender | /slˈɛndɜːr/ | `adj.* | 苗条的 | slender figure | 苗条的身材 | She has a slender figure. | 她有苗条的身材。 | 19 |
 | 2051 | slip | /slˈɪp/ | `v.* | 滑倒 | slip on | 在…上滑倒 | Slip on the ice. | 在冰上滑倒。 | 19 |
 | 2052 | slope | /slˈoʊp/ | `n.` | 斜坡 | gentle slope | 缓坡 | The bicycle path follows a gentle slope down to the river. | 自行车道沿着缓坡向下延伸到河边。 | 19 |
 | 2053 | sober | /sˈoʊbɜːr/ | `adj.* | 清醒的 | sober mind | 清醒的头脑 | Keep a sober mind when making decisions. | 做决定时保持清醒的头脑。 | 19 |
-| 2054 | span | /spˈæn/ | `n.` | 跨度 | life span | 寿命 | The average life span of humans has increased significantly over the past century. | 人类平均寿命在过去一个世纪显著增加。 | 19 |
+| 2054 | span | /spˈæn/ | `n.` | 跨度 | life span | 寿命 | The life span of a cat is about 15 years. | 猫的寿命大约15年。 | 19 |
 | 2055 | spell | /spˈɛl/ | `v.* | 拼写 | spell the word | 拼写这个单词 | Spell this word. | 拼写这个单词。 | 19 |
-| 2056 | string | /strˈɪŋ/ | `n.` | 绳子 | string of pearls | 珍珠项链 | She received a beautiful string of pearls as a wedding gift. | 她收到一条美丽的珍珠项链作为结婚礼物。 | 19 |
-| 2057 | stroke | /strˈoʊk/ | `n.` | 中风 | heart stroke | 心脏中风 | The patient suffered a heart stroke and was immediately taken to the hospital. | 病人突发心脏中风，立即被送往医院。 | 19 |
+| 2056 | string | /strˈɪŋ/ | `n.` | 绳子 | a string of | 一串 | She bought a string of beads. | 她买了一串珠子。 | 19 |
+| 2057 | stroke | /strˈoʊk/ | `n.` | 中风 | suffer a stroke | 中风 | He suffered a stroke last year. | 他去年中风了。 | 19 |
 | 2058 | timber | /tˈɪmbɜːr/ | `n.* | 木材 | construction timber | 建筑木材 | Construction timber is used for building houses. | 建筑木材用于建造房屋。 | 19 |
 | 2059 | toast | /tˈoʊst/ | `n.* | 烤面包 | toast bread | 烤面包 | I had toast bread for breakfast. | 我早餐吃了烤面包。 | 19 |
 | 2060 | tobacco | /tʌbˈækˌoʊ/ | `n.* | 烟草 | tobacco product | 烟草产品 | Tobacco product is harmful to health. | 烟草产品有害健康。 | 19 |
@@ -2128,7 +2128,7 @@
 | 2122 | consist | /kʌnsˈɪst/ | `v.* | 由...组成 | consist of | 由…组成 | This consists of that. | 这个由那个组成。 | 17 |
 | 2123 | counsel | /kˈaʊnsʌl/ | `v.* | 劝告 | give counsel | 给予劝告 | She counseled him on his career. | 她就他的事业劝告了他。 | 17 |
 | 2124 | departure | /dɪpˈɑrtʃɜːr/ | `n.` | 离开 | train departure | 火车离开 | The train departure was delayed due to bad weather. | 火车离开因恶劣天气而延误。 | 17 |
-| 2125 | deputy | /dˈɛpjʌtiː/ | `n.` | 副手 | manager deputy | 经理副手 | The manager deputy handled daily operations efficiently. | 经理副手高效处理日常运营。 | 17 |
+| 2125 | deputy | /dˈɛpjʌtiː/ | `n.` | 副手 | deputy manager | 副经理 | The deputy manager handled daily operations efficiently. | 副经理高效处理日常运营。 | 17 |
 | 2126 | economics | /ˌɛkʌnˈɑmɪks/ | `n.* | 经济学 | study economics | 学习经济学 | Many students study economics in college. | 许多学生在大学学习经济学。 | 17 |
 | 2127 | eighteen | /eɪtˈiːn/ | `num.* | 十八 | eighteen years | 十八年 | He has worked here for eighteen years. | 他在这里工作了十八年。 | 17 |
 | 2128 | flame | /flˈeɪm/ | `n.` | 火焰 | bright flame | 明亮火焰 | A bright flame burned in the fireplace. | 明亮火焰在壁炉里燃烧。 | 17 |
@@ -2214,8 +2214,8 @@
 | 2208 | muscular | /mˈʌskjʌlɜːr/ | `adj.* | 肌肉的 | muscular body | 肌肉发达的身体 | He has a muscular body. | 他有肌肉发达的身体。 | 16 |
 | 2209 | northeast | /nˌɔrθˈiːst/ | `n.* | 东北 | northeast region | 东北地区 | The northeast region of the country has cold winters. | 该国的东北地区冬季寒冷。 | 16 |
 | 2210 | obligation | /ˌɑblʌɡˈeɪʃʌn/ | `n.` | 义务 | legal obligation | 法律义务 | Citizens have a legal obligation to pay taxes. | 公民有纳税的法律义务。 | 16 |
-| 2211 | observer | /ʌbzˈɜːrvɜːr/ | `n.` | 观察者 | keen observer |敏锐观察者 | A keen observer recorded what happened in detail. | 一位敏锐观察者详细记录了发生的事情。 | 16 |
-| 2212 | occupy | /ˈɑkjʌpˌaɪ/ | `v.* | 占据 | occupy the space | 占据空间 | The furniture occupy the space in the room. | 家具占据房间里的空间。 | 16 |
+| 2211 | observer | /ʌbzˈɜːrvɜːr/ | `n.` | 观察者 | keen observer | 敏锐的观察者 | A keen observer recorded what happened in detail. | 一位敏锐的观察者详细记录了发生的事情。 | 16 |
+| 2212 | occupy | /ˈɑkjʌpˌaɪ/ | `v.* | 占据 | occupy the space | 占据空间 | The furniture occupies the space in the room. | 家具占据房间里的空间。 | 16 |
 | 2213 | optimum | /ˈɑptʌmʌm/ | `n.* | 最佳 | optimum solution | 最佳解决方案 | We found the optimum solution to the problem. | 我们找到了问题的最佳解决方案。 | 16 |
 | 2214 | oriental | /ˌɔriːˈɛntʌl/ | `adj.* | 东方的 | oriental culture | 东方文化 | She studied oriental culture. | 她学习了东方文化。 | 16 |
 | 2215 | orientation | /ˌɔriːɛntˈeɪʃʌn/ | `n.* | 方向 | career orientation | 职业方向 | The university offers career orientation for new students. | 大学为新学生提供职业方向指导。 | 16 |
@@ -2230,8 +2230,8 @@
 | 2224 | proposition | /prˌɑpʌzˈɪʃʌn/ | `n.` | 命题 | complex proposition | 复杂命题 | The mathematician proved a complex proposition. | 数学证明了一个复杂命题。 | 16 |
 | 2225 | pursuit | /pɜːrsˈuːt/ | `n.* | 追求 | career pursuit | 职业追求 | Her career pursuit was successful. | 她的职业追求是成功的。 | 16 |
 | 2226 | quest | /kwˈɛst/ | `n.` | 探索 | quest of | …的探索 | Scientists continued a quest of discovering new treatments for diseases. | 科学家继续探索发现新的疾病治疗方法。 | 16 |
-| 2227 | rage | /rˈeɪdʒ/ | `n.* | 愤怒 | rage of | …的愤怒 | He felt a rage of anger. | 他感到愤怒的rage。 | 16 |
-| 2228 | rail | /rˈeɪl/ | `n.` | 铁路 | rail of | …的铁路 | The rail of the system connects major cities across the country. | 系统的铁路连接了全国各大城市。 | 16 |
+| 2227 | rage | /rˈeɪdʒ/ | `n.* | 愤怒 | in a rage | 愤怒地 | He left the room in a rage. | 他愤怒地离开了房间。 | 16 |
+| 2228 | rail | /rˈeɪl/ | `n.` | 铁路 | by rail | 乘火车 | I traveled there by rail. | 我乘火车去那里。 | 16 |
 | 2229 | refuse | /rʌfjˈuːz/ | `v.* | 拒绝 | refuse to do | 拒绝做 | Refuse to go. | 拒绝去。 | 16 |
 | 2230 | saint | /sˈeɪnt/ | `n.` | 圣人 | saint of | …的圣人 | Saint Francis was a saint of compassion who helped the poor. | 圣弗朗西斯是一个同情穷人的圣人。 | 16 |
 | 2231 | satisfy | /sˈætʌsfˌaɪ/ | `v.* | 满足 | satisfy the need | 满足需求 | The company aims to satisfy the need of customers. | 公司旨在满足客户的需求。 | 16 |
@@ -2239,35 +2239,35 @@
 | 2233 | simplicity | /sɪmplˈɪsʌtiː/ | `n.* | 简单 | simplicity of | …的简单 | The simplicity of the design is appealing. | 设计的简单是吸引人的。 | 16 |
 | 2234 | sketch | /skˈɛtʃ/ | `n.` | 草图 | sketch of | …的草图 | The architect made a sketch of the building design for approval. | 建筑师为审批制作了建筑设计的草图。 | 16 |
 | 2235 | solar | /sˈoʊlɜːr/ | `adj.* | 太阳的 | solar energy | 太阳能 | Solar energy is clean and renewable. | 太阳能是清洁和可再生的。 | 16 |
-| 2236 | soup | /sˈuːp/ | `n.* | 汤 | soup of | …的汤 | She made a soup of vegetables. | 她做了一碗蔬菜汤。 | 16 |
-| 2237 | specialist | /spˈɛʃʌlʌst/ | `n.` | 专家 | specialist of | …的专家 | The specialist of heart disease examined the patient carefully. | 心脏病专家仔细检查了病人。 | 16 |
-| 2238 | spray | /sprˈeɪ/ | `v.* | 喷洒 | spray the water | 喷洒水 | Farmers spray the water on the crops. | 农民向庄稼喷洒水。 | 16 |
+| 2236 | soup | /sˈuːp/ | `n.* | 汤 | bowl of soup | 一碗汤 | She made a bowl of soup. | 她做了一碗汤。 | 16 |
+| 2237 | specialist | /spˈɛʃʌlʌst/ | `n.` | 专家 | specialist in | …领域的专家 | She is a specialist in heart disease. | 她是心脏病专家。 | 16 |
+| 2238 | spray | /sprˈeɪ/ | `v.* | 喷洒 | spray on | 喷洒在…上 | Spray the medicine on the wound. | 把药喷在伤口上。 | 16 |
 | 2239 | strengthen | /strˈɛŋθʌn/ | `v.* | 加强 | strengthen the team | 加强团队 | Training can strengthen the team performance. | 训练可以加强团队表现。 | 16 |
 | 2240 | stride | /strˈaɪd/ | `v.* | 大步走 | stride forward | 大步前进 | He strode forward confidently. | 他自信地大步前进。 | 16 |
 | 2241 | sturdy | /stˈɜːrdiː/ | `adj.* | 坚固的 | sturdy structure | 坚固的结构 | The building has a sturdy structure. | 这座建筑有坚固的结构。 | 16 |
 | 2242 | successor | /sʌksˈɛsɜːr/ | `n.` | 继任者 | successor of | …的继任者 | The successor of the company president was appointed last month. | 公司总裁的继任者上个月被任命。 | 16 |
 | 2243 | synthesis | /sˈɪnθʌsʌs/ | `n.* | 综合 | synthesis of | …的综合 | The synthesis of ideas led to innovation. | 思想的综合导致了创新。 | 16 |
-| 2244 | taxi | /tˈæksiː/ | `n.` | 出租车 | taxi of | …的出租车 | The taxi of the city transported passengers to the airport. | 市里的出租车将乘客运送到机场。 | 16 |
-| 2245 | ticket | /tˈɪkʌt/ | `n.` | 票 | ticket of | …的票 | She bought a ticket of admission to the concert online. | 她在网上购买了音乐会入场票。 | 16 |
-| 2246 | tile | /tˈaɪl/ | `n.` | 瓦片 | tile of | …的瓦片 | The roof was covered with a tile of ceramic material. |屋顶覆盖着陶瓷瓦片。 | 16 |
-| 2247 | toll | /tˈoʊl/ | `n.` | 通行费 | toll of | …的通行费 | Drivers paid a toll of five dollars to cross the bridge. | 驾驶者支付五美元的通行费过桥。 | 16 |
-| 2248 | tourist | /tˈʊrʌst/ | `n.` | 游客 | tourist of | …的游客 | A tourist of foreign country visited the museum yesterday. | 一位外国游客昨天参观了博物馆。 | 16 |
-| 2249 | transit | /trˈænzɪt/ | `n.* | 运输 | transit of | …的运输 | The transit of goods takes time. | 货物的运输需要时间。 | 16 |
+| 2244 | taxi | /tˈæksiː/ | `n.` | 出租车 | by taxi | 乘出租车 | I went to the airport by taxi. | 我乘出租车去了机场。 | 16 |
+| 2245 | ticket | /tˈɪkʌt/ | `n.` | 票 | ticket to | …的票 | She bought a ticket to the concert. | 她买了一张音乐会门票。 | 16 |
+| 2246 | tile | /tˈaɪl/ | `n.` | 瓦片 | roof tile | 屋顶瓦片 | The roof has red tiles. | 屋顶有红色瓦片。 | 16 |
+| 2247 | toll | /tˈoʊl/ | `n.` | 通行费 | toll road | 收费公路 | The toll road is expensive. | 这条收费公路很贵。 | 16 |
+| 2248 | tourist | /tˈʊrʌst/ | `n.` | 游客 | tourist attraction | 旅游景点 | The city is a popular tourist destination. | 这座城市是热门旅游目的地。 | 16 |
+| 2249 | transit | /trˈænzɪt/ | `n.* | 运输 | in transit | 在运输中 | The package is in transit. | 包裹正在运输中。 | 16 |
 | 2250 | translate | /trænzlˈeɪt/ | `v.* | 翻译 | translate the text | 翻译文本 | Please translate the text into English. | 请将文本翻译成英语。 | 16 |
 | 2251 | translation | /trænzlˈeɪʃʌn/ | `n.* | 翻译 | translation of | …的翻译 | This is a translation of the original text. | 这是原文的翻译。 | 16 |
 | 2252 | transmission | /trænsmˈɪʃʌn/ | `n.* | 传输 | transmission of | …的传输 | The transmission of data is fast. | 数据传输很快。 | 16 |
-| 2253 | troop | /trˈuːp/ | `n.` | 队伍 | military troop | 军队 | The military troop marched through the city during the parade. | 军队在游行期间穿过城市。 | 16 |
+| 2253 | troop | /trˈuːp/ | `n.` | 队伍 | send troops | 派遣部队 | The government decided to send troops. | 政府决定派遣部队。 | 16 |
 | 2254 | vertical | /vˈɜːrtɪkʌl/ | `adj.* | 垂直的 | vertical line | 垂直线 | Draw a vertical line here. | 在这里画一条垂直线。 | 16 |
-| 2255 | vessel | /vˈɛsʌl/ | `n.` | 船 | blood vessel | 血管 | The doctor examined the patient's blood vessel during the checkup. | 医生在检查期间检查病人的血管。 | 16 |
+| 2255 | vessel | /vˈɛsʌl/ | `n.` | 船 | cargo vessel | 货船 | The cargo vessel arrived at the port. | 货船到达了港口。 | 16 |
 | 2256 | viewpoint | /vjˈuːpˌɔɪnt/ | `n.` | 观点 | different viewpoint | 不同观点 | People often have a different viewpoint on the same political issue. | 人们对同一政治问题往往有不同观点。 | 16 |
 | 2257 | wanting | /wˈɑntɪŋ/ | `adj.* | 缺少的 | wanting in | 缺少… | He is wanting in confidence. | 他缺少自信。 | 16 |
 | 2258 | accustomed | /ʌkˈʌstʌmd/ | `adj.* | 习惯的 | accustomed to | 习惯于 | Be accustomed to it. | 习惯它。 | 15 |
 | 2259 | alter | /ˈɔltɜːr/ | `v.* | 改变 | alter the plan | 改变计划 | We need to alter the plan due to weather. | 我们需要因天气改变计划。 | 15 |
-| 2260 | assault | /ʌsˈɔlt/ | `n.` | 攻击 | assault of | …的攻击 | The assault of the enemy forces caused many casualties. | 敌军的攻击造成了许多伤亡。 | 15 |
+| 2260 | assault | /ʌsˈɔlt/ | `n.` | 攻击 | assault on | 对…的攻击 | The assault on the fortress failed. | 对堡垒的攻击失败了。 | 15 |
 | 2261 | attraction | /ʌtrˈækʃʌn/ | `n.` | 吸引 | tourist attraction | 旅游景点 | The ancient castle is a popular tourist attraction in this region. | 古城堡是该地区热门的旅游景点。 | 15 |
 | 2262 | bow | /bˈaʊ/ | `v.* | 鞠躬 | bow to | 向…鞠躬 | Bow to the teacher. | 向老师鞠躬。 | 15 |
 | 2263 | cardinal | /kˈɑrdʌnʌl/ | `adj.* | 基本的 | cardinal rule | 基本规则 | Follow the cardinal rule of safety. | 遵守安全的基本规则。 | 15 |
-| 2264 | cease | /sˈiːs/ | `v.* | 停止 | cease to do | 停止做 | Cease to talk. | 停止说话。 | 15 |
+| 2264 | cease | /sˈiːs/ | `v.* | 停止 | cease fire | 停火 | The two sides agreed to cease fire. | 双方同意停火。 | 15 |
 | 2265 | client | /klˈaʌnt/ | `n.` | 客户 | regular client | 常客 | The company has many regular clients who trust their services. | 公司有许多信任他们服务的常客。 | 15 |
 | 2266 | clue | /klˈuː/ | `n.` | 线索 | vital clue | 重要线索 | The detective found a vital clue that helped solve the mystery case. | 侦探找到了帮助解决神秘案件的重要线索。 | 15 |
 | 2267 | contempt | /kʌntˈɛmpt/ | `n.* | 轻视 | deep contempt | 深深轻视 | She felt deep contempt for his behavior. | 她对他的行为感到深深轻视。 | 15 |
@@ -2278,7 +2278,7 @@
 | 2272 | deliberate | /dɪlˈɪbɜːrʌt/ | `adj.* | 故意的 | deliberate action | 故意的行为 | That was a deliberate action. | 那是一个故意的行为。 | 15 |
 | 2273 | devote | /dɪvˈoʊt/ | `v.* | 奉献 | devote to | 奉献于 | Devote to the cause. | 奉献于事业。 | 15 |
 | 2274 | distress | /dɪstrˈɛs/ | `n.* | 痛苦 | great distress | 巨大痛苦 | She felt great distress after the news. | 她听到消息后感到巨大痛苦。 | 15 |
-| 2275 | drag | /drˈæɡ/ | `v.* | 拖 | drag the box | 拖箱子 | He drag the box across the floor. | 他把箱子拖过地板。 | 15 |
+| 2275 | drag | /drˈæɡ/ | `v.* | 拖 | drag the box | 拖箱子 | He dragged the box across the floor. | 他把箱子拖过地板。 | 15 |
 | 2276 | elder | /ˈɛldɜːr/ | `n.` | 长辈 | community elder | 社区长辈 | A community elder gave advice to the young people. | 社区长辈给年轻人提了建议。 | 15 |
 | 2277 | employer | /ɛmplˈɔɪɜːr/ | `n.` | 雇主 | company employer | 公司雇主 | A company employer interviewed job applicants yesterday. | 公司雇主昨天面试了求职者。 | 15 |
 | 2278 | essence | /ˈɛsʌns/ | `n.* | 本质 | true essence | 真正本质 | The true essence of love is kindness. | 爱的真正本质是善良。 | 15 |
@@ -2288,10 +2288,10 @@
 | 2282 | indispensable | /ˌɪndɪspˈɛnsʌbʌl/ | `adj.* | 不可缺少的 | indispensable tool | 不可缺少的工具 | This is an indispensable tool for work. | 这是工作中不可缺少的工具。 | 15 |
 | 2283 | intend | /ɪntˈɛnd/ | `v.* | 打算 | intend to do | 打算做 | Intend to go. | 打算去。 | 15 |
 | 2284 | intensive | /ɪntˈɛnsɪv/ | `adj.* | 集中的 | intensive training | 集中训练 | The athletes received intensive training. | 运动员接受了集中训练。 | 15 |
-| 2285 | kick | /kˈɪk/ | `v.* | 踢 | kick the ball | 踢球 | The player kick the ball into the goal. | 球员把球踢进了球门。 | 15 |
+| 2285 | kick | /kˈɪk/ | `v.* | 踢 | kick the ball | 踢球 | The player kicked the ball into the goal. | 球员把球踢进了球门。 | 15 |
 | 2286 | knock | /nˈɑk/ | `v.* | 敲 | knock on the door | 敲门 | Please knock on the door before entering. | 请在进入前敲门。 | 15 |
 | 2287 | lawn | /lˈɔn/ | `n.` | 草坪 | green lawn | 绿色草坪 | Children played on the green lawn in front of the house all afternoon. | 孩子们整个下午都在房子前面的绿色草坪上玩耍。 | 15 |
-| 2288 | literal | /lˈɪtɜːrʌl/ | `adj.* | 字面的 | literal meaning | 字面意思 | The literal meaning is different. | 字面意思不同。 | 15 |
+| 2288 | literal | /lˈɪtɜːrʌl/ | `adj.* | 字面的 | literal translation | 直译 | This is a literal translation. | 这是一个直译。 | 15 |
 | 2289 | mileage | /mˈaɪlʌdʒ/ | `n.* | 里程 | high mileage | 高里程 | The car has high mileage. | 这辆车里程很高。 | 15 |
 | 2290 | misery | /mˈɪzɜːriː/ | `n.* | 痛苦 | great misery | 巨大痛苦 | He endured great misery during the war. | 他在战争期间忍受了巨大痛苦。 | 15 |
 | 2291 | onion | /ˈʌnjʌn/ | `n.` | 洋葱 | fresh onion | 新鲜洋葱 | She bought a fresh onion at the market. | 她在市场买了一个新鲜洋葱。 | 15 |
@@ -2299,17 +2299,17 @@
 | 2293 | oppose | /ʌpˈoʊz/ | `v.* | 反对 | oppose the plan | 反对计划 | Many people oppose the plan for various reasons. | 许多人因各种原因反对计划。 | 15 |
 | 2294 | optimism | /ˈɑptʌmˌɪzʌm/ | `n.* | 乐观 | show optimism | 表现乐观 | She showed optimism about her future career. | 她对未来的职业表现乐观。 | 15 |
 | 2295 | parent | /pˈɛrʌnt/ | `n.` | 父母 | single parent | 单亲 | Being a single parent requires balancing work and family responsibilities. | 作为单亲需要平衡工作和家庭责任。 | 15 |
-| 2296 | petition | /pʌtˈɪʃʌn/ | `n.` | 请愿 | sign a petition | 签署请愿 | Residents signed a petition to improve public transportation in the city. | 居民签署请愿书以改善城市公共交通。 | 15 |
+| 2296 | petition | /pʌtˈɪʃʌn/ | `n.` | 请愿 | sign a petition | 签署请愿书 | Residents signed a petition for cleaner streets. | 居民签署了清洁街道的请愿书。 | 15 |
 | 2297 | physician | /fʌzˈɪʃʌn/ | `n.` | 医生 | family physician | 家庭医生 | The family physician recommended regular exercise for better health. | 家庭医生建议定期锻炼以改善健康。 | 15 |
 | 2298 | picnic | /pˈɪknˌɪk/ | `n.` | 野餐 | family picnic | 家庭野餐 | We had a family picnic in the park last weekend. | 我们上周末在公园进行了家庭野餐。 | 15 |
 | 2299 | profile | /prˈoʊfˌaɪl/ | `n.` | 轮廓 | user profile | 用户资料 | Users can update their profile information on the website anytime. | 用户可以随时在网站上更新他们的资料信息。 | 15 |
 | 2300 | province | /prˈɑvʌns/ | `n.` | 省 | autonomous province | 自治省 | The autonomous province has its own government and laws. | 自治省有自己的政府和法律。 | 15 |
-| 2301 | qualify | /kwˈɑlʌfˌaɪ/ | `v.* | 使有资格 | qualify for | 有资格 | Qualify for the job. | 有资格这份工作。 | 15 |
+| 2301 | qualify | /kwˈɑlʌfˌaɪ/ | `v.* | 使有资格 | qualify for | 有资格 | She qualifies for the scholarship. | 她有资格获得奖学金。 | 15 |
 | 2302 | quit | /kwˈɪt/ | `v.* | 退出 | quit the job | 退出工作 | He decided to quit the job last week. | 他上周决定退出工作。 | 15 |
 | 2303 | razor | /rˈeɪzɜːr/ | `n.` | 剃刀 | electric razor | 电动剃刀 | He bought an electric razor to save time in the morning. | 他买了电动剃刀以节省早晨的时间。 | 15 |
 | 2304 | react | /riːˈækt/ | `v.* | 反应 | react to | 对…反应 | React to the news. | 对这个消息反应。 | 15 |
 | 2305 | reluctant | /rɪlˈʌktʌnt/ | `adj.* | 不情愿的 | reluctant to do | 不情愿做 | Be reluctant to go. | 不情愿去。 | 15 |
-| 2306 | remind | /riːmˈaɪnd/ | `v.* | 提醒 | remind of | 提醒… | Remind me of the time. | 提醒我时间。 | 15 |
+| 2306 | remind | /riːmˈaɪnd/ | `v.* | 提醒 | remind me of | 使想起 | It reminds me of my childhood. | 它让我想起我的童年。 | 15 |
 | 2307 | reward | /rɪwˈɔrd/ | `n.` | 奖励 | cash reward | 现金奖励 | The company offered a cash reward for employees who met their targets. | 公司为达到目标的员工提供现金奖励。 | 15 |
 | 2308 | rubber | /rˈʌbɜːr/ | `n.* | 橡胶 | rubber band | 橡皮筋 | She used a rubber band to tie her hair. | 她用橡皮筋绑头发。 | 15 |
 | 2309 | scholar | /skˈɑlɜːr/ | `n.` | 学者 | visiting scholar | 访问学者 | The visiting scholar gave several lectures at our university this semester. | 访问学者本学期在我们大学做了几次讲座。 | 15 |
@@ -2320,7 +2320,7 @@
 | 2314 | sociology | /sˌoʊsiːˈɑlʌdʒiː/ | `n.* | 社会学 | study sociology | 学习社会学 | Many students study sociology in university. | 许多学生在大学学习社会学。 | 15 |
 | 2315 | soldier | /sˈoʊldʒɜːr/ | `n.` | 士兵 | brave soldier | 勇敢的士兵 | The brave soldier received a medal for his heroic actions in battle. | 勇敢的士兵因在战斗中的英勇行为获得了勋章。 | 15 |
 | 2316 | sorrow | /sˈɑroʊ/ | `n.* | 悲伤 | deep sorrow | 深切的悲伤 | She felt deep sorrow after losing her pet. | 她失去宠物后感到深切的悲伤。 | 15 |
-| 2317 | specialist | /spˈɛʃʌlʌst/ | `n.` | 专家 | medical specialist | 医学专家 | The patient was referred to a medical specialist for further examination. | 病人被转介给医学专家进行进一步检查。 | 15 |
+| 2317 | specialist | /spˈɛʃʌlʌst/ | `n.` | 专家 | medical specialist | 医学专家 | She is a medical specialist. | 她是一名医学专家。 | 15 |
 | 2318 | spiral | /spˈaɪrʌl/ | `n.` | 螺旋 | spiral staircase | 螺旋楼梯 | The ancient castle features a beautiful spiral staircase in the tower. | 古城堡在塔楼里有一个美丽的螺旋楼梯。 | 15 |
 | 2319 | spite | /spˈaɪt/ | `n.* | 恶意 | in spite of | 尽管 | In spite of the difficulties, we succeeded. | 尽管困难重重，我们还是成功了。 | 15 |
 | 2320 | spray | /sprˈeɪ/ | `n.` | 喷雾 | perfume spray | 香水喷雾 | She used perfume spray before leaving the house. | 她出门前喷了香水喷雾。 | 15 |
@@ -2337,11 +2337,11 @@
 | 2331 | texture | /tˈɛkstʃɜːr/ | `n.* | 质地 | smooth texture | 光滑质地 | The fabric has a smooth texture that feels comfortable. | 这种面料有光滑质地，感觉很舒适。 | 15 |
 | 2332 | thread | /θrˈɛd/ | `n.` | 线 | silk thread | 丝线 | She sewed with silk thread to make the dress. | 她用丝线缝制连衣裙。 | 15 |
 | 2333 | threshold | /θrˈɛʃˌoʊld/ | `n.` | 门槛 | new threshold | 新门槛 | He stood at a new threshold in his career. | 他站在职业生涯的新门槛上。 | 15 |
-| 2334 | trick | /trˈɪk/ | `n.` | 诡计 | magic trick | 魔术诡计 | The magician performed a magic trick that amazed the audience. | 魔术师表演了一个让观众惊叹的魔术诡计。 | 15 |
+| 2334 | trick | /trˈɪk/ | `n.` | 诡计 | magic trick | 魔术 | He performed a magic trick. | 他变了一个魔术。 | 15 |
 | 2335 | verdict | /vˈɜːrdɪkt/ | `n.` | 裁决 | guilty verdict | 有罪裁决 | The jury reached a guilty verdict after the trial. | 陪审团在审判后作出了有罪裁决。 | 15 |
 | 2336 | adventure | /ædvˈɛntʃɜːr/ | `n.` | 冒险 | exciting adventure | 令人兴奋的冒险 | Exploring the jungle was an exciting adventure. | 探索丛林是一次令人兴奋的冒险。 | 14 |
 | 2337 | approve | /ʌprˈuːv/ | `v.* | 批准 | approve the plan | 批准计划 | The board will approve the plan tomorrow. | 董事会明天将批准计划。 | 14 |
-| 2338 | arrow | /ˈæroʊ/ | `n.` | 箭 | sharp arrow |锋利箭 | The sharp arrow hit the target perfectly. | 锋利箭完美地击中了目标。 | 14 |
+| 2338 | arrow | /ˈæroʊ/ | `n.` | 箭 | bow and arrow | 弓箭 | He shot with a bow and arrow. | 他用弓箭射击。 | 14 |
 | 2339 | blank | /blˈæŋk/ | `adj.* | 空白的 | blank page | 空白页 | Please fill in the blank page. | 请填写空白页。 | 14 |
 | 2340 | brace | /brˈeɪs/ | `v.* | 振奋 | brace for impact | 准备迎接冲击 | Passengers brace for impact during turbulence. | 乘客在颠簸时准备迎接冲击。 | 14 |
 | 2341 | chill | /tʃˈɪl/ | `n.* | 寒冷 | winter chill | 冬天的寒冷 | She felt the winter chill when she stepped outside. | 她走到外面时感受到了冬天的寒冷。 | 14 |
@@ -2351,10 +2351,10 @@
 | 2345 | engage | /ɛnɡˈeɪdʒ/ | `v.* | 从事 | engage in | 从事于 | Engage in work. | 从事工作。 | 14 |
 | 2346 | entertain | /ˌɛntɜːrtˈeɪn/ | `v.* | 娱乐 | entertain guests | 招待客人 | She entertained guests at her home. | 她在家里招待客人。 | 14 |
 | 2347 | evolution | /ˌɛvʌlˈuːʃʌn/ | `n.* | 进化 | human evolution | 人类进化 | Scientists study human evolution through fossils. | 科学家通过化石研究人类进化。 | 14 |
-| 2348 | fix | /fˈɪks/ | `v.* | 修理 | fix the car | 修理汽车 | The mechanic fix the car quickly. | 机械师快速修理了汽车。 | 14 |
+| 2348 | fix | /fˈɪks/ | `v.* | 修理 | fix the car | 修理汽车 | The mechanic fixed the car quickly. | 机械师快速修理了汽车。 | 14 |
 | 2349 | fork | /fˈɔrk/ | `n.` | 叉 | dinner fork | 餐叉 | He used a dinner fork to eat his meal elegantly. | 他用餐叉优雅地吃饭。 | 14 |
 | 2350 | generator | /dʒˈɛnɜːrˌeɪtɜːr/ | `n.` | 发电机 | power generator | 发电机 | The factory uses a power generator during outages. | 工厂在停电时使用发电机。 | 14 |
-| 2351 | gloom | /glˈuːm/ | `n.* | 阴暗 | deep gloom | 深沉阴暗 | The room was filled with deep gloom after the news. | 听到消息后房间充满了深沉阴暗。 | 14 |
+| 2351 | gloom | /glˈuːm/ | `n.* | 阴暗 | deep gloom | 深深的忧愁 | She fell into deep gloom. | 她陷入了深深的忧愁。 | 14 |
 | 2352 | gum | /ˈɡʌm/ | `n.* | 口香糖 | chewing gum | 口香糖 | She enjoys chewing gum after meals. | 她喜欢饭后嚼口香糖。 | 14 |
 | 2353 | heap | /hˈiːp/ | `n.` | 堆 | large heap | 大堆 | There was a large heap of books on the desk. | 书桌上有一大堆书。 | 14 |
 | 2354 | hemisphere | /hˈɛmɪsfˌɪr/ | `n.` | 半球 | northern hemisphere | 北半球 | The northern hemisphere experiences winter in December. | 北半球在十二月经历冬季。 | 14 |
@@ -2379,7 +2379,7 @@
 | 2373 | penalty | /pˈɛnʌltiː/ | `n.` | 处罚 | heavy penalty | 重罚 | Breaking the law resulted in a heavy penalty. | 违法导致了重罚。 | 14 |
 | 2374 | pending | /pˈɛndɪŋ/ | `adj.* | 待定的 | pending case | 待处理的案件 | There is a pending case in court. | 法院有一个待处理的案件。 | 14 |
 | 2375 | pie | /pˈaɪ/ | `n.` | 馅饼 | apple pie | 苹果馅饼 | She baked an apple pie for Thanksgiving dinner. | 她为感恩节晚餐烤了一个苹果馅饼。 | 14 |
-| 2376 | pity | /pˈɪtiː/ | `n.* | 怜悯 | great pity | 巨大怜悯 | It is a great pity that he failed. | 他失败了是一个巨大怜悯。 | 14 |
+| 2376 | pity | /pˈɪtiː/ | `n.* | 怜悯 | what a pity | 真遗憾 | What a pity that he failed. | 他失败了真遗憾。 | 14 |
 | 2377 | profitable | /prˈɑfʌtʌbʌl/ | `adj.* | 有利可图的 | profitable business | 有利可图的生意 | Running a profitable business takes effort. | 经营有利可图的生意需要努力。 | 14 |
 | 2378 | prone | /prˈoʊn/ | `adj.* | 易于的 | prone to | 易于… | Be prone to error. | 易于犯错误。 | 14 |
 | 2379 | prosperity | /prɑspˈɛrʌtiː/ | `n.* | 繁荣 | economic prosperity | 经济繁荣 | The country enjoys economic prosperity. | 国家享受经济繁荣。 | 14 |
@@ -2391,7 +2391,7 @@
 | 2385 | retreat | /riːtrˈiːt/ | `v.* | 撤退 | retreat from | 从…撤退 | Retreat from the battle. | 从战斗中撤退。 | 14 |
 | 2386 | revelation | /rˌɛvʌlˈeɪʃʌn/ | `n.* | 启示 | sudden revelation | 突然启示 | He had a sudden revelation about life. | 他对生活有了突然启示。 | 14 |
 | 2387 | ripe | /rˈaɪp/ | `adj.* | 成熟的 | ripe fruit | 成熟的水果 | The ripe fruit tastes sweet. | 成熟的水果味道甜美。 | 14 |
-| 2388 | ruin | /rˈuːʌn/ | `v.* | 毁灭 | ruin the plan | 破坏计划 | Bad weather ruin the plan completely. | 恶劣天气完全破坏了计划。 | 14 |
+| 2388 | ruin | /rˈuːʌn/ | `v.* | 毁灭 | ruin the plan | 破坏计划 | Bad weather ruined the plan. | 恶劣天气破坏了计划。 | 14 |
 | 2389 | scenery | /sˈiːnɜːriː/ | `n.* | 风景 | beautiful scenery | 美丽风景 | We enjoyed the beautiful scenery. | 我们欣赏了美丽的风景。 | 14 |
 | 2390 | scrutiny | /skrˈuːtʌniː/ | `n.* | 审查 | careful scrutiny | 仔细审查 | The proposal needs careful scrutiny. | 这个提案需要仔细审查。 | 14 |
 | 2391 | sensation | /sɛnsˈeɪʃʌn/ | `n.* | 感觉 | strange sensation | 奇怪感觉 | I had a strange sensation in my arm. | 我手臂有一种奇怪的感觉。 | 14 |
@@ -2433,7 +2433,7 @@
 | 2427 | communicate | /kʌmjˈuːnʌkˌeɪt/ | `v.* | 交流 | communicate with | 与…交流 | Communicate with others. | 与他人交流。 | 13 |
 | 2428 | compass | /kˈʌmpʌs/ | `n.` | 指南针 | magnetic compass | 磁指南针 | Hikers use a magnetic compass to find their direction in the wilderness. | 徒步者使用磁指南针在荒野中找到方向。 | 13 |
 | 2429 | contradiction | /kˌɑntrʌdˈɪkʃʌn/ | `n.* | 矛盾 | obvious contradiction | 明显矛盾 | There is an obvious contradiction in his statement. | 他的陈述中有一个明显的矛盾。 | 13 |
-| 2430 | convey | /kʌnvˈeɪ/ | `v.* | 传达 | convey the message | 传达信息 | He convey the message to the team clearly. | 他向团队清晰地传达了信息。 | 13 |
+| 2430 | convey | /kʌnvˈeɪ/ | `v.* | 传达 | convey the message | 传达信息 | He conveyed the message to the team clearly. | 他向团队清晰地传达了信息。 | 13 |
 | 2431 | derive | /dɜːrˈaɪv/ | `v.* | 源于 | derive from | 源于 | Derive from the source. | 源于来源。 | 13 |
 | 2432 | detection | /dɪtˈɛkʃʌn/ | `n.* | 侦查 | early detection | 早期侦查 | Early detection of cancer is important. | 癌症的早期侦查很重要。 | 13 |
 | 2433 | document | /dˈɑkjʌmɛnt/ | `n.` | 文件 | legal document | 法律文件 | Lawyers reviewed the legal document carefully before signing it. | 律师在签署前仔细审查了法律文件。 | 13 |
@@ -2466,26 +2466,26 @@
 | 2460 | outset | /ˈaʊtsˌɛt/ | `n.* | 开始 | at the outset | 开头 | We knew at the outset that it would be hard. | 我们从一开始就知道这会很困难。 | 13 |
 | 2461 | pension | /pˈɛnʃʌn/ | `n.` | 养老金 | retirement pension | 退休养老金 | Employees contribute to their retirement pension fund every month. | 员工每个月为退休养老金基金缴费。 | 13 |
 | 2462 | pepper | /pˈɛpɜːr/ | `n.* | 胡椒 | black pepper | 黑胡椒 | She added black pepper to the soup for flavor. | 她在汤里加了黑胡椒调味。 | 13 |
-| 2463 | perceive | /pɜːrsˈiːv/ | `v.* | 察觉 | perceive the truth | 察觉真相 | She perceive the truth behind his words. | 她察觉到他话语背后的真相。 | 13 |
+| 2463 | perceive | /pɜːrsˈiːv/ | `v.* | 察觉 | perceive the truth | 察觉真相 | She perceived the truth behind his words. | 她察觉到他话语背后的真相。 | 13 |
 | 2464 | pint | /pˈaɪnt/ | `n.` | 品脱 | pint of milk | 一品脱牛奶 | He bought a pint of milk from the grocery store for breakfast. | 他从杂货店买了一品脱牛奶做早餐。 | 13 |
 | 2465 | portable | /pˈɔrtʌbʌl/ | `adj.* | 便携的 | portable device | 便携设备 | This is a portable device. | 这是一个便携设备。 | 13 |
 | 2466 | posture | /pˈɑstʃɜːr/ | `n.* | 姿势 | good posture | 好姿势 | Good posture is important for back health. | 好姿势对背部健康很重要。 | 13 |
-| 2467 | proclaim | /proʊklˈeɪm/ | `v.* | 宣布 | proclaim the news | 宣布消息 | The president proclaim the news yesterday. | 总统昨天宣布了消息。 | 13 |
-| 2468 | propose | /prʌpˈoʊz/ | `v.* | 提议 | propose a plan | 提议一个计划 | The committee propose a plan for improvement. | 委员会提议了一个改进计划。 | 13 |
+| 2467 | proclaim | /proʊklˈeɪm/ | `v.* | 宣布 | proclaim the news | 宣布消息 | The president proclaimed the news yesterday. | 总统昨天宣布了消息。 | 13 |
+| 2468 | propose | /prʌpˈoʊz/ | `v.* | 提议 | propose a plan | 提议一个计划 | The committee proposed a plan for improvement. | 委员会提议了一个改进计划。 | 13 |
 | 2469 | purple | /pˈɜːrpʌl/ | `adj.* | 紫色的 | purple color | 紫色 | She likes purple color. | 她喜欢紫色。 | 13 |
 | 2470 | rebellion | /rɪbˈɛljʌn/ | `n.* | 叛乱 | armed rebellion | 武装叛乱 | The armed rebellion threatened the government. | 武装叛乱威胁了政府。 | 13 |
 | 2471 | rely | /rɪlˈaɪ/ | `v.* | 依赖 | rely on | 依赖 | Rely on me. | 依赖我。 | 13 |
 | 2472 | remedy | /rˈɛmʌdiː/ | `n.` | 治疗方法 | herbal remedy | 草药疗法 | Many people prefer a herbal remedy for treating minor health issues. | 许多人更喜欢用草药疗法治疗轻微健康问题。 | 13 |
 | 2473 | resolve | /riːzˈɑlv/ | `v.* | 解决 | resolve the problem | 解决问题 | We must resolve the problem together. | 我们必须一起解决问题。 | 13 |
 | 2474 | restless | /rˈɛstlʌs/ | `adj.* | 不安的 | restless night | 不安的夜晚 | I had a restless night. | 我度过了一个不安的夜晚。 | 13 |
-| 2475 | romance | /roʊmˈæns/ | `n.* | 浪漫 | romantic romance | 浪漫爱情 | She enjoys romantic romance novels. | 她喜欢浪漫爱情小说。 | 13 |
-| 2476 | scream | /skrˈiːm/ | `v.* | 尖叫 | scream for help | 尖叫求助 | The victim scream for help loudly. | 受害者大声尖叫求助。 | 13 |
+| 2475 | romance | /roʊmˈæns/ | `n.` | 浪漫 | romantic novel | 浪漫小说 | She enjoys romantic novels. | 她喜欢浪漫小说。 | 13 |
+| 2476 | scream | /skrˈiːm/ | `v.* | 尖叫 | scream for help | 尖叫求助 | The victim screamed for help loudly. | 受害者大声尖叫求助。 | 13 |
 | 2477 | sector | /sˈɛktɜːr/ | `n.` | 部门 | service sector | 服务部门 | The service sector has grown significantly in recent years in the economy. | 服务部门近年来在经济中增长显著。 | 13 |
 | 2478 | shy | /ˈʃaɪ/ | `adj.* | 害羞的 | shy person | 害羞的人 | He is a shy person. | 他是一个害羞的人。 | 13 |
 | 2479 | sinister | /sˈɪnɪstɜːr/ | `adj.* | 险恶的 | sinister plan | 险恶的计划 | He had a sinister plan. | 他有一个险恶的计划。 | 13 |
 | 2480 | slice | /slˈaɪs/ | `n.` | 片 | slice of bread | 一片面包 | She ate a slice of bread with butter for breakfast this morning. | 她今天早餐吃了一片黄油面包。 | 13 |
 | 2481 | spokesman | /spˈoʊksmʌn/ | `n.` | 发言人 | official spokesman | 官方发言人 | The official spokesman addressed the media about the company's decision. | 官方发言人向媒体谈及公司的决定。 | 13 |
-| 2482 | spur | /spˈɜːr/ | `n.` | 刺激 | spur innovation | 促进创新 | The competition served as a spur innovation in the technology industry. | 竞争成为促进科技行业创新的刺激。 | 13 |
+| 2482 | spur | /spˈɜːr/ | `n.` | 刺激 | spur to innovation | 促进创新 | The competition served as a spur to innovation. | 竞争成为促进科技创新的刺激。 | 13 |
 | 2483 | stability | /stʌbˈɪlɪtiː/ | `n.* | 稳定 | economic stability | 经济稳定 | Economic stability is important for national growth. | 经济稳定对国家增长很重要。 | 13 |
 | 2484 | standpoint | /stˈændpˌɔɪnt/ | `n.` | 立场 | political standpoint | 政治立场 | From a political standpoint, the policy has both advantages and disadvantages. | 从政治立场来看，这项政策既有优点也有缺点。 | 13 |
 | 2485 | static | /stˈætɪk/ | `adj.* | 静态的 | static electricity | 静电 | Static electricity can be annoying. | 静电会很烦人。 | 13 |
@@ -2503,24 +2503,24 @@
 | 2497 | unaware | /ˌʌnʌwˈɛr/ | `adj.* | 不知道的 | unaware of | 不知道 | Be unaware of the fact. | 不知道这个事实。 | 13 |
 | 2498 | undertake | /ˈʌndɜːrtˌeɪk/ | `v.* | 承担 | undertake the task | 承担任务 | He volunteer to undertake the task. | 他自愿承担这个任务。 | 13 |
 | 2499 | undue | /ʌndˈuː/ | `adj.* | 过度的 | undue pressure | 过度的压力 | He faced undue pressure at work. | 他面临工作上的过度压力。 | 13 |
-| 2500 | utter | /ˈʌtɜːr/ | `v.* | 说出 | utter a word | 说一句话 | She utter a word of thanks. | 她说出一句感谢的话。 | 13 |
+| 2500 | utter | /ˈʌtɜːr/ | `v.* | 说出 | utter a word | 说一句话 | She uttered a word of thanks. | 她说出一句感谢的话。 | 13 |
 | 2501 | virus | /vˈaɪrʌs/ | `n.` | 病毒 | flu virus | 流感病毒 | The flu virus spread quickly in the school last winter. | 流感病毒去年冬天在学校迅速传播。 | 13 |
 | 2502 | visitor | /vˈɪzʌtɜːr/ | `n.` | 访客 | museum visitor | 博物馆访客 | A museum visitor admired the ancient artifacts. | 一位博物馆访客欣赏古代文物。 | 13 |
 | 2503 | vocabulary | /voʊkˈæbjʌlˌɛriː/ | `n.* | 词汇 | learn vocabulary | 学习词汇 | Students need to learn vocabulary for English class. | 学生需要为英语课学习词汇。 | 13 |
 | 2504 | whoever | /huːˈɛvɜːr/ | `pron.* | 无论谁 | whoever wants | 无论谁想要 | Whoever wants can come. | 无论谁想来都可以来。 | 13 |
-| 2505 | affirm | /ʌfˈɜːrm/ | `v.* | 肯定 | affirm the fact | 肯定事实 | The witness affirm the fact in court. | 证人在法庭上肯定了事实。 | 12 |
+| 2505 | affirm | /ʌfˈɜːrm/ | `v.* | 肯定 | affirm the fact | 肯定事实 | The witness affirmed the fact in court. | 证人在法庭上肯定了事实。 | 12 |
 | 2506 | antique | /æntˈiːk/ | `adj.` | 古老的 | antique shop | 古董店 | The antique shop sells rare items from different historical periods. | 古董店出售来自不同历史时期的稀有物品。 | 12 |
 | 2507 | bloom | /blˈuːm/ | `n.* | 花 | spring bloom | 春天绽放 | The spring bloom makes the garden beautiful. | 春天绽放让花园变得美丽。 | 12 |
 | 2508 | bubble | /bˈʌbʌl/ | `n.` | 气泡 | air bubble | 气泡 | An air bubble rose to the surface of the water. | 一个气泡升到了水面。 | 12 |
 | 2509 | cab | /kˈæb/ | `n.` | 出租车 | taxi cab |出租车 | A taxi cab took passengers to the train station. | 一辆出租车把乘客送到火车站。 | 12 |
-| 2510 | construct | /kʌnstrˈʌkt/ | `v.* | 建造 | construct the building | 建造建筑物 | Workers construct the building efficiently. | 工人高效地建造建筑物。 | 12 |
+| 2510 | construct | /kʌnstrˈʌkt/ | `v.* | 建造 | construct the building | 建造建筑物 | Workers constructed the building efficiently. | 工人高效地建造建筑物。 | 12 |
 | 2511 | consultant | /kʌnsˈʌltʌnt/ | `n.` | 顾问 | business consultant | 商业顾问 | A business consultant advised on business strategy. | 一位商业顾问为商业战略提供建议。 | 12 |
 | 2512 | convert | /kˈɑnvɜːrt/ | `v.* | 转换 | convert to | 转换成 | Convert to English. | 转换成英语。 | 12 |
 | 2513 | correspondent | /kˌɔrʌspˈɑndʌnt/ | `n.` | 记者 | news correspondent | 新闻记者 | A news correspondent reported on the conflict. | 一位新闻记者报道了这场冲突。 | 12 |
 | 2514 | coward | /kˈaʊɜːrd/ | `n.` |懦夫 | act like coward | 像懦夫一样行事 | Running away from responsibility is acting like a coward. |逃避责任是像懦夫一样的行为。 | 12 |
 | 2515 | craft | /krˈæft/ | `n.` | 工艺 | traditional craft | 传统工艺 | Traditional craft of pottery has been practiced for centuries. | 传统制陶工艺已经流传了几个世纪。 | 12 |
 | 2516 | crowded | /kraʊdɪd/ | `adj.* | 拥挤的 | crowded place | 拥挤的地方 | This is a crowded place. | 这是一个拥挤的地方。 | 12 |
-| 2517 | curb | /kˈɜːrb/ | `v.* | 控制 | curb the spending | 控制开支 | The government curb the spending on luxury items. | 政府控制奢侈品开支。 | 12 |
+| 2517 | curb | /kˈɜːrb/ | `v.* | 控制 | curb the spending | 控制开支 | The government curbed the spending on luxury items. | 政府控制奢侈品开支。 | 12 |
 | 2518 | deadly | /dˈɛdliː/ | `adj.* | 致命的 | deadly disease | 致命的疾病 | This is a deadly disease. | 这是一种致命的疾病。 | 12 |
 | 2519 | defiance | /dɪfaɪəns/ | `n.* | 挑战 | show defiance | 表现挑战 | He showed defiance against the unfair rules. | 他对不公平的规则表现挑战。 | 12 |
 | 2520 | democracy | /dɪmˈɑkrʌsiː/ | `n.* | 民主 | democratic democracy | 民主制度 | A democratic democracy allows citizens to vote freely. | 民主制度允许公民自由投票。 | 12 |
@@ -2535,7 +2535,7 @@
 | 2529 | fox | /fˈɑks/ | `n.` | 狐狸 | wild fox | 野生狐狸 | A wild fox hunted for food at night. | 野生狐狸在夜间寻找食物。 | 12 |
 | 2530 | gasoline | /ˈɡæsʌlˌiːn/ | `n.* | 汽油 | cheap gasoline | 便宜汽油 | Cheap gasoline is hard to find. | 便宜汽油很难找到。 | 12 |
 | 2531 | gaze | /ˈɡeɪz/ | `v.* | 凝视 | gaze at | 凝视 | Gaze at the stars. | 凝视星星。 | 12 |
-| 2532 | grill | /ɡrˈɪl/ | `v.* | 烧烤 | grill the meat | 烤肉 | The chef grill the meat perfectly. | 厨师完美地烤了肉。 | 12 |
+| 2532 | grill | /ɡrˈɪl/ | `v.* | 烧烤 | grill the meat | 烤肉 | The chef grilled the meat perfectly. | 厨师完美地烤了肉。 | 12 |
 | 2533 | guerrilla | /ɡɜːrˈɪlʌ/ | `n.` | 游击队 | local guerrilla | 当地游击队 | The local guerrilla fought against the government forces. | 当地游击队对抗政府军。 | 12 |
 | 2534 | harsh | /hˈɑrʃ/ | `adj.* | 严厉的 | harsh punishment | 严厉的惩罚 | He received harsh punishment. | 他受到了严厉的惩罚。 | 12 |
 | 2535 | harvest | /hˈɑrvʌst/ | `n.* | 收获 | good harvest | 好收获 | We had a good harvest this year. | 我们今年有好收获。 | 12 |
@@ -2551,7 +2551,7 @@
 | 2545 | luminous | /lˈuːmʌnʌs/ | `adj.* | 发光的 | luminous star | 发光的星星 | A luminous star shines bright. | 发光的星星闪耀明亮。 | 12 |
 | 2546 | lyric | /lˈɪrɪk/ | `n.` | 抒情诗 | song lyric | 歌词 | The song lyric expressed deep emotions. | 歌词表达了深深的情感。 | 12 |
 | 2547 | mineral | /mˈɪnɜːrʌl/ | `n.` | 矿物 | valuable mineral | 有价值矿物 | Gold is a valuable mineral found in nature. | 黄金是自然界中发现的有价值矿物。 | 12 |
-| 2548 | neglect | /nʌɡlˈɛkt/ | `v.* | 忽视 | neglect the duty | 忽视职责 | He neglect the duty and was fired. | 他忽视了职责被解雇了。 | 12 |
+| 2548 | neglect | /nʌɡlˈɛkt/ | `v.* | 忽视 | neglect the duty | 忽视职责 | He neglected the duty and was fired. | 他忽视了职责被解雇了。 | 12 |
 | 2549 | ninety | /nˈaɪntiː/ | `num.* | 九十 | ninety years | 九十年 | She has lived for ninety years. | 她活了九十年。 | 12 |
 | 2550 | organ | /ˈɔrɡʌn/ | `n.` | 器官 | vital organ | 重要器官 | The heart is a vital organ to the body. | 心脏是身体的重要器官。 | 12 |
 | 2551 | outline | /ˈaʊtlˌaɪn/ | `n.` | 大纲 | course outline | 课程大纲 | The professor provided a course outline at the beginning. | 教授在开始时提供了课程大纲。 | 12 |
@@ -2571,7 +2571,7 @@
 | 2565 | sermon | /sˈɜːrmʌn/ | `n.` | 布道 | religious sermon | 宗教布道 | The priest delivered a religious sermon about forgiveness and love. | 神父发表了关于宽恕和爱的宗教布道。 | 12 |
 | 2566 | shelf | /ˈʃɛlf/ | `n.` | 架子 | book shelf | 书架 | She organized her collection on the book shelf in alphabetical order. | 她按字母顺序把收藏品整理在书架上。 | 12 |
 | 2567 | silk | /sˈɪlk/ | `n.* | 丝绸 | fine silk | 上等丝绸 | She wore fine silk at the party. | 她在派对上穿着上等丝绸。 | 12 |
-| 2568 | snap | /snˈæp/ | `v.* | 啪地折断 | snap the branch | 折断树枝 | The wind snap the branch last night. | 风昨晚折断了树枝。 | 12 |
+| 2568 | snap | /snˈæp/ | `v.* | 啪地折断 | snap the branch | 折断树枝 | The wind snapped the branch last night. | 风昨晚折断了树枝。 | 12 |
 | 2569 | solemn | /sˈɑlʌm/ | `adj.* | 庄严的 | solemn ceremony | 庄严的仪式 | We attended a solemn ceremony yesterday. | 我们昨天参加了一个庄严的仪式。 | 12 |
 | 2570 | spark | /spˈɑrk/ | `n.` | 火花 | electric spark | 电火花 | The electric spark ignited the gas and caused a fire in the laboratory. | 电火花点燃了气体，在实验室引发了火灾。 | 12 |
 | 2571 | stereotype | /stˈɛriːʌtˌaɪp/ | `n.` | 刻板印象 | gender stereotype | 性别刻板印象 | We should challenge gender stereotypes in our society today. | 我们今天应该挑战社会中的性别刻板印象。 | 12 |
@@ -2584,7 +2584,7 @@
 | 2578 | tar | /tˈɑr/ | `n.* | 焦油 | road tar | 道路焦油 | Road tar is used for paving. | 道路焦油用于铺路。 | 12 |
 | 2579 | temper | /tˈɛmpɜːr/ | `n.* | 脾气 | bad temper | 坏脾气 | He has a bad temper sometimes. | 他有时候有坏脾气。 | 12 |
 | 2580 | temptation | /tɛmtˈeɪʃʌn/ | `n.* | 诱惑 | strong temptation | 强烈诱惑 | He felt a strong temptation to quit. | 他有强烈的诱惑想辞职。 | 12 |
-| 2581 | terminate | /tˈɜːrmʌnˌeɪt/ | `v.* | 终止 | terminate the contract | 终止合同 | The company terminate the contract early. | 公司提前终止了合同。 | 12 |
+| 2581 | terminate | /tˈɜːrmʌnˌeɪt/ | `v.* | 终止 | terminate the contract | 终止合同 | The company terminated the contract early. | 公司提前终止了合同。 | 12 |
 | 2582 | therapy | /ˈθɛrʌpiː/ | `n.* | 治疗 | medical therapy | 医疗治疗 | Medical therapy is important for recovery. | 医疗治疗对康复很重要。 | 12 |
 | 2583 | tin | /tˈɪn/ | `n.* | 锡 | metal tin | 金属锡 | Metal tin is used for making cans. | 金属锡用于制作罐子。 | 12 |
 | 2584 | trot | /trˈɑt/ | `v.* | 慢跑 | trot along | 慢跑 | The horse began to trot along the path. | 马开始沿着路径慢跑。 | 12 |
@@ -2599,14 +2599,14 @@
 | 2593 | approximate | /ʌprˈɑksʌmʌt/ | `adj.` | 大约的 | approximate value | 近似值 | The scientist calculated an approximate value for the experimental result. | 科学家计算了实验结果的近似值。 | 11 |
 | 2594 | architecture | /ˈɑrkʌtˌɛktʃɜːr/ | `n.` | 建筑 | modern architecture | 现代建筑 | The city is famous for its modern architecture and innovative design. | 这座城市以其现代建筑和创新设计而闻名。 | 11 |
 | 2595 | array | /ɜːrˈeɪ/ | `n.` | 排列 | array of | …的排列 | The store displayed an array of products for customers to choose. | 商店为顾客展示了一系列产品供选择。 | 11 |
-| 2596 | beg | /bˈɛɡ/ | `v.* | 乞求 | beg for money | 乞讨钱 | The homeless man beg for money on the street. | 无家可归的人在街上乞讨钱。 | 11 |
+| 2596 | beg | /bˈɛɡ/ | `v.* | 乞求 | beg for money | 乞讨钱 | The homeless man begs for money on the street. | 无家可归的人在街上乞讨钱。 | 11 |
 | 2597 | beneficial | /bˌɛnʌfˈɪʃʌl/ | `adj.* | 有益的 | beneficial effect | 有益的效果 | This has a beneficial effect on health. | 这对健康有益的效果。 | 11 |
 | 2598 | breast | /brˈɛst/ | `n.` | 胸部 | breast cancer | 乳腺癌 | Early detection of breast cancer can save many lives each year. | 早期发现乳腺癌每年可以挽救许多生命。 | 11 |
 | 2599 | cement | /sʌmˈɛnt/ | `n.* | 水泥 | building cement | 建筑水泥 | Building cement is used for construction. | 建筑水泥用于施工。 | 11 |
 | 2600 | complain | /kʌmplˈeɪn/ | `v.* | 抱怨 | complain about | 抱怨… | Complain about the service. | 抱怨服务。 | 11 |
 | 2601 | compound | /kˈɑmpaʊnd/ | `n.` | 化合物 | chemical compound | 化合物 | Scientists discovered a new chemical compound with unique properties. | 科学家发现了一种具有独特性质的新化合物。 | 11 |
 | 2602 | concentrate | /kˈɑnsʌntrˌeɪt/ | `v.* | 集中 | concentrate on work | 集中工作 | Students concentrate on work during exams. | 学生在考试期间集中工作。 | 11 |
-| 2603 | confess | /kʌnfˈɛs/ | `v.* | 忏悔 | confess the sin | 忏悔罪行 | The priest confess the sin in church. | 神父在教堂忏悔罪行。 | 11 |
+| 2603 | confess | /kʌnfˈɛs/ | `v.* | 忏悔 | confess the sin | 忏悔罪行 | The thief confessed the sin in church. | 神父在教堂忏悔罪行。 | 11 |
 | 2604 | consult | /kʌnsˈʌlt/ | `v.* | 咨询 | consult a doctor | 咨询医生 | You should consult a doctor about your health. | 你应该咨询医生关于你的健康。 | 11 |
 | 2605 | convincing | /kʌnvˈɪnsɪŋ/ | `adj.* | 令人信服的 | convincing argument | 令人信服的论点 | He made a convincing argument. | 他做出了令人信服的论点。 | 11 |
 | 2606 | cooperate | /koʊˈɑpɜːrˌeɪt/ | `v.* | 合作 | cooperate with others | 与他人合作 | Team members cooperate with others effectively. | 团队成员有效地与他人合作。 | 11 |
@@ -2614,7 +2614,7 @@
 | 2608 | cult | /kˈʌlt/ | `n.` | 崇拜 | religious cult | 宗教崇拜 | Some people join a religious cult seeking spiritual guidance and meaning. | 有些人加入宗教崇拜寻求精神指导和意义。 | 11 |
 | 2609 | curse | /kˈɜːrs/ | `n.` | 诅咒 | curse word | 诅咒词 | Using a curse word in formal situations is considered inappropriate. | 在正式场合使用诅咒词被认为是不恰当的。 | 11 |
 | 2610 | delegation | /dˌɛlʌɡˈeɪʃʌn/ | `n.` | 代表团 | official delegation | 官方代表团 | The official delegation visited several countries to discuss trade agreements. | 官方代表团访问了几个国家讨论贸易协议。 | 11 |
-| 2611 | disappear | /dˌɪsʌpˈɪr/ | `v.* | 消失 | disappear from sight | 消失 | The ship disappear from sight in the fog. | 船在雾中消失了。 | 11 |
+| 2611 | disappear | /dˌɪsʌpˈɪr/ | `v.* | 消失 | disappear from sight | 消失 | The ship disappears from sight in the fog. | 船在雾中消失了。 | 11 |
 | 2612 | drum | /drˈʌm/ | `n.` | 鼓 | drum beat | 鼓点 | The drum beat rhythmically as the band performed at the concert last night. | 鼓点有节奏地敲击，乐队昨晚在音乐会上表演。 | 11 |
 | 2613 | eighty | /ˈeɪtiː/ | `num.* | 八十 | eighty years | 八十年 | She has lived for eighty years. | 她活了八十年。 | 11 |
 | 2614 | energetic | /ˌɛnɜːrdʒˈɛtɪk/ | `adj.* | 精力充沛的 | energetic person | 精力充沛的人 | He is an energetic person. | 他是一个精力充沛的人。 | 11 |
@@ -2622,7 +2622,7 @@
 | 2616 | equator | /ɪkwˈeɪtɜːr/ | `n.* | 赤道 | earth equator | 地球赤道 | This is the equator. | 这是赤道。 | 11 |
 | 2617 | equivalent | /ɪkwˈɪvʌlʌnt/ | `adj.* | 相等的 | equivalent amount | 相等的数量 | They received an equivalent amount. | 他们收到了相等的数量。 | 11 |
 | 2618 | era | /ˈɪrʌ/ | `n.` | 时代 | digital era | 数字时代 | The digital era has transformed our lives. | 数字时代改变了我们的生活。 | 11 |
-| 2619 | evacuate | /ɪvˈækjʌˌeɪt/ | `v.* | 疏散 | evacuate the building | 疏散建筑物 | Firefighters evacuate the building quickly. | 消防员快速疏散建筑物。 | 11 |
+| 2619 | evacuate | /ɪvˈækjʌˌeɪt/ | `v.* | 疏散 | evacuate the building | 疏散建筑物 | Firefighters evacuate the building quickly. | 消防员迅速疏散了大楼里的人。 | 11 |
 | 2620 | exaggerate | /ɪɡzˈædʒɜːrˌeɪt/ | `v.* | 夸大 | exaggerate the story | 夸大故事 | Some people exaggerate the story for attention. | 有些人夸大故事以引起注意。 | 11 |
 | 2621 | epidemic | /ˌɛpʌdˈɛmɪk/ | `n.` | 流行病 | flu epidemic | 流感流行病 | A flu epidemic spread rapidly across the country. | 流感流行病在全国迅速传播。 | 11 |
 | 2622 | expectation | /ˌɛkspɛktˈeɪʃʌn/ | `n.* | 期望 | high expectation | 高期望 | Parents have high expectation for their children's education. | 父母对孩子的教育有高期望。 | 11 |
@@ -2648,18 +2648,18 @@
 | 2642 | mill | /mˈɪl/ | `n.` | 磨坊 | paper mill | 纸厂 | The paper mill produces recycled paper for environmental protection. | 纸厂生产再生纸以保护环境。 | 11 |
 | 2643 | moist | /mˈɔɪst/ | `adj.* | 潮湿的 | moist air | 潮湿的空气 | The moist air feels comfortable. | 潮湿的空气感觉很舒适。 | 11 |
 | 2644 | noticeable | /nˈoʊtʌsʌbʌl/ | `adj.* | 明显的 | noticeable change | 明显的变化 | There was a noticeable change. | 有明显的变化。 | 11 |
-| 2645 | overt | /oʊvˈɜːrt/ | `adj.* | 公开的 | overt action | 公开的行动 | That was an overt action. | 那是一个公开的行动。 | 11 |
+| 2645 | overt | /oʊvˈɜːrt/ | `adj.` | 公开的 | overt hostility | 公开的敌意 | She showed overt hostility. | 她表现出公开的敌意。 | 11 |
 | 2646 | parish | /pˈærɪʃ/ | `n.` | 教区 | local parish | 当地教区 | The local parish organizes community events throughout the year. | 当地教区全年组织社区活动。 | 11 |
 | 2647 | partial | /pˈɑrʃʌl/ | `adj.* | 部分的 | partial view | 部分视图 | We have a partial view from here. | 我们从这里有部分视图。 | 11 |
 | 2648 | passive | /pˈæsɪv/ | `adj.* | 被动的 | passive attitude | 被动的态度 | He has a passive attitude. | 他有被动的态度。 | 11 |
-| 2649 | perfection | /pɜːrfˈɛkʃʌn/ | `n.* | 完美 | strive perfection | 追求完美 | Artists strive perfection in their work. | 艺术家在工作中追求完美。 | 11 |
+| 2649 | perfection | /pɜːrfˈɛkʃʌn/ | `n.` | 完美 | strive for perfection | 追求完美 | Artists strive for perfection in their work. | 艺术家在工作中追求完美。 | 11 |
 | 2650 | pose | /pˈoʊz/ | `v.* | 摆姿势 | pose for photo | 摆姿势拍照 | Everyone pose for photo at the wedding. | 大家在婚礼上摆姿势拍照。 | 11 |
 | 2651 | poultry | /pˈoʊltriː/ | `n.* | 家禽 | raise poultry | 养家禽 | Farmers raise poultry for meat and eggs. | 农民养家禽获取肉和蛋。 | 11 |
 | 2652 | prejudice | /prˈɛdʒʌdɪs/ | `n.* | 偏见 | racial prejudice | 种族偏见 | Racial prejudice is unacceptable in modern society. | 种族偏见在现代社会是不可接受的。 | 11 |
 | 2653 | prompt | /prˈɑmpt/ | `v.* | 促使 | prompt action | 促使行动 | The news prompted action immediately. | 新闻立即促使了行动。 | 11 |
 | 2654 | rake | /rˈeɪk/ | `n.` | 耙子 | garden rake | 园艺耙 | He used a garden rake to clean up leaves from the lawn this weekend. | 他这个周末用园艺耙清理草坪上的落叶。 | 11 |
 | 2655 | recover | /rɪkˈʌvɜːr/ | `v.* | 恢复 | recover from illness | 康复 | She recover from illness after treatment. | 她治疗后康复了。 | 11 |
-| 2656 | retain | /rɪtˈeɪn/ | `v.* | 保留 | retain the talent | 保留人才 | Companies need to retain the talent. | 公司需要保留人才。 | 11 |
+| 2656 | retain | /rɪtˈeɪn/ | `v.` | 保留 | retain employees | 保留员工 | Companies need to retain employees. | 公司需要保留员工。 | 11 |
 | 2657 | reunion | /riːˈuːnjʌn/ | `n.` | 团聚 | family reunion | 家庭团聚 | The family reunion brought together relatives from across the country. | 家庭团聚聚集了来自全国各地的亲属。 | 11 |
 | 2658 | sanction | /sˈæŋkʃʌn/ | `n.* | 制裁 | economic sanction | 经济制裁 | Economic sanction was imposed on the country. | 经济制裁被施加于该国。 | 11 |
 | 2659 | sanitation | /sˌænʌtˈeɪʃʌn/ | `n.* | 卫生 | public sanitation | 公共卫生 | Public sanitation is important in cities. | 公共卫生在城市中很重要。 | 11 |
@@ -2676,7 +2676,7 @@
 | 2670 | surgeon | /sˈɜːrdʒʌn/ | `n.` | 外科医生 | skilled surgeon | 技术精湛的外科医生 | A skilled surgeon performed the operation successfully. | 一位技术精湛的外科医生成功地进行了手术。 | 11 |
 | 2671 | tender | /tˈɛndɜːr/ | `adj.* | 温柔的 | tender love | 温柔的爱 | She showed tender love to her child. | 她对孩子表现出温柔的爱。 | 11 |
 | 2672 | thirteen | /ˈθɜːrtˈiːn/ | `num.* | 十三 | thirteen years | 十三年 | She has studied for thirteen years. | 她已经学习了十三年。 | 11 |
-| 2673 | thoughtful | /ˈθɔtfʌl/ | `adj.* | 体贴的 | thoughtful person | 体贴的人 | He is a thoughtful person. | 他是一个体贴的人。 | 11 |
+| 2673 | thoughtful | /ˈθɔtfʌl/ | `adj.` | 体贴的 | thoughtful gift | 体贴的礼物 | Thank you for the thoughtful gift. | 谢谢你体贴的礼物。 | 11 |
 | 2674 | threaten | /θrˈɛtʌn/ | `v.* | 威胁 | threaten the enemy | 威胁敌人 | The army threaten the enemy with force. | 军队以武力威胁敌人。 | 11 |
 | 2675 | tide | /tˈaɪd/ | `n.* | 潮汐 | high tide | 高潮 | The high tide brought many fish to the shore. | 高潮带来了许多鱼到岸边。 | 11 |
 | 2676 | tomb | /tˈuːm/ | `n.` | 坟墓 | ancient tomb | 古代坟墓 | An ancient tomb was discovered by archaeologists. | 一座古代坟墓被考古学家发现。 | 11 |
@@ -2693,7 +2693,7 @@
 | 2687 | warn | /wˈɔrn/ | `v.* | 警告 | warn of danger | 警告危险 | Experts warn of danger ahead. | 专家警告前方有危险。 | 11 |
 | 2688 | wholesome | /hˈoʊlsʌm/ | `adj.* | 有益健康的 | wholesome food | 健康食物 | Wholesome food is important for health. | 健康食物对健康很重要。 | 11 |
 | 2689 | zone | /zˈoʊn/ | `n.` | 区域 | danger zone | 危险区域 | The danger zone was evacuated after the earthquake. | 危险区域在地震后被疏散。 | 11 |
-| 2690 | accuse | /ʌkjˈuːz/ | `v.* | 指控 | accuse of crime | 指控犯罪 | The police accuse of crime yesterday. | 警方昨天指控犯罪。 | 10 |
+| 2690 | accuse | /ʌkjˈuːz/ | `v.` | 指控 | accuse someone of theft | 指控某人偷窃 | The police accused him of theft yesterday. | 警方昨天指控他偷窃。 | 10 |
 | 2691 | admirable | /ˈædmɜːrʌbʌl/ | `adj.` | 可敬的 | admirable effort | 可敬的努力 | Her admirable effort to help the community received widespread recognition. | 她帮助社区的可敬努力获得了广泛认可。 | 10 |
 | 2692 | admire | /ædmˈaɪr/ | `v.* | 钦佩 | admire the view | 欣赏风景 | Tourists admire the view from the mountain. | 游客从山上欣赏风景。 | 10 |
 | 2693 | akin | /ʌkˈɪn/ | `adj.` | 类似的 | akin to | 类似于 | His approach to problem solving is akin to that of his mentor. | 他解决问题的方法类似于他的导师。 | 10 |
@@ -2783,7 +2783,7 @@
 | 2777 | theft | /ˈθɛft/ | `n.* | 盗窃 | identity theft | 身份盗窃 | Identity theft is a serious crime. | 身份盗窃是一种严重的犯罪。 | 10 |
 | 2778 | thermometer | /θɜːrmˈɑmʌtɜːr/ | `n.` | 温度计 | digital thermometer | 数字温度计 | Doctors use a digital thermometer to measure patients' temperature accurately. | 医生使用数字温度计准确测量病人的体温。 | 10 |
 | 2779 | thesis | /ˈθiːsʌs/ | `n.` | 论文 | doctoral thesis | 博士论文 | She completed her doctoral thesis on environmental science last year. | 她去年完成了关于环境科学的博士论文。 | 10 |
-| 2780 | thumb | /ˈθʌm/ | `n.` | 拇指 | thumb finger | 拇指 | Babies often suck their thumb finger when they feel sleepy. | 婴儿经常在困倦时吸拇指。 | 10 |
+| 2780 | thumb | /ˈθʌm/ | `n.` | 拇指 | suck thumb | 吸拇指 | The baby often sucks his thumb when tired. | 婴儿累了时常吸拇指。 | 10 |
 | 2781 | token | /tˈoʊkʌn/ | `n.` | 象征 | token of appreciation | 感谢的象征 | She gave him a token of appreciation for his help with the project. | 她给他一个感谢的象征以感谢他在项目中的帮助。 | 10 |
 | 2782 | tremble | /trˈɛmbʌl/ | `v.* | 颤抖 | tremble with fear | 害怕地颤抖 | Children tremble with fear in horror movies. | 孩童在恐怖电影中害怕地颤抖。 | 10 |
 | 2783 | tune | /tˈuːn/ | `n.` | 曲调 | popular tune | 流行曲调 | The popular tune from the movie became a hit song last summer. | 电影中的流行曲调去年夏天成为热门歌曲。 | 10 |
@@ -2821,7 +2821,7 @@
 | 2815 | embrace | /ɛmbrˈeɪs/ | `n.` | 拥抱 | warm embrace | 温暖拥抱 | A warm embrace comforted the crying child. | 温暖的拥抱安慰了哭泣的孩子。 | 9 |
 | 2816 | emigrate | /ˈɛmɪɡrˌeɪt/ | `v.* | 移民 | emigrate to another country | 移民到另一个国家 | Many people emigrate to another country for opportunities. | 许多人移民到另一个国家寻求机会。 | 9 |
 | 2817 | emulate | /ˈɛmjʌlˌeɪt/ | `v.* | 仿效 | emulate the hero | 仿效英雄 | Children emulate the hero in stories. | 孩童仿效故事中的英雄。 | 9 |
-| 2818 | enrich | /ɪnrˈɪtʃ/ | `v.* | 丰富 | enrich the mind | 丰富心灵 | Reading enrich the mind greatly. | 阅读极大地丰富心灵。 | 9 |
+| 2818 | enrich | /ɪnrˈɪtʃ/ | `v.* | 丰富 | enrich the mind | 丰富心灵 | Reading enriches the mind greatly. | 阅读极大地丰富心灵。 | 9 |
 | 2819 | erupt | /ɪrˈʌpt/ | `v.* | 爆发 | erupt into violence | 爆发暴力 | Protests erupt into violence sometimes. | 抗议有时爆发暴力。 | 9 |
 | 2820 | esteem | /ɪstˈiːm/ | `n.* | 尊重 | high esteem | 高度尊重 | He held his teacher in high esteem. | 他对老师高度尊重。 | 9 |
 | 2821 | enforce | /ɛnfˈɔrs/ | `v.* | 执行 | enforce the law | 执行法律 | Police enforce the law strictly. | 警察严格执行法律。 | 9 |
@@ -2871,7 +2871,7 @@
 | 2865 | paramount | /pˈɛrʌmˌaʊnt/ | `adj.* | 最重要的 | paramount importance | 最重要的 | Safety is of paramount importance. | 安全是最重要的。 | 9 |
 | 2866 | pearl | /pˈɜːrl/ | `n.` | 珍珠 | valuable pearl |珍贵的珍珠 | The necklace was made with valuable pearls. |项链是用珍贵的珍珠制成的。 | 9 |
 | 2867 | periodic | /pˌɪriːˈɑdɪk/ | `adj.* | 周期的 | periodic table | 元素周期表 | The periodic table shows chemical elements. | 元素周期表显示化学元素。 | 9 |
-| 2868 | persuasion | /pɜːrswˈeɪʒʌn/ | `n.* | 说服 | use persuasion | 使用说服 | She used persuasion to convince him to join. | 她使用说服来让他加入。 | 9 |
+| 2868 | persuasion | /pɜːrswˈeɪʒʌn/ | `n.* | 说服 | power of persuasion | 说服力 | She has great power of persuasion. | 她有很大的说服力。 | 9 |
 | 2869 | picturesque | /pˈɪktʃɜːrʌsk/ | `adj.* | 如画的 | picturesque scenery | 如画的风景 | We saw picturesque scenery in the mountains. | 我们在山里看到了如画的风景。 | 9 |
 | 2870 | precedent | /prˈɛsɪdʌnt/ | `n.` | 先例 | legal precedent | 法律先例 | The court decision set a legal precedent for future cases. | 法院决定为未来案件树立了法律先例。 | 9 |
 | 2871 | preference | /prˈɛfɜːrʌns/ | `n.* | 偏好 | personal preference | 个人偏好 | Personal preference varies from person to person. | 个人偏好因人而异。 | 9 |
@@ -2906,7 +2906,7 @@
 | 2900 | tolerance | /tˈɑlɜːrʌns/ | `n.* | 宽容 | great tolerance | 很大宽容 | She showed great tolerance toward him. | 她对他表现出很大宽容。 | 9 |
 | 2901 | tolerant | /tˈɑlɜːrʌnt/ | `adj.* | 宽容的 | tolerant attitude | 宽容的态度 | She has a tolerant attitude. | 她有宽容的态度。 | 9 |
 | 2902 | topic | /tˈɑpɪk/ | `n.` | 话题 | hot topic | 热门话题 | Climate change is a hot topic discussed at international conferences. | 气候变化是国际会议上讨论的热门话题。 | 9 |
-| 2903 | trifle | /trˈaɪfʌl/ | `n.` | 琐事 | trivial trifle | 微不足道的琐事 | Don't worry about trivial trifle when you have important work to do. | 当你有重要工作要做时，不要担心微不足道的琐事。 | 9 |
+| 2903 | trifle | /trˈaɪfʌl/ | `n.` | 琐事 | mere trifle | 微不足道的琐事 | Don't worry about such a mere trifle. | 不要为这种微不足道的琐事烦恼。 | 9 |
 | 2904 | trustee | /trˌʌstˈiː/ | `n.` | 受托人 | board trustee | 董事会受托人 | The board trustee manages the organization's assets responsibly. | 董事会受托人负责任地管理组织的资产。 | 9 |
 | 2905 | versus | /vˈɜːrsʌs/ | `prep.* | 对抗 | versus game | 对抗比赛 | This versus that. | 这个对抗那个。 | 9 |
 | 2906 | vinegar | /vˈɪnʌɡɜːr/ | `n.* | 醋 | apple vinegar | 苹果醋 | Apple vinegar is used in cooking. | 苹果醋用于烹饪。 | 9 |
@@ -2914,7 +2914,7 @@
 | 2908 | wheat | /wˈiːt/ | `n.* | 小麦 | whole wheat | 全麦 | Whole wheat is healthier. | 全麦更健康。 | 9 |
 | 2909 | wicked | /wˈɪkʌd/ | `adj.* | 邪恶的 | wicked person | 邪恶的人 | He is a wicked person. | 他是一个邪恶的人。 | 9 |
 | 2910 | wrath | /rˈæθ/ | `n.* | 愤怒 | great wrath | 巨大愤怒 | He felt great wrath after the betrayal. | 他背叛后感到巨大愤怒。 | 9 |
-| 2911 | zoo | /zˈuː/ | `n.` | 动物园 | city zoo | 市动物园 | Families visit the city zoo on weekends to see various animals. | 家庭周末参观市动物园观看各种动物。 | 9 |
+REMOVED_DUPLICATE
 | 2912 | accompany | /ʌkˈʌmpʌniː/ | `v.* | 陪伴 | accompany me | 陪我 | She accompanied me to the station. | 她陪我去了车站。 | 8 |
 | 2913 | arithmetic | /ˌɛrɪθmˈɛtɪk/ | `n.` | 算术 | basic arithmetic | 基础算术 | Children learn basic arithmetic in elementary school mathematics classes. | 孩童在小学数学课上学习基础算术。 | 8 |
 | 2914 | armpit | /ˈɑrmpˌɪt/ | `n.` | 腋窝 | body armpit | 身体腋窝 | Sweat from the body armpit can cause odor. | 身体腋窝的汗水会导致气味。 | 8 |
@@ -2939,7 +2939,7 @@
 | 2933 | creed | /krˈiːd/ | `n.` | 信条 | religious creed | 宗教信条 | Members follow the religious creed of their faith tradition. | 成员遵循他们信仰传统的宗教信条。 | 8 |
 | 2934 | delegate | /dˈɛlʌɡˌeɪt/ | `n.` | 代表 | country delegate | 国家代表 | The country delegate attended the international conference. | 国家代表出席了国际会议。 | 8 |
 | 2935 | devise | /dɪvˈaɪz/ | `v.* | 设计 | devise a plan | 设计计划 | Devise a plan. | 设计计划。 | 8 |
-| 2936 | discontent | /dɪskʌntˈɛnt/ | `adj.* | 不满的 | discontent with | 对…不满 | Discontent with the policy led to protests. | 对政策的不满导致了抗议。 | 8 |
+REMOVED_DUPLICATE
 | 2937 | dispatch | /dɪspˈætʃ/ | `v.* | 派遣 | dispatch the troops | 派遣部队 | Dispatch the troops. | 派遣部队。 | 8 |
 | 2938 | dominate | /dˈɑmʌnˌeɪt/ | `v.* | 支配 | dominate the market | 支配市场 | Dominate the market. | 支配市场。 | 8 |
 | 2939 | drawer | /drˈɔr/ | `n.` | 抽屉 | desk drawer | 书桌抽屉 | She kept important documents in a desk drawer. | 她把重要文件放在书桌抽屉里。 | 8 |
@@ -3014,24 +3014,24 @@
 | 3008 | selfish | /sˈɛlfɪʃ/ | `adj.* | 自私的 | selfish person | 自私的人 | A selfish person thinks only of themselves. | 自私的人只想着自己。 | 8 |
 | 3009 | shield | /ˈʃiːld/ | `n.` | 盾牌 | protective shield | 防护盾牌 | The warrior carried a protective shield in battle. |战士在战斗中携带防护盾牌。 | 8 |
 | 3010 | shrewd | /ʃrˈuːd/ | `adj.* | 精明的 | shrewd businessman | 精明的商人 | A shrewd businessman makes smart investments. | 精明的商人做出聪明的投资。 | 8 |
-| 3011 | slum | /slˈʌm/ | `n.` | 贫民窟 | urban slum | 市贫民窟 | The government is working to improve living conditions in the urban slum. | 政府正在努力改善市贫民窟的生活条件。 | 8 |
+| 3011 | slum | /slˈʌm/ | `n.` | 贫民窟 | urban slum | 城市贫民窟 | The government is working to improve living conditions in the urban slum. | 政府正在努力改善市贫民窟的生活条件。 | 8 |
 | 3012 | spiral | /spˈaɪrʌl/ | `adj.* | 螺旋的 | spiral pattern | 螺旋图案 | The spiral pattern is beautiful in design. | 螺旋图案在设计中很美。 | 8 |
 | 3013 | staircase | /stˈɛrkˌeɪs/ | `n.` | 楼梯 | wooden staircase | 木楼梯 | The wooden staircase connects the two floors of the historic building. | 木楼梯连接历史建筑的两层。 | 8 |
 | 3014 | statue | /stˈætʃˌuː/ | `n.` | 雕像 | marble statue | 大理石雕像 | The museum displays a marble statue from ancient Rome. | 博物馆陈列着一座来自古罗马的大理石雕像。 | 8 |
 | 3015 | steak | /stˈeɪk/ | `n.` | 牛排 | grilled steak | 烤牛排 | The restaurant serves grilled steak with mashed potatoes. | 餐厅供应烤牛排配土豆泥。 | 8 |
 | 3016 | steward | /stˈjuːɜːrd/ | `n.` | 男乘务员 | flight steward | 男乘务员 | The flight steward helped passengers with their luggage during boarding. | 男乘务员在登机时帮助乘客处理行李。 | 8 |
 | 3017 | stray | /strˈeɪ/ | `adj.* | 迷路的 | stray dog | 流浪狗 | A stray dog wandered into the neighborhood. | 流浪狗游荡进了社区。 | 8 |
-| 3018 | strengthen | /strˈɛŋθʌn/ | `v.* | 加强 | strengthen the wall | 加强墙壁 | Strengthen the wall. | 加强墙壁。 | 8 |
+| 3018 | strengthen | /strˈɛŋθʌn/ | `v.* | 加强 | strengthen the relationship | 加强关系 | They tried to strengthen the relationship. | 加强关系。 | 8 |
 | 3019 | strife | /strˈaɪf/ | `n.* | 冲突 | internal strife | 内部冲突 | Internal strife divided the organization. | 内部冲突分裂了组织。 | 8 |
 | 3020 | subtle | /sˈʌtbʌl/ | `adj.* | 微妙的 | subtle difference | 微妙的差异 | The subtle difference is hard to notice. | 微妙的差异很难注意到。 | 8 |
-| 3021 | stamp | /stˈæmp/ | `n.` | 邮票 | postage stamp | 邮票 | Collectors pay high prices for rare postage stamp from the 19th century. | 收藏家为19世纪的稀有邮票支付高价。 | 8 |
+| 3021 | stamp | /stˈæmp/ | `n.` | 邮票 | postage stamp | 邮票 | Collectors pay high prices for rare postage stamps from the 19th century. | 收藏家为19世纪的稀有邮票支付高价。 | 8 |
 | 3022 | stormy | /stˈɔrmiː/ | `adj.* | 暴风雨的 | stormy weather | 暴风雨的天气 | Stormy weather makes travel difficult. | 暴风雨的天气使旅行困难。 | 8 |
 | 3023 | sunshine | /sˈʌnʃˌaɪn/ | `n.* | 阳光 | warm sunshine | 温暖阳光 | Warm sunshine filled the room in the morning. | 温暖阳光在早晨充满了房间。 | 8 |
 | 3024 | super | /sˈuːpɜːr/ | `adj.* | 极好的 | super star | 超级明星 | She is a super star. | 她是一个超级明星。 | 8 |
 | 3025 | superstition | /sˌuːpɜːrstˈɪʃʌn/ | `n.* | 迷信 | break superstition | 打破迷信 | Education helps break superstition in society. | 教育有助于打破社会中的迷信。 | 8 |
 | 3026 | surroundings | /sɜːrˈaʊndɪŋz/ | `n.* | 环境 | natural surroundings | 自然环境 | Natural surroundings affect people's mood. | 自然环境影响人们的情绪。 | 8 |
 | 3027 | telegram | /tˈɛlʌɡrˌæm/ | `n.` | 电报 | urgent telegram | 紧急电报 | The urgent telegram informed the family about the emergency situation. | 紧急电报通知家庭关于紧急情况。 | 8 |
-| 3028 | testify | /tˈɛstʌfˌaɪ/ | `v.* | 作证 | testify in court | 出庭作证 | Testify in court. | 出庭作证。 | 8 |
+| 3028 | testify | /tˈɛstʌfˌaɪ/ | `v.* | 作证 | testify in court | 证人同意出庭作证 | The witness agreed to testify in court. | 出庭作证。 | 8 |
 | 3029 | thanksgiving | /θˌæŋksɡˈɪvɪŋ/ | `n.* | 感恩节 | Thanksgiving Day | 感恩节 | This is Thanksgiving. | 这是感恩节。 | 8 |
 | 3030 | thief | /ˈθiːf/ | `n.` | 贼 | notorious thief | 著名的贼 | The notorious thief stole valuable paintings from the museum. | 著名的贼从博物馆偷走了珍贵的画作。 | 8 |
 | 3031 | trunk | /trˈʌŋk/ | `n.` | 树干 | tree trunk | 树干 | The tree trunk provides support for the branches and leaves above. | 树干为上面的树枝和叶子提供支撑。 | 8 |
@@ -3042,7 +3042,7 @@
 | 3036 | withdraw | /wɪðdrˈɔ/ | `v.* | 撤回 | withdraw money | 取钱 | She withdrew money from the bank. | 她从银行取了钱。 | 8 |
 | 3037 | worthwhile | /wˈɜːrθwˈaɪl/ | `adj.* | 值得的 | worthwhile project | 值得的项目 | This is a worthwhile project. | 这是一个值得的项目。 | 8 |
 | 3038 | wreath | /rˈiːθ/ | `n.` | 花环 | funeral wreath | 悼念花环 | The family placed a funeral wreath at the gravesite during the ceremony. | 家人在仪式期间在墓地放置了悼念花环。 | 8 |
-| 3039 | wreck | /rˈɛk/ | `v.* | 破坏 | wreck the car | 破坏汽车 | Wreck the car. | 破坏汽车。 | 8 |
+| 3039 | wreck | /rˈɛk/ | `v.* | 破坏 | wreck the car | 破坏汽车 | The storm wrecked the car. | 破坏汽车。 | 8 |
 | 3040 | youngster | /jˈʌŋstɜːr/ | `n.` | 年轻人 | talented youngster | 有才华的年轻人 | The talented youngster won the national competition last year. | 有才华的年轻人去年赢得了全国比赛。 | 8 |
 | 3041 | yourselves | /jʊrsˈɛlvz/ | `pron.* | 你们自己 | help yourselves | 请自便 | Please help yourselves to the food. | 请自便享用食物。 | 8 |
 | 3042 | zeal | /zˈiːl/ | `n.* | 热情 | great zeal |巨大热情 | He showed great zeal for the project. | 他对项目表现出巨大热情。 | 8 |
@@ -3058,12 +3058,12 @@
 | 3052 | breathe | /brˈiːð/ | `v.* | 呼吸 | breathe fresh air | 呼吸新鲜空气 | Breathe fresh air. | 呼吸新鲜空气。 | 7 |
 | 3053 | cable | /kˈeɪbʌl/ | `n.` | 电缆 | underground cable | 地下电缆 | Workers repaired the underground cable that provides electricity to homes. | 工人修理了为家庭供电的地下电缆。 | 7 |
 | 3054 | cancel | /kˈænsʌl/ | `v.* | 取消 | cancel the meeting | 取消会议 | Cancel the meeting. | 取消会议。 | 7 |
-| 3055 | cargo | /kˈɑrɡˌoʊ/ | `n.* | 货物 | heavy cargo | 重货物 | They loaded heavy cargo onto the ship. | 他们把重货物装上船。 | 7 |
+| 3055 | cargo | /kˈɑrɡˌoʊ/ | `n.* | 货物 | heavy cargo | 沉重的货物 | They loaded heavy cargo onto the ship. | 他们把重货物装上船。 | 7 |
 | 3056 | certificate | /sɜːrtˈɪfɪkʌt/ | `n.` | 证书 | birth certificate | 出生证明 | Parents need a birth certificate to enroll their child in school. | 父母需要出生证明才能让孩子入学。 | 7 |
 | 3057 | conceal | /kʌnsˈiːl/ | `v.* | 隐藏 | conceal the truth | 隐藏真相 | Conceal the truth. | 隐藏真相。 | 7 |
 | 3058 | defiance | /dɪfˈaɪʌns/ | `n.* | 违抗 | open defiance | 公开违抗 | He showed open defiance to the rules. | 他对规则表现出公开违抗。 | 7 |
 | 3059 | depart | /dɪpˈɑrt/ | `v.* | 离开 | depart from home | 离开家 | Depart from home. | 离开家。 | 7 |
-| 3060 | disorder | /dɪsˈɔrdɜːr/ | `n.* | 混乱 | mental disorder | 精神混乱 | Mental disorder requires treatment. | 精神混乱需要治疗。 | 7 |
+| 3060 | disorder | /dɪsˈɔrdɜːr/ | `n.* | 混乱 | mental disorder | 精神障碍 | Mental disorder requires treatment. | 精神混乱需要治疗。 | 7 |
 | 3061 | dubious | /dˈuːbiːʌs/ | `adj.* | 可疑的 | dubious character | 可疑的人物 | He is a dubious character. | 他是一个可疑的人物。 | 7 |
 | 3062 | educate | /ˈɛdʒʌkˌeɪt/ | `v.* | 教育 | educate children | 教育孩子 | Parents educate children at home. | 父母在家教育孩子。 | 7 |
 | 3063 | enlarge | /ɛnlˈɑrdʒ/ | `v.* | 扩大 | enlarge the room | 扩大房间 | Enlarge the room. | 扩大房间。 | 7 |
@@ -3071,7 +3071,7 @@
 | 3065 | exclude | /ɪksklˈuːd/ | `v.* | 排除 | exclude from | 排除 | Exclude from the list. | 从列表中排除。 | 7 |
 | 3066 | exhaust | /ɪɡzˈɔst/ | `v.* | 耗尽 | exhaust energy | 耗尽精力 | Running exhausted her energy. | 跑步耗尽了她的精力。 | 7 |
 | 3067 | exit | /ˈɛɡzɪt/ | `n.` | 出口 | emergency exit | 紧急出口 | The emergency exit was clearly marked with signs. | 紧急出口清楚地标有指示牌。 | 7 |
-| 3068 | exotic | /ɪɡzˈɑtɪk/ | `adj.* | 异国的 | exotic food | 异国食物 | Exotic food is interesting to try. | 异国食物有趣尝试。 | 7 |
+| 3068 | exotic | /ɪɡzˈɑtɪk/ | `adj.* | 异国的 | exotic food | 异国食物 | Exotic food is interesting to try. | 这家餐厅提供异国美食。 | 7 |
 | 3069 | fiery | /fˈaɪɜːriː/ | `adj.* | 火热的 | fiery passion | 火热的情怀 | She has fiery passion for art. | 她对艺术有火热的情怀。 | 7 |
 | 3070 | fold | /fˈoʊld/ | `v.* | 折叠 | fold the paper | 折叠纸 | Fold the paper. | 折叠纸。 | 7 |
 | 3071 | forerunner | /fˈɔrˌʌnɜːr/ | `n.` | 先驱 | technological forerunner | 技术先驱 | The company is a technological forerunner in smartphone development. | 该公司是智能手机开发的技术先驱。 | 7 |
@@ -3110,7 +3110,7 @@
 | 3104 | monotony | /mʌnˈɑtʌniː/ | `n.* | 单调 | daily monotony | 日常单调 | Daily monotony makes life boring. | 日常单调使生活无聊。 | 7 |
 | 3105 | myriad | /mˈɪriːʌd/ | `adj.* | 无数的 | myriad stars | 无数的星星 | Myriad stars fill the night sky. | 无数的星星填满夜空。 | 7 |
 | 3106 | oven | /ˈʌvʌn/ | `n.` | 烤箱 | kitchen oven | 厨房烤箱 | The kitchen oven was used to bake bread daily. | 厨房烤箱每天用来烤面包。 | 7 |
-| 3107 | pageant | /pˈædʒʌnt/ | `n.` | 盛况 | historical pageant | 历史盛况 | The historical pageant was displayed in the museum exhibition. | 历史盛况在博物馆展览中展示。 | 7 |
+| 3107 | pageant | /pˈædʒʌnt/ | `n.` | 盛况 | historical pageant | 历史巡游表演 | The historical pageant was displayed in the museum exhibition. | 历史盛况在博物馆展览中展示。 | 7 |
 | 3108 | parameter | /pɜːrˈæmʌtɜːr/ | `n.` | 参数 | experimental parameter | 实验参数 | The experimental parameter was carefully controlled by scientists. | 实验参数被科学家仔细控制。 | 7 |
 | 3109 | peasant | /pˈɛzʌnt/ | `n.` | 农民 | village peasant | 村庄农民 | The village peasant worked hard in the fields every day. | 村庄农民每天在田地里辛勤工作。 | 7 |
 | 3110 | penetrate | /pˈɛnʌtrˌeɪt/ | `v.* | 穿透 | penetrate the wall | 穿透墙壁 | Penetrate the wall. | 穿透墙壁。 | 7 |
@@ -3138,7 +3138,7 @@
 | 3132 | reliance | /rɪlˈaɪʌns/ | `n.* | 信赖 | reliance on | 对…的信赖 | Reliance on technology is increasing. | 对技术的信赖正在增加。 | 7 |
 | 3133 | repay | /riːpˈeɪ/ | `v.* | 偿还 | repay the debt | 偿还债务 | Repay the debt. | 偿还债务。 | 7 |
 | 3134 | repeal | /rɪpˈiːl/ | `v.* | 废除 | repeal the law | 废除法律 | Repeal the law. | 废除法律。 | 7 |
-| 3135 | retarded | /rɪtˈɑrdɪd/ | `adj.* | 迟钝的 | retarded child | 迟钝的孩子 | A retarded child needs special education. | 迟钝的孩子需要特殊教育。 | 7 |
+REMOVED_ENTRY
 | 3136 | revenge | /riːvˈɛndʒ/ | `n.* | 复仇 | seek revenge | 寻求复仇 | He sought revenge for the injustice done to him. | 他寻求复仇以报复对他造成的不公。 | 7 |
 | 3137 | rigorous | /rˈɪɡɜːrʌs/ | `adj.* | 严格的 | rigorous training | 严格的训练 | Rigorous training prepares athletes well. | 严格的训练很好地准备运动员。 | 7 |
 | 3138 | rocket | /rˈɑkʌt/ | `n.` | 火箭 | space rocket |太空火箭 | A space rocket launched successfully last week. |太空火箭上周成功发射。 | 7 |
@@ -3180,7 +3180,7 @@
 | 3174 | upturn | /ʌptˈɜːrn/ | `n.` | 好转 | economic upturn | 经济好转 | An economic upturn brought hope to many people. | 经济好转给许多人带来了希望。 | 7 |
 | 3175 | utmost | /ˈʌtmˌoʊst/ | `adj.* | 极度的 | utmost importance | 极其重要 | Safety is of utmost importance. | 安全极其重要。 | 7 |
 | 3176 | valuation | /væljuːˈeɪʃʌn/ | `n.* | 估价 | property valuation | 财产估价 | Property valuation determines the market price. | 财产估价确定市场价格。 | 7 |
-| 3177 | vanity | /vˈænʌtiː/ | `n.* | 虚荣 | sheer vanity | 纯虚荣 | Her behavior was driven by sheer vanity. | 她的行为被纯虚荣驱使。 | 7 |
+| 3177 | vanity | /vˈænʌtiː/ | `n.* | 虚荣 | sheer vanity | 十足的虚荣心 | Her behavior was driven by sheer vanity. | 她的行为被纯虚荣驱使。 | 7 |
 | 3178 | violate | /vˈaɪʌleɪt/ | `v.* | 违反 | violate the rule | 违反规则 | Violate the rule. | 违反规则。 | 7 |
 | 3179 | violet | /vˈaɪʌlɪt/ | `n.* | 紫罗兰 | purple violet | 紫色紫罗兰 | A purple violet bloomed in the garden. | 紫色紫罗兰在花园中绽放。 | 7 |
 | 3180 | vulgar | /vˈʌlɡɜːr/ | `adj.* | 粗俗的 | vulgar language | 粗俗的语言 | Vulgar language is inappropriate in public. | 粗俗的语言在公共场合不合适。 | 7 |
@@ -3310,7 +3310,7 @@
 | 3304 | technician | /tɛknˈɪʃʌn/ | `n.` | 技术员 | skilled technician | 技术精湛的技术员 | A skilled technician repaired the broken machine. |技术精湛的技术员修理了损坏的机器。 | 6 |
 | 3305 | tedious | /tˈiːdiːʌs/ | `adj.* | 乏味的 | tedious work | 乏味的工作 | Tedious work requires patience. | 乏味的工作需要耐心。 | 6 |
 | 3306 | tenuous | /tˈɛnjʌwʌs/ | `adj.* | 脆弱的 | tenuous connection | 脆弱的联系 | A tenuous connection is easily broken. | 脆弱的联系很容易断裂。 | 6 |
-| 3307 | thaw | /ˈθɔ/ | `v.* | 融化 | thaw the ice | 融化冰 | Warm weather thaw the ice on the lake. | 温暖天气融化湖上的冰。 | 6 |
+| 3307 | thaw | /ˈθɔ/ | `v.* | 融化 | thaw the ice | 融化冰 | Warm weather thawed the ice on the lake. | 温暖天气融化湖上的冰。 | 6 |
 | 3308 | towel | /tˈaʊʌl/ | `n.` | 毛巾 | cotton towel |棉毛巾 | He dried his hands with a cotton towel after washing. | 他洗完后用棉毛巾擦干手。 | 6 |
 | 3309 | treason | /trˈiːzʌn/ | `n.* | 叛国 | commit treason | 犯叛国罪 | He was accused of committing treason. | 他被指控犯叛国罪。 | 6 |
 | 3310 | underworld | /ˈʌndɜːrwˌɜːrld/ | `n.* | 地下世界 | criminal underworld |犯罪地下世界 | The criminal underworld operates secretly. |犯罪地下世界秘密运作。 | 6 |
@@ -3403,12 +3403,12 @@
 | 3397 | mediocre | /mˌiːdiːˈoʊkɜːr/ | `adj.* | 平庸的 | mediocre performance | 平庸的表现 | Mediocre performance needs improvement. | 平庸的表现需要改进。 | 5 |
 | 3398 | menu | /mˈɛnjuː/ | `n.` | 菜单 | restaurant menu | 餐厅菜单 | The restaurant menu offers a variety of delicious dishes. | 餐厅菜单提供各种美味菜肴。 | 5 |
 | 3399 | metaphor | /mˈɛtʌfɔr/ | `n.` | 隐喻 | powerful metaphor | 强有力的隐喻 | The poet used a powerful metaphor to describe love. | 诗人用强有力的隐喻来描述爱情。 | 5 |
-| 3400 | midday | /mˈɪddˌeɪ/ | `n.* | 正午 | hot midday | 炎热正午 | Hot midday sun is intense. | 炎热正午的太阳很强烈。 | 5 |
+| 3400 | midday | /mˈɪddˌeɪ/ | `n.* | 正午 | midday sun | 炎热正午 | Hot midday sun is intense. | 炎热正午的太阳很强烈。 | 5 |
 | 3401 | mischief | /mˈɪstʃʌf/ | `n.* | 恶作剧 | childish mischief | 孩子恶作剧 | Childish mischief is innocent fun. | 孩子恶作剧是无辜的乐趣。 | 5 |
 | 3402 | mistress | /mˈɪstrʌs/ | `n.` | 情妇 | secret mistress | 秘密情妇 | The scandal revealed that he had a secret mistress for years. | 丑闻揭露了他多年来有一个秘密情妇。 | 5 |
 | 3403 | monumental | /mˌɑnjʌmˈɛntʌl/ | `adj.* | 不朽的 | monumental achievement | 不朽的成就 | A monumental achievement is historic. | 不朽的成就是历史性的。 | 5 |
 | 3404 | necessitate | /nʌsˈɛsʌtˌeɪt/ | `v.* | 使必要 | necessitate change | 需要改变 | The crisis necessitated change quickly. | 危机很快需要改变。 | 5 |
-| 3405 | novelty | /nˈɑvʌltiː/ | `n.* | 新奇 | great novelty | 很大新奇 | Great novelty attracts attention. | 很大新奇吸引注意力。 | 5 |
+| 3405 | novelty | /nˈɑvʌltiː/ | `n.* | 新奇 | great novelty | 新奇感 | Great novelty attracts attention. | 很大新奇吸引注意力。 | 5 |
 | 3406 | oneself | /wˌʌnsˈɛlf/ | `pron.* | 自己 | be oneself | 做自己 | You should be yourself. | 你应该做自己。 | 5 |
 | 3407 | option | /ˈɑpʃʌn/ | `n.` | 选项 | study option | 学习选项 | The study option appealed to many students. | 学习选项吸引了许多学生。 | 5 |
 | 3408 | overalls | /ˈoʊvɜːrˌɔlz/ | `n.* | 工装裤 | blue overalls | 蓝色工装裤 | These are overalls. | 这是工装裤。 | 5 |
@@ -3468,12 +3468,12 @@
 | 3462 | sportsman | /spˈɔrtsmʌn/ | `n.` | 运动员 | professional sportsman | 职业运动员 | The professional sportsman trains six hours every day. | 那位职业运动员每天训练六小时。 | 5 |
 | 3463 | steal | /stˈiːl/ | `v.* | 偷窃 | steal money | 偷钱 | Someone tried to steal money from the store. | 有人试图从商店偷钱。 | 5 |
 | 3464 | stew | /stˈuː/ | `v.* | 炖 | stew the meat | 炖肉 | Cooks stew the meat slowly. | 厨师慢慢地炖肉。 | 5 |
-| 3465 | sting | /stˈɪŋ/ | `v.* | 刺 | sting the bee | 蜜蜂蜇 | Sting like a bee. | 像蜜蜂一样蜇。 | 5 |
+| 3465 | sting | /stˈɪŋ/ | `v.` | 蜇 | bee sting | 蜜蜂蜇 | The bee sting was very painful. | 蜜蜂蜇非常疼。 | 5 |
 | 3466 | suck | /sˈʌk/ | `v.* | 吸 | suck the juice | 吸果汁 | Children suck the juice through straws. | 孩子们用吸管吸果汁。 | 5 |
 | 3467 | suffice | /sʌfˈaɪs/ | `v.* | 足够 | suffice for need | 满足需要 | This amount suffice for need temporarily. | 这个数量暂时满足需要。 | 5 |
 | 3468 | suffrage | /sˈʌfrɪdʒ/ | `n.* | 选举权 | women suffrage | 妇女选举权 | Women suffrage was achieved through struggle. | 妇女选举权通过斗争获得。 | 5 |
 | 3469 | sundry | /sˈʌndriː/ | `adj.* | 各式各样的 | sundry items | 各种物品 | Sundry items are varied and mixed. | 各种物品是多样化的。 | 5 |
-| 3470 | supervise | /sˈuːpɜːrvˌaɪz/ | `v.* | 监督 | supervise the workers | 监督工人 | Managers supervise the workers daily. | 经理每天监督工人。 | 5 |
+| 3470 | supervise | /sˈuːpɜːrvˌaɪz/ | `v.* | 监督 | supervise the workers | 监督工人 | Managers supervise their workers daily. | 经理每天监督工人。 | 5 |
 | 3471 | symptom | /sˈɪmptʌm/ | `n.` | 症状 | common symptom | 常见症状 | Headache is a common symptom of stress. | 头痛是压力的常见症状。 | 5 |
 | 3472 | tag | /tˈæɡ/ | `n.` | 标签 | price tag | 价格标签 | Make sure to check the price tag before buying. | 购买前一定要检查价格标签。 | 5 |
 | 3473 | tame | /tˈeɪm/ | `adj.* | 驯服的 | tame animal | 驯服的动物 | A tame animal is safe to approach. | 驯服的动物可以安全接近。 | 5 |
@@ -3505,7 +3505,7 @@
 | 3499 | abode | /ʌbˈoʊd/ | `n.` | 住所 | peaceful abode | 平静住所 | Their peaceful abode was located in the countryside. | 他们平静的住所位于乡村。 | 4 |
 | 3500 | altitude | /ˈæltʌtˌuːd/ | `n.` | 高度 | high altitude | 高海拔 | The climbers reached high altitude and needed oxygen masks. | 登山者到达高海拔地区，需要氧气面罩。 | 4 |
 | 3501 | antipathy | /æntˈɪpʌθiː/ | `n.` | 反感 | deep antipathy | 深深的反感 | She felt deep antipathy toward her former boss. | 她对前老板有深深的反感。 | 4 |
-| 3502 | appraise | /ʌprˈeɪz/ | `v.* | 评估 | appraise the property | 评估财产 | Appraise the property. | 评估财产。 | 4 |
+| 3502 | appraise | /ʌprˈeɪz/ | `v.* | 评估 | appraise the property | 专家评估了房产的高价值 | The expert appraised the property at a high value. | 评估财产。 | 4 |
 | 3503 | armistice | /ˈɑrmʌstʌs/ | `n.` | 停战 | peace armistice | 和平停战协定 | A peace armistice was signed after long negotiations. | 和平停战协定经过长期谈判后签署。 | 4 |
 | 3504 | auction | /ˈɑkʃʌn/ | `n.` | 拍卖 | antique auction | 古董拍卖 | An antique auction attracted many collectors yesterday. | 古董拍卖昨天吸引了许多收藏家。 | 4 |
 | 3505 | audit | /ˈɔdɪt/ | `v.* | 审计 | audit the accounts | 审计账户 | Audit the accounts. | 审计账户。 | 4 |
@@ -3647,7 +3647,7 @@
 | 3641 | candid | /kˈændʌd/ | `adj.` | 坦率的 | candid opinion | 坦诚的意见 | Please give me your candid opinion. | 请给我你的坦诚意见。 | 3 |
 | 3642 | cartoon | /kɑrtˈuːn/ | `n.` | 卡通 | cartoon character | 卡通人物 | Children love cartoon characters. | 孩子们喜欢卡通人物。 | 3 |
 | 3643 | casualty | /kˈæʒʌwʌltiː/ | `n.` | 伤亡 | casualty of war | 战争伤亡 | The war caused many casualties. | 战争造成许多伤亡。 | 3 |
-| 3644 | cheat | /tʃˈiːt/ | `v.` | 欺骗 | cheat on exam | 考试作弊 | Students must not cheat on exam. | 学生不能考试作弊。 | 3 |
+| 3644 | cheat | /tʃˈiːt/ | `v.` | 欺骗 | cheat on exams | 考试作弊 | Students must not cheat on exam. | 学生不能考试作弊。 | 3 |
 | 3645 | chop | /tʃˈɑp/ | `v.` | 砍 | chop down tree | 砍倒树 | Lumberjacks chop down tree every day. | 伐木工每天砍倒树。 | 3 |
 | 3646 | cinema | /sˈɪnʌmʌ/ | `n.` | 电影院 | go to cinema | 去看电影 | Let's go to cinema this weekend. | 我们这周末去看电影吧。 | 3 |
 | 3647 | concession | /kʌnsˈɛʃʌn/ | `n.` | 让步 | make concession | 做出让步 | Both sides must make concession. | 双方都必须做出让步。 | 3 |
@@ -3707,7 +3707,7 @@
 | 3701 | lag | /lˈæɡ/ | `v.` | 落后 | lag behind | 落后 | Do not lag behind your classmates. | 不要落后于同学。 | 3 |
 | 3702 | landmark | /lˈændmˌɑrk/ | `n.` | 地标 | historic landmark | 历史地标 | The statue is a historic landmark. | 这座雕像是历史地标。 | 3 |
 | 3703 | lavish | /lˈævɪʃ/ | `adj.` | 浪费的 | lavish lifestyle | 奢侈的生活方式 | He lives a lavish lifestyle. | 他过着奢侈的生活。 | 3 |
-| 3704 | layman | /lˈeɪmʌn/ | `n.` | 外行 | layman term | 外行术语 | Please explain in layman term. | 请用外行能懂的话解释。 | 3 |
+| 3704 | layman | /lˈeɪmʌn/ | `n.` | 外行 | layman terms | 外行术语 | Please explain in layman terms. | 请用外行能懂的话解释。 | 3 |
 | 3705 | lick | /lˈɪk/ | `v.` | 舔 | lick the ice cream | 舔冰淇淋 | The child likes to lick the ice cream. | 孩子喜欢舔冰淇淋。 | 3 |
 | 3706 | lipstick | /lˈɪpstˌɪk/ | `n.` | 口红 | apply lipstick | 涂口红 | She likes to apply lipstick every day. | 她喜欢每天涂口红。 | 3 |
 | 3707 | literate | /lˈɪtɜːrʌt/ | `adj.` | 有文化的 | computer literate | 精通电脑 | Young people are usually computer literate. | 年轻人通常精通电脑。 | 3 |
@@ -3810,8 +3810,8 @@
 | 3804 | stink | /stˈɪŋk/ | `v.` | 发臭 | stink of smoke | 烟味熏天 | The room does stink of smoke. | 房间确实烟味熏天。 | 3 |
 | 3805 | stoic | /stˈoʊɪk/ | `adj.` | 坚忍的 | stoic endurance | 坚韧的耐力 | She showed stoic endurance during the crisis. | 她在危机中表现出坚韧的耐力。 | 3 |
 | 3806 | stout | /stˈaʊt/ | `adj.` | 肥胖的 | stout man | 胖男人 | The stout man sat in the chair. | 胖男人坐在椅子里。 | 3 |
-| 3807 | strut | /strˈʌt/ | `v.` | 昂首阔步 | strut around | 昂首阔步 | The peacock strut around the yard. | 孔雀在院子里昂首阔步。 | 3 |
-| 3808 | subservient | /sʌbsˈɜːrviːʌnt/ | `adj.` | 屈从的 | subservient attitude | 卑躬屈膝的态度 | He has a subservient attitude to boss. | 他对老板卑躬屈膝。 | 3 |
+| 3807 | strut | /strˈʌt/ | `v.` | 昂首阔步 | strut around | 昂首阔步 | The peacock struts around the yard. | 孔雀在院子里昂首阔步。 | 3 |
+| 3808 | subservient | /sʌbsˈɜːrviːʌnt/ | `adj.` | 屈从的 | subservient attitude | 卑躬屈膝的态度 | He has a subservient attitude to his boss. | 他对老板卑躬屈膝。 | 3 |
 | 3809 | subsidy | /sˈʌbsɪdiː/ | `n.` | 补贴 | government subsidy | 政府补贴 | The farmer received government subsidy. | 农民收到了政府补贴。 | 3 |
 | 3810 | summarize | /sˈʌmɜːrˌaɪz/ | `v.` | 总结 | summarize main points | 总结要点 | Please summarize main points of the article. | 请总结文章的要点。 | 3 |
 | 3811 | surname | /sˈɜːrnˌeɪm/ | `n.` | 姓 | family surname | 姓氏 | What is your family surname? | 你的姓氏是什么？ | 3 |
@@ -3820,7 +3820,7 @@
 | 3814 | tablet | /tˈæblʌt/ | `n.` | 药片 | pain tablet | 止痛片 | Take a pain tablet for headache. | 头痛时吃一片止痛片。 | 3 |
 | 3815 | taboo | /tæbˈuː/ | `n.` | 禁忌 | cultural taboo | 文化禁忌 | Some topics are a cultural taboo. | 一些话题是文化禁忌。 | 3 |
 | 3816 | tantamount | /tˈæntʌmˌaʊnt/ | `adj.` | 等于 | tantamount to | 等同于 | His action is tantamount to betrayal. | 他的行为等同于背叛。 | 3 |
-| 3817 | taper | /tˈeɪpɜːr/ | `n.` | 圆锥 | candle taper | 蜡烛锥 | The candle taper is burning slowly. | 蜡烛锥慢慢燃烧着。 | 3 |
+| 3817 | taper | /tˈeɪpɜːr/ | `n.` | 圆锥 | candle taper | 细蜡烛 | The candle taper is burning slowly. | 蜡烛锥慢慢燃烧着。 | 3 |
 | 3818 | thorn | /ˈθɔrn/ | `n.` | 刺 | rose thorn | 玫瑰刺 | Be careful of the rose thorn. | 小心玫瑰刺。 | 3 |
 | 3819 | thrifty | /θrˈɪftiː/ | `adj.` | 节俭的 | thrifty habit | 节俭的习惯 | She has a thrifty habit of saving money. | 她有节俭存钱的习惯。 | 3 |
 | 3820 | throng | /θrˈɔŋ/ | `n.` | 人群 | throng of people | 一大群人 | A throng of people gathered at the square. | 一大群人聚集在广场上。 | 3 |
@@ -3846,7 +3846,7 @@
 | 3840 | visualize | /vˈɪʒwʌlˌaɪz/ | `v.` | 想象 | visualize the future | 想象未来 | Try to visualize your future. | 试着想象你的未来。 | 3 |
 | 3841 | vivacious | /vʌvˈeɪʃʌs/ | `adj.` | 活泼的 | vivacious personality | 活泼的性格 | She has a vivacious personality. | 她性格活泼。 | 3 |
 | 3842 | wail | /wˈeɪl/ | `v.` | 哀号 | wail in pain | 痛苦地哀号 | The patient began to wail in pain. | 病人开始痛苦地哀号。 | 3 |
-| 3843 | wanton | /wˈɔntʌn/ | `adj.` | 放肆的 | wanton destruction | 故意破坏 | The war caused wanton destruction. | 战争造成了故意的破坏。 | 3 |
+| 3843 | wanton | /wˈɔntʌn/ | `adj.` | 放肆的 | wanton destruction | 故意破坏 | The war caused wanton destruction. | 战争造成了肆意的破坏。 | 3 |
 | 3844 | wasteland | /wˈeɪstlˌænd/ | `n.` | 荒地 | nuclear wasteland | 核荒地 | The area became a nuclear wasteland. | 这个地区变成了核荒地。 | 3 |
 | 3845 | watchdog | /wˈɑtʃdˌɔɡ/ | `n.` | 看门狗 | watchdog group | 监督组织 | The watchdog group monitors government. | 监督组织监督政府。 | 3 |
 | 3846 | watershed | /wˈɔtɜːrʃˌɛd/ | `n.` | 分水岭 | watershed moment | 关键时刻 | This was a watershed moment in history. | 这是历史上的关键时刻。 | 3 |
@@ -3858,7 +3858,7 @@
 | 3852 | adversity | /ædvˈɜːrsɪtiː/ | `n.` | 逆境 | overcome adversity | 克服逆境 | We must overcome adversity. | 我们必须克服逆境。 | 2 |
 | 3853 | advertisement | /ʌdvˈɜːrtʌzmʌnt/ | `n.` | 广告 | television advertisement | 电视广告 | I saw an interesting television advertisement. | 我看到一个有趣的电视广告。 | 2 |
 | 3854 | amiable | /ˈeɪmiːʌbʌl/ | `adj.` | 和蔼的 | amiable personality | 和蔼的性格 | He has an amiable personality. | 他性格和蔼。 | 2 |
-| 3855 | amiss | /ʌmˈɪs/ | `adj.` | 有毛病的 | something amiss | 出了什么问题 | There is something amiss here. | 这里出了什么问题。 | 2 |
+| 3855 | amiss | /ʌmˈɪs/ | `adj.` | 有毛病的 | something amiss | 出了什么问题 | There is something amiss here. | 这里有些不对劲。 | 2 |
 | 3856 | appease | /ʌpˈiːz/ | `v.` | 平息 | appease the crowd | 平息人群 | The leader tried to appease the crowd. | 领袖试图平息人群。 | 2 |
 | 3857 | avarice | /ˈævɜːrʌs/ | `n.` | 贪婪 | avarice and greed | 贪婪与欲望 | His avarice led to his downfall. | 他的贪婪导致了他的堕落。 | 2 |
 | 3858 | avenge | /ʌvˈɛndʒ/ | `v.` | 报仇 | avenge the death | 为死亡报仇 | He wanted to avenge his father's death. | 他想为父亲之死报仇。 | 2 |
@@ -3869,7 +3869,7 @@
 | 3863 | bestow | /bɪstˈoʊ/ | `v.` | 给予 | bestow honor | 授予荣誉 | The queen will bestow honor on him. | 女王将授予他荣誉。 | 2 |
 | 3864 | betide | /bɪtˈaɪd/ | `v.` | 降临 | whatever betide | 无论发生什么 | Whatever betide, we will stay together. | 无论发生什么，我们都会在一起。 | 2 |
 | 3865 | biscuit | /bˈɪskʌt/ | `n.` | 饼干 | chocolate biscuit | 巧克力饼干 | I like chocolate biscuit. | 我喜欢巧克力饼干。 | 2 |
-| 3866 | bleed | /blˈiːd/ | `v.` | 流血 | bleed to death | 流血致死 | The wound made him bleed heavily. | 伤口让他大量流血。 | 2 |
+| 3866 | bleed | /blˈiːd/ | `v.` | 流血 | bleed to death | 流血致死 | The injured soldier bled to death. | 伤口让他大量流血。 | 2 |
 | 3867 | brag | /brˈæɡ/ | `v.` | 吹牛 | brag about achievement | 吹嘘成就 | He likes to brag about his achievement. | 他喜欢吹嘘自己的成就。 | 2 |
 | 3868 | briefing | /brˈiːfɪŋ/ | `n.` | 简报 | morning briefing | 早间简报 | The boss gave a morning briefing. | 老板做了早间简报。 | 2 |
 | 3869 | caricature | /kˈɛrʌkʌtʃɜːr/ | `n.` | 漫画 | political caricature | 政治漫画 | The newspaper published a political caricature. | 报纸刊登了一幅政治漫画。 | 2 |
@@ -3884,18 +3884,18 @@
 | 3878 | decorate | /dˈɛkɜːrˌeɪt/ | `v.` | 装饰 | decorate the room | 装饰房间 | We will decorate the room for the party. | 我们将为聚会装饰房间。 | 2 |
 | 3879 | default | /dɪfˈɔlt/ | `n.` | 违约 | default on loan | 贷款违约 | He is in default on his loan. | 他贷款违约了。 | 2 |
 | 3880 | delude | /dɪlˈuːd/ | `v.` | 欺骗 | delude oneself | 自欺 | Do not delude yourself with false hope. | 不要用虚假希望自欺。 | 2 |
-| 3881 | destitute | /dˈɛstʌtˌuːt/ | `adj.` | 赤贫的 | destitute family | 赤贫的家庭 | The family lived in destitute conditions. | 这家人生活在赤贫中。 | 2 |
+| 3881 | destitute | /dˈɛstʌtˌuːt/ | `adj.` | 赤贫的 | destitute family | 赤贫的家庭 | The destitute family had nowhere to live. | 这家人生活在赤贫中。 | 2 |
 | 3882 | devour | /dɪvˈaʊɜːr/ | `v.` | 吞食 | devour the food | 狼吞虎咽 | The hungry boy devoured the food. | 饥饿的男孩狼吞虎咽地吃东西。 | 2 |
 | 3883 | dilate | /daɪlˈeɪt/ | `v.` | 膨胀 | dilate the pupil | 瞳孔扩大 | The doctor will dilate the pupil. | 医生会扩大瞳孔。 | 2 |
 | 3884 | disperse | /dɪspˈɜːrs/ | `v.` | 分散 | disperse the crowd | 驱散人群 | Police will disperse the crowd. | 警察将驱散人群。 | 2 |
 | 3885 | donation | /doʊnˈeɪʃʌn/ | `n.` | 捐赠 | make donation | 捐赠 | Please make a donation to charity. | 请向慈善机构捐赠。 | 2 |
-| 3886 | eloquence | /ˈɛlʌkwʌns/ | `n.` | 口才 | eloquent speech | 雄辩的演讲 | He gave an eloquent speech. | 他发表了雄辩的演讲。 | 2 |
-| 3887 | emancipate | /ɪmˈænsʌpˌeɪt/ | `v.` | 解放 | emancipate from | 解放 | Lincoln freed to emancipate from slavery. | 林肯解放了奴隶。 | 2 |
+| 3886 | eloquence | /ˈɛlʌkwʌns/ | `n.` | 口才 | great eloquence | 卓越的口才 | He gave an eloquent speech. | 他发表了雄辩的演讲。 | 2 |
+| 3887 | emancipate | /ɪmˈænsʌpˌeɪt/ | `v.` | 解放 | emancipate from | 解放 | Lincoln acted to emancipate slaves from slavery. | 林肯解放了奴隶。 | 2 |
 | 3888 | ensue | /ɪnsˈuː/ | `v.` | 接着发生 | chaos ensued | 随之而来的是混乱 | Chaos ensued after the announcement. | 公告后随之而来的是混乱。 | 2 |
 | 3889 | entrust | /ɛntrˈʌst/ | `v.` | 委托 | entrust the task | 委托任务 | I will entrust the task to you. | 我将把任务委托给你。 | 2 |
 | 3890 | epidemics | /ˌɛpʌdˈɛmɪks/ | `n.` | 流行病 | control epidemics | 控制流行病 | The government works to control epidemics. | 政府努力控制流行病。 | 2 |
 | 3891 | excursion | /ɪkskˈɜːrʒʌn/ | `n.` | 远足 | day excursion | 一日游 | We went on a day excursion. | 我们进行了一日游。 | 2 |
-| 3892 | expel | /ɪkspˈɛl/ | `v.` | 驱逐 | expel from school | 开除学籍 | The school will expel from school. | 学校将开除学籍。 | 2 |
+| 3892 | expel | /ɪkspˈɛl/ | `v.` | 驱逐 | expel from school | 开除学籍 | The school will expel the student. | 学校将开除学籍。 | 2 |
 | 3893 | exterminate | /ɪkstˈɜːrmʌnˌeɪt/ | `v.` | 消灭 | exterminate pests | 消灭害虫 | We need to exterminate pests. | 我们需要消灭害虫。 | 2 |
 | 3894 | fable | /fˈeɪbʌl/ | `n.` | 寓言 | Aesop's fable | 伊索寓言 | I read an Aesop's fable yesterday. | 我昨天读了一个伊索寓言。 | 2 |
 | 3895 | fetish | /fˈɛtɪʃ/ | `n.` | 崇拜物 | fashion fetish | 时尚癖 | She has a fashion fetish. | 她有时尚癖。 | 2 |
@@ -3907,19 +3907,19 @@
 | 3901 | fry | /frˈaɪ/ | `v.` | 煎炸 | fry the egg | 煎鸡蛋 | Please fry the egg for breakfast. | 请煎个鸡蛋当早餐。 | 2 |
 | 3902 | gender | /dʒˈɛndɜːr/ | `n.` | 性别 | gender equality | 性别平等 | We need gender equality. | 我们需要性别平等。 | 2 |
 | 3903 | genre | /ˈʒɑnrʌ/ | `n.` | 类型 | literary genre | 文学类型 | This book belongs to a new genre. | 这本书属于一个新类型。 | 2 |
-| 3904 | glint | /ɡlˈɪnt/ | `v.` | 闪烁 | glint in the sun | 在阳光下闪烁 | The gold glint in the sun. | 金子在阳光下闪烁。 | 2 |
+| 3904 | glint | /ɡlˈɪnt/ | `v.` | 闪烁 | glint in the sun | 在阳光下闪烁 | The gold glints in the sun. | 金子在阳光下闪烁。 | 2 |
 | 3905 | greenhouse | /ɡrˈiːnhˌaʊs/ | `n.` | 温室 | greenhouse effect | 温室效应 | The greenhouse effect is a problem. | 温室效应是个问题。 | 2 |
 | 3906 | grisly | /ɡrˈɪzliː/ | `adj.` | 可怕的 | grisly murder | 残忍的谋杀 | The crime was a grisly murder. | 这是一起残忍的谋杀。 | 2 |
 | 3907 | gusto | /ˈɡʌstˌoʊ/ | `n.` | 热情 | with gusto | 热情地 | She eats with gusto. | 她吃东西时热情十足。 | 2 |
 | 3908 | haggard | /hˈæɡɜːrd/ | `adj.` | 憔悴的 | haggard face | 憔悴的面容 | He looks haggard after sleepless night. | 失眠后他看起来很憔悴。 | 2 |
-| 3909 | haphazard | /hæphˈæzɜːrd/ | `adj.` | 随意的 | haphazard approach | 随意的方法 | The plan is a haphazard approach. | 这个计划是随意的。 | 2 |
+| 3909 | haphazard | /hæphˈæzɜːrd/ | `adj.` | 随意的 | haphazard approach | 随意的方法 | The plan is a haphazard approach. | 这个计划杂乱无章。 | 2 |
 | 3910 | haughty | /hˈɔtiː/ | `adj.` | 傲慢的 | haughty attitude | 傲慢的态度 | She has a haughty attitude. | 她态度傲慢。 | 2 |
 | 3911 | heal | /hˈiːl/ | `v.` | 治愈 | heal the wound | 治愈伤口 | Time will heal the wound. | 时间会治愈伤口。 | 2 |
 | 3912 | heave | /hˈiːv/ | `v.` | 举起 | heave a sigh | 叹气 | He heaved a sigh of relief. | 他如释重负地叹了口气。 | 2 |
 | 3913 | hereditary | /hɜːrˈɛdʌtˌɛriː/ | `adj.` | 遗传的 | hereditary disease | 遗传病 | This is a hereditary disease. | 这是遗传病。 | 2 |
 | 3914 | highlight | /hˈaɪlˌaɪt/ | `v.` | 突出 | highlight the importance | 强调重要性 | We must highlight the importance. | 我们必须强调重要性。 | 2 |
 | 3915 | homestead | /hˈoʊmstˌɛd/ | `n.` | 家园 | family homestead | 家族家园 | They returned to their family homestead. | 他们回到了家族家园。 | 2 |
-| 3916 | hostage | /hˈɑstɪdʒ/ | `n.` | 人质 | take hostage | 劫持人质 | Terrorists took hostage of the people. | 恐怖分子劫持了人质。 | 2 |
+| 3916 | hostage | /hˈɑstɪdʒ/ | `n.` | 人质 | take hostage | 劫持人质 | Terrorists took the people hostage. | 恐怖分子劫持了人质。 | 2 |
 | 3917 | impious | /ɪmpˈaɪʌs/ | `adj.` | 不敬的 | impious behavior | 不敬的行为 | His impious behavior shocked everyone. | 他的不敬行为让所有人震惊。 | 2 |
 | 3918 | improvise | /ˈɪmprʌvˌaɪz/ | `v.` | 即兴创作 | improvise a song | 即兴创作歌曲 | He can improvise a song easily. | 他能轻松即兴创作歌曲。 | 2 |
 | 3919 | inadvertent | /ˌɪnʌdvˈɜːrtʌnt/ | `adj.` | 无意的 | inadvertent mistake | 无意的错误 | It was an inadvertent mistake. | 这是无意的错误。 | 2 |
@@ -4014,9 +4014,9 @@
 | 4008 | sage | /sˈeɪdʒ/ | `n.` | 圣人 | wise sage | 智慧的圣人 | The wise sage gave advice. | 智慧的圣人给出了建议。 | 2 |
 | 4009 | scatter | /skˈætɜːr/ | `v.` | 散开 | scatter seeds | 撒种子 | Farmers scatter seeds in spring. | 农民春天撒种子。 | 2 |
 | 4010 | scourge | /skˈɜːrdʒ/ | `n.` | 灾祸 | scourge of war | 战争的灾祸 | The war brought the scourge. | 战争带来了灾祸。 | 2 |
-| 4011 | scramble | /skrˈæmbʌl/ | `v.` | 攀爬 | scramble up the hill | 爬上山 | The child will scramble up the hill. | 孩子会爬上 山。 | 2 |
+| 4011 | scramble | /skrˈæmbʌl/ | `v.` | 攀爬 | scramble up the hill | 爬上山 | The child will scramble up the hill. | 孩子会爬上山。 | 2 |
 | 4012 | sect | /sˈɛkt/ | `n.` | 派别 | religious sect | 宗教派别 | The religious sect has many members. | 这个宗教派别有很多成员。 | 2 |
-| 4013 | sedate | /sɪdˈeɪt/ | `adj.` | 安静的 | sedate pace | 安静的步伐 | The old man walked at a sedate pace. | 老人以安静的步伐走。 | 2 |
+| 4013 | sedate | /sɪdˈeɪt/ | `adj.` | 安静的 | sedate pace | 安静的步伐 | The old man walked at a sedate pace. | 老人缓步而行。 | 2 |
 | 4014 | semblance | /sˈɛmblʌns/ | `n.` | 外表 | semblance of | ...的样子 | The manager tried to maintain a semblance of order in the chaotic office. | 经理试图在混乱的办公室保持秩序的样子。 | 2 |
 | 4015 | sensuous | /sˈɛntʃʌwʌs/ | `adj.` | 感觉的 | sensuous pleasure | 感官享受 | Music gives sensuous pleasure. | 音乐带来感官享受。 | 2 |
 | 4016 | sentinel | /sˈɛntʌnʌl/ | `n.` | 哨兵 | stand sentinel | 站岗 | The soldier will stand sentinel. | 士兵将站岗。 | 2 |
@@ -4050,7 +4050,7 @@
 | 4044 | stump | /stˈʌmp/ | `n.` | 树桩 | tree stump | 树桩 | The tree stump is in the yard. | 树桩在院子里。 | 2 |
 | 4045 | suave | /swˈɑv/ | `adj.` | 温和的 | suave manner | 温和的态度 | He has a suave manner. | 他态度温和。 | 2 |
 | 4046 | subdue | /sʌbdˈuː/ | `v.` | 征服 | subdue the enemy | 征服敌人 | The army will subdue the enemy. | 军队将征服敌人。 | 2 |
-| 4047 | subside | /sʌbsˈaɪd/ | `v.` | 平息 | subside the storm | 风暴平息 | The storm will subside. | 风暴会平息。 | 2 |
+| 4047 | subside | /sʌbsˈaɪd/ | `v.` | 平息 | subside gradually | 逐渐平息 | The storm finally subsided. | 风暴终于平息了。 | 2 |
 | 4048 | subtract | /sʌbtrˈækt/ | `v.` | 减去 | subtract from | 减去 | Please subtract five from ten. | 请从十减去五。 | 2 |
 | 4049 | subversive | /sʌbvˈɜːrsɪv/ | `adj.` | 颠覆性的 | subversive activity | 颠覆活动 | The group engaged in subversive activity. | 该团体从事颠覆活动。 | 2 |
 | 4050 | tailor | /tˈeɪlɜːr/ | `n.` | 裁缝 | professional tailor | 专业裁缝 | The professional tailor made a suit. | 专业裁缝做了一套西装。 | 2 |
@@ -4068,7 +4068,7 @@
 | 4062 | trickle | /trˈɪkʌl/ | `v.` | 滴流 | water trickle | 水滴流 | The water will trickle down. | 水会滴流下来。 | 2 |
 | 4063 | tyrant | /tˈaɪrʌnt/ | `n.` | 暴君 | cruel tyrant | 残酷的暴君 | The cruel tyrant ruled the country. | 残酷的暴君统治国家。 | 2 |
 | 4064 | underlie | /ˌʌndɜːrlˈaɪ/ | `v.` | 构成...的基础 | underlie the theory | 理论基础 | This principle will underlie the theory. | 这一原则是理论的基础。 | 2 |
-| 4065 | underline | /ˈʌndɜːrlˌaɪn/ | `v.` | 强调 | underline the importance | 强调重要性 | Please underline the importance. | 请强调重要性。 | 2 |
+| 4065 | underline | /ˈʌndɜːrlˌaɪn/ | `v.` | 强调 | underline the word | 在单词下划线 | Please underline the importance. | 请强调重要性。 | 2 |
 | 4066 | unfold | /ʌnfˈoʊld/ | `v.` | 展开 | unfold the map | 展开地图 | Please unfold the map. | 请展开地图。 | 2 |
 | 4067 | ungainly | /ʌnɡˈeɪnliː/ | `adj.` | 笨拙的 | ungainly movement | 笨拙的动作 | His movement is ungainly. | 他的动作很笨拙。 | 2 |
 | 4068 | unify | /jˈuːnʌfˌaɪ/ | `v.` | 统一 | unify the country | 统一国家 | The leader wants to unify the country. | 领袖想统一国家。 | 2 |
@@ -4092,7 +4092,7 @@
 | 4086 | wither | /wˈɪðɜːr/ | `v.` | 枯萎 | wither away | 枯萎 | The flower will wither away. | 花会枯萎。 | 2 |
 | 4087 | withhold | /wɪθhˈoʊld/ | `v.` | 扣留 | withhold payment | 扣留付款 | They will withhold payment. | 他们将扣留付款。 | 2 |
 | 4088 | wont | /wˈoʊnt/ | `adj.` | 习惯的 | wont to do | 习惯做 | He is wont to arrive late. | 他习惯迟到。 | 2 |
-| 4089 | wrestle | /rˈɛsʌl/ | `v.` | 摔跤 | wrestle match | 摔跤比赛 | They will wrestle match tomorrow. | 他们明天进行摔跤比赛。 | 2 |
+| 4089 | wrestle | /rˈɛsʌl/ | `v.` | 摔跤 | wrestle match | 摔跤比赛 | They will have a wrestling match tomorrow. | 他们明天进行摔跤比赛。 | 2 |
 | 4090 | yawn | /jˈɔn/ | `v.` | 打哈欠 | yawn loudly | 大声打哈欠 | He cannot stop yawning. | 他不停地打哈欠。 | 2 |
 | 4091 | yearbook | /jˈɪrbˌʊk/ | `n.` | 年鉴 | school yearbook | 学校年鉴 | We made a school yearbook. | 我们制作了学校年鉴。 | 1 |
 | 4092 | abound | /ʌbˈaʊnd/ | `v.` | 充满 | abound in | 充满 | Wild animals abound in this area. | 这个地区野生动物很多。 | 1 |
@@ -4171,7 +4171,7 @@
 | 4165 | fumble | /fˈʌmbʌl/ | `v.` | 摸索 | fumble for | 摸索找 | He will fumble for his keys. | 他会摸索着找钥匙。 | 1 |
 | 4166 | gash | /ˈɡæʃ/ | `n.` | 深伤口 | deep gash | 深的伤口 | He has a deep gash on his arm. | 他手臂上有很深的伤口。 | 1 |
 | 4167 | gentry | /dʒˈɛntriː/ | `n.` | 贵族 | local gentry | 当地贵族 | The local gentry attended the event. | 当地贵族参加了活动。 | 1 |
-| 4168 | graft | /ɡrˈæft/ | `v.` | 嫁接 | graft the tree | 嫁接树 | Gardeners will graft the tree. | 园丁会嫁接树。 | 1 |
+| 4168 | graft | /ɡrˈæft/ | `v.` | 嫁接 | political graft | 政治腐败 | Gardeners will graft the tree. | 园丁会嫁接树。 | 1 |
 | 4169 | gratify | /ɡrˈætʌfˌaɪ/ | `v.` | 使满足 | gratify the desire | 满足欲望 | We cannot gratify every desire. | 我们不能满足每个欲望。 | 1 |
 | 4170 | graze | /ɡrˈeɪz/ | `v.` | 吃草 | graze in field | 在田里吃草 | The cows graze in the field. | 牛在田里吃草。 | 1 |
 | 4171 | groan | /ɡrˈoʊn/ | `v.` | 呻吟 | groan in pain | 痛苦地呻吟 | The patient began to groan. | 病人开始呻吟。 | 1 |
@@ -4448,8 +4448,8 @@
 | 4442 | constrain | /kʌnstrˈeɪn/ | `v.` | 限制 | constrain freedom | 限制自由 | Do not constrain freedom. | 不要限制自由。 | 0 |
 | 4443 | consultancy | /kʌnsˈʌltʌnsiː/ | `n.` | 咨询 | consultancy service | 咨询服务 | The consultancy offers advice. | 咨询服务提供建议。 | 0 |
 | 4444 | counterclockwise | /kˌaʊntɜːrklˈɔkwaɪz/ | `adv.` | 逆时针地 | turn counterclockwise | 逆时针转动 | Please turn counterclockwise. | 请逆时针转动。 | 0 |
-| 4445 | critical | /krˈɪtɪkʌl/ | `n.` | 暗示 | critical clue | 关键线索 | This is a critical clue. | 这是关键线索。 | 0 |
-| 4446 | curve | /kɜːrv/ | `n.` | 咒骂 | harsh curse | 恶毒咒骂 | He uttered a harsh curse. | 他发出恶毒的咒骂。 | 0 |
+| 4445 | hint | /krˈɪtɪkʌl/ | `n.` | 暗示 | hint clue | 关键线索 | This is a critical clue. | 这是关键线索。 | 0 |
+| 4446 | curse | /kɜːrv/ | `n.` | 咒骂 | harsh curse | 恶毒咒骂 | He uttered a harsh curse. | 他发出恶毒的咒骂。 | 0 |
 | 4447 | decease | /dɪsˈiːs/ | `n.` | 死亡 | sudden decease | 突然死亡 | His decease was sudden. | 他突然死亡。 | 0 |
 | 4448 | decease | /dɪsˈiːs/ | `n.` | 欠款 | pay debt | 还债 | He must pay his debt. | 他必须还债。 | 0 |
 | 4449 | dedicate | /dˈɛdʌkˌeɪt/ | `v.` | 奉献 | dedicate to memory | 纪念 | He will dedicate to her memory. | 他将纪念她。 | 0 |
@@ -4474,15 +4474,14 @@
 | 4468 | estrange | /ɛstrˈeɪndʒ/ | `v.` | 疏远 | estrange from friends | 疏远朋友 | Do not estrange from friends. | 不要疏远朋友。 | 0 |
 | 4469 | evince | /ɪvˈɪns/ | `v.` | 表明 | evince interest | 表明兴趣 | He will evince interest. | 他会表明兴趣。 | 0 |
 | 4470 | fatalism | /fˈeɪtʌlˌɪzʌm/ | `n.` | 宿命论 | believe in fatalism | 相信宿命论 | He believes in fatalism. | 他相信宿命论。 | 0 |
-| 4471 | fiddle | /fˈɪdʌl/ | `adj.` | 虚构的 | fiddle story | 虚构的故事 | This is a fiddle story. | 这是虚构的故事。 | 0 |
-| 4472 | fist | /fˈɪst/ | `n.` | 渔场 | fishing fistfleece | 渔场 | The fistfleece is large. | 渔场很大。 | 0 |
+| 4471 | fictitious | /fˈɪktɪʃəs/ | `adj.` | 虚构的 | fictitious story | 虚构的故事 | The story is fictitious. | 故事是虚构的。 | 0 |
 | 4473 | fleece | /flˈiːs/ | `n.` | 羊毛 | warm fleece | 羊毛 | The fleece is warm. | 羊毛很暖和。 | 0 |
 | 4474 | flit | /flˈɪt/ | `v.` | 掠过 | flit across | 掠过 | The bird will flit across. | 鸟会掠过。 | 0 |
 | 4475 | forbear | /fɔːrbˈɛər/ | `v.` | 克制 | forbear from anger | 克制愤怒 | We must forbear from anger. | 我们必须克制愤怒。 | 0 |
 | 4476 | forcible | /fˈɔrsʌbʌl/ | `adj.` | 强行的 | forcible entry | 强行进入 | The forcible entry is illegal. | 强行进入是违法的。 | 0 |
 | 4477 | freelance | /frˈiːlˌæns/ | `adj.` | 自由职业的 | freelance writer | 自由撰稿人 | The freelance writer published several articles in major magazines this year. | 这位自由撰稿人今年在主要杂志上发表了几篇文章。 | 0 |
 | 4478 | tomato | /təmˈeɪtoʊ/ | `n.` | 西红柿 | ripe tomato | 成熟的西红柿 | The tomato is ripe. | 西红柿成熟了。 | 0 |
-| 4479 | grieve | /ɡrˈiːv/ | `v.` | 悲伤 | grieve over loss | 因失去而悲伤 | We grieve over loss. | 我们因失去而悲伤。 | 0 |
+| REMOVED | hegira | /hˈɛdʒɪrʌ/ | n. | 出走 | REMOVED — 生僻古词 | REMOVED | REMOVED | 0 |
 | 4480 | guarantee | /ɡˌærənˈtiː/ | `n.` | 保证 | guarantee the promise | 保证承诺 | I will guarantee the promise. | 我保证承诺。 | 0 |
 | 4481 | habitation | /hˌæbʌtˈeɪʃʌn/ | `n.` | 居住 | place of habitation | 居住地 | This is the place of habitation. | 这是居住地。 | 0 |
 | 4482 | harassment | /hɜːrˈæsmʌnt/ | `n.` | 骚扰 | sexual harassment | 性骚扰 | Sexual harassment is illegal. | 性骚扰是违法的。 | 0 |
@@ -4533,17 +4532,17 @@
 | 4527 | intoxicate | /ɪntˈɑksʌkˌeɪt/ | `v.` | 使陶醉 | intoxicate with success | 因成功而陶醉 | Do not intoxicate with success. | 不要因成功而陶醉。 | 0 |
 | 4528 | inundate | /ˈɪnʌndˌeɪt/ | `v.` | 淹没 | inundate with water | 被水淹没 | The area will inundate with water. | 地区将被水淹没。 | 0 |
 | 4529 | inurbane | /ɪnɜːrbˈeɪn/ | `adj.` | 不礼貌的 | inurbane behavior | 不礼貌的行为 | His behavior is inurbane. | 他的行为不礼貌。 | 0 |
-| 4530 | invitation | /ɪnvɪtˈeɪʃʌn/ | `adj.` | 根深蒂固的 | deep-rooted problem | 根深蒂固的问题 | This is a deep-rooted problem. | 这是根深蒂固的问题。 | 0 |
+| 4530 | inveterate | /ɪnvɪtˈeɪʃʌn/ | `adj.` | 根深蒂固的 | deep-rooted problem | 根深蒂固的问题 | This is a deep-rooted problem. | 这是根深蒂固的问题。 | 0 |
 | 4531 | iterate | /ˈɪtɜːreɪt/ | `v.` | 重复 | iterate the process | 重复过程 | We must iterate the process. | 我们必须重复这个过程。 | 0 |
 | 4532 | jewellery | /dʒˈuːʌlri/ | `n.` | 珠宝 | wear jewellery | 佩戴珠宝 | She likes to wear jewellery. | 她喜欢佩戴珠宝。 | 0 |
-| 4533 | joke | /dʒˈoʊk/ | `vt.` | 判断 | make judgment | 做判断 | We must make judgment. | 我们必须做判断。 | 0 |
+| 4533 | judge | /dʒˈoʊk/ | `vt.` | 判断 | make judgment | 做判断 | We must make judgment. | 我们必须做判断。 | 0 |
 | 4534 | jumbo | /dʒˈʌmboʊ/ | `adj.` | 特大的 | jumbo jet | 大型喷气机 | The jumbo jet is huge. | 大型喷气机很大。 | 0 |
 | 4535 | kilogram | /kˈɪlʌɡrˌæm/ | `n.` | 千克 | one kilogram | 一千克 | I bought one kilogram of apples. | 我买了一千克苹果。 | 0 |
 | 4536 | know | /noʊ/ | `vt.` | 知道 | know the truth | 知道真相 | I know the truth. | 我知道真相。 | 0 |
 | 4537 | labor | /lˈeɪbɜːr/ | `n.` | 劳动 | do labor | 做劳动 | We must do labor. | 我们必须做劳动。 | 0 |
 | 4538 | laser | /lˈeɪzɜːr/ | `n.` | 激光 | laser beam | 激光束 | The laser beam is bright. | 激光束很亮。 | 0 |
-| 4539 | leak | /lˈiːk/ | `n.` | 叶子 | green leaf | 绿叶 | The leaf is green. | 叶子是绿色的。 | 0 |
-| 4540 | link | /lˈɪŋk/ | `adj.` | 语言的 | linguistic skill | 语言能力 | She has linguistic skill. | 她有语言能力。 | 0 |
+| 4539 | leaf | /lˈiːk/ | `n.` | 叶子 | green leaf | 绿叶 | The leaf is green. | 叶子是绿色的。 | 0 |
+| 4540 | linguistic | /lˈɪŋk/ | `adj.` | 语言的 | linguistic skill | 语言能力 | She has linguistic skill. | 她有语言能力。 | 0 |
 | 4541 | literacy | /lˈɪtɜːrʌsiː/ | `n.` | 读写能力 | improve literacy | 提高读写能力 | We must improve literacy. | 我们必须提高读写能力。 | 0 |
 | 4542 | burden | /bˈɜːrdʌn/ | `n.` | 负荷 | bear burden | 承受负担 | We must bear the burden. | 我们必须承受负担。 | 0 |
 | 4543 | livingroom | /lˈɪvɪŋrˌuːm/ | `n.` | 客厅 | spacious livingroom | 宽敞的客厅 | The livingroom is spacious. | 客厅很宽敞。 | 0 |
@@ -4562,7 +4561,7 @@
 | 4556 | metric | /mˈɛtrɪk/ | `adj.` | 公制的 | metric system | 公制 | The metric system is used worldwide. | 公制在全世界使用。 | 0 |
 | 4557 | microbe | /mˈaɪkrˌoʊb/ | `n.` | 微生物 | harmful microbe | 有害微生物 | The microbe causes disease. | 微生物导致疾病。 | 0 |
 | 4558 | microbiology | /mˌaɪkroʊbˌaɪˈɑlʌdʒiː/ | `n.` | 微生物学 | study microbiology | 学习微生物学 | She studies microbiology. | 她学习微生物学。 | 0 |
-| 4559 | minimal | /mˈɪnʌmʌl/ | `n.` | 小型巴士 | small bus | 小型巴士 | The small bus is convenient. | 小型巴士很方便。 | 0 |
+| 4559 | minibus | /mˈɪnʌmʌl/ | `n.` | 小型巴士 | small bus | 小型巴士 | The small bus is convenient. | 小型巴士很方便。 | 0 |
 | 4560 | minuscule | /mˈɪnʌskjˌuːl/ | `adj.` | 极小的 | minuscule amount | 极少量 | The amount is minuscule. | 数量极小。 | 0 |
 | 4561 | mirage | /mɜːrˈɑʒ/ | `n.` | 海市蜃楼 | desert mirage | 沙漠海市蜃楼 | The mirage appears in desert. | 海市蜃楼出现在沙漠。 | 0 |
 | 4562 | misapply | /mɪsʌplˈaɪ/ | `v.` | 误用 | misapply funds | 误用资金 | Do not misapply funds. | 不要误用资金。 | 0 |
@@ -4581,7 +4580,7 @@
 | 4575 | multivocal | /mˈʌltɪvˈoʊkʌl/ | `adj.` | 多义的 | multivocal meaning | 多重含义 | The word has multivocal meaning. | 这个词有多重含义。 | 0 |
 | 4576 | munificent | /mjunˈɪfɪsɪnt/ | `adj.` | 慷慨的 | munificent gift | 慷慨的礼物 | The billionaire made a munificent gift to the university library. | 这位亿万富翁向大学图书馆捐赠了慷慨的礼物。 | 0 |
 | 4577 | munition | /mjuːnˈɪʃʌn/ | `n.` | 军需品 | supply munition | 供应军需品 | They need to supply munition. | 他们需要供应军需品。 | 0 |
-| 4578 | necessitate | /nʌsˈɛsɪteɪt/ | `n.` | 必要 | necessary condition | 必要条件 | This is a necessary condition. | 这是必要条件。 | 0 |
+| 4578 | necessity | /nʌsˈɛsɪteɪt/ | `n.` | 必要 | necessary condition | 必要条件 | This is a necessary condition. | 这是必要条件。 | 0 |
 | 4579 | newscaster | /nˈuːzkˌæstɜːr/ | `n.` | 播音员 | TV newscaster | 电视播音员 | The newscaster reads news. | 播音员播报新闻。 | 0 |
 | 4580 | noodle | /nˈuːdʌl/ | `n.` | 面条 | eat noodle | 吃面条 | I like to eat noodle. | 我喜欢吃面条。 | 0 |
 | 4581 | northern | /nˈɔːrθɜːrn/ | `adj.` | 东北的 | northeastern region | 东北地区 | The northeastern region is cold. | 东北地区很冷。 | 0 |
@@ -4630,7 +4629,7 @@
 | 4624 | ply | /plˈaɪ/ | `v.` | 努力从事 | ply the trade | 从事贸易 | They ply the trade. | 他们从事贸易。 | 0 |
 | 4625 | proud | /prˈaʊd/ | `adj.` | 骄傲的 | proud of | 骄傲 | We are proud of you. | 我们为你骄傲。 | 0 |
 | 4626 | pollute | /pʌlˈuːt/ | `v.` | 污染 | pollute the environment | 污染环境 | Do not pollute the environment. | 不要污染环境。 | 0 |
-| 4627 | poo | /pˈuː/ | `vi.` | 淹没 | flood in | 涌入 | Water will poo in. | 水会涌入。 | 0 |
+| 4627 | pour | /pˈuː/ | `vi.` | 淹没 | flood in | 涌入 | Water will poo in. | 水会涌入。 | 0 |
 | 4628 | lumber | /lˈʌmbɜːr/ | `n.` | 木材 | wood material | 木材 | The lumber is wood. | 木材是木头。 | 0 |
 | 4629 | mood | /mˈuːd/ | `n.` | 心情 | good mood | 好心情 | I am in good mood. | 我心情好。 | 0 |
 | 4630 | postage | /pˈoʊstʌdʒ/ | `n.` | 邮资 | pay postage | 付邮资 | Please pay the postage. | 请付邮资。 | 0 |
@@ -4652,13 +4651,13 @@
 | 4646 | recycle | /riːsˈaɪkʌl/ | `v.` | 回收 | recycle paper | 回收纸张 | Please recycle paper. | 请回收纸张。 | 0 |
 | 4647 | relegate | /rˈɛlʌɡˌeɪt/ | `v.` | 降级 | relegate to lower | 降级到较低 | They will relegate him to lower position. | 他们会把他降级。 | 0 |
 | 4648 | relics | /rˈɛlɪks/ | `n.` | 遗迹 | ancient relics | 古代遗迹 | The relics are ancient. | 这些遗迹是古代的。 | 0 |
-| 4649 | relics | /rˈɛlɪks/ | `n.` | 讨论 | have discussion | 讨论 | We have a discussion. | 我们讨论一下。 | 0 |
+| 4649 | discuss | /rˈɛlɪks/ | `n.` | 讨论 | have discussion | 讨论 | We have a discussion. | 我们讨论一下。 | 0 |
 | 4650 | renew | /rɪnˈuː/ | `n.` | 时期 | new period | 新时期 | This is a new period. | 这是新时期。 | 0 |
 | 4651 | replicate | /rˈɛplʌkˌeɪt/ | `v.` | 复制 | replicate the data | 复制数据 | Please replicate the data. | 请复制数据。 | 0 |
 | 4652 | repulse | /riːpˈʌls/ | `v.` | 击退 | repulse the enemy | 击退敌人 | We will repulse the enemy. | 我们将击退敌人。 | 0 |
 | 4653 | restitute | /rˈɛstɪtˌuːt/ | `v.` | 归还 | restitute the property | 归还财产 | He must restitute the property. | 他必须归还财产。 | 0 |
 | 4654 | reverberate | /rɪvˈɜːrbɜːrʌt/ | `v.` | 回荡 | reverberate in hall | 回荡在大厅 | The sound will reverberate in hall. | 声音会在大厅回荡。 | 0 |
-| 4655 | reviewer | /rɪvˈuːɜːr/ | `n.` | 复习 | review the lesson | 复习功课 | Students review the lesson. | 学生复习功课。 | 0 |
+| 4655 | review | /rɪvˈuːɜːr/ | `n.` | 复习 | review the lesson | 复习功课 | Students review the lesson. | 学生复习功课。 | 0 |
 | 4656 | rigor | /rˈɪɡɜːr/ | `n.` | 严格 | strict rigor | 严格 | The discipline requires rigor. | 纪律需要严格。 | 0 |
 | 4657 | robust | /roʊbˈʌst/ | `adj.` | 强健的 | robust health | 健康 | He has robust health. | 他身体健康。 | 0 |
 | 4658 | rudiments | /rˈuːdɪmʌnts/ | `n.` | 基础 | learn rudiments | 学习基础 | Learn the rudiments first. | 先学习基础。 | 0 |
@@ -4674,7 +4673,7 @@
 | 4668 | scythe | /sˈɪθ/ | `n.` | 镰刀 | sharp scythe | 锋利的镰刀 | The scythe is sharp. | 镰刀很锋利。 | 0 |
 | 4669 | seduce | /sɪdˈuːs/ | `v.` | 引诱 | seduce into trap | 引诱入陷阱 | Do not seduce into trap. | 不要引诱入陷阱。 | 0 |
 | 4670 | sedulous | /sˈɛdʒulʌs/ | `adj.` | 勤勉的 | sedulous work | 勤勉的工作 | He does sedulous work. | 他工作勤勉。 | 0 |
-| 4671 | sensory | /sˈɛnsɔri/ | `n.` | 服务 | provide service | 提供服务 | We provide service. | 我们提供服务。 | 0 |
+| 4671 | service | /sˈɛnsɔri/ | `n.` | 服务 | provide service | 提供服务 | We provide service. | 我们提供服务。 | 0 |
 | 4672 | shark | /ˈʃɑrk/ | `n.` | 鲨鱼 | dangerous shark | 危险的鲨鱼 | The shark is dangerous. | 鲨鱼很危险。 | 0 |
 | 4673 | shortcoming | /ˈʃɔrtkˌʌmɪŋ/ | `n.` | 缺点 | overcome shortcoming | 克服缺点 | We must overcome shortcoming. | 我们必须克服缺点。 | 0 |
 | 4674 | shuttle | /ˈʃʌtʌl/ | `n.` | 航天飞机 | space shuttle | 航天飞机 | The space shuttle launched. | 航天飞机发射了。 | 0 |
@@ -4682,7 +4681,7 @@
 | 4676 | skim | /skˈɪm/ | `v.` | 掠过 | skim the surface | 掠过表面 | The bird will skim the surface. | 鸟会掠过水面。 | 0 |
 | 4677 | skyrocket | /skˈaɪrˌɑkʌt/ | `v.` | 猛涨 | prices skyrocket | 价格猛涨 | Prices skyrocket these days. | 这些天价格猛涨。 | 0 |
 | 4678 | slay | /slˈeɪ/ | `v.` | 杀死 | slay the enemy | 杀死敌人 | The hero will slay the enemy. | 英雄将杀死敌人。 | 0 |
-| 4679 | smell | /smˈɛl/ | `v.` | 扼杀 | kill the hope | 扼杀希望 | Do not kill the hope. | 不要扼杀希望。 | 0 |
+| 4679 | smother | /smˈɛl/ | `v.` | 扼杀 | kill the hope | 扼杀希望 | Do not kill the hope. | 不要扼杀希望。 | 0 |
 | 4680 | smite | /smˈaɪt/ | `v.` | 重击 | smite the enemy | 重击敌人 | He will smite the enemy. | 他将重击敌人。 | 0 |
 | 4681 | smolder | /smˈoʊldɜːr/ | `v.` | 闷烧 | smolder in ashes | 闷烧 | The fire will smolder in ashes. | 火会在灰烬中闷烧。 | 0 |
 | 4682 | smother | /smˈʌðɜːr/ | `v.` | 捂住 | smother the fire | 捂住火 | Please smother the fire. | 请捂住火。 | 0 |
@@ -4698,10 +4697,10 @@
 | 4692 | stalk | /stˈɔk/ | `n.` | 茎 | flower stalk | 花茎 | The flower stalk is tall. | 花茎很高。 | 0 |
 | 4693 | stammer | /stˈæmɜːr/ | `v.` | 口吃 | stammer in speech | 说话口吃 | He tends to stammer. | 他容易口吃。 | 0 |
 | 4694 | standardize | /stˈændɜːrdˌaɪz/ | `v.` | 标准化 | standardize the process | 标准化流程 | We must standardize the process. | 我们必须标准化流程。 | 0 |
-| 4695 | statistic | /stʌtˈɪstɪk/ | `n.` | 统计 | collect statistic | 收集统计 | We collect statistic data. | 我们收集统计数据。 | 0 |
+| 4695 | statistic | /stʌtˈɪstɪk/ | `n.` | 统计 | collect statistic | 收集统计 | We collect statistical data. | 我们收集统计数据。 | 0 |
 | 4696 | steadfast | /stˈɛdfˌæst/ | `adj.` | 坚定的 | steadfast belief | 坚定的信念 | He has steadfast belief. | 他有坚定的信念。 | 0 |
 | 4697 | stealthy | /stˈɛlθiː/ | `adj.` | 隐秘的 | stealthy movement | 隐秘的行动 | The spy made a stealthy movement. | 间谍隐秘地行动。 | 0 |
-| 4698 | steep | /stˈiːp/ | `n.` | 钢 | steel material | 钢材 | Steel is strong. | 钢材很坚固。 | 0 |
+| 4698 | steel | /stˈiːp/ | `n.` | 钢 | steel material | 钢材 | Steel is strong. | 钢材很坚固。 | 0 |
 | 4699 | stepfather | /stˈɛpfˌɑðɜːr/ | `n.` | 继父 | kind stepfather | 善良的继父 | My stepfather is kind. | 我继父很善良。 | 0 |
 | 4700 | storey | /stˈɔriː/ | `n.` | 楼层 | third storey | 三楼 | The third storey is for bedrooms. | 三楼是卧室。 | 0 |
 | 4701 | straddle | /strˈædʌl/ | `v.` | 跨坐 | straddle the horse | 骑马 | He can straddle the horse. | 他会骑马。 | 0 |
@@ -4727,7 +4726,7 @@
 | 4721 | terrify | /tˈɛrʌfˌaɪ/ | `v.` | 使恐惧 | terrify children | 吓孩子 | Do not terrify children. | 不要吓孩子。 | 0 |
 | 4722 | thatch | /ˈθætʃ/ | `n.` | 茅草 | thatch roof | 茅草屋顶 | The house has a thatch roof. | 房子是茅草屋顶。 | 0 |
 | 4723 | thrall | /θrˈɔl/ | `n.` | 奴隶 | in thrall to | 受...支配 | He is in thrall to passion. | 他被激情所支配。 | 0 |
-| 4724 | threshold | /thrˈɛʃhoʊld/ | `adv.` | 完全地 | thoroughly complete | 完全彻底 | This is thoroughly complete. | 这完全彻底。 | 0 |
+| 4724 | thoroughly | /thrˈɛʃhoʊld/ | `adv.` | 完全地 | thoroughly complete | 完全彻底 | This is thoroughly complete. | 这完全彻底。 | 0 |
 | 4725 | throb | /θrˈɑb/ | `v.` | 跳动 | heart throb | 心跳 | My heart begins to throb. | 我的心跳开始加速。 | 0 |
 | 4726 | tier | /tˈiːr/ | `n.` | 层 | three tier | 三层 | The cake has three tiers. | 蛋糕有三层。 | 0 |
 | 4727 | timorous | /tˈɪmɜːrʌs/ | `adj.` | 胆小的 | timorous person | 胆小的 | A timorous person is afraid to take risks in life. | 一个胆小的人害怕在生活中冒险。 | 0 |
@@ -4759,7 +4758,7 @@
 | 4753 | upbraid | /ˈʌpbrˌeɪd/ | `v.` | 责骂 | upbraid the child | 责骂孩子 | Do not upbraid the child. | 不要责骂孩子。 | 0 |
 | 4754 | up-to-date | /ˌʌptədˈeɪt/ | `adj.` | 现代化的 | up-to-date technology | 最新技术 | We use up-to-date technology. | 我们使用最新技术。 | 0 |
 | 4755 | urbane | /ɜːrbˈeɪn/ | `adj.` | 彬彬有礼的 | urbane manner | 彬彬有礼的态度 | He has an urbane manner. | 他态度彬彬有礼。 | 0 |
-| 4756 | vacual | /vˈækjuːʌl/ | `adj.` | 真空的 | vacual space | 真空空间 | The vacual space is empty. | 真空空间是空的。 | 0 |
+| REMOVED | vacual | /vˈækjuːʌl/ | adj. | 真空的 | REMOVED — 非标准词 | REMOVED | REMOVED | 0 |
 | 4757 | vacuate | /vˈækjuːeɪt/ | `v.` | 使空虚 | vacuate the building | 腾空建筑 | Please vacuate the building. | 请腾空建筑。 | 0 |
 | 4758 | vacuity | /vʌkˈuːɪti/ | `n.` | 空虚 | sense of vacuity | 空虚感 | He feels a sense of vacuity. | 他感到空虚。 | 0 |
 | 4759 | vastity | /vˈæstɪti/ | `n.` | 广阔 | vastity of space | 空间的广阔 | The vastity of space is amazing. | 空间的广阔令人惊叹。 | 0 |
@@ -4770,7 +4769,7 @@
 | 4764 | voicemail | /vˈoɪsmˈeɪl/ | `n.` | 语音邮件 | leave voicemail | 留语音邮件 | Please leave a voicemail. | 请留语音邮件。 | 0 |
 | 4765 | waken | /wˈeɪkʌn/ | `v.` | 唤醒 | waken from sleep | 从睡梦中唤醒 | Please waken me at seven. | 请七点唤醒我。 | 0 |
 | 4766 | wane | /wˈeɪn/ | `v.` | 衰落 | wane in power | 衰落 | The power begins to wane. | 权力开始衰落。 | 0 |
-| 4767 | wane | /wˈeɪn/ | `vi.` | 漫游 | wander around | 漫游 | He likes to wander around. | 他喜欢漫游。 | 0 |
+| 4767 | wander | /wˈeɪn/ | `vi.` | 漫游 | wander around | 漫游 | He likes to wander around. | 他喜欢漫游。 | 0 |
 | 4768 | warship | /wˈɔrʃˌɪp/ | `n.` | 军舰 | powerful warship | 强大的军舰 | The warship is powerful. | 军舰很强大。 | 0 |
 | 4769 | wastepaper | /wˈeɪstpˌeɪpɜːr/ | `n.` | 废纸 | basket wastepaper | 废纸篓 | Put wastepaper in the basket. | 把废纸放进废纸篓。 | 0 |
 | 4770 | waster | /wˈeɪstɜːr/ | `n.` | 浪费者 | money waster | 浪费钱的人 | A money waster often spends on unnecessary things. | 一个浪费钱的人经常花在不必要的东西上。 | 0 |
@@ -4778,8 +4777,8 @@
 | 4772 | watcher | /wˈɑtʃɜːr/ | `n.` | 观察者 | bird watcher | 观鸟者 | The bird watcher observes birds. | 观鸟者观察鸟类。 | 0 |
 | 4773 | watchword | /wˈɑtʃwˌɜːrd/ | `n.` | 口号 | campaign watchword | 竞选口号 | The watchword is unity. | 口号是团结。 | 0 |
 | 4774 | waxcandle | /wˈæskˈændʌl/ | `n.` | 蜡烛 | light waxcandle | 点蜡烛 | Please light the waxcandle. | 请点蜡烛。 | 0 |
-| 4775 | way | /wˈeɪ/ | `adj.` | 极好的 | wayout solution | 极好的解决方案 | This is a wayout solution. | 这是极好的解决方案。 | 0 |
-| 4776 | weak | /wˈiːk/ | `n.` | 虚弱 | physical weakmess | 身体虚弱 | His weakmess is obvious. | 他的虚弱显而易见。 | 0 |
+| 4775 | way-out | /wˈeɪ/ | `adj.` | 极好的 | wayout solution | 极好的解决方案 | This is a wayout solution. | 这是极好的解决方案。 | 0 |
+| 4776 | weakness | /wˈiːk/ | `n.` | 虚弱 | physical weakmess | 身体虚弱 | His weakmess is obvious. | 他的虚弱显而易见。 | 0 |
 | 4777 | webmaster | /wˈɛbmˌæstɜːr/ | `n.` | 网站管理员 | skilled webmaster | 熟练的网站管理员 | The webmaster manages the site. | 网站管理员管理网站。 | 0 |
 | 4778 | website | /wˈɛbsˌaɪt/ | `n.` | 网站 | popular website | 热门网站 | The website is popular. | 网站很热门。 | 0 |
 | 4779 | westernize | /wˈɛstɜːrnˌaɪz/ | `v.` | 西方化 | westernize culture | 西方化文化 | They want to westernize culture. | 他们想西方化文化。 | 0 |
@@ -4805,10 +4804,9 @@
 | 4799 | rated | /rˈeɪtɪd/ | `adj.` | 淫秽的 | xrated content | 淫秽内容 | The xrated content is banned. | 淫秽内容被禁止。 | 0 |
 | 4800 | xray | /ˈɛksreɪ/ | `n.` | X射线 | take xray | 拍X光 | The doctor will take an xray. | 医生将拍X光。 | 0 |
 | 4801 | yahoo | /jˈɑhˌuː/ | `n.` | Yahoo | Yahoo website | Yahoo网站 | I visited the Yahoo website. | 我访问了Yahoo网站。 | 0 |
-| 4802 | yap | /jˈæp/ | `v.` | 狂吠 | yap loudly | 狗狂吠 | The dog won't stop yap. | 狗不停地狂吠。 | 0 |
+| 4802 | yap | /jˈæp/ | `v.` | 狂吠 | yap loudly | 狗狂吠 | The dog won't stop yapping. | 狗不停地狂吠。 | 0 |
 | 4803 | yawn | /jˈɔːn/ | `adj.` | 打哈欠的 | feeling yawny | 感到困倦 | I am feeling yawny. | 我感到困倦。 | 0 |
 | 4804 | yea | /jˈeɪ/ | `n.` | 赞同 | express yeasaying | 表示赞同 | He expressed yeasaying. | 他表示赞同。 | 0 |
 | 4805 | yesman | /jˈɛsmæn/ | `n.` | 应声虫 | act as yesman | 做个应声虫 | Do not act as yesman. | 不要做应声虫。 | 0 |
-| 4806 | youthhood | /jˈuːθhʊd/ | `n.` | 青年时代 | in youthhood | 在青年时代 | In youthhood, anything is possible. | 在青年时代，一切皆有可能。 | 0 |
 | 4807 | zealot | /zˈɛlʌt/ | `adj.` | 狂热的 | zealotic belief | 狂热的信仰 | His belief is zealotic. | 他的信仰很狂热。 | 0 |
 

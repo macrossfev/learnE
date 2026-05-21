@@ -34,9 +34,8 @@ data class WrongWord(
 /**
  * 学习记录（每日统计）
  */
-@Entity(tableName = "study_records")
+@Entity(tableName = "study_records", primaryKeys = ["date", "corpusId"])
 data class StudyRecord(
-    @PrimaryKey
     val date: String, // YYYY-MM-DD
     val corpusId: String,
     val learnedCount: Int = 0,

@@ -3,44 +3,58 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E8E8E8"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/mecha_hull">
 
-    <!-- 顶部栏 -->
+    <!-- Top HUD bar -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:orientation="horizontal"
         android:paddingHorizontal="12dp"
-        android:paddingVertical="6dp"
         android:gravity="center_vertical"
-        android:background="#FFFFFF">
+        android:background="@drawable/panel_dark"
+        android:elevation="4dp">
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="◀ 返回"
+            android:textColor="@color/mecha_white"
+            android:textSize="12sp"
+            android:background="@drawable/btn_accent"
+            android:layout_marginEnd="8dp"
+            android:paddingHorizontal="12dp"
+            android:letterSpacing="0.05"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="学习统计"
-            android:textColor="#E3000F"
+            android:textColor="@color/mecha_gold"
             android:textSize="16sp"
-            android:textStyle="bold"/>
-
-        <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
+            android:textStyle="bold"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.08"/>
 
         <TextView
             android:id="@+id/tv_streak"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
-            android:textColor="#0039CB"
-            android:textSize="13sp"/>
+            android:textColor="@color/mecha_hud_orange"
+            android:textSize="12sp"
+            android:fontFamily="monospace"/>
     </LinearLayout>
 
-    <!-- 统计卡片 -->
+    <!-- Stats cards -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="16dp">
+        android:padding="12dp">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -48,26 +62,27 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center"
-            android:background="#FFFFFF"
-            android:padding="16dp"
-            android:layout_marginEnd="8dp"
-            android:elevation="2dp">
+            android:background="@drawable/card_metal"
+            android:padding="12dp"
+            android:layout_marginEnd="6dp">
 
             <TextView
                 android:id="@+id/tv_total_learned"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:textColor="#000000"
-                android:textSize="28sp"
-                android:textStyle="bold"/>
+                android:textColor="@color/mecha_gold"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:fontFamily="monospace"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="已学单词"
-                android:textColor="#808080"
-                android:textSize="12sp"
+                android:textColor="@color/mecha_armor"
+                android:textSize="11sp"
+                android:fontFamily="monospace"
                 android:layout_marginTop="4dp"/>
         </LinearLayout>
 
@@ -77,26 +92,27 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center"
-            android:background="#FFFFFF"
-            android:padding="16dp"
-            android:layout_marginHorizontal="4dp"
-            android:elevation="2dp">
+            android:background="@drawable/card_metal"
+            android:padding="12dp"
+            android:layout_marginHorizontal="4dp">
 
             <TextView
                 android:id="@+id/tv_total_mastered"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:textColor="#4CAF50"
-                android:textSize="28sp"
-                android:textStyle="bold"/>
+                android:textColor="@color/mecha_hud_green"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:fontFamily="monospace"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="已掌握"
-                android:textColor="#808080"
-                android:textSize="12sp"
+                android:textColor="@color/mecha_armor"
+                android:textSize="11sp"
+                android:fontFamily="monospace"
                 android:layout_marginTop="4dp"/>
         </LinearLayout>
 
@@ -106,47 +122,50 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center"
-            android:background="#FFFFFF"
-            android:padding="16dp"
-            android:layout_marginStart="8dp"
-            android:elevation="2dp">
+            android:background="@drawable/card_metal"
+            android:padding="12dp"
+            android:layout_marginStart="6dp">
 
             <TextView
                 android:id="@+id/tv_total_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0分钟"
-                android:textColor="#0039CB"
-                android:textSize="28sp"
-                android:textStyle="bold"/>
+                android:textColor="@color/mecha_hud_cyan"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:fontFamily="monospace"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="学习时长"
-                android:textColor="#808080"
-                android:textSize="12sp"
+                android:textColor="@color/mecha_armor"
+                android:textSize="11sp"
+                android:fontFamily="monospace"
                 android:layout_marginTop="4dp"/>
         </LinearLayout>
     </LinearLayout>
 
-    <!-- 热力图 -->
+    <!-- Heatmap -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="#FFFFFF"
-        android:padding="16dp"
-        android:layout_margin="16dp"
-        android:elevation="2dp">
+        android:background="@drawable/panel_dark"
+        android:padding="12dp"
+        android:layout_marginHorizontal="12dp"
+        android:elevation="4dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="学习热力图（近90天）"
-            android:textColor="#000000"
-            android:textSize="16sp"
+            android:textColor="@color/mecha_gold"
+            android:textSize="14sp"
             android:textStyle="bold"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.08"
             android:layout_marginBottom="12dp"/>
 
         <HorizontalScrollView
@@ -160,7 +179,7 @@
                 android:orientation="vertical"/>
         </HorizontalScrollView>
 
-        <!-- 图例 -->
+        <!-- Legend -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -172,45 +191,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="少"
-                android:textColor="#808080"
+                android:textColor="@color/mecha_armor"
                 android:textSize="10sp"
+                android:fontFamily="monospace"
                 android:layout_marginEnd="4dp"/>
 
-            <View
-                android:layout_width="14dp"
-                android:layout_height="14dp"
-                android:background="#E0E0E0"/>
-
-            <View
-                android:layout_width="14dp"
-                android:layout_height="14dp"
-                android:layout_marginStart="2dp"
-                android:background="#C6E48B"/>
-
-            <View
-                android:layout_width="14dp"
-                android:layout_height="14dp"
-                android:layout_marginStart="2dp"
-                android:background="#7BC96F"/>
-
-            <View
-                android:layout_width="14dp"
-                android:layout_height="14dp"
-                android:layout_marginStart="2dp"
-                android:background="#239A3B"/>
-
-            <View
-                android:layout_width="14dp"
-                android:layout_height="14dp"
-                android:layout_marginStart="2dp"
-                android:background="#196127"/>
+            <View android:layout_width="14dp" android:layout_height="14dp" android:background="@color/mecha_panel"/>
+            <View android:layout_width="14dp" android:layout_height="14dp" android:layout_marginStart="2dp" android:background="#C6E48B"/>
+            <View android:layout_width="14dp" android:layout_height="14dp" android:layout_marginStart="2dp" android:background="#7BC96F"/>
+            <View android:layout_width="14dp" android:layout_height="14dp" android:layout_marginStart="2dp" android:background="#239A3B"/>
+            <View android:layout_width="14dp" android:layout_height="14dp" android:layout_marginStart="2dp" android:background="#196127"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="多"
-                android:textColor="#808080"
+                android:textColor="@color/mecha_armor"
                 android:textSize="10sp"
+                android:fontFamily="monospace"
                 android:layout_marginStart="4dp"/>
         </LinearLayout>
     </LinearLayout>

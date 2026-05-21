@@ -1,11 +1,10 @@
 package com.learne.ui.listen
 
-import android.app.Activity
+import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -15,12 +14,12 @@ import androidx.lifecycle.lifecycleScope
 import com.learne.data.db.AppDatabase
 import com.learne.data.model.ListenHistory
 import com.learne.data.model.Word
-import com.learne.data.repository.CorpusLoader
 import com.learne.data.repository.CorpusRepository
+import com.learne.data.repository.UserManager
 import com.learne.data.repository.UserPreferencesRepository
 import com.learne.databinding.FragmentListenReadBinding
 import com.learne.service.AudioPlayer
-import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withTimeout
 import kotlin.math.ceil
@@ -28,15 +27,19 @@ import kotlin.math.ceil
 class ListenReadFragment : Fragment() {
 
     companion object {
-        fun newInstance(corpusId: String = "catti"): ListenReadFragment {
+        fun newInstance(corpusId: String = "catti", groupIndex: Int = -1, planIndex: Int = -1): ListenReadFragment {
             val fragment = ListenReadFragment()
-            fragment.arguments = Bundle().apply { putString("corpusId", corpusId) }
+            fragment.arguments = Bundle().apply {
+                putString("corpusId", corpusId)
+                putInt("groupIndex", groupIndex)
+                putInt("planIndex", planIndex)
+            }
             return fragment
         }
     }
 
-    // Playback modes
-    enum class PlayMode { ORDER, SHUFFLE, LOOP_GROUP }
+    // Group-level play modes
+    enum class GroupPlayMode { LOOP_GROUP, SEQUENTIAL, RANDOM }
 
     private var _binding: FragmentListenReadBinding? = null
     private val binding get() = _binding!!
@@ -46,16 +49,18 @@ class ListenReadFragment : Fragment() {
     private var currentWordIndex = 0
     private var isPlaying = false
     private var repeatCount = 1
-    private var playMode = PlayMode.ORDER
+    private var groupPlayMode = GroupPlayMode.LOOP_GROUP
 
-    // Shuffled order state
-    private var shuffledOrder: List<Int> = emptyList()
-    private var shufflePosition = 0
+    // Shuffled group order state
+    private var shuffledGroupOrder: List<Int> = emptyList()
+    private var shuffleGroupPosition = 0
 
-    // Blind mode state
-    private var isBlindMode = false
+    // Group selection state
+    private var selectedGroupIndex = 0
 
     private val audioPlayer = AudioPlayer()
+
+    private var planIndexArg: Int = -1
 
     // 3个子组，每组[英文音频, 释义音频]
     private val subGroupPaths = listOf(
@@ -68,11 +73,13 @@ class ListenReadFragment : Fragment() {
     private var currentSubGroup = 0 // 0=单词, 1=词组, 2=例句
     private var repeatCurrent = 0   // 当前子组内重复计数
     private var lastAudioDurationMs: Long = 0
-    private var isFullScreenMode = false
-    private var fullScreenActivity: Activity? = null
+
+    // Prevent duplicate playback
+    private var playbackToken = 0
 
     private var groupSize: Int = 30
     private var currentCorpusId: String = "catti"
+    private var groupIndexArg: Int = -1
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -87,38 +94,60 @@ class ListenReadFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         currentCorpusId = arguments?.getString("corpusId") ?: UserPreferencesRepository.planCorpusId ?: "catti"
+        groupIndexArg = arguments?.getInt("groupIndex", -1) ?: -1
+        planIndexArg = arguments?.getInt("planIndex", -1) ?: -1
         groupSize = UserPreferencesRepository.planGroupSize
         repeatCount = UserPreferencesRepository.repeatCount.coerceIn(1, 5)
-        playMode = try {
-            PlayMode.valueOf(UserPreferencesRepository.listenPlayMode)
+        groupPlayMode = try {
+            GroupPlayMode.valueOf(UserPreferencesRepository.listenGroupPlayMode)
         } catch (e: Exception) {
-            PlayMode.ORDER
+            GroupPlayMode.LOOP_GROUP
         }
 
-        binding.tvCorpusName.text = getCorpusName(currentCorpusId)
-        binding.btnPlay.setOnClickListener { startAutoPlay() }
-        binding.btnPause.setOnClickListener { pausePlaying() }
-        binding.btnPrevWord.setOnClickListener { prevWord() }
-        binding.btnNextWord.setOnClickListener { nextWord() }
-        binding.btnFullscreen.setOnClickListener { enterFullScreenMode() }
+        binding.btnBack.setOnClickListener { parentFragmentManager.popBackStack() }
+        binding.btnStartListen.setOnClickListener { startListening() }
 
-        setupGroupSpinner()
-        setupRepeatButtons()
-        setupPlayModeButtons()
+        setupGroupPlayModeButtons()
+        setupPlayRepeatButtons()
+        setupPlayControls()
         loadWords()
     }
 
-    private fun setupGroupSpinner() {
-        binding.spGroup.onItemSelectedListener = object : android.widget.AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: android.widget.AdapterView<*>?, view: View?, position: Int, id: Long) {
-                selectGroup(position)
-            }
-            override fun onNothingSelected(parent: android.widget.AdapterView<*>?) {}
+    // ====== Group Selection Grid ======
+
+    private fun setupGroupPlayModeButtons() {
+        binding.btnModeGroupLoop.setOnClickListener {
+            groupPlayMode = GroupPlayMode.LOOP_GROUP
+            UserPreferencesRepository.listenGroupPlayMode = groupPlayMode.name
+            updateGroupPlayModeButtonColors()
         }
+        binding.btnModeGroupSeq.setOnClickListener {
+            groupPlayMode = GroupPlayMode.SEQUENTIAL
+            UserPreferencesRepository.listenGroupPlayMode = groupPlayMode.name
+            updateGroupPlayModeButtonColors()
+        }
+        binding.btnModeGroupRandom.setOnClickListener {
+            groupPlayMode = GroupPlayMode.RANDOM
+            UserPreferencesRepository.listenGroupPlayMode = groupPlayMode.name
+            updateGroupPlayModeButtonColors()
+        }
+        updateGroupPlayModeButtonColors()
     }
 
-    private fun setupRepeatButtons() {
-        binding.repeatButtons.removeAllViews()
+    private fun updateGroupPlayModeButtonColors() {
+        val selectedColor = 0xFF0039CB.toInt()
+        val unselectedColor = 0xFF808080.toInt()
+        binding.btnModeGroupLoop.setBackgroundColor(if (groupPlayMode == GroupPlayMode.LOOP_GROUP) selectedColor else unselectedColor)
+        binding.btnModeGroupSeq.setBackgroundColor(if (groupPlayMode == GroupPlayMode.SEQUENTIAL) selectedColor else unselectedColor)
+        binding.btnModeGroupRandom.setBackgroundColor(if (groupPlayMode == GroupPlayMode.RANDOM) selectedColor else unselectedColor)
+    }
+
+    private fun setupPlayRepeatButtons() {
+        binding.repeatButtons2.removeAllViews()
+        buildRepeatButtons(binding.repeatButtons2)
+    }
+
+    private fun buildRepeatButtons(container: LinearLayout) {
         val dp8 = dip(8)
         for (count in 1..5) {
             val btn = Button(requireContext()).apply {
@@ -133,7 +162,7 @@ class ListenReadFragment : Fragment() {
                 setOnClickListener {
                     repeatCount = count
                     UserPreferencesRepository.repeatCount = count
-                    updateRepeatButtonColors()
+                    updateRepeatButtonColors(container)
                     if (isPlaying) {
                         audioPlayer.release()
                         currentSubGroup = 0
@@ -142,89 +171,197 @@ class ListenReadFragment : Fragment() {
                     }
                 }
             }
-            binding.repeatButtons.addView(btn)
+            container.addView(btn)
         }
     }
 
-    private fun updateRepeatButtonColors() {
-        for (i in 0 until binding.repeatButtons.childCount) {
-            val btn = binding.repeatButtons.getChildAt(i) as Button
+    private fun updateRepeatButtonColors(container: LinearLayout) {
+        for (i in 0 until container.childCount) {
+            val btn = container.getChildAt(i) as Button
             val count = i + 1
             btn.setBackgroundColor(if (count == repeatCount) 0xFFE3000F.toInt() else 0xFF808080.toInt())
         }
     }
 
-    private fun setupPlayModeButtons() {
-        binding.modeButtons.removeAllViews()
-        val dp8 = dip(8)
-        val modes = listOf(
-            Pair(PlayMode.ORDER, "顺序"),
-            Pair(PlayMode.SHUFFLE, "乱序"),
-            Pair(PlayMode.LOOP_GROUP, "循环")
-        )
-        for ((mode, label) in modes) {
-            val btn = Button(requireContext()).apply {
-                text = label
-                textSize = 12f
-                setTextColor(0xFFFFFFFF.toInt())
-                setBackgroundColor(if (mode == playMode) 0xFFE3000F.toInt() else 0xFF808080.toInt())
-                setPadding(dp8, 0, dp8, 0)
-                layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, dip(30)).apply {
-                    marginEnd = dip(4)
-                }
-                setOnClickListener {
-                    playMode = mode
-                    UserPreferencesRepository.listenPlayMode = mode.name
-                    updateModeButtonColors()
-                    if (mode == PlayMode.SHUFFLE) reshuffle()
-                    stopPlaying()
-                }
-            }
-            binding.modeButtons.addView(btn)
-        }
-        // Blind mode toggle
-        val blindBtn = Button(requireContext()).apply {
-            text = "盲听"
-            textSize = 12f
-            setTextColor(0xFFFFFFFF.toInt())
-            setBackgroundColor(if (isBlindMode) 0xFFE3000F.toInt() else 0xFF808080.toInt())
-            setPadding(dp8, 0, dp8, 0)
-            layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, dip(30))
-            setOnClickListener { toggleBlindMode() }
-        }
-        binding.modeButtons.addView(blindBtn)
+    private fun setupPlayControls() {
+        binding.btnPlay.setOnClickListener { startAutoPlay() }
+        binding.btnPause.setOnClickListener { pausePlaying() }
+        binding.btnPrevWord.setOnClickListener { prevWord() }
+        binding.btnNextWord.setOnClickListener { nextWord() }
+        binding.btnFullscreen.setOnClickListener { enterFullScreenMode() }
     }
 
-    private fun updateModeButtonColors() {
-        val modes = listOf(PlayMode.ORDER, PlayMode.SHUFFLE, PlayMode.LOOP_GROUP)
-        for (i in 0 until binding.modeButtons.childCount) {
-            val btn = binding.modeButtons.getChildAt(i) as Button
-            if (i < modes.size) {
-                btn.setBackgroundColor(if (modes[i] == playMode) 0xFFE3000F.toInt() else 0xFF808080.toInt())
+    private fun enterFullScreenMode() {
+        val intent = android.content.Intent(requireContext(), ListenReadFullScreenActivity::class.java).apply {
+            putExtra("corpusId", currentCorpusId)
+            putExtra("groupIndex", currentGroupIndex)
+            putExtra("wordIndex", currentWordIndex)
+            putExtra("repeatCount", repeatCount)
+            putExtra("isPlaying", isPlaying)
+            putExtra("groupPlayMode", groupPlayMode.name)
+        }
+        startActivity(intent)
+    }
+
+    private fun buildGroupMap() {
+        binding.layoutLoading.visibility = View.GONE
+        binding.layoutGroupMap.visibility = View.VISIBLE
+        binding.layoutPlay.visibility = View.GONE
+
+        lifecycleScope.launch {
+            val db = AppDatabase.getDatabase(requireContext())
+            val uidCorpus = "${UserManager.userId}_$currentCorpusId"
+            val learned = db.progressDao().getLearnedCount(uidCorpus).first() ?: 0
+            val mastered = db.progressDao().getMasteredCount(uidCorpus).first() ?: 0
+            val completedGroups = if (planIndexArg >= 0) {
+                UserPreferencesRepository.getPlanCompletedGroups(planIndexArg)
             } else {
-                // Blind mode button
-                btn.setBackgroundColor(if (isBlindMode) 0xFFE3000F.toInt() else 0xFF808080.toInt())
+                UserPreferencesRepository.getCompletedGroups(currentCorpusId)
             }
+            val totalGroups = ceil(allWords.size.toDouble() / groupSize).toInt()
+
+            binding.tvMapTitle.text = "听读模式"
+            binding.tvProgressTop.text = "$totalGroups 组 ${completedGroups.size}/$totalGroups"
+            binding.progressBar.progress = if (totalGroups > 0) completedGroups.size * 100 / totalGroups else 0
+
+            // Group grid
+            val dp4 = dip(4)
+            val dp6 = dip(6)
+            val colsPerRow = 5
+
+            binding.layoutGroupGrid.removeAllViews()
+
+            // Per-group review count
+            val dueForReview = try {
+                com.learne.data.repository.StudyRepository(requireContext()).getWordsDueForReview(currentCorpusId)
+            } catch (e: Exception) { emptyList() }
+            val duePerGroup = IntArray(totalGroups)
+            for (word in dueForReview) {
+                val idx = allWords.indexOfFirst { it.word == word.word }
+                if (idx >= 0) {
+                    val groupIdx = idx / groupSize
+                    if (groupIdx < totalGroups) duePerGroup[groupIdx]++
+                }
+            }
+
+            var row = 0
+            while (row < totalGroups) {
+                val gridRow = LinearLayout(requireContext()).apply {
+                    orientation = LinearLayout.HORIZONTAL
+                    layoutParams = LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT
+                    ).apply { topMargin = dp6 }
+                }
+                for (col in 0 until colsPerRow) {
+                    val g = row + col
+                    if (g >= totalGroups) break
+                    val isCompleted = completedGroups.contains(g)
+                    val start = g * groupSize + 1
+                    val end = ((g + 1) * groupSize).coerceAtMost(allWords.size)
+                    val dueCount = duePerGroup[g]
+
+                    val card = LinearLayout(requireContext()).apply {
+                        orientation = LinearLayout.VERTICAL
+                        gravity = android.view.Gravity.CENTER
+                        layoutParams = LinearLayout.LayoutParams(0, dip(56)).apply { weight = 1f; marginEnd = dp6 }
+                        setPadding(dp4, dp4, dp4, dp4)
+                        val bg = GradientDrawable().apply {
+                            if (isCompleted) {
+                                setColor(0xFF4CAF50.toInt())
+                            } else if (dueCount > 0) {
+                                setColor(0xFFFFF3E0.toInt())
+                                setStroke(dip(2), 0xFFFF9800.toInt())
+                            } else {
+                                setColor(0xFFF5F5F5.toInt())
+                            }
+                            cornerRadius = dip(8).toFloat()
+                        }
+                        background = bg
+                        elevation = if (isCompleted) 3f else 1f
+                        setOnClickListener {
+                            selectedGroupIndex = g
+                            binding.btnStartListen.isEnabled = true
+                            // Highlight selected
+                            for (i in 0 until binding.layoutGroupGrid.childCount) {
+                                val r = binding.layoutGroupGrid.getChildAt(i) as LinearLayout
+                                for (j in 0 until r.childCount) {
+                                    (r.getChildAt(j) as? LinearLayout)?.alpha = 0.5f
+                                }
+                            }
+                            this.alpha = 1.0f
+                        }
+                    }
+
+                    card.addView(textView("${g + 1}", 16f, true, if (isCompleted) "#FFFFFF" else if (dueCount > 0) "#E65100" else "#333333").apply {
+                        gravity = android.view.Gravity.CENTER
+                    })
+                    card.addView(textView("$start-$end", 9f, false, if (isCompleted) "#E8F5E9" else if (dueCount > 0) "#BF360C" else "#999999").apply {
+                        gravity = android.view.Gravity.CENTER
+                    })
+                    if (isCompleted) {
+                        card.addView(textView("✓", 11f, true, "#C8E6C9").apply {
+                            gravity = android.view.Gravity.CENTER
+                        })
+                    } else if (dueCount > 0) {
+                        card.addView(textView("$dueCount", 10f, true, "#E3000F").apply {
+                            gravity = android.view.Gravity.CENTER
+                        })
+                    }
+
+                    gridRow.addView(card)
+                }
+                binding.layoutGroupGrid.addView(gridRow)
+                row += colsPerRow
+            }
+
+            // Achievements
+            buildAchievements(completedGroups.size, totalGroups)
         }
     }
 
-    private fun reshuffle() {
-        shuffledOrder = currentGroup.indices.toList().shuffled()
-        shufflePosition = 0
+    private fun buildAchievements(completed: Int, total: Int) {
+        // Achievements section - shown below group grid
+        // We'll add them as small badges in a separate container if needed
+        // For now, the progress bar and stats are sufficient
     }
 
-    private fun getActualWordIndex(): Int {
-        return when (playMode) {
-            PlayMode.SHUFFLE -> {
-                if (shuffledOrder.isEmpty() || shufflePosition >= shuffledOrder.size) reshuffle()
-                shuffledOrder[shufflePosition]
+    private fun showGroupMap() {
+        stopPlaying()
+        buildGroupMap()
+    }
+
+    private fun loadCurrentGroup() {
+        val start = currentGroupIndex * groupSize
+        val end = (start + groupSize).coerceAtMost(allWords.size)
+        currentGroup = allWords.subList(start, end)
+        currentWordIndex = 0
+        currentSubGroup = 0
+        repeatCurrent = 0
+        updateProgress()
+        showCurrentWordNormal()
+    }
+
+    private fun startListening() {
+        selectedGroupIndex = selectedGroupIndex.coerceAtMost(ceil(allWords.size.toDouble() / groupSize).toInt() - 1)
+        currentGroupIndex = selectedGroupIndex
+
+        // Initialize group play order
+        if (groupPlayMode == GroupPlayMode.RANDOM) {
+            shuffledGroupOrder = (0 until ceil(allWords.size.toDouble() / groupSize).toInt()).toList().shuffled()
+            shuffleGroupPosition = shuffledGroupOrder.indexOfFirst { it == currentGroupIndex }
+            if (shuffleGroupPosition < 0) {
+                shuffleGroupPosition = 0
+                currentGroupIndex = shuffledGroupOrder[0]
             }
-            else -> currentWordIndex
         }
+
+        loadCurrentGroup()
     }
 
     private fun loadWords() {
         binding.layoutLoading.visibility = View.VISIBLE
+        binding.layoutGroupMap.visibility = View.GONE
+        binding.layoutPlay.visibility = View.GONE
 
         lifecycleScope.launch {
             try {
@@ -232,23 +369,20 @@ class ListenReadFragment : Fragment() {
                     CorpusRepository(requireContext()).loadWords(currentCorpusId)
                 }
                 allWords = result
-                binding.layoutLoading.visibility = View.GONE
                 if (allWords.isEmpty()) {
                     Toast.makeText(context, "词库为空", Toast.LENGTH_SHORT).show()
+                    parentFragmentManager.popBackStack()
                     return@launch
                 }
-                setupGroups()
-
-                // Resume from last position
-                val lastCorpus = UserPreferencesRepository.lastListenCorpus
-                val lastGroup = UserPreferencesRepository.lastListenGroupIndex
-                val lastWord = UserPreferencesRepository.lastListenWordIndex
-                if (lastCorpus == currentCorpusId && lastGroup >= 0 && lastGroup < binding.spGroup.adapter.count && lastWord >= 0) {
-                    selectGroupWithResume(lastGroup, lastWord)
-                    Toast.makeText(context, "从上次位置继续", Toast.LENGTH_SHORT).show()
-                } else {
-                    selectGroup(0)
+                // Use group from ChallengeMapFragment
+                if (groupIndexArg >= 0) {
+                    selectedGroupIndex = groupIndexArg
+                    currentGroupIndex = groupIndexArg
                 }
+                binding.layoutLoading.visibility = View.GONE
+                binding.layoutGroupMap.visibility = View.GONE
+                binding.layoutPlay.visibility = View.VISIBLE
+                loadCurrentGroup()
             } catch (e: Exception) {
                 binding.layoutLoading.visibility = View.GONE
                 Toast.makeText(context, "加载失败: ${e.message}", Toast.LENGTH_LONG).show()
@@ -256,60 +390,22 @@ class ListenReadFragment : Fragment() {
         }
     }
 
-    private fun setupGroups() {
-        val totalGroups = ceil(allWords.size.toDouble() / groupSize).toInt()
-        val groupNames = List(totalGroups) { "第${it + 1}组 (${getGroupWordRange(it)})" }
-        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, groupNames)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        binding.spGroup.adapter = adapter
-    }
-
-    private fun getGroupWordRange(groupIndex: Int): String {
-        val start = groupIndex * groupSize + 1
-        val end = ((groupIndex + 1) * groupSize).coerceAtMost(allWords.size)
-        return "$start-$end"
-    }
-
-    private fun selectGroup(groupIndex: Int) {
-        stopPlaying()
-        currentGroupIndex = groupIndex
-        val start = groupIndex * groupSize
-        val end = (start + groupSize).coerceAtMost(allWords.size)
-        currentGroup = allWords.subList(start, end)
-        currentWordIndex = 0
-        currentSubGroup = 0
-        repeatCurrent = 0
-        if (playMode == PlayMode.SHUFFLE) reshuffle()
-        UserPreferencesRepository.saveListenPosition(currentCorpusId, currentGroupIndex, currentWordIndex)
-        updateProgress()
-        showCurrentWordNormal()
-    }
-
-    private fun selectGroupWithResume(groupIndex: Int, wordIndex: Int) {
-        stopPlaying()
-        currentGroupIndex = groupIndex
-        val start = groupIndex * groupSize
-        val end = (start + groupSize).coerceAtMost(allWords.size)
-        currentGroup = allWords.subList(start, end)
-        currentWordIndex = wordIndex.coerceAtMost(currentGroup.size - 1)
-        currentSubGroup = 0
-        repeatCurrent = 0
-        if (playMode == PlayMode.SHUFFLE) reshuffle()
-        UserPreferencesRepository.saveListenPosition(currentCorpusId, currentGroupIndex, currentWordIndex)
-        updateProgress()
-        showCurrentWordNormal()
-    }
+    // ====== Word Display ======
 
     private fun updateProgress() {
         val displayIndex = getActualWordIndex()
         val globalIndex = currentGroupIndex * groupSize + displayIndex + 1
         val total = allWords.size
-        binding.tvWordProgress.text = "$globalIndex / $total"
-        binding.progressBar.progress = (globalIndex * 100 / total)
+        binding.tvProgressTop.text = "$globalIndex / $total"
+        binding.progressBar.progress = if (total > 0) (globalIndex * 100 / total) else 0
     }
 
     private fun getCurrentWord(): Word {
         return currentGroup[getActualWordIndex()]
+    }
+
+    private fun getActualWordIndex(): Int {
+        return currentWordIndex.coerceAtMost(currentGroup.size - 1)
     }
 
     private fun updateStickyHeader() {
@@ -324,9 +420,15 @@ class ListenReadFragment : Fragment() {
             else -> word.meaning
         }
         binding.tvStickyPhonetic.visibility = if (word.phonetic.isNotBlank()) View.VISIBLE else View.GONE
+        binding.tvStickySubgroup.text = getSubGroupLabel()
     }
 
-    // ====== Normal mode: show all content ======
+    private fun getSubGroupLabel(): String = when (currentSubGroup) {
+        0 -> "单词"
+        1 -> "词组"
+        2 -> "例句"
+        else -> "单词"
+    }
 
     private fun showCurrentWordNormal() {
         if (currentGroup.isEmpty()) return
@@ -338,15 +440,38 @@ class ListenReadFragment : Fragment() {
         val dp12 = dip(12)
         val dp16 = dip(16)
 
-        // Status
+        // Status with sub-group label
+        val subGroupLabel = getSubGroupLabel()
         val statusText = TextView(requireContext()).apply {
-            text = if (isPlaying) "正在播放..." else "点击播放开始听读"
+            text = if (isPlaying) "正在播放 · $subGroupLabel" else "点击播放开始听读"
             textSize = 14f
-            setTextColor(0xFFE3000F.toInt())
+            setTextColor(if (isPlaying) 0xFF0039CB.toInt() else 0xFFE3000F.toInt())
             setTypeface(null, android.graphics.Typeface.BOLD)
-            setPadding(dp16, 0, dp16, dp16)
+            setPadding(dp16, 0, dp16, dip(8))
         }
         binding.contentContainer.addView(statusText)
+
+        // Sub-group indicator bar (单词 / 词组 / 例句)
+        val subGroupBar = LinearLayout(requireContext()).apply {
+            orientation = LinearLayout.HORIZONTAL
+            setPadding(dp16, 0, dp16, dip(12))
+            val labels = listOf("单词", "词组", "例句")
+            for (i in labels.indices) {
+                addView(TextView(requireContext()).apply {
+                    text = labels[i]
+                    textSize = 13f
+                    setTypeface(null, if (i == currentSubGroup) android.graphics.Typeface.BOLD else android.graphics.Typeface.NORMAL)
+                    setTextColor(if (i == currentSubGroup) 0xFF0039CB.toInt() else 0xFFCCCCCC.toInt())
+                    setPadding(dip(12), dip(4), dip(12), dip(4))
+                    val bg = GradientDrawable().apply {
+                        setColor(if (i == currentSubGroup) 0xFFE8EAF6.toInt() else 0x00000000)
+                        cornerRadius = dip(12).toFloat()
+                    }
+                    background = bg
+                })
+            }
+        }
+        binding.contentContainer.addView(subGroupBar)
 
         // Word card
         val wordCard = makeCard()
@@ -407,30 +532,25 @@ class ListenReadFragment : Fragment() {
     private fun playCurrentWord() {
         if (!isPlaying || currentGroup.isEmpty()) return
         if (currentWordIndex >= currentGroup.size) {
-            if (playMode == PlayMode.LOOP_GROUP) {
-                // Loop back to start of current group
+            if (groupPlayMode == GroupPlayMode.LOOP_GROUP) {
                 currentWordIndex = 0
-                if (playMode == PlayMode.SHUFFLE) reshuffle()
             } else {
                 nextGroup()
                 return
             }
         }
 
+        playbackToken++
+        val token = playbackToken
         currentSubGroup = 0
         repeatCurrent = 0
         lastAudioDurationMs = 0
-        updateStatusText()
-        playCurrentAudio()
+        updateProgress()
+        playCurrentAudio(token)
     }
 
-    /**
-     * 播放当前子组的当前重复音频
-     * 每个子组（单词/词组/例句）包含2个音频（英文+释义），每个重复repeatCount次
-     * 例如重复2次：英文-释义-英文-释义
-     */
-    private fun playCurrentAudio() {
-        if (!isPlaying) return
+    private fun playCurrentAudio(token: Int) {
+        if (!isPlaying || playbackToken != token) return
 
         if (currentSubGroup >= 3) {
             recordHistory()
@@ -442,7 +562,7 @@ class ListenReadFragment : Fragment() {
         val pairAudioIndex = repeatCurrent % 2 // 0=英文, 1=释义
         val word = getCurrentWord()
 
-        updateStatusText()
+        updateProgress()
         updateStickyHeader()
         val path = CorpusRepository(requireContext()).getAudioPath(currentCorpusId, word.word, paths[pairAudioIndex])
 
@@ -451,23 +571,19 @@ class ListenReadFragment : Fragment() {
             repeatCurrent++
 
             val pauseMs = duration.coerceAtLeast(500)
-            android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
+            android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({ if (!isAdded) return@postDelayed
                 if (repeatCurrent >= repeatCount * 2) {
                     repeatCurrent = 0
                     currentSubGroup++
-                    playCurrentAudio()
+                    playCurrentAudio(token)
                 } else {
-                    playCurrentAudio()
+                    playCurrentAudio(token)
                 }
             }, pauseMs)
         }
     }
 
     // ====== Navigation ======
-
-    private fun updateStatusText() {
-        // Status text updated during playback
-    }
 
     private fun recordHistory() {
         if (currentGroup.isEmpty()) return
@@ -485,28 +601,50 @@ class ListenReadFragment : Fragment() {
         )
         lifecycleScope.launch {
             AppDatabase.getDatabase(requireContext()).listenHistoryDao().insert(history)
+            // Mark word as learned in progress tracking
+            com.learne.data.repository.ProgressRepository(requireContext())
+                .markWordLearned(UserManager.userId, currentCorpusId, word.word)
+        }
+    }
+
+    private fun markGroupCompletedIfAllListened() {
+        // Mark group completed when user has listened through all words in the group
+        if (planIndexArg >= 0) {
+            UserPreferencesRepository.markGroupCompletedForPlan(planIndexArg, currentGroupIndex)
+        } else {
+            UserPreferencesRepository.markGroupCompleted(currentCorpusId, currentGroupIndex)
+        }
+        // Notify ChallengeMapFragment
+        parentFragmentManager.fragments.find { it is com.learne.ui.challenge.ChallengeMapFragment }?.let {
+            (it as com.learne.ui.challenge.ChallengeMapFragment).refreshMap()
         }
     }
 
     private fun nextWord() {
         stopPlaying()
 
-        when (playMode) {
-            PlayMode.SHUFFLE -> {
-                shufflePosition++
-                if (shufflePosition >= currentGroup.size) {
-                    shufflePosition = 0
-                    reshuffle()
-                }
-            }
-            PlayMode.LOOP_GROUP -> {
-                currentWordIndex = (currentWordIndex + 1) % currentGroup.size
-                if (currentWordIndex == 0) reshuffle()
-            }
-            else -> { // ORDER
+        when (groupPlayMode) {
+            GroupPlayMode.RANDOM -> {
+                // Within current group, sequential
                 if (currentWordIndex >= currentGroup.size - 1) {
-                    stopPlaying()
-                    Toast.makeText(context, "本组播放完毕", Toast.LENGTH_SHORT).show()
+                    markGroupCompletedIfAllListened()
+                    nextGroup()
+                    return
+                }
+                currentWordIndex++
+            }
+            GroupPlayMode.LOOP_GROUP -> {
+                // When looping back to start, mark group completed on first wrap
+                val nextIndex = (currentWordIndex + 1) % currentGroup.size
+                if (nextIndex == 0 && currentWordIndex == currentGroup.size - 1) {
+                    markGroupCompletedIfAllListened()
+                }
+                currentWordIndex = nextIndex
+            }
+            GroupPlayMode.SEQUENTIAL -> {
+                if (currentWordIndex >= currentGroup.size - 1) {
+                    markGroupCompletedIfAllListened()
+                    nextGroup()
                     return
                 }
                 currentWordIndex++
@@ -521,18 +659,7 @@ class ListenReadFragment : Fragment() {
 
     private fun prevWord() {
         stopPlaying()
-
-        when (playMode) {
-            PlayMode.SHUFFLE -> {
-                shufflePosition = (shufflePosition - 1).coerceAtLeast(0)
-            }
-            PlayMode.LOOP_GROUP -> {
-                currentWordIndex = (currentWordIndex - 1 + currentGroup.size) % currentGroup.size
-            }
-            else -> {
-                if (currentWordIndex > 0) currentWordIndex--
-            }
-        }
+        if (currentWordIndex > 0) currentWordIndex--
 
         UserPreferencesRepository.saveListenPosition(currentCorpusId, currentGroupIndex, currentWordIndex)
         updateProgress()
@@ -541,80 +668,47 @@ class ListenReadFragment : Fragment() {
 
     private fun nextGroup() {
         stopPlaying()
-        val groupCount = binding.spGroup.adapter.count
-        if (currentGroupIndex < groupCount - 1) {
-            selectGroup(currentGroupIndex + 1)
-            binding.spGroup.setSelection(currentGroupIndex)
-        }
-    }
+        val totalGroups = ceil(allWords.size.toDouble() / groupSize).toInt()
 
-    // ====== Full screen mode ======
-
-    private fun enterFullScreenMode() {
-        val intent = android.content.Intent(requireContext(), ListenReadFullScreenActivity::class.java).apply {
-            putExtra("corpusId", currentCorpusId)
-            putExtra("groupIndex", currentGroupIndex)
-            putExtra("wordIndex", currentWordIndex)
-            putExtra("repeatCount", repeatCount)
-            putExtra("isPlaying", isPlaying)
-            putExtra("playMode", playMode.name)
+        val nextIdx = when (groupPlayMode) {
+            GroupPlayMode.RANDOM -> {
+                shuffleGroupPosition++
+                if (shuffleGroupPosition >= shuffledGroupOrder.size) {
+                    shuffleGroupPosition = 0
+                    shuffledGroupOrder = shuffledGroupOrder.shuffled()
+                }
+                shuffledGroupOrder[shuffleGroupPosition]
+            }
+            GroupPlayMode.SEQUENTIAL -> {
+                if (currentGroupIndex >= totalGroups - 1) {
+                    Toast.makeText(context, "所有组播放完毕", Toast.LENGTH_SHORT).show()
+                    return
+                }
+                currentGroupIndex + 1
+            }
+            GroupPlayMode.LOOP_GROUP -> {
+                // Loop within selected group shouldn't reach here normally
+                currentGroupIndex
+            }
         }
-        startActivity(intent)
+
+        currentGroupIndex = nextIdx.coerceAtMost(totalGroups - 1)
+        selectedGroupIndex = currentGroupIndex
+
+        val start = currentGroupIndex * groupSize
+        val end = (start + groupSize).coerceAtMost(allWords.size)
+        currentGroup = allWords.subList(start, end)
+        currentWordIndex = 0
+        currentSubGroup = 0
+        repeatCurrent = 0
+
+        UserPreferencesRepository.saveListenPosition(currentCorpusId, currentGroupIndex, 0)
+        updateProgress()
+        showCurrentWordNormal()
+        if (isPlaying) playCurrentWord()
     }
 
     // ====== Helpers ======
-
-    private fun toggleBlindMode() {
-        isBlindMode = !isBlindMode
-        UserPreferencesRepository.listenBlindMode = isBlindMode
-        updateModeButtonColors()
-        if (isBlindMode) {
-            showBlindContent()
-        } else {
-            showCurrentWordNormal()
-        }
-    }
-
-    private fun showBlindContent() {
-        binding.contentContainer.removeAllViews()
-        val dp16 = dip(16)
-        binding.tvStickyWord.text = "盲听模式"
-        binding.tvStickyPhonetic.visibility = View.GONE
-        binding.tvStickyMeaning.text = "仔细听，点击下方按钮查看内容"
-
-        val statusText = TextView(requireContext()).apply {
-            text = if (isPlaying) "正在播放音频..." else "点击播放开始盲听"
-            textSize = 18f
-            setTextColor(0xFFE3000F.toInt())
-            setTypeface(null, android.graphics.Typeface.BOLD)
-            setPadding(dp16, dp16, dp16, dp16)
-            gravity = android.view.Gravity.CENTER
-        }
-        binding.contentContainer.addView(statusText)
-
-        val viewBtn = Button(requireContext()).apply {
-            text = "查看内容"
-            textSize = 16f
-            setTextColor(0xFFFFFFFF.toInt())
-            setBackgroundColor(0xFF0039CB.toInt())
-            setPadding(dp16, dp16, dp16, dp16)
-            layoutParams = LinearLayout.LayoutParams(dip(180), dip(50)).apply {
-                gravity = android.view.Gravity.CENTER_HORIZONTAL
-                topMargin = dip(16)
-            }
-            setOnClickListener { showCurrentWordNormal() }
-        }
-        binding.contentContainer.addView(viewBtn)
-    }
-
-    // Override showCurrentWord to redirect in blind mode
-    private fun showCurrentWordBlind() {
-        if (isBlindMode) {
-            showBlindContent()
-            return
-        }
-        showCurrentWordNormal()
-    }
 
     private fun makeCard(): LinearLayout {
         return LinearLayout(requireContext()).apply {
@@ -656,14 +750,6 @@ class ListenReadFragment : Fragment() {
     private fun dip(dp: Int): Int {
         val scale = requireContext().resources.displayMetrics.density
         return (dp * scale + 0.5f).toInt()
-    }
-
-    private fun getCorpusName(id: String): String {
-        return when (id) {
-            "catti" -> "CATTI"
-            "cet4" -> "CET4"
-            else -> id
-        }
     }
 
     override fun onDestroyView() {

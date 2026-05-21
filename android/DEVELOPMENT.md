@@ -140,7 +140,7 @@ object HomeNavigation {
 
 **文件**: `app/src/main/java/com/learne/ui/challenge/DailyChallengeFragment.kt`
 
-- 随机抽取10词（5个待复习 + 5个随机）
+- 随机抽取10词（仅从考试通过的组中抽取）
 - 三种题型循环：
   1. **选择题**: 英文 → 4选1释义
   2. **拼写题**: 听音频 → 输入单词（显示释义提示）
@@ -148,7 +148,7 @@ object HomeNavigation {
 - 记录连击统计（最高连击）
 - 完成时显示结果：正确/错误/正确率/连击
 
-### 8. StudyStatsFragment - 学习统计
+### 9. StudyStatsFragment - 学习统计
 
 **文件**: `app/src/main/java/com/learne/ui/stats/StudyStatsFragment.kt`
 
@@ -158,7 +158,40 @@ object HomeNavigation {
   - 无色 → 0词、浅绿 → <5词、中绿 → <10词、深绿 → <20词、最深绿 → 20+词
 - 点击热力图格子显示当日学习量 Toast
 
-### 9. UserPreferencesRepository - 用户偏好
+### 10. UserCenterFragment - 个人中心
+
+**文件**: `app/src/main/java/com/learne/ui/user/UserCenterFragment.kt`
+
+- 显示用户名、学习统计（已学/已掌握/错题数/学习时长/连续天数）
+- 能力等级评估：入门/初级/中级/高级（基于掌握率）
+- 今日学习总结：今日学习单词数、时长、复习错题数
+- 掌握率进度条
+
+### 11. HomeFragment - 首页模式验证
+
+**文件**: `app/src/main/java/com/learne/ui/home/HomeFragment.kt`
+
+- **复习模式**：点击时检查 `reviewWordCount`，为 0 时弹出提示"暂无需要复习的单词"，不进入页面
+- **考试模式**：点击时检查 `quizAvailableGroups`（已学习但未考试的组），为空时弹出提示"暂无需要考试的组，请先学习新组"，不进入页面
+- **听写/闪卡/每日挑战**：检查 `completedGroupCount`（考试通过组数），为 0 时提示"请先完成考试后再使用"
+- 数据通过 `loadReviewAndQuizData()` 异步加载
+
+**HomeNavigation 对象** (定义在同文件中):
+```kotlin
+object HomeNavigation {
+    var startInteractiveLearn: ((String) -> Unit)? = null
+    var startListenRead: ((String) -> Unit)? = null
+    var startReview: ((String) -> Unit)? = null
+    var startQuiz: ((String) -> Unit)? = null
+    var startDictation: ((String) -> Unit)? = null
+    var startFlashcard: ((String) -> Unit)? = null
+    var startDailyChallenge: (() -> Unit)? = null
+    var startStudyStats: (() -> Unit)? = null
+    var startUserCenter: (() -> Unit)? = null
+}
+```
+
+### 12. UserPreferencesRepository - 用户偏好
 
 **文件**: `app/src/main/java/com/learne/data/repository/UserPreferencesRepository.kt`
 
@@ -332,3 +365,46 @@ Step 1 自动播放6段音频序列，进入Step 2后停止：
 | `data/model/StudyModels.kt` | 修改 | 新增 StarredWord 实体 |
 | `data/db/AllDaos.kt` | 修改 | 新增 StarredWordDao |
 | `data/db/AppDatabase.kt` | 修改 | version 6→7，注册 StarredWord |
+
+### 导航入口完善
+- ChallengeMapFragment 顶部栏新增"主页"按钮（蓝色），可进入 HomeFragment 访问所有学习模式
+- HomeFragment 新增"返回学习地图"按钮，可回到 ChallengeMapFragment
+- 导航流程：`Login → StudyPlanActivity → MainActivity(planIndex) → ChallengeMapFragment ↔ HomeFragment → 各学习模式`
+
+### 文件改动清单
+
+| 文件 | 操作 | 说明 |
+|------|------|------|
+| `ui/challenge/ChallengeMapFragment.kt` | 修改 | 新增 `navigateToHome()` 方法 + "主页"按钮 |
+| `res/layout/fragment_challenge_map.xml` | 修改 | 新增 `btn_home` 按钮 |
+| `ui/home/HomeFragment.kt` | 修改 | 新增 `btnBackToMap` 返回地图 |
+| `res/layout/fragment_home.xml` | 修改 | 新增 `btn_back_to_map` 按钮 |
+
+### 首页重构 + 个人中心 + 存档删除确认
+
+- 读取存档后进入 HomeFragment（主页），用户自选学习模式
+- HomeFragment 改为 2列网格图标+文字布局
+- 删除"交互"两字，改为"学习模式"
+- 闪卡模式和每日挑战只能基于已学内容（通过 HomeNavigation 回调统一处理）
+- 新增"个人中心"模块，查看学习历史、能力水平、今日学习等
+- 返回主页不弹出选存档对话框
+- 删除存档需手动输入名称确认
+
+### 文件改动清单
+
+| 文件 | 操作 | 说明 |
+|------|------|------|
+| `res/drawable/ic_study_mode.xml` | **新建** | 学习模式图标 |
+| `res/drawable/ic_listen_read.xml` | **新建** | 听读模式图标 |
+| `res/drawable/ic_dictation.xml` | **新建** | 听写模式图标 |
+| `res/drawable/ic_flashcard.xml` | **新建** | 闪卡模式图标 |
+| `res/drawable/ic_daily_challenge.xml` | **新建** | 每日挑战图标 |
+| `res/drawable/ic_wrong_words.xml` | **新建** | 错题本图标 |
+| `res/drawable/ic_user_center.xml` | **新建** | 个人中心图标 |
+| `res/drawable/ic_learn_map.xml` | **新建** | 学习地图图标 |
+| `res/layout/fragment_home.xml` | **重写** | 图标+文字网格布局 |
+| `ui/home/HomeFragment.kt` | 修改 | 个人中心按钮、plan菜单 |
+| `ui/main/MainActivity.kt` | 修改 | planIndex进入HomeFragment |
+| `ui/user/UserCenterFragment.kt` | **新建** | 个人中心 |
+| `res/layout/fragment_user_center.xml` | **新建** | 个人中心布局 |
+| `ui/plan/StudyPlanActivity.kt` | 修改 | 删除存档需输入名称确认 |

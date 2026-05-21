@@ -14,6 +14,12 @@ interface ProgressDao {
     @Query("SELECT * FROM word_progress WHERE id = :id")
     suspend fun getProgressById(id: String): WordProgress?
 
+    @Query("SELECT * FROM word_progress WHERE word = :word AND corpusId = :corpusId LIMIT 1")
+    suspend fun getByWordAndCorpus(word: String, corpusId: String): WordProgress?
+
+    @Query("SELECT * FROM word_progress WHERE corpusId = :corpusId")
+    fun getByCorpusId(corpusId: String): Flow<List<WordProgress>>
+
     @Query("SELECT * FROM word_progress WHERE corpusId = :corpusId AND mastered = 0 AND (nextReviewTime <= :now OR stage = 0) ORDER BY stage ASC, nextReviewTime ASC")
     fun getWordsForReview(corpusId: String, now: Long): Flow<List<WordProgress>>
 

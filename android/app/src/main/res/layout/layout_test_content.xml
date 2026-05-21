@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/mecha_hull"
     android:padding="16dp">
 
     <!-- 选择题测试界面 -->
@@ -27,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="14sp"
-            android:textColor="#666"
+            android:textColor="@color/text_secondary"
             app:layout_constraintTop_toBottomOf="@id/tv_choice_word"
             app:layout_constraintLeft_toLeftOf="parent" />
 
@@ -78,7 +79,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
-            android:textColor="#4CAF50"
+            android:textColor="@color/accent"
             android:visibility="invisible"
             app:layout_constraintTop_toBottomOf="@id/btn_submit_choice"
             app:layout_constraintLeft_toLeftOf="parent"

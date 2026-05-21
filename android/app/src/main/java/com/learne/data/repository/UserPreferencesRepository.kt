@@ -15,10 +15,12 @@ object UserPreferencesRepository {
     private const val KEY_LAST_LISTEN_WORD_INDEX = "last_listen_word_index"
     private const val KEY_LAST_LISTEN_CORPUS = "last_listen_corpus"
     private const val KEY_LISTEN_PLAY_MODE = "listen_play_mode"
+    private const val KEY_LISTEN_GROUP_PLAY_MODE = "listen_group_play_mode"
     private const val KEY_LISTEN_BLIND_MODE = "listen_blind_mode"
     private const val KEY_PLAN_CORPUS = "plan_corpus"
     private const val KEY_PLAN_GROUP_SIZE = "plan_group_size"
 
+    @Volatile
     private var prefs: android.content.SharedPreferences? = null
 
     fun init(context: Context) {
@@ -67,6 +69,16 @@ object UserPreferencesRepository {
         set(value) {
             checkPrefs()
             prefs!!.edit { putString(KEY_LISTEN_PLAY_MODE, value) }
+        }
+
+    var listenGroupPlayMode: String
+        get() {
+            checkPrefs()
+            return prefs!!.getString(KEY_LISTEN_GROUP_PLAY_MODE, "LOOP_GROUP") ?: "LOOP_GROUP"
+        }
+        set(value) {
+            checkPrefs()
+            prefs!!.edit { putString(KEY_LISTEN_GROUP_PLAY_MODE, value) }
         }
 
     var listenBlindMode: Boolean
@@ -397,5 +409,76 @@ object UserPreferencesRepository {
         hasActivePlan = false
         planCurrentGroupIndex = 0
         planCurrentWordIndex = 0
+    }
+
+    // Daily challenge completion tracking
+    fun isDailyChallengeCompleted(corpusId: String, date: String): Boolean {
+        checkPrefs()
+        return prefs!!.getBoolean("daily_challenge_${corpusId}_${date}", false)
+    }
+
+    fun markDailyChallengeCompleted(corpusId: String, date: String) {
+        checkPrefs()
+        prefs!!.edit { putBoolean("daily_challenge_${corpusId}_${date}", true) }
+    }
+
+    fun getDailyChallengeScore(corpusId: String, date: String): Int {
+        checkPrefs()
+        return prefs!!.getInt("daily_challenge_score_${corpusId}_${date}", 0)
+    }
+
+    fun saveDailyChallengeScore(corpusId: String, date: String, score: Int) {
+        checkPrefs()
+        prefs!!.edit { putInt("daily_challenge_score_${corpusId}_${date}", score) }
+    }
+
+    // Plan-level daily challenge tracking
+    fun markDailyChallengeCompletedForPlan(planIndex: Int, date: String) {
+        checkPrefs()
+        prefs!!.edit { putBoolean("plan_daily_challenge_${planIndex}_${date}", true) }
+    }
+
+    fun isDailyChallengeCompletedForPlan(planIndex: Int, date: String): Boolean {
+        checkPrefs()
+        return prefs!!.getBoolean("plan_daily_challenge_${planIndex}_${date}", false)
+    }
+
+    fun clearAll() {
+        checkPrefs()
+        prefs!!.edit { clear() }
+    }
+
+    // Learn position save/restore (non-plan mode)
+    fun saveLearnPosition(corpusId: String, groupIndex: Int, wordIndex: Int, step: Int = 1) {
+        checkPrefs()
+        prefs!!.edit {
+            putInt("learn_pos_group_$corpusId", groupIndex)
+            putInt("learn_pos_word_$corpusId", wordIndex)
+            putInt("learn_pos_step_$corpusId", step)
+        }
+    }
+
+    fun getLearnPosition(corpusId: String): Triple<Int, Int, Int> {
+        checkPrefs()
+        val group = prefs!!.getInt("learn_pos_group_$corpusId", 0)
+        val word = prefs!!.getInt("learn_pos_word_$corpusId", 0)
+        val step = prefs!!.getInt("learn_pos_step_$corpusId", 1)
+        return Triple(group, word, step)
+    }
+
+    // Today's learned word count
+    fun recordWordLearned(corpusId: String) {
+        checkPrefs()
+        val today = java.text.SimpleDateFormat("yyyyMMdd", java.util.Locale.US).format(java.util.Date())
+        val key = "learned_today_${today}_$corpusId"
+        val count = prefs!!.getInt(key, 0)
+        prefs!!.edit { putInt(key, count + 1) }
+    }
+
+    fun getTodayLearnedCount(corpusId: String): Int {
+        checkPrefs()
+        val today = java.text.SimpleDateFormat("yyyyMMdd", java.util.Locale.US).format(java.util.Date())
+        val key = "learned_today_${today}_$corpusId"
+        return prefs!!.getInt(key, 0)
     }
 }

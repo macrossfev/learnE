@@ -343,7 +343,7 @@ class InteractiveLearnViewModel(
     }
 
     private suspend fun markAsLearned(word: Word) {
-        progressRepository.recordLearned(uid, corpusId, word.word)
+        progressRepository.markWordLearned(uid, corpusId, word.word)
     }
 
     private fun saveError(word: Word, type: String, userAnswer: String, correctAnswer: String) {

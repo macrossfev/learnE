@@ -1,9 +1,9 @@
 package com.learne.ui.stats
 
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.learne.R
 import com.learne.data.model.Achievement
@@ -46,7 +46,7 @@ class AchievementAdapter : RecyclerView.Adapter<AchievementAdapter.ViewHolder>()
 
             if (item.unlocked) {
                 binding.tvStatus.text = "已解锁"
-                binding.tvStatus.setTextColor(Color.parseColor("#FFD700"))
+                binding.tvStatus.setTextColor(ContextCompat.getColor(binding.root.context, R.color.mecha_gold))
                 binding.tvIcon.text = when (item.type) {
                     "streak" -> "🔥"
                     "master" -> "🏅"
@@ -54,7 +54,7 @@ class AchievementAdapter : RecyclerView.Adapter<AchievementAdapter.ViewHolder>()
                 }
             } else {
                 binding.tvStatus.text = "${item.progress}/${item.target}"
-                binding.tvStatus.setTextColor(Color.parseColor("#808080"))
+                binding.tvStatus.setTextColor(ContextCompat.getColor(binding.root.context, R.color.text_hint))
                 binding.tvIcon.text = "🔒"
             }
         }

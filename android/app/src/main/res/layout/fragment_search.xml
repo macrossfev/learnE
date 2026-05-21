@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/background"
+    android:background="@color/mecha_hull"
     android:padding="16dp">
 
     <!-- 搜索框 -->

@@ -1,6 +1,7 @@
 package com.learne.ui.stats
 
 import android.graphics.Color
+import androidx.core.content.ContextCompat
 import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,8 +11,10 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import com.learne.R
 import com.learne.data.db.AppDatabase
 import com.learne.data.db.HeatmapRecord
+import com.learne.data.repository.UserManager
 import com.learne.data.repository.UserPreferencesRepository
 import com.learne.databinding.FragmentStudyStatsBinding
 import kotlinx.coroutines.flow.first
@@ -46,6 +49,9 @@ class StudyStatsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         currentCorpusId = UserPreferencesRepository.planCorpusId ?: "catti"
+        binding.btnBack.setOnClickListener {
+            parentFragmentManager.popBackStack()
+        }
         loadStats()
     }
 
@@ -56,17 +62,19 @@ class StudyStatsFragment : Fragment() {
                 val studyDao = db.studyRecordDao()
                 val goalDao = db.dailyGoalDao()
 
-                val totalLearned = studyDao.getTotalLearned(currentCorpusId).first() ?: 0
-                val totalMastered = studyDao.getTotalMastered(currentCorpusId).first() ?: 0
-                val totalDuration = studyDao.getTotalDuration(currentCorpusId).first() ?: 0L
+                val uidCorpus = "${UserManager.userId}_$currentCorpusId"
+
+                val totalLearned = studyDao.getTotalLearned(uidCorpus).first() ?: 0
+                val totalMastered = studyDao.getTotalMastered(uidCorpus).first() ?: 0
+                val totalDuration = studyDao.getTotalDuration(uidCorpus).first() ?: 0L
                 val totalMinutes = totalDuration / 60
 
                 updateSummaryTexts(totalLearned, totalMastered, totalMinutes)
 
-                val streak = goalDao.getStreakDays(currentCorpusId) ?: 0
+                val streak = goalDao.getStreakDays(uidCorpus) ?: 0
                 binding.tvStreak.text = if (streak > 0) "连续学习 $streak 天" else "暂无连续学习记录"
 
-                loadHeatmap(db)
+                loadHeatmap(db, uidCorpus)
             } catch (e: Exception) {
                 // Ignore errors
             }
@@ -79,7 +87,7 @@ class StudyStatsFragment : Fragment() {
         binding.tvTotalTime.text = "${minutes}分钟"
     }
 
-    private fun loadHeatmap(db: AppDatabase) {
+    private fun loadHeatmap(db: AppDatabase, uidCorpus: String) {
         lifecycleScope.launch {
             try {
                 val calendar = Calendar.getInstance()
@@ -88,7 +96,7 @@ class StudyStatsFragment : Fragment() {
                 calendar.add(Calendar.DAY_OF_YEAR, -90)
                 val startDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(calendar.time)
 
-                val records = db.studyRecordDao().getHeatmapData(currentCorpusId, startDate)
+                val records = db.studyRecordDao().getHeatmapData(uidCorpus, startDate)
                 val recordMap = records.associate { it.date to it.learnedCount }
 
                 buildHeatmapGrid(recordMap)
@@ -114,7 +122,7 @@ class StudyStatsFragment : Fragment() {
                 addView(TextView(requireContext()).apply {
                     text = day
                     textSize = 10f
-                    setTextColor(Color.parseColor("#808080"))
+                    setTextColor(ContextCompat.getColor(requireContext(), R.color.text_hint))
                     gravity = android.view.Gravity.CENTER
                     layoutParams = LinearLayout.LayoutParams(dip(14), dip(14)).apply {
                         marginEnd = 2

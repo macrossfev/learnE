@@ -31,12 +31,70 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
+        // Clear stale callbacks from previous Activity instances
+        HomeNavigation.startInteractiveLearn = null
+        HomeNavigation.startListenRead = null
+        HomeNavigation.startReview = null
+        HomeNavigation.startReviewDirect = null
+        HomeNavigation.startWrongWords = null
+        HomeNavigation.startQuiz = null
+        HomeNavigation.startDictation = null
+        HomeNavigation.startFlashcard = null
+        HomeNavigation.startDailyChallenge = null
+        HomeNavigation.startStudyStats = null
+        HomeNavigation.startUserCenter = null
+
         // Set up navigation callbacks
+        val planIndex = intent.getIntExtra("planIndex", -1)
         HomeNavigation.startInteractiveLearn = { cid ->
-            switchFragment(InteractiveLearnFragment.newInstance(cid))
+            if (planIndex >= 0) {
+                supportFragmentManager.commit {
+                    replace(R.id.fragment_container, ChallengeMapFragment.newInstance(planIndex, "learn"))
+                    setReorderingAllowed(true)
+                    addToBackStack("home")
+                }
+            } else {
+                switchFragment(InteractiveLearnFragment.newInstance(cid))
+            }
         }
         HomeNavigation.startListenRead = { cid ->
-            switchFragment(ListenReadFragment.newInstance(cid))
+            if (planIndex >= 0) {
+                supportFragmentManager.commit {
+                    replace(R.id.fragment_container, ChallengeMapFragment.newInstance(planIndex, "listen"))
+                    setReorderingAllowed(true)
+                    addToBackStack("home")
+                }
+            } else {
+                switchFragment(ListenReadFragment.newInstance(cid))
+            }
+        }
+        HomeNavigation.startReview = { cid ->
+            if (planIndex >= 0) {
+                supportFragmentManager.commit {
+                    replace(R.id.fragment_container, ChallengeMapFragment.newInstance(planIndex, "review"))
+                    setReorderingAllowed(true)
+                    addToBackStack("home")
+                }
+            } else {
+                switchFragment(InteractiveLearnFragment.newInstance(cid, InteractiveLearnFragment.Mode.REVIEW))
+            }
+        }
+        HomeNavigation.startReviewDirect = { cid ->
+            switchFragment(InteractiveLearnFragment.newInstance(cid, InteractiveLearnFragment.Mode.REVIEW_DIRECT))
+        }
+        HomeNavigation.startWrongWords = { cid ->
+            switchFragment(InteractiveLearnFragment.newInstance(cid, InteractiveLearnFragment.Mode.WRONG))
+        }
+        HomeNavigation.startQuiz = { cid ->
+            if (planIndex >= 0) {
+                supportFragmentManager.commit {
+                    replace(R.id.fragment_container, ChallengeMapFragment.newInstance(planIndex, "quiz"))
+                    setReorderingAllowed(true)
+                    addToBackStack("home")
+                }
+            } else {
+                switchFragment(InteractiveLearnFragment.newInstance(cid))
+            }
         }
         HomeNavigation.startDictation = { cid ->
             switchFragment(DictationFragment.newInstance(cid))
@@ -45,32 +103,23 @@ class MainActivity : AppCompatActivity() {
             switchFragment(FlashcardFragment.newInstance(cid))
         }
         HomeNavigation.startDailyChallenge = {
-            switchFragment(DailyChallengeFragment.newInstance())
+            switchFragment(DailyChallengeFragment.newInstance(planIndex))
         }
         HomeNavigation.startStudyStats = {
             switchFragment(StudyStatsFragment.newInstance())
         }
-        HomeNavigation.startWrongWords = {
-            switchFragment(WrongWordsFragment())
+        HomeNavigation.startUserCenter = {
+            switchFragment(com.learne.ui.user.UserCenterFragment())
         }
 
         if (savedInstanceState == null) {
             val planIndex = intent.getIntExtra("planIndex", -1)
-            if (planIndex >= 0) {
-                // Enter challenge map for the selected plan
-                supportFragmentManager.commit {
-                    replace(R.id.fragment_container, ChallengeMapFragment.newInstance(planIndex))
-                    setReorderingAllowed(true)
-                }
-            } else {
-                // Fallback: show home screen
-                val corpusId = intent.getStringExtra("corpusId")
-                    ?: UserPreferencesRepository.planCorpusId
-                    ?: "catti"
-                supportFragmentManager.commit {
-                    replace(R.id.fragment_container, HomeFragment.newInstance(corpusId))
-                    setReorderingAllowed(true)
-                }
+            val corpusId = intent.getStringExtra("corpusId")
+                ?: UserPreferencesRepository.planCorpusId
+                ?: "catti"
+            supportFragmentManager.commit {
+                replace(R.id.fragment_container, HomeFragment.newInstance(corpusId))
+                setReorderingAllowed(true)
             }
         }
     }
@@ -81,5 +130,10 @@ class MainActivity : AppCompatActivity() {
             setReorderingAllowed(true)
             addToBackStack("home")
         }
+    }
+
+    override fun onDestroy() {
+        HomeNavigation.clear()
+        super.onDestroy()
     }
 }

@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/mecha_hull"
     android:padding="16dp">
 
     <!-- 顶部标题 -->
@@ -37,7 +38,7 @@
             android:layout_height="wrap_content"
             android:text="待复习: 0 个"
             android:textSize="14sp"
-            android:textColor="#666" />
+            android:textColor="@color/text_secondary" />
     </LinearLayout>
 
     <!-- 开始复习按钮（初始显示） -->
@@ -72,7 +73,7 @@
                 android:layout_weight="1"
                 android:text="1 / 10"
                 android:textSize="14sp"
-                android:textColor="#888" />
+                android:textColor="@color/text_secondary" />
 
             <TextView
                 android:id="@+id/tv_step_indicator"
@@ -80,7 +81,7 @@
                 android:layout_height="wrap_content"
                 android:text="步骤 1/3"
                 android:textSize="14sp"
-                android:textColor="#888" />
+                android:textColor="@color/text_secondary" />
         </LinearLayout>
 
         <!-- 进度条 -->
@@ -90,7 +91,7 @@
             android:layout_width="match_parent"
             android:layout_height="4dp"
             android:layout_marginTop="8dp"
-            android:progressTint="#2196F3" />
+            android:progressTint="@color/primary" />
 
         <!-- ===== Step 1: 单词展示 ===== -->
         <LinearLayout
@@ -114,14 +115,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:textColor="#666"
+                android:textColor="@color/text_secondary"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="4dp" />
 
             <View
                 android:layout_width="60dp"
                 android:layout_height="1dp"
-                android:background="#ddd"
+                android:background="@color/mecha_divider"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="16dp" />
 
@@ -130,14 +131,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
-                android:textColor="#333"
+                android:textColor="@color/text_primary"
                 android:layout_marginTop="12dp"
                 android:layout_marginLeft="16dp" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#eee"
+                android:background="@color/mecha_divider"
                 android:layout_marginTop="16dp" />
 
             <LinearLayout
@@ -151,14 +152,14 @@
                     android:layout_height="wrap_content"
                     android:text="词组"
                     android:textSize="12sp"
-                    android:textColor="#aaa" />
+                    android:textColor="@color/text_hint" />
 
                 <TextView
                     android:id="@+id/tv_phrase"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15sp"
-                    android:textColor="#333"
+                    android:textColor="@color/text_primary"
                     android:layout_marginTop="2dp" />
 
                 <TextView
@@ -166,14 +167,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
-                    android:textColor="#555"
+                    android:textColor="@color/text_hint"
                     android:layout_marginTop="2dp" />
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#eee"
+                android:background="@color/mecha_divider"
                 android:layout_marginTop="12dp" />
 
             <LinearLayout
@@ -187,14 +188,14 @@
                     android:layout_height="wrap_content"
                     android:text="例句"
                     android:textSize="12sp"
-                    android:textColor="#aaa" />
+                    android:textColor="@color/text_hint" />
 
                 <TextView
                     android:id="@+id/tv_example"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15sp"
-                    android:textColor="#333"
+                    android:textColor="@color/text_primary"
                     android:layout_marginTop="2dp" />
 
                 <TextView
@@ -202,7 +203,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
-                    android:textColor="#555"
+                    android:textColor="@color/text_hint"
                     android:layout_marginTop="2dp" />
             </LinearLayout>
         </LinearLayout>
@@ -221,7 +222,7 @@
                 android:layout_height="wrap_content"
                 android:text="请选择正确的中文含义"
                 android:textSize="14sp"
-                android:textColor="#888"
+                android:textColor="@color/text_secondary"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="24dp" />
 
@@ -239,7 +240,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:textColor="#666"
+                android:textColor="@color/text_secondary"
                 android:layout_gravity="center_horizontal" />
 
             <LinearLayout
@@ -274,7 +275,7 @@
                 android:layout_height="wrap_content"
                 android:text="请输入对应的英文单词"
                 android:textSize="14sp"
-                android:textColor="#888"
+                android:textColor="@color/text_secondary"
                 android:layout_gravity="center_horizontal" />
 
             <TextView
@@ -282,7 +283,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="22sp"
-                android:textColor="#333"
+                android:textColor="@color/text_primary"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="16dp" />
 
@@ -302,7 +303,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
-                android:textColor="#F44336"
+                android:textColor="@color/accent"
                 android:layout_marginTop="8dp"
                 android:visibility="gone" />
 
@@ -391,7 +392,7 @@
             android:layout_height="wrap_content"
             android:text="今日复习内容已全部完成"
             android:textSize="16sp"
-            android:textColor="#666"
+            android:textColor="@color/text_secondary"
             android:layout_marginTop="8dp" />
     </LinearLayout>
 

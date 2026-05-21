@@ -4,9 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#E8E8E8">
+    android:background="@color/mecha_hull">
 
-    <!-- Top bar -->
+    <!-- Top HUD bar -->
     <LinearLayout
         android:id="@+id/layout_top_bar"
         android:layout_width="match_parent"
@@ -14,16 +14,18 @@
         android:orientation="horizontal"
         android:padding="12dp"
         android:gravity="center_vertical"
-        android:background="#FFFFFF">
+        android:background="@drawable/panel_dark"
+        android:elevation="4dp">
 
         <TextView
             android:id="@+id/tv_progress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="1 / 30"
-            android:textColor="#E3000F"
-            android:textSize="16sp"
-            android:textStyle="bold"/>
+            android:textColor="@color/mecha_gold"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:fontFamily="monospace"/>
 
         <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
 
@@ -32,17 +34,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="组 1 考试"
-            android:textColor="#000000"
-            android:textSize="14sp"/>
+            android:textColor="@color/mecha_armor"
+            android:textSize="13sp"
+            android:fontFamily="monospace"/>
     </LinearLayout>
 
     <!-- Progress bar -->
     <ProgressBar
         android:id="@+id/progress_bar"
-        style="?android:attr/progressBarStyleHorizontal"
+        style="@style/AutoPlayProgress"
         android:layout_width="match_parent"
-        android:layout_height="4dp"
-        android:progressDrawable="@drawable/progress_gundam"/>
+        android:layout_height="4dp"/>
 
     <!-- Main content -->
     <LinearLayout
@@ -67,19 +69,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
-                android:textColor="#E3000F"
+                android:textColor="@color/mecha_gold"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:gravity="center"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="24dp"/>
+                android:layout_marginBottom="24dp"
+                android:fontFamily="monospace"/>
 
             <LinearLayout
                 android:id="@+id/choice_options"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-            </LinearLayout>
+                android:orientation="vertical"/>
         </LinearLayout>
 
         <!-- Spell layout -->
@@ -95,20 +97,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="请根据听力拼写单词"
-                android:textColor="#808080"
-                android:textSize="16sp"
+                android:textColor="@color/mecha_armor"
+                android:textSize="15sp"
                 android:gravity="center"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="24dp"/>
+                android:layout_marginBottom="24dp"
+                android:fontFamily="monospace"/>
 
             <Button
                 android:id="@+id/btn_spell_play"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="播放"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                android:backgroundTint="#0039CB"
+                android:text="▶"
+                android:textColor="@color/mecha_white"
+                android:textSize="24sp"
+                android:background="@drawable/btn_accent"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="24dp"/>
 
@@ -119,10 +122,13 @@
                 android:hint="输入单词..."
                 android:textSize="20sp"
                 android:padding="12dp"
-                android:background="#FFFFFF"
+                android:background="@color/mecha_panel"
+                android:textColor="@color/mecha_white"
+                android:textColorHint="@color/mecha_armor_dark"
                 android:inputType="text"
                 android:imeOptions="actionDone"
-                android:layout_marginBottom="16dp"/>
+                android:layout_marginBottom="16dp"
+                android:fontFamily="monospace"/>
 
             <TextView
                 android:id="@+id/tv_spell_result"
@@ -147,20 +153,24 @@
                     android:layout_width="120dp"
                     android:layout_height="48dp"
                     android:text="提交"
-                    android:textColor="#FFFFFF"
-                    android:textSize="16sp"
-                    android:backgroundTint="#E3000F"/>
+                    android:textColor="@color/mecha_white"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/btn_primary"
+                    android:letterSpacing="0.05"/>
 
                 <Button
                     android:id="@+id/btn_spell_next"
                     android:layout_width="120dp"
                     android:layout_height="48dp"
-                    android:text="下一题"
-                    android:textColor="#FFFFFF"
-                    android:textSize="16sp"
-                    android:backgroundTint="#0039CB"
+                    android:text="下一题 ▶"
+                    android:textColor="@color/mecha_white"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/btn_accent"
                     android:layout_marginStart="16dp"
-                    android:visibility="gone"/>
+                    android:visibility="gone"
+                    android:letterSpacing="0.05"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
@@ -171,7 +181,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"
-        android:background="#E8E8E8">
+        android:background="@color/mecha_hull">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -182,15 +192,16 @@
             <ProgressBar
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:indeterminateTint="#E3000F"/>
+                android:indeterminateTint="@color/mecha_gold"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="正在加载..."
-                android:textColor="#000000"
-                android:textSize="16sp"/>
+                android:textColor="@color/mecha_armor"
+                android:textSize="14sp"
+                android:fontFamily="monospace"/>
         </LinearLayout>
     </FrameLayout>
 
